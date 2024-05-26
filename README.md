@@ -1,9 +1,11 @@
 ## Airline Management System
 
-Setup Environment (create .env file)
+Setup Environment (create .env file):
 
+```bash
 TURSO_DATABASE_URL=""
 TURSO_AUTH_TOKEN=""
+```
 
 Run the development server:
 
