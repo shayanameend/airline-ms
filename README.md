@@ -1,6 +1,18 @@
 ## Airline Management System
 
-Setup Environment (create .env file):
+Install the dependencies:
+
+```bash
+npm i
+# or
+yarn i
+# or
+pnpm i
+# or
+bun i
+```
+
+Create .env file:
 
 ```bash
 TURSO_DATABASE_URL=""
