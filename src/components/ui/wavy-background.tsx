@@ -2,8 +2,8 @@
 
 import type { PropsWithChildren } from "react";
 
-import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
+import { useEffect, useRef, useState } from "react";
 import { createNoise3D } from "simplex-noise";
 import { cn } from "~/lib/utils";
 

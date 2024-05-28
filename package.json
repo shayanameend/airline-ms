@@ -6,7 +6,8 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"db": "drizzle-kit"
+		"db": "drizzle-kit",
+		"fix": "biome check --apply ./src"
 	},
 	"packageManager": "pnpm@9.0.4",
 	"dependencies": {
@@ -28,6 +29,7 @@
 		"zod": "^3.23.8"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "^1.7.3",
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",
