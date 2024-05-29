@@ -9,7 +9,7 @@
 		"db": "drizzle-kit",
 		"fix": "biome check --apply ./src"
 	},
-	"packageManager": "pnpm@9.0.4",
+	"packageManager": "pnpm@9.0.6",
 	"dependencies": {
 		"@libsql/client": "^0.6.0",
 		"@radix-ui/react-dropdown-menu": "^2.0.6",
