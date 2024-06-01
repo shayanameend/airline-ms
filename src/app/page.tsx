@@ -1,20 +1,35 @@
-import { ThemeMenuButon } from "~/components/common/theme-menu-button";
-import { WavyBackground } from "~/components/ui/wavy-background";
-import { user_table } from "~/db/schema";
-import { db } from "~/db/setup";
+import { Card, CardContent } from "~/components/ui/card";
+import { cn } from "~/lib/utils";
 
 export default async function HomePage() {
-	const users = await db.select().from(user_table).all();
-
-	console.log(users);
-
 	return (
 		<main>
-			<WavyBackground>
-				<section>
-					<ThemeMenuButon size="icon" />
-				</section>
-			</WavyBackground>
+			<section
+				className={cn("h-screen p-8 grid gap-8 grid-cols-4 grid-rows-6")}
+			>
+				<Card className={cn("row-span-2")}>
+					<CardContent></CardContent>
+				</Card>
+				<Card className={cn("row-span-5 col-span-3")}>
+					<CardContent className={cn("p-8 grid gap-8 grid-cols-3 grid-rows-6")}>
+						<Card className={cn("")}>
+							<CardContent></CardContent>
+						</Card>
+						<Card className={cn("")}>
+							<CardContent></CardContent>
+						</Card>
+						<Card className={cn("")}>
+							<CardContent></CardContent>
+						</Card>
+					</CardContent>{" "}
+				</Card>
+				<Card className={cn("row-span-4")}>
+					<CardContent></CardContent>
+				</Card>
+				<Card className={cn("col-span-3")}>
+					<CardContent></CardContent>
+				</Card>
+			</section>
 		</main>
 	);
 }
