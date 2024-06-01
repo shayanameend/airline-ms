@@ -1,7 +1,8 @@
 import type { PropsWithChildren } from "react";
 
-import "~/app/globals.css";
 import { ThemeProvider } from "~/providers/theme-provider";
+
+import "~/app/globals.css";
 
 export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
 	return (

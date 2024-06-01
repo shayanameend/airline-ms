@@ -3,11 +3,11 @@ import * as zod from "zod";
 
 dotenv.config();
 
-const env = process.env;
+const { env } = process;
 
 export const envSchema = zod.object({
 	TURSO_DATABASE_URL: zod.string().url(),
-	TURSO_AUTH_TOKEN: zod.string(),
+	TURSO_AUTH_TOKEN: zod.string().min(1),
 });
 
 export const envConfig = envSchema.parse(env);
