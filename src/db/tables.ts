@@ -30,8 +30,8 @@ export const route_table = sqliteTable("route", {
 export const flight_table = sqliteTable("flight", {
 	id: text("id").primaryKey().$default(uuid),
 	airlineId: text("airline_id").notNull(),
-	airportId: text("airport_id").notNull(),
 	arrivalAirportId: text("arrival_airport_id").notNull(), //
+	departureAirportId: text("departure_airport_id").notNull(),
 	aircraftId: text("aircraft_id").notNull(),
 	departure: text("departure").notNull(),
 	arrival: text("arrival").notNull(),

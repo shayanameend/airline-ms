@@ -41,7 +41,7 @@ export const flight_relations = relations(flight_table, ({ one, many }) => ({
 		references: [airline_table.id],
 	}),
 	airport: one(airport_table, {
-		fields: [flight_table.airportId],
+		fields: [flight_table.departureAirportId],
 		references: [airport_table.id],
 	}),
 	aircraft: one(aircraft_table, {
