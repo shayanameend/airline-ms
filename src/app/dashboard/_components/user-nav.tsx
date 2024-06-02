@@ -45,7 +45,7 @@ export function UserNav() {
 						Settings
 						<DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
 					</DropdownMenuItem>
-					<DropdownMenuItem>New Team</DropdownMenuItem>
+					<DropdownMenuItem>Flights</DropdownMenuItem>
 				</DropdownMenuGroup>
 				<DropdownMenuSeparator />
 				<DropdownMenuItem>
