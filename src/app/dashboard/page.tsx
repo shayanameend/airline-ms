@@ -8,15 +8,12 @@ import {
 	CardHeader,
 	CardTitle,
 } from "~/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 
 import { CalendarDateRangePicker } from "~/app/dashboard/_components/date-range-picker";
 import { MainNav } from "~/app/dashboard/_components/main-nav";
 import { Overview } from "~/app/dashboard/_components/overview";
 import { RecentSales } from "~/app/dashboard/_components/recent-sales";
-import { Search } from "~/app/dashboard/_components/search";
 import { TeamSwitcher } from "~/app/dashboard/_components/team-switcher";
-import { UserNav } from "~/app/dashboard/_components/user-nav";
 import { ThemeMenuButon } from "~/components/common/theme-menu-button";
 import { cn } from "~/lib/utils";
 
@@ -54,7 +51,8 @@ export default function DashboardPage() {
 						<Card>
 							<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
 								<CardTitle className="text-sm font-medium">
-									Total Revenue
+									Total Passengers
+									{/* Display the total number of passengers flown in a given period.*/}
 								</CardTitle>
 								{/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
 								<svg
@@ -71,16 +69,17 @@ export default function DashboardPage() {
 								</svg>
 							</CardHeader>
 							<CardContent>
-								<div className="text-2xl font-bold">$45,231.89</div>
+								<div className="text-2xl font-bold">14,000</div>
 								<p className="text-xs text-muted-foreground">
-									+20.1% from last month
+									{/* +20.1% from last month */}
 								</p>
 							</CardContent>
 						</Card>
 						<Card>
 							<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
 								<CardTitle className="text-sm font-medium">
-									Subscriptions
+									Flights Sheduled
+									{/* Display the number of flights scheduled or operated in a given period. */}
 								</CardTitle>
 								{/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
 								<svg
@@ -99,15 +98,18 @@ export default function DashboardPage() {
 								</svg>
 							</CardHeader>
 							<CardContent>
-								<div className="text-2xl font-bold">+2350</div>
+								<div className="text-2xl font-bold">20</div>
 								<p className="text-xs text-muted-foreground">
-									+180.1% from last month
+									{/* +180.1% from last month */}
 								</p>
 							</CardContent>
 						</Card>
 						<Card>
 							<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-								<CardTitle className="text-sm font-medium">Sales</CardTitle>
+								<CardTitle className="text-sm font-medium">
+									Tickets Sold
+								</CardTitle>
+								{/*  Display the number of tickets sold.*/}
 								{/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -124,17 +126,18 @@ export default function DashboardPage() {
 								</svg>
 							</CardHeader>
 							<CardContent>
-								<div className="text-2xl font-bold">+12,234</div>
+								<div className="text-2xl font-bold">20,000</div>
 								<p className="text-xs text-muted-foreground">
-									+19% from last month
+									{/* +19% from last month */}
 								</p>
 							</CardContent>
 						</Card>
 						<Card>
 							<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
 								<CardTitle className="text-sm font-medium">
-									Active Now
+									Active Flights
 								</CardTitle>
+								{/* Display the number of flights currently in the air. */}
 								{/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -150,9 +153,9 @@ export default function DashboardPage() {
 								</svg>
 							</CardHeader>
 							<CardContent>
-								<div className="text-2xl font-bold">+573</div>
+								<div className="text-2xl font-bold">7</div>
 								<p className="text-xs text-muted-foreground">
-									+201 since last hour
+									{/* +201 since last hour */}
 								</p>
 							</CardContent>
 						</Card>
@@ -160,7 +163,8 @@ export default function DashboardPage() {
 					<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
 						<Card className="col-span-4">
 							<CardHeader>
-								<CardTitle>Overview</CardTitle>
+								<CardTitle>Passenger Traffic</CardTitle>
+								{/*Display the number of passengers flown per month.*/}
 							</CardHeader>
 							<CardContent className="pl-2">
 								<Overview />
@@ -168,9 +172,10 @@ export default function DashboardPage() {
 						</Card>
 						<Card className="col-span-3">
 							<CardHeader>
-								<CardTitle>Recent Sales</CardTitle>
+								<CardTitle>Recent Bookings</CardTitle>
+								{/* Display recent passenger bookings along with the booking amount.*/}
 								<CardDescription>
-									You made 265 sales this month.
+									You made 265 bookings this month.
 								</CardDescription>
 							</CardHeader>
 							<CardContent>
