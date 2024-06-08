@@ -1,13 +1,12 @@
 "use client";
 
-import * as React from "react";
 import {
 	CaretSortIcon,
 	CheckIcon,
 	PlusCircledIcon,
 } from "@radix-ui/react-icons";
+import * as React from "react";
 
-import { cn } from "~/lib/utils";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { Button } from "~/components/ui/button";
 import {
@@ -42,6 +41,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "~/components/ui/select";
+import { cn } from "~/lib/utils";
 
 const groups = [
 	{

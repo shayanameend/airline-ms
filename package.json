@@ -8,7 +8,8 @@
 		"start": "next start",
 		"ui": "pnpm dlx shadcn-ui",
 		"db": "drizzle-kit",
-		"fix": "biome check --apply ./src"
+		"fix": "biome check --apply ./src",
+		"fix-forced": "biome check --apply-unsafe ./src"
 	},
 	"packageManager": "pnpm@9.0.6",
 	"dependencies": {

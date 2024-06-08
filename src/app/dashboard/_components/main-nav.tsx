@@ -1,11 +1,10 @@
-import Link from "next/link";
+import type { HTMLAttributes } from "react";
+
+import { default as Link } from "next/link";
 
 import { cn } from "~/lib/utils";
 
-export function MainNav({
-	className,
-	...props
-}: React.HTMLAttributes<HTMLElement>) {
+export function MainNav({ className, ...props }: HTMLAttributes<HTMLElement>) {
 	return (
 		<nav
 			className={cn("flex items-center space-x-4 lg:space-x-6", className)}
