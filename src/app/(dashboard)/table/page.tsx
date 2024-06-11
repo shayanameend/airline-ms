@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 
-import { promises as fs } from "node:fs";
 import { default as path } from "node:path";
+import { promises as fs } from "node:fs";
 import { default as Image } from "next/image";
 import { z } from "zod";
-import { columns } from "./_components/columns";
-import { DataTable } from "./_components/data-table";
-import { UserNav } from "./_components/user-nav";
-import { taskSchema } from "./data/schema";
+
+import { columns } from "~/app/(dashboard)/table/_components/columns";
+import { DataTable } from "~/app/(dashboard)/table/_components/data-table";
+import { taskSchema } from "~/app/(dashboard)/table/data/schema";
+import { UserNav } from "~/app/(dashboard)/table/_components/user-nav";
 
 export const metadata: Metadata = {
-	title: "Tasks",
-	description: "A task and issue tracker build using Tanstack Table.",
+	title: "Table",
 };
 
 async function getTasks() {
@@ -25,7 +25,7 @@ async function getTasks() {
 }
 
 export default async function TaskPage() {
-	const tasks = await getTasks();
+	const data = await getTasks();
 
 	return (
 		<>
@@ -57,7 +57,7 @@ export default async function TaskPage() {
 						<UserNav />
 					</div>
 				</div>
-				<DataTable data={tasks} columns={columns} />
+				<DataTable data={data} columns={columns} />
 			</div>
 		</>
 	);
