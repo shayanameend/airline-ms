@@ -1,0 +1,702 @@
+[
+  {
+    "id": "AIRCRAFT-3752",
+    "airlineId": "AIRLINE-JL",
+    "make": "Bombardier",
+    "model": "A320",
+    "capacity": 273
+  },
+  {
+    "id": "AIRCRAFT-7857",
+    "airlineId": "AIRLINE-G4",
+    "make": "Gulfstream",
+    "model": "E190",
+    "capacity": 212
+  },
+  {
+    "id": "AIRCRAFT-4322",
+    "airlineId": "AIRLINE-PC",
+    "make": "Embraer",
+    "model": "CRJ900",
+    "capacity": 131
+  },
+  {
+    "id": "AIRCRAFT-8931",
+    "airlineId": "AIRLINE-XQ",
+    "make": "Antonov",
+    "model": "E190",
+    "capacity": 170
+  },
+  {
+    "id": "AIRCRAFT-8140",
+    "airlineId": "AIRLINE-SK",
+    "make": "Cessna",
+    "model": "SpaceJet",
+    "capacity": 270
+  },
+  {
+    "id": "AIRCRAFT-2324",
+    "airlineId": "AIRLINE-OO",
+    "make": "Airbus",
+    "model": "An-124",
+    "capacity": 203
+  },
+  {
+    "id": "AIRCRAFT-5690",
+    "airlineId": "AIRLINE-P5",
+    "make": "Embraer",
+    "model": "A320",
+    "capacity": 316
+  },
+  {
+    "id": "AIRCRAFT-2587",
+    "airlineId": "AIRLINE-W6",
+    "make": "Airbus",
+    "model": "E190",
+    "capacity": 245
+  },
+  {
+    "id": "AIRCRAFT-1892",
+    "airlineId": "AIRLINE-VE",
+    "make": "Embraer",
+    "model": "CRJ900",
+    "capacity": 378
+  },
+  {
+    "id": "AIRCRAFT-3642",
+    "airlineId": "AIRLINE-9R",
+    "make": "Dassault",
+    "model": "G650",
+    "capacity": 139
+  },
+  {
+    "id": "AIRCRAFT-8451",
+    "airlineId": "AIRLINE-AT",
+    "make": "Boeing",
+    "model": "G650",
+    "capacity": 259
+  },
+  {
+    "id": "AIRCRAFT-1099",
+    "airlineId": "AIRLINE-G9",
+    "make": "Sukhoi",
+    "model": "Citation X",
+    "capacity": 329
+  },
+  {
+    "id": "AIRCRAFT-8197",
+    "airlineId": "AIRLINE-JD",
+    "make": "Embraer",
+    "model": "SpaceJet",
+    "capacity": 261
+  },
+  {
+    "id": "AIRCRAFT-9606",
+    "airlineId": "AIRLINE-Y4",
+    "make": "Bombardier",
+    "model": "An-124",
+    "capacity": 211
+  },
+  {
+    "id": "AIRCRAFT-7527",
+    "airlineId": "AIRLINE-G3",
+    "make": "Embraer",
+    "model": "Falcon 7X",
+    "capacity": 313
+  },
+  {
+    "id": "AIRCRAFT-2434",
+    "airlineId": "AIRLINE-UL",
+    "make": "Mitsubishi",
+    "model": "G650",
+    "capacity": 307
+  },
+  {
+    "id": "AIRCRAFT-4095",
+    "airlineId": "AIRLINE-P5",
+    "make": "Mitsubishi",
+    "model": "E190",
+    "capacity": 367
+  },
+  {
+    "id": "AIRCRAFT-6937",
+    "airlineId": "AIRLINE-MK",
+    "make": "Cessna",
+    "model": "737",
+    "capacity": 256
+  },
+  {
+    "id": "AIRCRAFT-7852",
+    "airlineId": "AIRLINE-FA",
+    "make": "Embraer",
+    "model": "A320",
+    "capacity": 108
+  },
+  {
+    "id": "AIRCRAFT-3450",
+    "airlineId": "AIRLINE-UX",
+    "make": "Sukhoi",
+    "model": "Citation X",
+    "capacity": 136
+  },
+  {
+    "id": "AIRCRAFT-9646",
+    "airlineId": "AIRLINE-SG",
+    "make": "Antonov",
+    "model": "CRJ900",
+    "capacity": 216
+  },
+  {
+    "id": "AIRCRAFT-5825",
+    "airlineId": "AIRLINE-2I",
+    "make": "Dassault",
+    "model": "Superjet 100",
+    "capacity": 290
+  },
+  {
+    "id": "AIRCRAFT-5732",
+    "airlineId": "AIRLINE-BY",
+    "make": "Sukhoi",
+    "model": "CRJ900",
+    "capacity": 251
+  },
+  {
+    "id": "AIRCRAFT-1616",
+    "airlineId": "AIRLINE-AC",
+    "make": "Bombardier",
+    "model": "A320",
+    "capacity": 249
+  },
+  {
+    "id": "AIRCRAFT-8554",
+    "airlineId": "AIRLINE-OO",
+    "make": "Sukhoi",
+    "model": "A320",
+    "capacity": 201
+  },
+  {
+    "id": "AIRCRAFT-1532",
+    "airlineId": "AIRLINE-TG",
+    "make": "Mitsubishi",
+    "model": "CRJ900",
+    "capacity": 186
+  },
+  {
+    "id": "AIRCRAFT-1609",
+    "airlineId": "AIRLINE-ET",
+    "make": "Gulfstream",
+    "model": "E190",
+    "capacity": 322
+  },
+  {
+    "id": "AIRCRAFT-7111",
+    "airlineId": "AIRLINE-F9",
+    "make": "Gulfstream",
+    "model": "SpaceJet",
+    "capacity": 106
+  },
+  {
+    "id": "AIRCRAFT-7954",
+    "airlineId": "AIRLINE-LH",
+    "make": "Bombardier",
+    "model": "G650",
+    "capacity": 329
+  },
+  {
+    "id": "AIRCRAFT-3611",
+    "airlineId": "AIRLINE-G3",
+    "make": "Embraer",
+    "model": "Citation X",
+    "capacity": 365
+  },
+  {
+    "id": "AIRCRAFT-8001",
+    "airlineId": "AIRLINE-XQ",
+    "make": "Cessna",
+    "model": "737",
+    "capacity": 228
+  },
+  {
+    "id": "AIRCRAFT-7135",
+    "airlineId": "AIRLINE-QF",
+    "make": "Cessna",
+    "model": "E190",
+    "capacity": 351
+  },
+  {
+    "id": "AIRCRAFT-9348",
+    "airlineId": "AIRLINE-SQ",
+    "make": "Gulfstream",
+    "model": "Superjet 100",
+    "capacity": 241
+  },
+  {
+    "id": "AIRCRAFT-5029",
+    "airlineId": "AIRLINE-FD",
+    "make": "Airbus",
+    "model": "G650",
+    "capacity": 311
+  },
+  {
+    "id": "AIRCRAFT-6196",
+    "airlineId": "AIRLINE-AA",
+    "make": "Boeing",
+    "model": "737",
+    "capacity": 328
+  },
+  {
+    "id": "AIRCRAFT-7867",
+    "airlineId": "AIRLINE-EK",
+    "make": "Antonov",
+    "model": "Falcon 7X",
+    "capacity": 377
+  },
+  {
+    "id": "AIRCRAFT-8375",
+    "airlineId": "AIRLINE-LO",
+    "make": "Embraer",
+    "model": "Falcon 7X",
+    "capacity": 331
+  },
+  {
+    "id": "AIRCRAFT-9924",
+    "airlineId": "AIRLINE-FA",
+    "make": "Cessna",
+    "model": "CRJ900",
+    "capacity": 177
+  },
+  {
+    "id": "AIRCRAFT-3297",
+    "airlineId": "AIRLINE-EK",
+    "make": "Embraer",
+    "model": "Citation X",
+    "capacity": 306
+  },
+  {
+    "id": "AIRCRAFT-3618",
+    "airlineId": "AIRLINE-VN",
+    "make": "Cessna",
+    "model": "Superjet 100",
+    "capacity": 286
+  },
+  {
+    "id": "AIRCRAFT-5126",
+    "airlineId": "AIRLINE-HA",
+    "make": "Gulfstream",
+    "model": "Falcon 7X",
+    "capacity": 222
+  },
+  {
+    "id": "AIRCRAFT-8780",
+    "airlineId": "AIRLINE-Z8",
+    "make": "Sukhoi",
+    "model": "G650",
+    "capacity": 287
+  },
+  {
+    "id": "AIRCRAFT-5159",
+    "airlineId": "AIRLINE-GA",
+    "make": "Airbus",
+    "model": "An-124",
+    "capacity": 231
+  },
+  {
+    "id": "AIRCRAFT-8608",
+    "airlineId": "AIRLINE-9S",
+    "make": "Cessna",
+    "model": "G650",
+    "capacity": 307
+  },
+  {
+    "id": "AIRCRAFT-9263",
+    "airlineId": "AIRLINE-BY",
+    "make": "Gulfstream",
+    "model": "An-124",
+    "capacity": 177
+  },
+  {
+    "id": "AIRCRAFT-2145",
+    "airlineId": "AIRLINE-TG",
+    "make": "Mitsubishi",
+    "model": "E190",
+    "capacity": 162
+  },
+  {
+    "id": "AIRCRAFT-4748",
+    "airlineId": "AIRLINE-SB",
+    "make": "Bombardier",
+    "model": "G650",
+    "capacity": 396
+  },
+  {
+    "id": "AIRCRAFT-4089",
+    "airlineId": "AIRLINE-LH",
+    "make": "Sukhoi",
+    "model": "An-124",
+    "capacity": 335
+  },
+  {
+    "id": "AIRCRAFT-3434",
+    "airlineId": "AIRLINE-F9",
+    "make": "Sukhoi",
+    "model": "An-124",
+    "capacity": 115
+  },
+  {
+    "id": "AIRCRAFT-4728",
+    "airlineId": "AIRLINE-MN",
+    "make": "Sukhoi",
+    "model": "737",
+    "capacity": 277
+  },
+  {
+    "id": "AIRCRAFT-4910",
+    "airlineId": "AIRLINE-AA",
+    "make": "Airbus",
+    "model": "Superjet 100",
+    "capacity": 298
+  },
+  {
+    "id": "AIRCRAFT-6696",
+    "airlineId": "AIRLINE-CX",
+    "make": "Boeing",
+    "model": "Falcon 7X",
+    "capacity": 373
+  },
+  {
+    "id": "AIRCRAFT-4338",
+    "airlineId": "AIRLINE-AF",
+    "make": "Cessna",
+    "model": "An-124",
+    "capacity": 121
+  },
+  {
+    "id": "AIRCRAFT-7466",
+    "airlineId": "AIRLINE-G3",
+    "make": "Boeing",
+    "model": "E190",
+    "capacity": 129
+  },
+  {
+    "id": "AIRCRAFT-9789",
+    "airlineId": "AIRLINE-FA",
+    "make": "Embraer",
+    "model": "G650",
+    "capacity": 368
+  },
+  {
+    "id": "AIRCRAFT-7774",
+    "airlineId": "AIRLINE-TP",
+    "make": "Boeing",
+    "model": "Falcon 7X",
+    "capacity": 230
+  },
+  {
+    "id": "AIRCRAFT-2685",
+    "airlineId": "AIRLINE-6E",
+    "make": "Airbus",
+    "model": "SpaceJet",
+    "capacity": 160
+  },
+  {
+    "id": "AIRCRAFT-2689",
+    "airlineId": "AIRLINE-G9",
+    "make": "Cessna",
+    "model": "An-124",
+    "capacity": 165
+  },
+  {
+    "id": "AIRCRAFT-7763",
+    "airlineId": "AIRLINE-LS",
+    "make": "Antonov",
+    "model": "A320",
+    "capacity": 154
+  },
+  {
+    "id": "AIRCRAFT-8522",
+    "airlineId": "AIRLINE-AS",
+    "make": "Boeing",
+    "model": "A320",
+    "capacity": 190
+  },
+  {
+    "id": "AIRCRAFT-9557",
+    "airlineId": "AIRLINE-N4",
+    "make": "Boeing",
+    "model": "Superjet 100",
+    "capacity": 181
+  },
+  {
+    "id": "AIRCRAFT-3010",
+    "airlineId": "AIRLINE-AI",
+    "make": "Airbus",
+    "model": "A320",
+    "capacity": 371
+  },
+  {
+    "id": "AIRCRAFT-5997",
+    "airlineId": "AIRLINE-AR",
+    "make": "Mitsubishi",
+    "model": "G650",
+    "capacity": 333
+  },
+  {
+    "id": "AIRCRAFT-9165",
+    "airlineId": "AIRLINE-A3",
+    "make": "Antonov",
+    "model": "CRJ900",
+    "capacity": 191
+  },
+  {
+    "id": "AIRCRAFT-8287",
+    "airlineId": "AIRLINE-2Z",
+    "make": "Antonov",
+    "model": "Falcon 7X",
+    "capacity": 348
+  },
+  {
+    "id": "AIRCRAFT-7939",
+    "airlineId": "AIRLINE-LO",
+    "make": "Airbus",
+    "model": "E190",
+    "capacity": 323
+  },
+  {
+    "id": "AIRCRAFT-4363",
+    "airlineId": "AIRLINE-FR",
+    "make": "Boeing",
+    "model": "An-124",
+    "capacity": 383
+  },
+  {
+    "id": "AIRCRAFT-8723",
+    "airlineId": "AIRLINE-KQ",
+    "make": "Sukhoi",
+    "model": "Falcon 7X",
+    "capacity": 141
+  },
+  {
+    "id": "AIRCRAFT-8089",
+    "airlineId": "AIRLINE-PS",
+    "make": "Sukhoi",
+    "model": "G650",
+    "capacity": 371
+  },
+  {
+    "id": "AIRCRAFT-5827",
+    "airlineId": "AIRLINE-LS",
+    "make": "Antonov",
+    "model": "Superjet 100",
+    "capacity": 276
+  },
+  {
+    "id": "AIRCRAFT-7183",
+    "airlineId": "AIRLINE-AA",
+    "make": "Mitsubishi",
+    "model": "Falcon 7X",
+    "capacity": 392
+  },
+  {
+    "id": "AIRCRAFT-2698",
+    "airlineId": "AIRLINE-XQ",
+    "make": "Antonov",
+    "model": "Superjet 100",
+    "capacity": 352
+  },
+  {
+    "id": "AIRCRAFT-9661",
+    "airlineId": "AIRLINE-LO",
+    "make": "Cessna",
+    "model": "A320",
+    "capacity": 331
+  },
+  {
+    "id": "AIRCRAFT-2305",
+    "airlineId": "AIRLINE-GA",
+    "make": "Embraer",
+    "model": "G650",
+    "capacity": 342
+  },
+  {
+    "id": "AIRCRAFT-3991",
+    "airlineId": "AIRLINE-TP",
+    "make": "Embraer",
+    "model": "737",
+    "capacity": 342
+  },
+  {
+    "id": "AIRCRAFT-8246",
+    "airlineId": "AIRLINE-F9",
+    "make": "Cessna",
+    "model": "SpaceJet",
+    "capacity": 367
+  },
+  {
+    "id": "AIRCRAFT-6001",
+    "airlineId": "AIRLINE-KE",
+    "make": "Dassault",
+    "model": "An-124",
+    "capacity": 327
+  },
+  {
+    "id": "AIRCRAFT-4927",
+    "airlineId": "AIRLINE-AR",
+    "make": "Antonov",
+    "model": "An-124",
+    "capacity": 398
+  },
+  {
+    "id": "AIRCRAFT-5220",
+    "airlineId": "AIRLINE-JL",
+    "make": "Gulfstream",
+    "model": "737",
+    "capacity": 395
+  },
+  {
+    "id": "AIRCRAFT-6713",
+    "airlineId": "AIRLINE-JD",
+    "make": "Boeing",
+    "model": "Falcon 7X",
+    "capacity": 392
+  },
+  {
+    "id": "AIRCRAFT-5142",
+    "airlineId": "AIRLINE-UA",
+    "make": "Antonov",
+    "model": "737",
+    "capacity": 137
+  },
+  {
+    "id": "AIRCRAFT-3922",
+    "airlineId": "AIRLINE-FO",
+    "make": "Gulfstream",
+    "model": "CRJ900",
+    "capacity": 266
+  },
+  {
+    "id": "AIRCRAFT-5150",
+    "airlineId": "AIRLINE-G3",
+    "make": "Gulfstream",
+    "model": "Citation X",
+    "capacity": 289
+  },
+  {
+    "id": "AIRCRAFT-5387",
+    "airlineId": "AIRLINE-LN",
+    "make": "Sukhoi",
+    "model": "CRJ900",
+    "capacity": 380
+  },
+  {
+    "id": "AIRCRAFT-2382",
+    "airlineId": "AIRLINE-DL",
+    "make": "Antonov",
+    "model": "SpaceJet",
+    "capacity": 136
+  },
+  {
+    "id": "AIRCRAFT-5939",
+    "airlineId": "AIRLINE-MN",
+    "make": "Cessna",
+    "model": "Superjet 100",
+    "capacity": 319
+  },
+  {
+    "id": "AIRCRAFT-3346",
+    "airlineId": "AIRLINE-TK",
+    "make": "Airbus",
+    "model": "Falcon 7X",
+    "capacity": 193
+  },
+  {
+    "id": "AIRCRAFT-2039",
+    "airlineId": "AIRLINE-WS",
+    "make": "Embraer",
+    "model": "An-124",
+    "capacity": 318
+  },
+  {
+    "id": "AIRCRAFT-2748",
+    "airlineId": "AIRLINE-AA",
+    "make": "Cessna",
+    "model": "CRJ900",
+    "capacity": 338
+  },
+  {
+    "id": "AIRCRAFT-6338",
+    "airlineId": "AIRLINE-CM",
+    "make": "Cessna",
+    "model": "Citation X",
+    "capacity": 206
+  },
+  {
+    "id": "AIRCRAFT-8371",
+    "airlineId": "AIRLINE-TS",
+    "make": "Antonov",
+    "model": "E190",
+    "capacity": 116
+  },
+  {
+    "id": "AIRCRAFT-9560",
+    "airlineId": "AIRLINE-CZ",
+    "make": "Antonov",
+    "model": "E190",
+    "capacity": 328
+  },
+  {
+    "id": "AIRCRAFT-3868",
+    "airlineId": "AIRLINE-YX",
+    "make": "Antonov",
+    "model": "CRJ900",
+    "capacity": 123
+  },
+  {
+    "id": "AIRCRAFT-7474",
+    "airlineId": "AIRLINE-U2",
+    "make": "Bombardier",
+    "model": "737",
+    "capacity": 398
+  },
+  {
+    "id": "AIRCRAFT-5459",
+    "airlineId": "AIRLINE-3U",
+    "make": "Gulfstream",
+    "model": "An-124",
+    "capacity": 302
+  },
+  {
+    "id": "AIRCRAFT-2125",
+    "airlineId": "AIRLINE-NK",
+    "make": "Boeing",
+    "model": "A320",
+    "capacity": 365
+  },
+  {
+    "id": "AIRCRAFT-7818",
+    "airlineId": "AIRLINE-3U",
+    "make": "Bombardier",
+    "model": "E190",
+    "capacity": 304
+  },
+  {
+    "id": "AIRCRAFT-5610",
+    "airlineId": "AIRLINE-VS",
+    "make": "Embraer",
+    "model": "G650",
+    "capacity": 327
+  },
+  {
+    "id": "AIRCRAFT-7243",
+    "airlineId": "AIRLINE-CA",
+    "make": "Gulfstream",
+    "model": "An-124",
+    "capacity": 366
+  },
+  {
+    "id": "AIRCRAFT-7616",
+    "airlineId": "AIRLINE-FO",
+    "make": "Dassault",
+    "model": "A320",
+    "capacity": 361
+  }
+]

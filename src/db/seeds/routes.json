@@ -1,0 +1,502 @@
+[
+  {
+    "id": "ROUTE-7471",
+    "departureAirportId": "AIRPORT-SHA",
+    "arrivalAirportId": "AIRPORT-FOR"
+  },
+  {
+    "id": "ROUTE-6407",
+    "departureAirportId": "AIRPORT-CPH",
+    "arrivalAirportId": "AIRPORT-IAH"
+  },
+  {
+    "id": "ROUTE-5690",
+    "departureAirportId": "AIRPORT-BKK",
+    "arrivalAirportId": "AIRPORT-AMS"
+  },
+  {
+    "id": "ROUTE-1889",
+    "departureAirportId": "AIRPORT-OGG",
+    "arrivalAirportId": "AIRPORT-OGG"
+  },
+  {
+    "id": "ROUTE-5776",
+    "departureAirportId": "AIRPORT-SCL",
+    "arrivalAirportId": "AIRPORT-OSL"
+  },
+  {
+    "id": "ROUTE-5063",
+    "departureAirportId": "AIRPORT-ADD",
+    "arrivalAirportId": "AIRPORT-TXL"
+  },
+  {
+    "id": "ROUTE-7712",
+    "departureAirportId": "AIRPORT-CBR",
+    "arrivalAirportId": "AIRPORT-ATL"
+  },
+  {
+    "id": "ROUTE-4822",
+    "departureAirportId": "AIRPORT-HEL",
+    "arrivalAirportId": "AIRPORT-DEL"
+  },
+  {
+    "id": "ROUTE-2495",
+    "departureAirportId": "AIRPORT-WLG",
+    "arrivalAirportId": "AIRPORT-MIA"
+  },
+  {
+    "id": "ROUTE-2813",
+    "departureAirportId": "AIRPORT-GRU",
+    "arrivalAirportId": "AIRPORT-IAH"
+  },
+  {
+    "id": "ROUTE-3359",
+    "departureAirportId": "AIRPORT-YVR",
+    "arrivalAirportId": "AIRPORT-SSA"
+  },
+  {
+    "id": "ROUTE-4386",
+    "departureAirportId": "AIRPORT-YVR",
+    "arrivalAirportId": "AIRPORT-JNB"
+  },
+  {
+    "id": "ROUTE-977",
+    "departureAirportId": "AIRPORT-POM",
+    "arrivalAirportId": "AIRPORT-CGH"
+  },
+  {
+    "id": "ROUTE-6808",
+    "departureAirportId": "AIRPORT-KUL",
+    "arrivalAirportId": "AIRPORT-FCO"
+  },
+  {
+    "id": "ROUTE-745",
+    "departureAirportId": "AIRPORT-CBR",
+    "arrivalAirportId": "AIRPORT-BEL"
+  },
+  {
+    "id": "ROUTE-9988",
+    "departureAirportId": "AIRPORT-HEL",
+    "arrivalAirportId": "AIRPORT-CGH"
+  },
+  {
+    "id": "ROUTE-2310",
+    "departureAirportId": "AIRPORT-NOU",
+    "arrivalAirportId": "AIRPORT-NOU"
+  },
+  {
+    "id": "ROUTE-5732",
+    "departureAirportId": "AIRPORT-REC",
+    "arrivalAirportId": "AIRPORT-HND"
+  },
+  {
+    "id": "ROUTE-6996",
+    "departureAirportId": "AIRPORT-MEL",
+    "arrivalAirportId": "AIRPORT-CPH"
+  },
+  {
+    "id": "ROUTE-8712",
+    "departureAirportId": "AIRPORT-POA",
+    "arrivalAirportId": "AIRPORT-MAD"
+  },
+  {
+    "id": "ROUTE-4854",
+    "departureAirportId": "AIRPORT-HKG",
+    "arrivalAirportId": "AIRPORT-LHR"
+  },
+  {
+    "id": "ROUTE-2756",
+    "departureAirportId": "AIRPORT-MCO",
+    "arrivalAirportId": "AIRPORT-OOL"
+  },
+  {
+    "id": "ROUTE-4036",
+    "departureAirportId": "AIRPORT-AMS",
+    "arrivalAirportId": "AIRPORT-SDU"
+  },
+  {
+    "id": "ROUTE-1483",
+    "departureAirportId": "AIRPORT-NOU",
+    "arrivalAirportId": "AIRPORT-MEX"
+  },
+  {
+    "id": "ROUTE-1452",
+    "departureAirportId": "AIRPORT-BNE",
+    "arrivalAirportId": "AIRPORT-DEN"
+  },
+  {
+    "id": "ROUTE-7618",
+    "departureAirportId": "AIRPORT-HRG",
+    "arrivalAirportId": "AIRPORT-AMS"
+  },
+  {
+    "id": "ROUTE-4025",
+    "departureAirportId": "AIRPORT-LAX",
+    "arrivalAirportId": "AIRPORT-ICN"
+  },
+  {
+    "id": "ROUTE-9123",
+    "departureAirportId": "AIRPORT-SVO",
+    "arrivalAirportId": "AIRPORT-ORD"
+  },
+  {
+    "id": "ROUTE-748",
+    "departureAirportId": "AIRPORT-EZE",
+    "arrivalAirportId": "AIRPORT-IST"
+  },
+  {
+    "id": "ROUTE-8884",
+    "departureAirportId": "AIRPORT-KUL",
+    "arrivalAirportId": "AIRPORT-HKG"
+  },
+  {
+    "id": "ROUTE-6595",
+    "departureAirportId": "AIRPORT-CPT",
+    "arrivalAirportId": "AIRPORT-ADL"
+  },
+  {
+    "id": "ROUTE-9189",
+    "departureAirportId": "AIRPORT-GRU",
+    "arrivalAirportId": "AIRPORT-MEL"
+  },
+  {
+    "id": "ROUTE-3765",
+    "departureAirportId": "AIRPORT-XIY",
+    "arrivalAirportId": "AIRPORT-CNS"
+  },
+  {
+    "id": "ROUTE-5835",
+    "departureAirportId": "AIRPORT-CNS",
+    "arrivalAirportId": "AIRPORT-OGG"
+  },
+  {
+    "id": "ROUTE-3968",
+    "departureAirportId": "AIRPORT-POM",
+    "arrivalAirportId": "AIRPORT-CGK"
+  },
+  {
+    "id": "ROUTE-9008",
+    "departureAirportId": "AIRPORT-CBR",
+    "arrivalAirportId": "AIRPORT-MUC"
+  },
+  {
+    "id": "ROUTE-2518",
+    "departureAirportId": "AIRPORT-CNS",
+    "arrivalAirportId": "AIRPORT-DME"
+  },
+  {
+    "id": "ROUTE-8884",
+    "departureAirportId": "AIRPORT-CKG",
+    "arrivalAirportId": "AIRPORT-AMS"
+  },
+  {
+    "id": "ROUTE-5772",
+    "departureAirportId": "AIRPORT-FOR",
+    "arrivalAirportId": "AIRPORT-CGH"
+  },
+  {
+    "id": "ROUTE-6807",
+    "departureAirportId": "AIRPORT-FOR",
+    "arrivalAirportId": "AIRPORT-GIG"
+  },
+  {
+    "id": "ROUTE-4408",
+    "departureAirportId": "AIRPORT-VKO",
+    "arrivalAirportId": "AIRPORT-FLL"
+  },
+  {
+    "id": "ROUTE-5796",
+    "departureAirportId": "AIRPORT-NOU",
+    "arrivalAirportId": "AIRPORT-MAD"
+  },
+  {
+    "id": "ROUTE-1209",
+    "departureAirportId": "AIRPORT-BOG",
+    "arrivalAirportId": "AIRPORT-POA"
+  },
+  {
+    "id": "ROUTE-7440",
+    "departureAirportId": "AIRPORT-MSP",
+    "arrivalAirportId": "AIRPORT-HND"
+  },
+  {
+    "id": "ROUTE-3807",
+    "departureAirportId": "AIRPORT-SSA",
+    "arrivalAirportId": "AIRPORT-PHX"
+  },
+  {
+    "id": "ROUTE-786",
+    "departureAirportId": "AIRPORT-LAS",
+    "arrivalAirportId": "AIRPORT-GRU"
+  },
+  {
+    "id": "ROUTE-8469",
+    "departureAirportId": "AIRPORT-ATL",
+    "arrivalAirportId": "AIRPORT-CAI"
+  },
+  {
+    "id": "ROUTE-5176",
+    "departureAirportId": "AIRPORT-BOM",
+    "arrivalAirportId": "AIRPORT-SSA"
+  },
+  {
+    "id": "ROUTE-9063",
+    "departureAirportId": "AIRPORT-POA",
+    "arrivalAirportId": "AIRPORT-POM"
+  },
+  {
+    "id": "ROUTE-2875",
+    "departureAirportId": "AIRPORT-CLO",
+    "arrivalAirportId": "AIRPORT-GRU"
+  },
+  {
+    "id": "ROUTE-9709",
+    "departureAirportId": "AIRPORT-LAS",
+    "arrivalAirportId": "AIRPORT-CTU"
+  },
+  {
+    "id": "ROUTE-6950",
+    "departureAirportId": "AIRPORT-HRG",
+    "arrivalAirportId": "AIRPORT-FRA"
+  },
+  {
+    "id": "ROUTE-4576",
+    "departureAirportId": "AIRPORT-ADL",
+    "arrivalAirportId": "AIRPORT-ATH"
+  },
+  {
+    "id": "ROUTE-6868",
+    "departureAirportId": "AIRPORT-CGK",
+    "arrivalAirportId": "AIRPORT-ICN"
+  },
+  {
+    "id": "ROUTE-8566",
+    "departureAirportId": "AIRPORT-CKG",
+    "arrivalAirportId": "AIRPORT-SFO"
+  },
+  {
+    "id": "ROUTE-9482",
+    "departureAirportId": "AIRPORT-HEL",
+    "arrivalAirportId": "AIRPORT-DEN"
+  },
+  {
+    "id": "ROUTE-3317",
+    "departureAirportId": "AIRPORT-BOG",
+    "arrivalAirportId": "AIRPORT-ARN"
+  },
+  {
+    "id": "ROUTE-9517",
+    "departureAirportId": "AIRPORT-ATH",
+    "arrivalAirportId": "AIRPORT-NOU"
+  },
+  {
+    "id": "ROUTE-9633",
+    "departureAirportId": "AIRPORT-ALG",
+    "arrivalAirportId": "AIRPORT-LAX"
+  },
+  {
+    "id": "ROUTE-902",
+    "departureAirportId": "AIRPORT-HKG",
+    "arrivalAirportId": "AIRPORT-JED"
+  },
+  {
+    "id": "ROUTE-7883",
+    "departureAirportId": "AIRPORT-BOM",
+    "arrivalAirportId": "AIRPORT-MIA"
+  },
+  {
+    "id": "ROUTE-6216",
+    "departureAirportId": "AIRPORT-HNL",
+    "arrivalAirportId": "AIRPORT-SDU"
+  },
+  {
+    "id": "ROUTE-1589",
+    "departureAirportId": "AIRPORT-SYD",
+    "arrivalAirportId": "AIRPORT-SFO"
+  },
+  {
+    "id": "ROUTE-3893",
+    "departureAirportId": "AIRPORT-HRG",
+    "arrivalAirportId": "AIRPORT-BRU"
+  },
+  {
+    "id": "ROUTE-4149",
+    "departureAirportId": "AIRPORT-MDE",
+    "arrivalAirportId": "AIRPORT-BOG"
+  },
+  {
+    "id": "ROUTE-9089",
+    "departureAirportId": "AIRPORT-ZIA",
+    "arrivalAirportId": "AIRPORT-FOR"
+  },
+  {
+    "id": "ROUTE-6273",
+    "departureAirportId": "AIRPORT-HRG",
+    "arrivalAirportId": "AIRPORT-CTU"
+  },
+  {
+    "id": "ROUTE-6427",
+    "departureAirportId": "AIRPORT-BOG",
+    "arrivalAirportId": "AIRPORT-BRU"
+  },
+  {
+    "id": "ROUTE-7210",
+    "departureAirportId": "AIRPORT-MEL",
+    "arrivalAirportId": "AIRPORT-SYD"
+  },
+  {
+    "id": "ROUTE-3535",
+    "departureAirportId": "AIRPORT-NBO",
+    "arrivalAirportId": "AIRPORT-TXL"
+  },
+  {
+    "id": "ROUTE-5721",
+    "departureAirportId": "AIRPORT-SCL",
+    "arrivalAirportId": "AIRPORT-GIG"
+  },
+  {
+    "id": "ROUTE-3436",
+    "departureAirportId": "AIRPORT-OGG",
+    "arrivalAirportId": "AIRPORT-CPT"
+  },
+  {
+    "id": "ROUTE-8338",
+    "departureAirportId": "AIRPORT-CLT",
+    "arrivalAirportId": "AIRPORT-MEL"
+  },
+  {
+    "id": "ROUTE-365",
+    "departureAirportId": "AIRPORT-SZX",
+    "arrivalAirportId": "AIRPORT-SYD"
+  },
+  {
+    "id": "ROUTE-203",
+    "departureAirportId": "AIRPORT-KUL",
+    "arrivalAirportId": "AIRPORT-CNF"
+  },
+  {
+    "id": "ROUTE-6272",
+    "departureAirportId": "AIRPORT-CWB",
+    "arrivalAirportId": "AIRPORT-ATL"
+  },
+  {
+    "id": "ROUTE-1230",
+    "departureAirportId": "AIRPORT-FLL",
+    "arrivalAirportId": "AIRPORT-MAD"
+  },
+  {
+    "id": "ROUTE-9329",
+    "departureAirportId": "AIRPORT-CTU",
+    "arrivalAirportId": "AIRPORT-EWR"
+  },
+  {
+    "id": "ROUTE-2378",
+    "departureAirportId": "AIRPORT-DEN",
+    "arrivalAirportId": "AIRPORT-CTU"
+  },
+  {
+    "id": "ROUTE-8227",
+    "departureAirportId": "AIRPORT-CLT",
+    "arrivalAirportId": "AIRPORT-KUL"
+  },
+  {
+    "id": "ROUTE-5801",
+    "departureAirportId": "AIRPORT-IST",
+    "arrivalAirportId": "AIRPORT-ARN"
+  },
+  {
+    "id": "ROUTE-9810",
+    "departureAirportId": "AIRPORT-MEL",
+    "arrivalAirportId": "AIRPORT-ADL"
+  },
+  {
+    "id": "ROUTE-9514",
+    "departureAirportId": "AIRPORT-DMK",
+    "arrivalAirportId": "AIRPORT-PEK"
+  },
+  {
+    "id": "ROUTE-9606",
+    "departureAirportId": "AIRPORT-CPH",
+    "arrivalAirportId": "AIRPORT-PPT"
+  },
+  {
+    "id": "ROUTE-640",
+    "departureAirportId": "AIRPORT-DUB",
+    "arrivalAirportId": "AIRPORT-PPT"
+  },
+  {
+    "id": "ROUTE-9141",
+    "departureAirportId": "AIRPORT-MAD",
+    "arrivalAirportId": "AIRPORT-VKO"
+  },
+  {
+    "id": "ROUTE-5326",
+    "departureAirportId": "AIRPORT-HND",
+    "arrivalAirportId": "AIRPORT-OOL"
+  },
+  {
+    "id": "ROUTE-7030",
+    "departureAirportId": "AIRPORT-SCL",
+    "arrivalAirportId": "AIRPORT-SZX"
+  },
+  {
+    "id": "ROUTE-4587",
+    "departureAirportId": "AIRPORT-CBR",
+    "arrivalAirportId": "AIRPORT-MIA"
+  },
+  {
+    "id": "ROUTE-8341",
+    "departureAirportId": "AIRPORT-OGG",
+    "arrivalAirportId": "AIRPORT-ZIA"
+  },
+  {
+    "id": "ROUTE-6708",
+    "departureAirportId": "AIRPORT-CWB",
+    "arrivalAirportId": "AIRPORT-CHC"
+  },
+  {
+    "id": "ROUTE-8264",
+    "departureAirportId": "AIRPORT-CJU",
+    "arrivalAirportId": "AIRPORT-PHX"
+  },
+  {
+    "id": "ROUTE-7363",
+    "departureAirportId": "AIRPORT-HNL",
+    "arrivalAirportId": "AIRPORT-CAI"
+  },
+  {
+    "id": "ROUTE-996",
+    "departureAirportId": "AIRPORT-LAX",
+    "arrivalAirportId": "AIRPORT-DME"
+  },
+  {
+    "id": "ROUTE-9861",
+    "departureAirportId": "AIRPORT-BNE",
+    "arrivalAirportId": "AIRPORT-DFW"
+  },
+  {
+    "id": "ROUTE-2565",
+    "departureAirportId": "AIRPORT-DUB",
+    "arrivalAirportId": "AIRPORT-HNL"
+  },
+  {
+    "id": "ROUTE-4930",
+    "departureAirportId": "AIRPORT-MCO",
+    "arrivalAirportId": "AIRPORT-ATH"
+  },
+  {
+    "id": "ROUTE-5452",
+    "departureAirportId": "AIRPORT-SEA",
+    "arrivalAirportId": "AIRPORT-XIY"
+  },
+  {
+    "id": "ROUTE-4368",
+    "departureAirportId": "AIRPORT-CGK",
+    "arrivalAirportId": "AIRPORT-BNE"
+  },
+  {
+    "id": "ROUTE-6304",
+    "departureAirportId": "AIRPORT-PHX",
+    "arrivalAirportId": "AIRPORT-PVG"
+  }
+]
