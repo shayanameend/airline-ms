@@ -1,8 +1,8 @@
 import type { PropsWithChildren } from "react";
 
-import { TeamSwitcher } from "./overview/_components/team-switcher";
-import { MainNav } from "./overview/_components/main-nav";
 import { ThemeMenuButon } from "~/components/common/theme-menu-button";
+import { MainNav } from "./overview/_components/main-nav";
+import { TeamSwitcher } from "./overview/_components/team-switcher";
 
 import { cn } from "~/lib/utils";
 

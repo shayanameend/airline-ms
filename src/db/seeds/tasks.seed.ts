@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { faker } from "@faker-js/faker";
 
-import { labels, priorities, statuses, type Task } from "~/schemas/tasks";
+import { type Task, labels, priorities, statuses } from "~/schemas/tasks";
 
 const tasks: Task[] = Array.from({ length: 100 }, () => ({
 	id: `TASK-${faker.number.int({ min: 1000, max: 9999 })}`,
