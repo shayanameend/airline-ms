@@ -6,7 +6,7 @@ import { Badge } from "~/components/ui/badge";
 import { Checkbox } from "~/components/ui/checkbox";
 
 import { type Task, labels, priorities, statuses } from "~/schemas/tasks";
-import { DataTableColumnHeader } from "../../../../components/ui/data-table-column-header";
+import { DataTableColumnHeader } from "../../../../components/common/data-table-column-header";
 import { TasksRowActions } from "./tasks-row-actions";
 
 export const tasksColumns: ColumnDef<Task>[] = [

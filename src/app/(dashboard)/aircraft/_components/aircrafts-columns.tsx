@@ -6,7 +6,7 @@ import { Badge } from "~/components/ui/badge";
 import { Checkbox } from "~/components/ui/checkbox";
 
 import { type Aircraft, labels } from "~/schemas/aircrafts";
-import { DataTableColumnHeader } from "~/components/ui/data-table-column-header";
+import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import { AircraftsRowActions } from "~/app/(dashboard)/aircraft/_components/aircrafts-row-actions";
 
 export const aircraftsColumns: ColumnDef<Aircraft>[] = [

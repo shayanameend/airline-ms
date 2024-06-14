@@ -4,7 +4,7 @@ import { promises as fs } from "node:fs";
 import { default as path } from "node:path";
 import { z } from "zod";
 
-import { DataTable } from "~/components/ui/data-table";
+import { DataTable } from "~/components/common/data-table";
 import { AircraftsNavActions } from "~/app/(dashboard)/aircraft/_components/aircrafts-nav-actions";
 
 import { aircraftsColumns } from "./_components/aircrafts-columns";

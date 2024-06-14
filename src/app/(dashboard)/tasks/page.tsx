@@ -6,7 +6,7 @@ import { z } from "zod";
 
 import { tasksColumns } from "~/app/(dashboard)/tasks/_components/tasks-columns";
 import { TasksNavActions } from "~/app/(dashboard)/tasks/_components/tasks-nav-actions";
-import { DataTable } from "~/components/ui/data-table";
+import { DataTable } from "~/components/common/data-table";
 import { taskSchema } from "~/schemas/tasks";
 
 export const metadata: Metadata = {
