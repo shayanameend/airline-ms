@@ -6,10 +6,10 @@ import { Badge } from "~/components/ui/badge";
 import { Checkbox } from "~/components/ui/checkbox";
 
 import { type Task, labels, priorities, statuses } from "~/schemas/tasks";
-import { DataTableColumnHeader } from "./data-table-column-header";
-import { DataTableRowActions } from "./data-table-row-actions";
+import { DataTableColumnHeader } from "../../../../components/ui/data-table-column-header";
+import { TasksRowActions } from "./tasks-row-actions";
 
-export const columns: ColumnDef<Task>[] = [
+export const tasksColumns: ColumnDef<Task>[] = [
 	{
 		id: "select",
 		header: ({ table }) => (
@@ -117,6 +117,6 @@ export const columns: ColumnDef<Task>[] = [
 	},
 	{
 		id: "actions",
-		cell: ({ row }) => <DataTableRowActions row={row} />,
+		cell: ({ row }) => <TasksRowActions row={row} />,
 	},
 ];

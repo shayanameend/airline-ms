@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 
 import { default as path } from "node:path";
 import { promises as fs } from "node:fs";
-import { default as Image } from "next/image";
 import { z } from "zod";
 
-import { columns } from "~/app/(dashboard)/table/_components/columns";
-import { DataTable } from "~/app/(dashboard)/table/_components/data-table";
+import { tasksColumns } from "~/app/(dashboard)/tasks/_components/tasks-columns";
+import { DataTable } from "~/components/ui/data-table";
 import { taskSchema } from "~/schemas/tasks";
-import { UserNav } from "~/app/(dashboard)/table/_components/user-nav";
+import { TasksNavActions } from "~/app/(dashboard)/tasks/_components/tasks-nav-actions";
 
 export const metadata: Metadata = {
 	title: "Table",
@@ -24,40 +23,24 @@ async function getTasks() {
 	return z.array(taskSchema).parse(tasks);
 }
 
-export default async function TaskPage() {
+export default async function TasksPage() {
 	const data = await getTasks();
 
 	return (
 		<>
-			<div className="md:hidden">
-				<Image
-					src="/examples/tasks-light.png"
-					width={1280}
-					height={998}
-					alt="Playground"
-					className="block dark:hidden"
-				/>
-				<Image
-					src="/examples/tasks-dark.png"
-					width={1280}
-					height={998}
-					alt="Playground"
-					className="hidden dark:block"
-				/>
-			</div>
 			<div className="hidden h-full flex-1 flex-col space-y-8 p-8 md:flex">
 				<div className="flex items-center justify-between space-y-2">
 					<div>
-						<h2 className="text-2xl font-bold tracking-tight">Welcome back!</h2>
+						<h2 className="text-2xl font-bold tracking-tight">Tasks</h2>
 						<p className="text-muted-foreground">
 							Here&apos;s a list of your tasks for this month!
 						</p>
 					</div>
 					<div className="flex items-center space-x-2">
-						<UserNav />
+						<TasksNavActions />
 					</div>
 				</div>
-				<DataTable data={data} columns={columns} />
+				<DataTable columns={tasksColumns} data={data} />
 			</div>
 		</>
 	);

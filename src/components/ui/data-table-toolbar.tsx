@@ -5,7 +5,7 @@ import type { Table } from "@tanstack/react-table";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
-import { DataTableViewOptions } from "~/app/(dashboard)/table/_components/data-table-view-options";
+import { DataTableViewOptions } from "~/components/ui/data-table-view-options";
 import { priorities, statuses } from "~/schemas/tasks";
 import { DataTableFacetedFilter } from "./data-table-faceted-filter";
 
