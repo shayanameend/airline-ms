@@ -2,13 +2,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { faker } from "@faker-js/faker";
 
-import {
-	labels,
-	priorities,
-	statuses,
-} from "~/app/(dashboard)/table/data/data";
+import { labels, priorities, statuses, type Task } from "~/schemas/tasks";
 
-const tasks = Array.from({ length: 100 }, () => ({
+const tasks: Task[] = Array.from({ length: 100 }, () => ({
 	id: `TASK-${faker.number.int({ min: 1000, max: 9999 })}`,
 	title: faker.hacker.phrase().replace(/^./, (letter) => letter.toUpperCase()),
 	status: faker.helpers.arrayElement(statuses).value,

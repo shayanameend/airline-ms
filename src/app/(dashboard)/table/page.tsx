@@ -7,7 +7,7 @@ import { z } from "zod";
 
 import { columns } from "~/app/(dashboard)/table/_components/columns";
 import { DataTable } from "~/app/(dashboard)/table/_components/data-table";
-import { taskSchema } from "~/app/(dashboard)/table/data/schema";
+import { taskSchema } from "~/schemas/tasks";
 import { UserNav } from "~/app/(dashboard)/table/_components/user-nav";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 async function getTasks() {
 	const data = await fs.readFile(
-		path.join(process.cwd(), "src/app/(dashboard)/table/data/tasks.json"),
+		path.join(process.cwd(), "src/db/seeds/tasks.json"),
 	);
 
 	const tasks = JSON.parse(data.toString());
