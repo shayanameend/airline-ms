@@ -3,7 +3,7 @@
 import type { PropsWithChildren } from "react";
 
 import { useTheme } from "next-themes";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { createNoise3D } from "simplex-noise";
 import { cn } from "~/lib/utils";
 
@@ -28,13 +28,13 @@ export const WavyBackground = ({
 	const { resolvedTheme } = useTheme();
 
 	const noise = createNoise3D();
-	let w: number;
-	let h: number;
-	let nt: number;
-	let i: number;
-	let x: number;
-	let ctx: CanvasRenderingContext2D | null | undefined;
-	let canvas: HTMLCanvasElement | null;
+	let w = 0;
+	let h = 0;
+	let nt = 0;
+	let i = 0;
+	let x = 0;
+	let ctx: CanvasRenderingContext2D | null | undefined = null;
+	let canvas: HTMLCanvasElement | null = null;
 
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const getSpeed = () => {
@@ -48,7 +48,7 @@ export const WavyBackground = ({
 		}
 	};
 
-	const init = () => {
+	const init = useCallback(() => {
 		canvas = canvasRef.current;
 		ctx = canvas?.getContext("2d");
 
@@ -70,7 +70,7 @@ export const WavyBackground = ({
 			ctx.filter = `blur(${blur}px)`;
 		};
 		render();
-	};
+	}, [blur, canvas, ctx, h, nt, w]);
 
 	const waveColors = colors ?? [
 		"#38bdf8",

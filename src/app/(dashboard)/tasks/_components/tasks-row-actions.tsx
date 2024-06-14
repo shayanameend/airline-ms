@@ -17,16 +17,14 @@ import {
 	DropdownMenuSubTrigger,
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
-import { labels } from "~/app/(dashboard)/table/data/data";
-import { taskSchema } from "~/app/(dashboard)/table/data/schema";
 
-interface DataTableRowActionsProps<TData> {
+import { labels, taskSchema } from "~/schemas/tasks";
+
+interface TaskActionsProps<TData> {
 	row: Row<TData>;
 }
 
-export function DataTableRowActions<TData>({
-	row,
-}: DataTableRowActionsProps<TData>) {
+export function TasksRowActions<TData>({ row }: TaskActionsProps<TData>) {
 	const task = taskSchema.parse(row.original);
 
 	return (
