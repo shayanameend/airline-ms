@@ -14,8 +14,7 @@ import { Overview } from "~/app/(dashboard)/overview/_components/overview";
 import { RecentSales } from "~/app/(dashboard)/overview/_components/recent-sales";
 
 export const metadata: Metadata = {
-	title: "Dashboard",
-	description: "Example dashboard app built using the components.",
+	title: "Overview",
 };
 
 export default function DashboardPage() {
@@ -33,9 +32,8 @@ export default function DashboardPage() {
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
 						<CardTitle className="text-sm font-medium">
 							Total Passengers
-							{/* Display the total number of passengers flown in a given period.*/}
 						</CardTitle>
-						{/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
+						{/* biome-ignore lint/a11y/noSvgWithoutTitle: <> */}
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
@@ -51,18 +49,16 @@ export default function DashboardPage() {
 					</CardHeader>
 					<CardContent>
 						<div className="text-2xl font-bold">14,000</div>
-						<p className="text-xs text-muted-foreground">
-							{/* +20.1% from last month */}
-						</p>
+						{/* biome-ignore lint/style/useSelfClosingElements: <> */}
+						<p className="text-xs text-muted-foreground"></p>
 					</CardContent>
 				</Card>
 				<Card>
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
 						<CardTitle className="text-sm font-medium">
 							Flights Sheduled
-							{/* Display the number of flights scheduled or operated in a given period. */}
 						</CardTitle>
-						{/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
+						{/* biome-ignore lint/a11y/noSvgWithoutTitle: <> */}
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
@@ -88,8 +84,7 @@ export default function DashboardPage() {
 				<Card>
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
 						<CardTitle className="text-sm font-medium">Tickets Sold</CardTitle>
-						{/*  Display the number of tickets sold.*/}
-						{/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
+						{/* biome-ignore lint/a11y/noSvgWithoutTitle: <> */}
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
@@ -116,8 +111,7 @@ export default function DashboardPage() {
 						<CardTitle className="text-sm font-medium">
 							Active Flights
 						</CardTitle>
-						{/* Display the number of flights currently in the air. */}
-						{/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
+						{/* biome-ignore lint/a11y/noSvgWithoutTitle: <> */}
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
@@ -143,7 +137,6 @@ export default function DashboardPage() {
 				<Card className="col-span-4">
 					<CardHeader>
 						<CardTitle>Passenger Traffic</CardTitle>
-						{/*Display the number of passengers flown per month.*/}
 					</CardHeader>
 					<CardContent className="pl-2">
 						<Overview />
@@ -152,7 +145,6 @@ export default function DashboardPage() {
 				<Card className="col-span-3">
 					<CardHeader>
 						<CardTitle>Recent Bookings</CardTitle>
-						{/* Display recent passenger bookings along with the booking amount.*/}
 						<CardDescription>You made 265 bookings this month.</CardDescription>
 					</CardHeader>
 					<CardContent>

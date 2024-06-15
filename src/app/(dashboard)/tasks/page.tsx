@@ -4,10 +4,12 @@ import { promises as fs } from "node:fs";
 import { default as path } from "node:path";
 import { z } from "zod";
 
+import { DataTable } from "~/components/common/data-table";
+
 import { tasksColumns } from "~/app/(dashboard)/tasks/_components/tasks-columns";
 import { TasksNavActions } from "~/app/(dashboard)/tasks/_components/tasks-nav-actions";
-import { DataTable } from "~/components/common/data-table";
-import { taskSchema } from "~/schemas/tasks";
+
+import { taskSchema } from "~/validators/tasks";
 
 export const metadata: Metadata = {
 	title: "Table",

@@ -18,7 +18,7 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 
-import { labels, taskSchema } from "~/schemas/tasks";
+import { labels, taskSchema } from "~/validators/tasks";
 
 interface TaskActionsProps<TData> {
 	row: Row<TData>;
