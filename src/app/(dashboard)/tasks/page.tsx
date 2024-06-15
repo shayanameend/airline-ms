@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 async function getTasks() {
 	const data = await fs.readFile(
-		path.join(process.cwd(), "src/db/seeds/tasks.json"),
+		path.join(process.cwd(), "src/seeds/tasks.json"),
 	);
 
 	const tasks = JSON.parse(data.toString());

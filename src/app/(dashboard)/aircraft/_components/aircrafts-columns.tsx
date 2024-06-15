@@ -5,9 +5,9 @@ import type { ColumnDef } from "@tanstack/react-table";
 import { Badge } from "~/components/ui/badge";
 import { Checkbox } from "~/components/ui/checkbox";
 
-import { type Aircraft, labels } from "~/schemas/aircrafts";
-import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import { AircraftsRowActions } from "~/app/(dashboard)/aircraft/_components/aircrafts-row-actions";
+import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
+import { type Aircraft, labels } from "~/schemas/aircrafts";
 
 export const aircraftsColumns: ColumnDef<Aircraft>[] = [
 	{

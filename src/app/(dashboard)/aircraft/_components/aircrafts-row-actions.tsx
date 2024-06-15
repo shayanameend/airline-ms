@@ -18,7 +18,7 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 
-import { labels, aircraftSchema } from "~/schemas/aircrafts";
+import { aircraftSchema, labels } from "~/schemas/aircrafts";
 
 interface AircraftsRowActionsProps<TData> {
 	row: Row<TData>;

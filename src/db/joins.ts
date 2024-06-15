@@ -1,6 +1,6 @@
+import { relations } from "drizzle-orm";
 import { primaryKey, sqliteTable, text } from "drizzle-orm/sqlite-core";
 import { crew_member_table, flight_table, pilot_table } from "./tables";
-import { relations } from "drizzle-orm";
 
 export const pilotsToFlightsJoin = sqliteTable(
 	"pilots_to_flights",

@@ -2,9 +2,9 @@ import { createClient } from "@libsql/client";
 import { drizzle } from "drizzle-orm/libsql";
 import { dbAuthToken, dbUrl } from "~/lib/env";
 
-import * as tables from "~/db/tables";
-import * as relations from "~/db/relations";
 import * as joins from "~/db/joins";
+import * as relations from "~/db/relations";
+import * as tables from "~/db/tables";
 
 const turso = createClient({
 	url: dbUrl,
