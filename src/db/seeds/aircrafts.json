@@ -1,952 +1,380 @@
 [
   {
-    "id": "AIRCRAFT-8691",
-    "airlineId": "AIRLINE-MK",
+    "id": "AIRCRAFT-5051",
+    "airlineId": "AIRLINE-PK",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Embraer",
+    "model": "An-124",
+    "capacity": 180
+  },
+  {
+    "id": "AIRCRAFT-7001",
+    "airlineId": "AIRLINE-DY",
     "label": {
       "value": "operable",
       "label": "Operable"
-    },
-    "make": "Mitsubishi",
-    "model": "CRJ900",
-    "capacity": 244
-  },
-  {
-    "id": "AIRCRAFT-5967",
-    "airlineId": "AIRLINE-FA",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
-    "make": "Boeing",
-    "model": "737",
-    "capacity": 321
-  },
-  {
-    "id": "AIRCRAFT-7249",
-    "airlineId": "AIRLINE-TK",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Gulfstream",
-    "model": "G650",
-    "capacity": 345
-  },
-  {
-    "id": "AIRCRAFT-1506",
-    "airlineId": "AIRLINE-SB",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Boeing",
-    "model": "SpaceJet",
-    "capacity": 149
-  },
-  {
-    "id": "AIRCRAFT-2517",
-    "airlineId": "AIRLINE-SV",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
     },
     "make": "Bombardier",
-    "model": "Falcon 7X",
-    "capacity": 374
+    "model": "737",
+    "capacity": 363
   },
   {
-    "id": "AIRCRAFT-6308",
-    "airlineId": "AIRLINE-BR",
+    "id": "AIRCRAFT-6482",
+    "airlineId": "AIRLINE-JL",
     "label": {
       "value": "operable",
       "label": "Operable"
     },
     "make": "Airbus",
-    "model": "Citation X",
-    "capacity": 351
+    "model": "SpaceJet",
+    "capacity": 283
   },
   {
-    "id": "AIRCRAFT-3843",
-    "airlineId": "AIRLINE-AI",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Cessna",
-    "model": "Falcon 7X",
-    "capacity": 368
-  },
-  {
-    "id": "AIRCRAFT-9236",
-    "airlineId": "AIRLINE-JA",
+    "id": "AIRCRAFT-6565",
+    "airlineId": "AIRLINE-PX",
     "label": {
       "value": "discarded",
       "label": "Discarded"
     },
     "make": "Antonov",
-    "model": "Citation X",
-    "capacity": 283
+    "model": "A320",
+    "capacity": 134
   },
   {
-    "id": "AIRCRAFT-9320",
+    "id": "AIRCRAFT-8317",
     "airlineId": "AIRLINE-A3",
     "label": {
       "value": "damaged",
       "label": "Damaged"
     },
-    "make": "Cessna",
-    "model": "An-124",
-    "capacity": 220
-  },
-  {
-    "id": "AIRCRAFT-9753",
-    "airlineId": "AIRLINE-CA",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
-    "make": "Airbus",
-    "model": "CRJ900",
-    "capacity": 181
-  },
-  {
-    "id": "AIRCRAFT-4111",
-    "airlineId": "AIRLINE-PK",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
-    "make": "Airbus",
-    "model": "An-124",
-    "capacity": 153
-  },
-  {
-    "id": "AIRCRAFT-4805",
-    "airlineId": "AIRLINE-FR",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Bombardier",
-    "model": "An-124",
-    "capacity": 235
-  },
-  {
-    "id": "AIRCRAFT-4139",
-    "airlineId": "AIRLINE-AT",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
     "make": "Sukhoi",
-    "model": "CRJ900",
-    "capacity": 287
+    "model": "Citation X",
+    "capacity": 283
   },
   {
-    "id": "AIRCRAFT-8720",
-    "airlineId": "AIRLINE-JA",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
-    "make": "Mitsubishi",
-    "model": "E190",
-    "capacity": 297
-  },
-  {
-    "id": "AIRCRAFT-4119",
-    "airlineId": "AIRLINE-SC",
+    "id": "AIRCRAFT-7874",
+    "airlineId": "AIRLINE-JL",
     "label": {
       "value": "operable",
       "label": "Operable"
-    },
-    "make": "Sukhoi",
-    "model": "G650",
-    "capacity": 396
-  },
-  {
-    "id": "AIRCRAFT-5138",
-    "airlineId": "AIRLINE-U6",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Airbus",
-    "model": "E190",
-    "capacity": 235
-  },
-  {
-    "id": "AIRCRAFT-4677",
-    "airlineId": "AIRLINE-H2",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Sukhoi",
-    "model": "Superjet 100",
-    "capacity": 381
-  },
-  {
-    "id": "AIRCRAFT-6490",
-    "airlineId": "AIRLINE-JD",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
-    "make": "Cessna",
-    "model": "CRJ900",
-    "capacity": 400
-  },
-  {
-    "id": "AIRCRAFT-4566",
-    "airlineId": "AIRLINE-2Z",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Mitsubishi",
-    "model": "Falcon 7X",
-    "capacity": 152
-  },
-  {
-    "id": "AIRCRAFT-1748",
-    "airlineId": "AIRLINE-9R",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Gulfstream",
-    "model": "SpaceJet",
-    "capacity": 382
-  },
-  {
-    "id": "AIRCRAFT-4045",
-    "airlineId": "AIRLINE-DL",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Airbus",
-    "model": "An-124",
-    "capacity": 132
-  },
-  {
-    "id": "AIRCRAFT-4607",
-    "airlineId": "AIRLINE-MN",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
-    "make": "Gulfstream",
-    "model": "E190",
-    "capacity": 275
-  },
-  {
-    "id": "AIRCRAFT-5444",
-    "airlineId": "AIRLINE-EK",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
-    "make": "Mitsubishi",
-    "model": "G650",
-    "capacity": 155
-  },
-  {
-    "id": "AIRCRAFT-2774",
-    "airlineId": "AIRLINE-P5",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
     },
     "make": "Boeing",
-    "model": "CRJ900",
-    "capacity": 204
+    "model": "Falcon 7X",
+    "capacity": 262
   },
   {
-    "id": "AIRCRAFT-6654",
-    "airlineId": "AIRLINE-SK",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Gulfstream",
-    "model": "E190",
-    "capacity": 150
-  },
-  {
-    "id": "AIRCRAFT-9474",
-    "airlineId": "AIRLINE-G8",
+    "id": "AIRCRAFT-7863",
+    "airlineId": "AIRLINE-TN",
     "label": {
       "value": "damaged",
       "label": "Damaged"
     },
     "make": "Sukhoi",
-    "model": "An-124",
-    "capacity": 274
+    "model": "Falcon 7X",
+    "capacity": 273
   },
   {
-    "id": "AIRCRAFT-9649",
-    "airlineId": "AIRLINE-TN",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Sukhoi",
-    "model": "E190",
-    "capacity": 357
-  },
-  {
-    "id": "AIRCRAFT-8843",
-    "airlineId": "AIRLINE-VJ",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Antonov",
-    "model": "Citation X",
-    "capacity": 345
-  },
-  {
-    "id": "AIRCRAFT-1200",
-    "airlineId": "AIRLINE-AI",
+    "id": "AIRCRAFT-8421",
+    "airlineId": "AIRLINE-Z8",
     "label": {
       "value": "discarded",
       "label": "Discarded"
     },
-    "make": "Gulfstream",
-    "model": "Superjet 100",
-    "capacity": 167
+    "make": "Cessna",
+    "model": "An-124",
+    "capacity": 362
   },
   {
-    "id": "AIRCRAFT-6644",
+    "id": "AIRCRAFT-9787",
+    "airlineId": "AIRLINE-QF",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Sukhoi",
+    "model": "SpaceJet",
+    "capacity": 305
+  },
+  {
+    "id": "AIRCRAFT-2822",
+    "airlineId": "AIRLINE-JL",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Airbus",
+    "model": "Citation X",
+    "capacity": 326
+  },
+  {
+    "id": "AIRCRAFT-4991",
     "airlineId": "AIRLINE-SU",
     "label": {
       "value": "operable",
       "label": "Operable"
     },
-    "make": "Embraer",
-    "model": "SpaceJet",
-    "capacity": 221
-  },
-  {
-    "id": "AIRCRAFT-1985",
-    "airlineId": "AIRLINE-JD",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
-    "make": "Bombardier",
+    "make": "Gulfstream",
     "model": "737",
-    "capacity": 122
+    "capacity": 137
   },
   {
-    "id": "AIRCRAFT-3435",
-    "airlineId": "AIRLINE-NH",
+    "id": "AIRCRAFT-8138",
+    "airlineId": "AIRLINE-AF",
     "label": {
       "value": "discarded",
       "label": "Discarded"
-    },
-    "make": "Cessna",
-    "model": "Superjet 100",
-    "capacity": 215
-  },
-  {
-    "id": "AIRCRAFT-4472",
-    "airlineId": "AIRLINE-AZ",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
-    "make": "Embraer",
-    "model": "An-124",
-    "capacity": 211
-  },
-  {
-    "id": "AIRCRAFT-5393",
-    "airlineId": "AIRLINE-9R",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Boeing",
-    "model": "G650",
-    "capacity": 154
-  },
-  {
-    "id": "AIRCRAFT-1845",
-    "airlineId": "AIRLINE-OZ",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Dassault",
-    "model": "SpaceJet",
-    "capacity": 222
-  },
-  {
-    "id": "AIRCRAFT-4323",
-    "airlineId": "AIRLINE-HA",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Cessna",
-    "model": "G650",
-    "capacity": 267
-  },
-  {
-    "id": "AIRCRAFT-5763",
-    "airlineId": "AIRLINE-NK",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
-    "make": "Sukhoi",
-    "model": "G650",
-    "capacity": 235
-  },
-  {
-    "id": "AIRCRAFT-4652",
-    "airlineId": "AIRLINE-MN",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Airbus",
-    "model": "G650",
-    "capacity": 334
-  },
-  {
-    "id": "AIRCRAFT-8123",
-    "airlineId": "AIRLINE-MN",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
-    "make": "Embraer",
-    "model": "E190",
-    "capacity": 228
-  },
-  {
-    "id": "AIRCRAFT-7991",
-    "airlineId": "AIRLINE-AM",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Boeing",
-    "model": "A320",
-    "capacity": 132
-  },
-  {
-    "id": "AIRCRAFT-6253",
-    "airlineId": "AIRLINE-BA",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
     },
     "make": "Gulfstream",
-    "model": "Citation X",
+    "model": "E190",
+    "capacity": 350
+  },
+  {
+    "id": "AIRCRAFT-5710",
+    "airlineId": "AIRLINE-KQ",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Gulfstream",
+    "model": "Falcon 7X",
+    "capacity": 236
+  },
+  {
+    "id": "AIRCRAFT-1267",
+    "airlineId": "AIRLINE-PK",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Gulfstream",
+    "model": "G650",
     "capacity": 347
   },
   {
-    "id": "AIRCRAFT-2858",
-    "airlineId": "AIRLINE-ZF",
+    "id": "AIRCRAFT-6566",
+    "airlineId": "AIRLINE-SU",
     "label": {
-      "value": "operable",
-      "label": "Operable"
+      "value": "discarded",
+      "label": "Discarded"
     },
-    "make": "Airbus",
-    "model": "Falcon 7X",
-    "capacity": 198
-  },
-  {
-    "id": "AIRCRAFT-7319",
-    "airlineId": "AIRLINE-CX",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
-    "make": "Dassault",
+    "make": "Mitsubishi",
     "model": "Citation X",
-    "capacity": 162
+    "capacity": 266
   },
   {
-    "id": "AIRCRAFT-3571",
-    "airlineId": "AIRLINE-CZ",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Bombardier",
-    "model": "CRJ900",
-    "capacity": 385
-  },
-  {
-    "id": "AIRCRAFT-2450",
-    "airlineId": "AIRLINE-JA",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Antonov",
-    "model": "G650",
-    "capacity": 396
-  },
-  {
-    "id": "AIRCRAFT-8408",
-    "airlineId": "AIRLINE-EY",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Airbus",
-    "model": "737",
-    "capacity": 102
-  },
-  {
-    "id": "AIRCRAFT-2434",
-    "airlineId": "AIRLINE-CI",
+    "id": "AIRCRAFT-5318",
+    "airlineId": "AIRLINE-MU",
     "label": {
       "value": "operable",
       "label": "Operable"
     },
     "make": "Gulfstream",
-    "model": "Falcon 7X",
-    "capacity": 246
+    "model": "Superjet 100",
+    "capacity": 174
   },
   {
-    "id": "AIRCRAFT-7936",
-    "airlineId": "AIRLINE-WY",
+    "id": "AIRCRAFT-5351",
+    "airlineId": "AIRLINE-2Z",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Embraer",
+    "model": "A320",
+    "capacity": 235
+  },
+  {
+    "id": "AIRCRAFT-8656",
+    "airlineId": "AIRLINE-AT",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Mitsubishi",
+    "model": "SpaceJet",
+    "capacity": 362
+  },
+  {
+    "id": "AIRCRAFT-2499",
+    "airlineId": "AIRLINE-AY",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Antonov",
+    "model": "SpaceJet",
+    "capacity": 284
+  },
+  {
+    "id": "AIRCRAFT-4099",
+    "airlineId": "AIRLINE-WN",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Antonov",
+    "model": "SpaceJet",
+    "capacity": 304
+  },
+  {
+    "id": "AIRCRAFT-3627",
+    "airlineId": "AIRLINE-AR",
     "label": {
       "value": "operable",
       "label": "Operable"
     },
     "make": "Mitsubishi",
     "model": "G650",
-    "capacity": 307
+    "capacity": 325
   },
   {
-    "id": "AIRCRAFT-8600",
-    "airlineId": "AIRLINE-AV",
+    "id": "AIRCRAFT-2145",
+    "airlineId": "AIRLINE-CZ",
     "label": {
       "value": "discarded",
       "label": "Discarded"
     },
-    "make": "Sukhoi",
-    "model": "A320",
-    "capacity": 300
-  },
-  {
-    "id": "AIRCRAFT-4054",
-    "airlineId": "AIRLINE-AH",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Embraer",
-    "model": "An-124",
-    "capacity": 205
-  },
-  {
-    "id": "AIRCRAFT-2119",
-    "airlineId": "AIRLINE-EY",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Boeing",
+    "make": "Dassault",
     "model": "SpaceJet",
-    "capacity": 207
+    "capacity": 249
   },
   {
-    "id": "AIRCRAFT-2563",
-    "airlineId": "AIRLINE-DE",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
-    "make": "Embraer",
-    "model": "An-124",
-    "capacity": 137
-  },
-  {
-    "id": "AIRCRAFT-7110",
-    "airlineId": "AIRLINE-LA",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Bombardier",
-    "model": "An-124",
-    "capacity": 337
-  },
-  {
-    "id": "AIRCRAFT-3321",
-    "airlineId": "AIRLINE-LH",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Gulfstream",
-    "model": "SpaceJet",
-    "capacity": 270
-  },
-  {
-    "id": "AIRCRAFT-5207",
+    "id": "AIRCRAFT-4769",
     "airlineId": "AIRLINE-KQ",
     "label": {
       "value": "discarded",
       "label": "Discarded"
     },
     "make": "Cessna",
-    "model": "An-124",
-    "capacity": 309
-  },
-  {
-    "id": "AIRCRAFT-7625",
-    "airlineId": "AIRLINE-HA",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Mitsubishi",
-    "model": "Falcon 7X",
-    "capacity": 149
-  },
-  {
-    "id": "AIRCRAFT-1143",
-    "airlineId": "AIRLINE-VN",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Boeing",
-    "model": "CRJ900",
-    "capacity": 219
-  },
-  {
-    "id": "AIRCRAFT-5395",
-    "airlineId": "AIRLINE-JD",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
-    "make": "Antonov",
-    "model": "CRJ900",
-    "capacity": 295
-  },
-  {
-    "id": "AIRCRAFT-2961",
-    "airlineId": "AIRLINE-ET",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Antonov",
-    "model": "Falcon 7X",
-    "capacity": 325
-  },
-  {
-    "id": "AIRCRAFT-7655",
-    "airlineId": "AIRLINE-OO",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Dassault",
-    "model": "Superjet 100",
-    "capacity": 109
-  },
-  {
-    "id": "AIRCRAFT-7033",
-    "airlineId": "AIRLINE-U6",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
-    "make": "Gulfstream",
-    "model": "Falcon 7X",
-    "capacity": 184
-  },
-  {
-    "id": "AIRCRAFT-1043",
-    "airlineId": "AIRLINE-A3",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Embraer",
-    "model": "SpaceJet",
-    "capacity": 293
-  },
-  {
-    "id": "AIRCRAFT-4537",
-    "airlineId": "AIRLINE-MK",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Bombardier",
-    "model": "SpaceJet",
-    "capacity": 155
-  },
-  {
-    "id": "AIRCRAFT-2605",
-    "airlineId": "AIRLINE-DE",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
-    "make": "Bombardier",
-    "model": "A320",
-    "capacity": 147
-  },
-  {
-    "id": "AIRCRAFT-6178",
-    "airlineId": "AIRLINE-HO",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
-    "make": "Antonov",
-    "model": "CRJ900",
-    "capacity": 118
-  },
-  {
-    "id": "AIRCRAFT-9538",
-    "airlineId": "AIRLINE-AD",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Bombardier",
-    "model": "Citation X",
-    "capacity": 175
-  },
-  {
-    "id": "AIRCRAFT-3312",
-    "airlineId": "AIRLINE-VJ",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Boeing",
-    "model": "737",
-    "capacity": 304
-  },
-  {
-    "id": "AIRCRAFT-9241",
-    "airlineId": "AIRLINE-HU",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Antonov",
-    "model": "A320",
-    "capacity": 299
-  },
-  {
-    "id": "AIRCRAFT-1452",
-    "airlineId": "AIRLINE-DE",
-    "label": {
-      "value": "damaged",
-      "label": "Damaged"
-    },
-    "make": "Cessna",
-    "model": "G650",
-    "capacity": 146
-  },
-  {
-    "id": "AIRCRAFT-2251",
-    "airlineId": "AIRLINE-G8",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Dassault",
-    "model": "G650",
-    "capacity": 331
-  },
-  {
-    "id": "AIRCRAFT-6487",
-    "airlineId": "AIRLINE-OZ",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Boeing",
     "model": "E190",
-    "capacity": 166
+    "capacity": 217
   },
   {
-    "id": "AIRCRAFT-3169",
-    "airlineId": "AIRLINE-AT",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Bombardier",
-    "model": "CRJ900",
-    "capacity": 334
-  },
-  {
-    "id": "AIRCRAFT-8292",
-    "airlineId": "AIRLINE-WN",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Embraer",
-    "model": "Superjet 100",
-    "capacity": 222
-  },
-  {
-    "id": "AIRCRAFT-2974",
-    "airlineId": "AIRLINE-PC",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Antonov",
-    "model": "Falcon 7X",
-    "capacity": 257
-  },
-  {
-    "id": "AIRCRAFT-4775",
-    "airlineId": "AIRLINE-JA",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Antonov",
-    "model": "SpaceJet",
-    "capacity": 265
-  },
-  {
-    "id": "AIRCRAFT-5205",
-    "airlineId": "AIRLINE-OZ",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Gulfstream",
-    "model": "737",
-    "capacity": 286
-  },
-  {
-    "id": "AIRCRAFT-4780",
-    "airlineId": "AIRLINE-NK",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Airbus",
-    "model": "Superjet 100",
-    "capacity": 224
-  },
-  {
-    "id": "AIRCRAFT-8446",
-    "airlineId": "AIRLINE-U2",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Cessna",
-    "model": "Citation X",
-    "capacity": 173
-  },
-  {
-    "id": "AIRCRAFT-6999",
-    "airlineId": "AIRLINE-SY",
-    "label": {
-      "value": "discarded",
-      "label": "Discarded"
-    },
-    "make": "Antonov",
-    "model": "G650",
-    "capacity": 249
-  },
-  {
-    "id": "AIRCRAFT-1348",
+    "id": "AIRCRAFT-1674",
     "airlineId": "AIRLINE-CZ",
     "label": {
       "value": "damaged",
       "label": "Damaged"
     },
-    "make": "Mitsubishi",
-    "model": "737",
-    "capacity": 124
+    "make": "Dassault",
+    "model": "SpaceJet",
+    "capacity": 323
   },
   {
-    "id": "AIRCRAFT-5412",
-    "airlineId": "AIRLINE-Y4",
+    "id": "AIRCRAFT-6221",
+    "airlineId": "AIRLINE-7C",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Cessna",
+    "model": "Citation X",
+    "capacity": 229
+  },
+  {
+    "id": "AIRCRAFT-5156",
+    "airlineId": "AIRLINE-SQ",
     "label": {
       "value": "discarded",
       "label": "Discarded"
     },
-    "make": "Mitsubishi",
-    "model": "G650",
-    "capacity": 270
+    "make": "Gulfstream",
+    "model": "Superjet 100",
+    "capacity": 358
   },
   {
-    "id": "AIRCRAFT-1621",
-    "airlineId": "AIRLINE-D7",
+    "id": "AIRCRAFT-8642",
+    "airlineId": "AIRLINE-G9",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Antonov",
+    "model": "Citation X",
+    "capacity": 284
+  },
+  {
+    "id": "AIRCRAFT-7108",
+    "airlineId": "AIRLINE-2Z",
     "label": {
       "value": "damaged",
       "label": "Damaged"
     },
-    "make": "Dassault",
-    "model": "737",
-    "capacity": 171
+    "make": "Cessna",
+    "model": "A320",
+    "capacity": 261
   },
   {
-    "id": "AIRCRAFT-4567",
-    "airlineId": "AIRLINE-AT",
+    "id": "AIRCRAFT-8344",
+    "airlineId": "AIRLINE-DE",
     "label": {
       "value": "operable",
       "label": "Operable"
     },
-    "make": "Cessna",
+    "make": "Antonov",
     "model": "CRJ900",
-    "capacity": 121
+    "capacity": 294
   },
   {
-    "id": "AIRCRAFT-4326",
+    "id": "AIRCRAFT-2357",
+    "airlineId": "AIRLINE-CA",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Antonov",
+    "model": "737",
+    "capacity": 280
+  },
+  {
+    "id": "AIRCRAFT-8093",
+    "airlineId": "AIRLINE-BA",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Antonov",
+    "model": "E190",
+    "capacity": 371
+  },
+  {
+    "id": "AIRCRAFT-1284",
+    "airlineId": "AIRLINE-9S",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Antonov",
+    "model": "A320",
+    "capacity": 247
+  },
+  {
+    "id": "AIRCRAFT-3868",
+    "airlineId": "AIRLINE-BY",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Gulfstream",
+    "model": "SpaceJet",
+    "capacity": 398
+  },
+  {
+    "id": "AIRCRAFT-6732",
     "airlineId": "AIRLINE-MH",
     "label": {
-      "value": "operable",
-      "label": "Operable"
+      "value": "damaged",
+      "label": "Damaged"
     },
-    "make": "Dassault",
-    "model": "Falcon 7X",
-    "capacity": 341
+    "make": "Airbus",
+    "model": "E190",
+    "capacity": 242
   },
   {
-    "id": "AIRCRAFT-9067",
-    "airlineId": "AIRLINE-AK",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Embraer",
-    "model": "Citation X",
-    "capacity": 360
-  },
-  {
-    "id": "AIRCRAFT-7036",
-    "airlineId": "AIRLINE-FZ",
-    "label": {
-      "value": "operable",
-      "label": "Operable"
-    },
-    "make": "Cessna",
-    "model": "737",
-    "capacity": 117
-  },
-  {
-    "id": "AIRCRAFT-2084",
+    "id": "AIRCRAFT-7379",
     "airlineId": "AIRLINE-2I",
     "label": {
       "value": "discarded",
@@ -954,149 +382,721 @@
     },
     "make": "Sukhoi",
     "model": "Citation X",
-    "capacity": 117
+    "capacity": 111
   },
   {
-    "id": "AIRCRAFT-7549",
-    "airlineId": "AIRLINE-VE",
+    "id": "AIRCRAFT-7185",
+    "airlineId": "AIRLINE-7C",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Embraer",
+    "model": "G650",
+    "capacity": 141
+  },
+  {
+    "id": "AIRCRAFT-4323",
+    "airlineId": "AIRLINE-AF",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Gulfstream",
+    "model": "An-124",
+    "capacity": 182
+  },
+  {
+    "id": "AIRCRAFT-3525",
+    "airlineId": "AIRLINE-WS",
     "label": {
       "value": "discarded",
       "label": "Discarded"
     },
-    "make": "Embraer",
+    "make": "Dassault",
     "model": "A320",
-    "capacity": 237
+    "capacity": 172
   },
   {
-    "id": "AIRCRAFT-9190",
-    "airlineId": "AIRLINE-VJ",
+    "id": "AIRCRAFT-1137",
+    "airlineId": "AIRLINE-G4",
     "label": {
-      "value": "operable",
-      "label": "Operable"
+      "value": "discarded",
+      "label": "Discarded"
     },
-    "make": "Boeing",
-    "model": "SpaceJet",
-    "capacity": 131
+    "make": "Gulfstream",
+    "model": "Superjet 100",
+    "capacity": 304
   },
   {
-    "id": "AIRCRAFT-7517",
-    "airlineId": "AIRLINE-LH",
+    "id": "AIRCRAFT-6694",
+    "airlineId": "AIRLINE-VT",
     "label": {
-      "value": "operable",
-      "label": "Operable"
+      "value": "discarded",
+      "label": "Discarded"
     },
-    "make": "Embraer",
+    "make": "Cessna",
     "model": "737",
-    "capacity": 187
+    "capacity": 115
   },
   {
-    "id": "AIRCRAFT-1348",
-    "airlineId": "AIRLINE-PR",
+    "id": "AIRCRAFT-9329",
+    "airlineId": "AIRLINE-HU",
     "label": {
       "value": "discarded",
       "label": "Discarded"
     },
     "make": "Antonov",
-    "model": "Superjet 100",
-    "capacity": 112
+    "model": "SpaceJet",
+    "capacity": 218
   },
   {
-    "id": "AIRCRAFT-6093",
-    "airlineId": "AIRLINE-JD",
+    "id": "AIRCRAFT-8330",
+    "airlineId": "AIRLINE-TK",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Antonov",
+    "model": "737",
+    "capacity": 160
+  },
+  {
+    "id": "AIRCRAFT-4201",
+    "airlineId": "AIRLINE-NZ",
     "label": {
       "value": "damaged",
       "label": "Damaged"
     },
     "make": "Dassault",
     "model": "Falcon 7X",
-    "capacity": 299
+    "capacity": 253
   },
   {
-    "id": "AIRCRAFT-7534",
-    "airlineId": "AIRLINE-AT",
+    "id": "AIRCRAFT-8663",
+    "airlineId": "AIRLINE-UL",
     "label": {
-      "value": "discarded",
-      "label": "Discarded"
+      "value": "damaged",
+      "label": "Damaged"
     },
-    "make": "Sukhoi",
-    "model": "Superjet 100",
-    "capacity": 101
+    "make": "Antonov",
+    "model": "Citation X",
+    "capacity": 243
   },
   {
-    "id": "AIRCRAFT-9090",
-    "airlineId": "AIRLINE-U2",
+    "id": "AIRCRAFT-3352",
+    "airlineId": "AIRLINE-NH",
     "label": {
       "value": "operable",
       "label": "Operable"
     },
     "make": "Embraer",
-    "model": "Falcon 7X",
-    "capacity": 216
+    "model": "CRJ900",
+    "capacity": 354
   },
   {
-    "id": "AIRCRAFT-3137",
-    "airlineId": "AIRLINE-SC",
+    "id": "AIRCRAFT-1741",
+    "airlineId": "AIRLINE-3U",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Gulfstream",
+    "model": "An-124",
+    "capacity": 172
+  },
+  {
+    "id": "AIRCRAFT-8984",
+    "airlineId": "AIRLINE-G9",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Bombardier",
+    "model": "SpaceJet",
+    "capacity": 382
+  },
+  {
+    "id": "AIRCRAFT-7349",
+    "airlineId": "AIRLINE-Y4",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Sukhoi",
+    "model": "A320",
+    "capacity": 258
+  },
+  {
+    "id": "AIRCRAFT-7847",
+    "airlineId": "AIRLINE-WN",
     "label": {
       "value": "operable",
       "label": "Operable"
     },
     "make": "Antonov",
-    "model": "737",
-    "capacity": 107
+    "model": "SpaceJet",
+    "capacity": 201
   },
   {
-    "id": "AIRCRAFT-3397",
-    "airlineId": "AIRLINE-PC",
+    "id": "AIRCRAFT-2523",
+    "airlineId": "AIRLINE-PK",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Airbus",
+    "model": "G650",
+    "capacity": 151
+  },
+  {
+    "id": "AIRCRAFT-3529",
+    "airlineId": "AIRLINE-3U",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Dassault",
+    "model": "G650",
+    "capacity": 253
+  },
+  {
+    "id": "AIRCRAFT-9121",
+    "airlineId": "AIRLINE-OZ",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Bombardier",
+    "model": "E190",
+    "capacity": 293
+  },
+  {
+    "id": "AIRCRAFT-6443",
+    "airlineId": "AIRLINE-OO",
     "label": {
       "value": "operable",
       "label": "Operable"
     },
-    "make": "Airbus",
-    "model": "737",
-    "capacity": 314
+    "make": "Embraer",
+    "model": "G650",
+    "capacity": 243
   },
   {
-    "id": "AIRCRAFT-8995",
-    "airlineId": "AIRLINE-7C",
+    "id": "AIRCRAFT-4754",
+    "airlineId": "AIRLINE-NK",
     "label": {
       "value": "damaged",
       "label": "Damaged"
     },
     "make": "Mitsubishi",
-    "model": "737",
-    "capacity": 204
+    "model": "Citation X",
+    "capacity": 301
   },
   {
-    "id": "AIRCRAFT-6309",
+    "id": "AIRCRAFT-9040",
+    "airlineId": "AIRLINE-AK",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Sukhoi",
+    "model": "G650",
+    "capacity": 310
+  },
+  {
+    "id": "AIRCRAFT-2017",
+    "airlineId": "AIRLINE-SQ",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Antonov",
+    "model": "CRJ900",
+    "capacity": 280
+  },
+  {
+    "id": "AIRCRAFT-2492",
+    "airlineId": "AIRLINE-MU",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Antonov",
+    "model": "G650",
+    "capacity": 167
+  },
+  {
+    "id": "AIRCRAFT-9601",
+    "airlineId": "AIRLINE-JL",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Dassault",
+    "model": "G650",
+    "capacity": 112
+  },
+  {
+    "id": "AIRCRAFT-1863",
+    "airlineId": "AIRLINE-LO",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Antonov",
+    "model": "G650",
+    "capacity": 310
+  },
+  {
+    "id": "AIRCRAFT-8309",
+    "airlineId": "AIRLINE-N4",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Dassault",
+    "model": "E190",
+    "capacity": 235
+  },
+  {
+    "id": "AIRCRAFT-8940",
+    "airlineId": "AIRLINE-8J",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Cessna",
+    "model": "Citation X",
+    "capacity": 322
+  },
+  {
+    "id": "AIRCRAFT-7192",
+    "airlineId": "AIRLINE-WN",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Antonov",
+    "model": "A320",
+    "capacity": 218
+  },
+  {
+    "id": "AIRCRAFT-7717",
+    "airlineId": "AIRLINE-AT",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Embraer",
+    "model": "737",
+    "capacity": 326
+  },
+  {
+    "id": "AIRCRAFT-6324",
+    "airlineId": "AIRLINE-OB",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Bombardier",
+    "model": "E190",
+    "capacity": 335
+  },
+  {
+    "id": "AIRCRAFT-3873",
+    "airlineId": "AIRLINE-MN",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Airbus",
+    "model": "Citation X",
+    "capacity": 193
+  },
+  {
+    "id": "AIRCRAFT-2999",
+    "airlineId": "AIRLINE-SY",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Dassault",
+    "model": "An-124",
+    "capacity": 185
+  },
+  {
+    "id": "AIRCRAFT-3727",
+    "airlineId": "AIRLINE-VA",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Cessna",
+    "model": "A320",
+    "capacity": 247
+  },
+  {
+    "id": "AIRCRAFT-2174",
+    "airlineId": "AIRLINE-FR",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Boeing",
+    "model": "G650",
+    "capacity": 288
+  },
+  {
+    "id": "AIRCRAFT-7019",
+    "airlineId": "AIRLINE-CM",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Dassault",
+    "model": "Superjet 100",
+    "capacity": 304
+  },
+  {
+    "id": "AIRCRAFT-5249",
     "airlineId": "AIRLINE-ET",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Embraer",
+    "model": "737",
+    "capacity": 110
+  },
+  {
+    "id": "AIRCRAFT-7948",
+    "airlineId": "AIRLINE-GA",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Boeing",
+    "model": "An-124",
+    "capacity": 399
+  },
+  {
+    "id": "AIRCRAFT-5488",
+    "airlineId": "AIRLINE-B6",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Embraer",
+    "model": "G650",
+    "capacity": 141
+  },
+  {
+    "id": "AIRCRAFT-1608",
+    "airlineId": "AIRLINE-BA",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Dassault",
+    "model": "Falcon 7X",
+    "capacity": 165
+  },
+  {
+    "id": "AIRCRAFT-1299",
+    "airlineId": "AIRLINE-NZ",
     "label": {
       "value": "operable",
       "label": "Operable"
     },
     "make": "Mitsubishi",
-    "model": "Superjet 100",
-    "capacity": 122
+    "model": "Falcon 7X",
+    "capacity": 219
   },
   {
-    "id": "AIRCRAFT-7524",
-    "airlineId": "AIRLINE-TU",
+    "id": "AIRCRAFT-9025",
+    "airlineId": "AIRLINE-TP",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Mitsubishi",
+    "model": "E190",
+    "capacity": 133
+  },
+  {
+    "id": "AIRCRAFT-8360",
+    "airlineId": "AIRLINE-MH",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Bombardier",
+    "model": "Falcon 7X",
+    "capacity": 176
+  },
+  {
+    "id": "AIRCRAFT-5767",
+    "airlineId": "AIRLINE-2I",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Cessna",
+    "model": "737",
+    "capacity": 275
+  },
+  {
+    "id": "AIRCRAFT-1397",
+    "airlineId": "AIRLINE-9R",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Boeing",
+    "model": "Citation X",
+    "capacity": 277
+  },
+  {
+    "id": "AIRCRAFT-3785",
+    "airlineId": "AIRLINE-G3",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Cessna",
+    "model": "737",
+    "capacity": 186
+  },
+  {
+    "id": "AIRCRAFT-2995",
+    "airlineId": "AIRLINE-OZ",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Bombardier",
+    "model": "A320",
+    "capacity": 180
+  },
+  {
+    "id": "AIRCRAFT-5853",
+    "airlineId": "AIRLINE-TS",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Cessna",
+    "model": "Citation X",
+    "capacity": 373
+  },
+  {
+    "id": "AIRCRAFT-3424",
+    "airlineId": "AIRLINE-7C",
     "label": {
       "value": "operable",
       "label": "Operable"
     },
-    "make": "Airbus",
-    "model": "Superjet 100",
-    "capacity": 291
+    "make": "Boeing",
+    "model": "737",
+    "capacity": 129
   },
   {
-    "id": "AIRCRAFT-8234",
+    "id": "AIRCRAFT-5301",
+    "airlineId": "AIRLINE-Z8",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Antonov",
+    "model": "Citation X",
+    "capacity": 105
+  },
+  {
+    "id": "AIRCRAFT-5673",
+    "airlineId": "AIRLINE-EK",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Dassault",
+    "model": "Falcon 7X",
+    "capacity": 225
+  },
+  {
+    "id": "AIRCRAFT-5348",
+    "airlineId": "AIRLINE-F9",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Gulfstream",
+    "model": "Superjet 100",
+    "capacity": 325
+  },
+  {
+    "id": "AIRCRAFT-1372",
+    "airlineId": "AIRLINE-G8",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Embraer",
+    "model": "737",
+    "capacity": 337
+  },
+  {
+    "id": "AIRCRAFT-1946",
+    "airlineId": "AIRLINE-MH",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Bombardier",
+    "model": "737",
+    "capacity": 164
+  },
+  {
+    "id": "AIRCRAFT-5126",
+    "airlineId": "AIRLINE-ZF",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Sukhoi",
+    "model": "Superjet 100",
+    "capacity": 396
+  },
+  {
+    "id": "AIRCRAFT-8110",
     "airlineId": "AIRLINE-SU",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Bombardier",
+    "model": "SpaceJet",
+    "capacity": 252
+  },
+  {
+    "id": "AIRCRAFT-6367",
+    "airlineId": "AIRLINE-LS",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Dassault",
+    "model": "Superjet 100",
+    "capacity": 302
+  },
+  {
+    "id": "AIRCRAFT-6913",
+    "airlineId": "AIRLINE-DL",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Antonov",
+    "model": "CRJ900",
+    "capacity": 175
+  },
+  {
+    "id": "AIRCRAFT-6918",
+    "airlineId": "AIRLINE-PC",
     "label": {
       "value": "discarded",
       "label": "Discarded"
     },
     "make": "Gulfstream",
     "model": "A320",
-    "capacity": 356
+    "capacity": 367
+  },
+  {
+    "id": "AIRCRAFT-2691",
+    "airlineId": "AIRLINE-PS",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Mitsubishi",
+    "model": "A320",
+    "capacity": 270
+  },
+  {
+    "id": "AIRCRAFT-9113",
+    "airlineId": "AIRLINE-F9",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Dassault",
+    "model": "An-124",
+    "capacity": 344
+  },
+  {
+    "id": "AIRCRAFT-8632",
+    "airlineId": "AIRLINE-FJ",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Dassault",
+    "model": "SpaceJet",
+    "capacity": 172
+  },
+  {
+    "id": "AIRCRAFT-6759",
+    "airlineId": "AIRLINE-2I",
+    "label": {
+      "value": "discarded",
+      "label": "Discarded"
+    },
+    "make": "Cessna",
+    "model": "Superjet 100",
+    "capacity": 280
+  },
+  {
+    "id": "AIRCRAFT-6139",
+    "airlineId": "AIRLINE-UL",
+    "label": {
+      "value": "damaged",
+      "label": "Damaged"
+    },
+    "make": "Mitsubishi",
+    "model": "E190",
+    "capacity": 192
+  },
+  {
+    "id": "AIRCRAFT-2824",
+    "airlineId": "AIRLINE-H2",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Airbus",
+    "model": "A320",
+    "capacity": 152
+  },
+  {
+    "id": "AIRCRAFT-3799",
+    "airlineId": "AIRLINE-S7",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Antonov",
+    "model": "An-124",
+    "capacity": 143
+  },
+  {
+    "id": "AIRCRAFT-1206",
+    "airlineId": "AIRLINE-MU",
+    "label": {
+      "value": "operable",
+      "label": "Operable"
+    },
+    "make": "Dassault",
+    "model": "SpaceJet",
+    "capacity": 379
   }
 ]
