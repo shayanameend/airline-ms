@@ -1,9 +1,9 @@
 import type { NextResponse } from "next/server";
 
-import { CustomResponse } from "~/lib/handlers/response-handler";
+import { HttpResponse } from "~/lib/handlers/response-handler";
 
 export function GET(): NextResponse {
-	return CustomResponse.success(
+	return HttpResponse.success(
 		{},
 		{
 			message: "Pilots retrieved successfully",
