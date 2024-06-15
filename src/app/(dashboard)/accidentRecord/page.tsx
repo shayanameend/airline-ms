@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 async function getaccidentRecord() {
 	const data = await fs.readFile(
-		path.join(process.cwd(), "src/seeds/accidentRecords.json"),
+		path.join(process.cwd(), "src/seeds/accident_records.json"),
 	);
 
 	const accidentRecord = JSON.parse(data.toString());

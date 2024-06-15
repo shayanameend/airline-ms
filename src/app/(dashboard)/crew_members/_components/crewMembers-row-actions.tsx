@@ -13,16 +13,16 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 
-import { airlineSchema } from "~/validators/airline";
+import { crewMember as crewMembersSchema } from "~/validators/crewMember";
 
-interface AirlineRowActionsProps<TData> {
+interface CrewMembersRowActionsProps<TData> {
 	row: Row<TData>;
 }
 
-export function AirlineRowActions<TData>({
+export function CrewMembersRowActions<TData>({
 	row,
-}: AirlineRowActionsProps<TData>) {
-	const airline = airlineSchema.parse(row.original);
+}: CrewMembersRowActionsProps<TData>) {
+	const crewMembers = crewMembersSchema.parse(row.original);
 
 	return (
 		<DropdownMenu>

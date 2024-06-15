@@ -8,26 +8,21 @@ import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
-	DropdownMenuRadioGroup,
-	DropdownMenuRadioItem,
 	DropdownMenuSeparator,
 	DropdownMenuShortcut,
-	DropdownMenuSub,
-	DropdownMenuSubContent,
-	DropdownMenuSubTrigger,
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 
-import { airlineSchema } from "~/validators/airline";
+import { airportSchema } from "~/validators/airport";
 
-interface AirlineRowActionsProps<TData> {
+interface AirportRowActionsProps<TData> {
 	row: Row<TData>;
 }
 
-export function AirlineRowActions<TData>({
+export function AirportRowActions<TData>({
 	row,
-}: AirlineRowActionsProps<TData>) {
-	const aircraft = airlineSchema.parse(row.original);
+}: AirportRowActionsProps<TData>) {
+	const airport = airportSchema.parse(row.original);
 
 	return (
 		<DropdownMenu>
