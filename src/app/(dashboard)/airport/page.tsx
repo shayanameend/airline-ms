@@ -4,11 +4,11 @@ import { promises as fs } from "node:fs";
 import { default as path } from "node:path";
 import { z } from "zod";
 
-import { DataTable } from "~/components/ui/data-table";
+import { DataTable } from "~/components/common/data-table";
 import { AirlineNavActions } from "~/app/(dashboard)/airline/_components/airline-nav-actions";
 
 import { airlineColumns } from "./_components/airport-columns";
-import { airlineSchema } from "~/schemas/airline";
+import { airlineSchema } from "~/validators/airline";
 
 export const metadata: Metadata = {
 	title: "Airlines",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 async function getAirline() {
 	const data = await fs.readFile(
-		path.join(process.cwd(), "src/db/seeds/airlines.json"),
+		path.join(process.cwd(), "src/seeds/airlines.json"),
 	);
 
 	const airline = JSON.parse(data.toString());

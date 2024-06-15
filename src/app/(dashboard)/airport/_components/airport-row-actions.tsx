@@ -18,7 +18,7 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 
-import { airlineSchema } from "~/schemas/airline";
+import { airlineSchema } from "~/validators/airline";
 
 interface AirlineRowActionsProps<TData> {
 	row: Row<TData>;

@@ -18,7 +18,7 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 
-import { accidentRecordSchema } from "~/schemas/accidentRecord";
+import { accidentRecordSchema } from "~/validators/accidentRecord";
 
 interface AccidentRecordRowActions<TData> {
 	row: Row<TData>;
