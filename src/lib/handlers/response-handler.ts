@@ -8,7 +8,7 @@ type JSONType =
 	| { [key: string]: JSONType }
 	| JSONType[];
 
-export class CustomResponse extends NextResponse {
+export class HttpResponse extends NextResponse {
 	constructor(data: JSONType, status: number, headers: HeadersInit = {}) {
 		super(JSON.stringify(data), { status, headers });
 	}
