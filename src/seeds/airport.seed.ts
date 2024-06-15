@@ -5,6 +5,8 @@ import { faker } from "@faker-js/faker";
 const airports = Array.from({ length: 100 }, () => ({
 	id: faker.airline.airport().iataCode,
 	name: faker.airline.airport().name,
+	city: faker.location.city(),
+	country: faker.location.country(),
 }));
 export default function () {
 	fs.writeFileSync(
