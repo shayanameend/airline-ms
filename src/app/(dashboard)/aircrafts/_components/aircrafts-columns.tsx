@@ -1,13 +1,13 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
+import type { Aircraft } from "~/validators/aircrafts";
 
 import { Badge } from "~/components/ui/badge";
 import { Checkbox } from "~/components/ui/checkbox";
+import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 
-import { type Aircraft, labels } from "~/schemas/aircrafts";
-import { DataTableColumnHeader } from "~/components/ui/data-table-column-header";
-import { AircraftsRowActions } from "~/app/(dashboard)/aircraft/_components/aircrafts-row-actions";
+import { AircraftsRowActions } from "~/app/(dashboard)/aircrafts/_components/aircrafts-row-actions";
 
 export const aircraftsColumns: ColumnDef<Aircraft>[] = [
 	{

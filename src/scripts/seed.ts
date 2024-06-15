@@ -1,7 +1,7 @@
 import { readdirSync } from "node:fs";
 import { join, resolve } from "node:path";
 
-const seedsDir = resolve(process.cwd(), "src/db/seeds");
+const seedsDir = resolve(process.cwd(), "src/seeds");
 
 const files = readdirSync(seedsDir);
 

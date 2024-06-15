@@ -10,7 +10,10 @@ export const airline_table = sqliteTable("airline", {
 
 export const airport_table = sqliteTable("airport", {
 	id: text("id").primaryKey().$default(uuid),
+	airlineId: text("airline_id").notNull(),
 	name: text("name").notNull(),
+	city: text("city").notNull(),
+	country: text("country").notNull(),
 });
 
 export const aircraft_table = sqliteTable("aircraft", {
@@ -23,15 +26,15 @@ export const aircraft_table = sqliteTable("aircraft", {
 
 export const route_table = sqliteTable("route", {
 	id: text("id").primaryKey().$default(uuid),
-	departureAirportId: text("departure_airport_id").notNull(), //
-	arrivalAirportId: text("arrival_airport_id").notNull(), //
+	departureAirportId: text("departure_airport_id").notNull(),
+	arrivalAirportId: text("arrival_airport_id").notNull(),
+	duration: integer("duration").notNull(),
 });
 
 export const flight_table = sqliteTable("flight", {
 	id: text("id").primaryKey().$default(uuid),
 	airlineId: text("airline_id").notNull(),
-	arrivalAirportId: text("arrival_airport_id").notNull(), //
-	departureAirportId: text("departure_airport_id").notNull(),
+	routeId: text("route_id").notNull(),
 	aircraftId: text("aircraft_id").notNull(),
 	departure: text("departure").notNull(),
 	arrival: text("arrival").notNull(),
@@ -76,7 +79,7 @@ export const maintenance_record_table = sqliteTable("maintenance_record", {
 
 export const weather_record_table = sqliteTable("weather_record", {
 	id: text("id").primaryKey().$default(uuid),
-	flightId: text("flight_id").notNull(), //
+	flightId: text("flight_id").notNull(),
 	description: text("description").notNull(),
 	date: text("date").notNull(),
 });

@@ -4,10 +4,12 @@ import { promises as fs } from "node:fs";
 import { default as path } from "node:path";
 import { z } from "zod";
 
+import { DataTable } from "~/components/common/data-table";
+
 import { tasksColumns } from "~/app/(dashboard)/tasks/_components/tasks-columns";
 import { TasksNavActions } from "~/app/(dashboard)/tasks/_components/tasks-nav-actions";
-import { DataTable } from "~/components/ui/data-table";
-import { taskSchema } from "~/schemas/tasks";
+
+import { taskSchema } from "~/validators/tasks";
 
 export const metadata: Metadata = {
 	title: "Table",
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
 
 async function getTasks() {
 	const data = await fs.readFile(
-		path.join(process.cwd(), "src/db/seeds/tasks.json"),
+		path.join(process.cwd(), "src/seeds/tasks.json"),
 	);
 
 	const tasks = JSON.parse(data.toString());

@@ -1,0 +1,602 @@
+[
+	{
+		"id": "WEATHER-7402",
+		"flightId": "FLIGHT-YX0335",
+		"description": "Fog",
+		"date": "2023-12-28T17:37:38.252Z"
+	},
+	{
+		"id": "WEATHER-1665",
+		"flightId": "FLIGHT-JT0014",
+		"description": "Clear sky",
+		"date": "2024-03-24T17:14:12.358Z"
+	},
+	{
+		"id": "WEATHER-5490",
+		"flightId": "FLIGHT-SA0207",
+		"description": "Light rain",
+		"date": "2023-10-13T09:14:36.232Z"
+	},
+	{
+		"id": "WEATHER-1768",
+		"flightId": "FLIGHT-XQ0009",
+		"description": "Fog",
+		"date": "2023-12-16T14:09:49.026Z"
+	},
+	{
+		"id": "WEATHER-3745",
+		"flightId": "FLIGHT-JT0604",
+		"description": "Clear sky",
+		"date": "2024-04-17T17:59:55.949Z"
+	},
+	{
+		"id": "WEATHER-1751",
+		"flightId": "FLIGHT-AM3322",
+		"description": "Snow",
+		"date": "2024-03-17T19:40:51.882Z"
+	},
+	{
+		"id": "WEATHER-5052",
+		"flightId": "FLIGHT-SK0003",
+		"description": "Windy",
+		"date": "2024-01-23T16:54:28.311Z"
+	},
+	{
+		"id": "WEATHER-8828",
+		"flightId": "FLIGHT-S70190",
+		"description": "Fog",
+		"date": "2023-12-30T02:11:23.431Z"
+	},
+	{
+		"id": "WEATHER-4305",
+		"flightId": "FLIGHT-VT0004",
+		"description": "Heavy rain",
+		"date": "2023-10-24T20:14:15.786Z"
+	},
+	{
+		"id": "WEATHER-1077",
+		"flightId": "FLIGHT-7C0003",
+		"description": "Clear sky",
+		"date": "2023-07-23T20:45:27.472Z"
+	},
+	{
+		"id": "WEATHER-8926",
+		"flightId": "FLIGHT-LY0801",
+		"description": "Tropical storm",
+		"date": "2024-01-06T01:28:47.230Z"
+	},
+	{
+		"id": "WEATHER-5968",
+		"flightId": "FLIGHT-FR0350",
+		"description": "Overcast",
+		"date": "2023-10-08T21:08:46.905Z"
+	},
+	{
+		"id": "WEATHER-2801",
+		"flightId": "FLIGHT-FO9600",
+		"description": "Partly cloudy",
+		"date": "2023-06-21T12:08:52.488Z"
+	},
+	{
+		"id": "WEATHER-5281",
+		"flightId": "FLIGHT-LO0249",
+		"description": "Fog",
+		"date": "2024-03-18T23:27:27.349Z"
+	},
+	{
+		"id": "WEATHER-3614",
+		"flightId": "FLIGHT-AM0005",
+		"description": "Clear sky",
+		"date": "2024-03-21T09:12:48.564Z"
+	},
+	{
+		"id": "WEATHER-8433",
+		"flightId": "FLIGHT-VB0008",
+		"description": "Light rain",
+		"date": "2023-09-12T17:03:48.797Z"
+	},
+	{
+		"id": "WEATHER-5825",
+		"flightId": "FLIGHT-AM9836",
+		"description": "Light rain",
+		"date": "2023-12-11T17:31:51.478Z"
+	},
+	{
+		"id": "WEATHER-8417",
+		"flightId": "FLIGHT-D70007",
+		"description": "Partly cloudy",
+		"date": "2024-01-08T23:23:40.246Z"
+	},
+	{
+		"id": "WEATHER-7009",
+		"flightId": "FLIGHT-2I1286",
+		"description": "Clear sky",
+		"date": "2023-07-10T20:08:37.636Z"
+	},
+	{
+		"id": "WEATHER-8168",
+		"flightId": "FLIGHT-B60009",
+		"description": "Heavy rain",
+		"date": "2023-08-16T09:09:34.369Z"
+	},
+	{
+		"id": "WEATHER-3733",
+		"flightId": "FLIGHT-TK0001",
+		"description": "Heavy rain",
+		"date": "2024-01-29T04:48:48.341Z"
+	},
+	{
+		"id": "WEATHER-3363",
+		"flightId": "FLIGHT-PR0059",
+		"description": "Clear sky",
+		"date": "2023-12-10T02:57:59.988Z"
+	},
+	{
+		"id": "WEATHER-4732",
+		"flightId": "FLIGHT-WS7689",
+		"description": "Blizzard",
+		"date": "2024-02-07T08:13:59.321Z"
+	},
+	{
+		"id": "WEATHER-3310",
+		"flightId": "FLIGHT-PK0003",
+		"description": "Hail",
+		"date": "2024-04-18T19:21:08.169Z"
+	},
+	{
+		"id": "WEATHER-3161",
+		"flightId": "FLIGHT-PK3804",
+		"description": "Windy",
+		"date": "2024-04-02T14:26:02.512Z"
+	},
+	{
+		"id": "WEATHER-4066",
+		"flightId": "FLIGHT-MK0008",
+		"description": "Partly cloudy",
+		"date": "2023-09-07T14:32:19.894Z"
+	},
+	{
+		"id": "WEATHER-1359",
+		"flightId": "FLIGHT-FJ0008",
+		"description": "Partly cloudy",
+		"date": "2024-01-16T12:12:54.149Z"
+	},
+	{
+		"id": "WEATHER-3255",
+		"flightId": "FLIGHT-VS5137",
+		"description": "Snow",
+		"date": "2024-05-05T15:41:19.287Z"
+	},
+	{
+		"id": "WEATHER-6930",
+		"flightId": "FLIGHT-EY0469",
+		"description": "Light rain",
+		"date": "2023-07-08T13:18:24.567Z"
+	},
+	{
+		"id": "WEATHER-1956",
+		"flightId": "FLIGHT-VT0013",
+		"description": "Blizzard",
+		"date": "2024-04-04T12:48:15.016Z"
+	},
+	{
+		"id": "WEATHER-9681",
+		"flightId": "FLIGHT-TK5630",
+		"description": "Tropical storm",
+		"date": "2024-03-05T10:18:29.448Z"
+	},
+	{
+		"id": "WEATHER-4200",
+		"flightId": "FLIGHT-PX0001",
+		"description": "Fog",
+		"date": "2023-12-26T04:41:44.434Z"
+	},
+	{
+		"id": "WEATHER-9987",
+		"flightId": "FLIGHT-SQ0060",
+		"description": "Windy",
+		"date": "2023-08-15T14:38:27.266Z"
+	},
+	{
+		"id": "WEATHER-3914",
+		"flightId": "FLIGHT-BY0002",
+		"description": "Snow",
+		"date": "2023-07-09T15:17:06.184Z"
+	},
+	{
+		"id": "WEATHER-3512",
+		"flightId": "FLIGHT-PK1324",
+		"description": "Windy",
+		"date": "2024-01-22T00:44:23.986Z"
+	},
+	{
+		"id": "WEATHER-1463",
+		"flightId": "FLIGHT-UL7701",
+		"description": "Light rain",
+		"date": "2024-02-12T19:32:26.377Z"
+	},
+	{
+		"id": "WEATHER-3481",
+		"flightId": "FLIGHT-SK8580",
+		"description": "Fog",
+		"date": "2024-05-21T15:39:27.402Z"
+	},
+	{
+		"id": "WEATHER-3759",
+		"flightId": "FLIGHT-NZ0008",
+		"description": "Light rain",
+		"date": "2023-07-13T22:54:06.564Z"
+	},
+	{
+		"id": "WEATHER-4696",
+		"flightId": "FLIGHT-WY0094",
+		"description": "Hail",
+		"date": "2024-05-11T11:21:56.140Z"
+	},
+	{
+		"id": "WEATHER-3241",
+		"flightId": "FLIGHT-AV0909",
+		"description": "Windy",
+		"date": "2023-07-30T14:34:51.285Z"
+	},
+	{
+		"id": "WEATHER-8621",
+		"flightId": "FLIGHT-VS5888",
+		"description": "Thunderstorm",
+		"date": "2024-06-10T09:48:05.575Z"
+	},
+	{
+		"id": "WEATHER-8859",
+		"flightId": "FLIGHT-XQ0627",
+		"description": "Clear sky",
+		"date": "2023-10-09T23:06:19.047Z"
+	},
+	{
+		"id": "WEATHER-9204",
+		"flightId": "FLIGHT-CI0016",
+		"description": "Snow",
+		"date": "2024-03-20T10:14:43.673Z"
+	},
+	{
+		"id": "WEATHER-9513",
+		"flightId": "FLIGHT-F90040",
+		"description": "Clear sky",
+		"date": "2024-05-01T11:42:05.219Z"
+	},
+	{
+		"id": "WEATHER-5749",
+		"flightId": "FLIGHT-NK0004",
+		"description": "Heavy rain",
+		"date": "2024-05-11T13:09:27.294Z"
+	},
+	{
+		"id": "WEATHER-9355",
+		"flightId": "FLIGHT-HA1559",
+		"description": "Heavy rain",
+		"date": "2024-01-27T09:16:27.792Z"
+	},
+	{
+		"id": "WEATHER-6046",
+		"flightId": "FLIGHT-LH5138",
+		"description": "Light rain",
+		"date": "2024-03-14T01:56:17.628Z"
+	},
+	{
+		"id": "WEATHER-3148",
+		"flightId": "FLIGHT-WN0020",
+		"description": "Partly cloudy",
+		"date": "2023-06-17T00:21:26.959Z"
+	},
+	{
+		"id": "WEATHER-3422",
+		"flightId": "FLIGHT-Z80326",
+		"description": "Tropical storm",
+		"date": "2023-09-13T19:17:34.671Z"
+	},
+	{
+		"id": "WEATHER-3131",
+		"flightId": "FLIGHT-AZ0082",
+		"description": "Hail",
+		"date": "2023-08-05T12:12:45.904Z"
+	},
+	{
+		"id": "WEATHER-3646",
+		"flightId": "FLIGHT-FZ0024",
+		"description": "Blizzard",
+		"date": "2023-11-25T06:30:11.187Z"
+	},
+	{
+		"id": "WEATHER-4927",
+		"flightId": "FLIGHT-DY0092",
+		"description": "Partly cloudy",
+		"date": "2023-09-15T14:34:34.979Z"
+	},
+	{
+		"id": "WEATHER-9679",
+		"flightId": "FLIGHT-PR1061",
+		"description": "Light rain",
+		"date": "2023-12-17T01:24:13.422Z"
+	},
+	{
+		"id": "WEATHER-1527",
+		"flightId": "FLIGHT-SQ0974",
+		"description": "Heavy rain",
+		"date": "2024-03-28T07:11:47.502Z"
+	},
+	{
+		"id": "WEATHER-1841",
+		"flightId": "FLIGHT-WY0513",
+		"description": "Heavy rain",
+		"date": "2023-11-27T13:05:42.107Z"
+	},
+	{
+		"id": "WEATHER-3270",
+		"flightId": "FLIGHT-9S3325",
+		"description": "Windy",
+		"date": "2023-08-21T05:19:25.490Z"
+	},
+	{
+		"id": "WEATHER-8224",
+		"flightId": "FLIGHT-FO0008",
+		"description": "Thunderstorm",
+		"date": "2023-08-25T02:59:43.427Z"
+	},
+	{
+		"id": "WEATHER-7257",
+		"flightId": "FLIGHT-PX0087",
+		"description": "Heavy rain",
+		"date": "2024-03-16T16:58:12.067Z"
+	},
+	{
+		"id": "WEATHER-7570",
+		"flightId": "FLIGHT-QF0092",
+		"description": "Clear sky",
+		"date": "2024-04-04T11:22:02.156Z"
+	},
+	{
+		"id": "WEATHER-9094",
+		"flightId": "FLIGHT-9R0037",
+		"description": "Tropical storm",
+		"date": "2023-07-12T17:18:03.865Z"
+	},
+	{
+		"id": "WEATHER-2872",
+		"flightId": "FLIGHT-SY8896",
+		"description": "Blizzard",
+		"date": "2024-04-13T10:34:30.945Z"
+	},
+	{
+		"id": "WEATHER-2392",
+		"flightId": "FLIGHT-G80019",
+		"description": "Windy",
+		"date": "2024-03-03T17:22:34.752Z"
+	},
+	{
+		"id": "WEATHER-8125",
+		"flightId": "FLIGHT-LS0006",
+		"description": "Hail",
+		"date": "2024-04-24T13:20:21.208Z"
+	},
+	{
+		"id": "WEATHER-1981",
+		"flightId": "FLIGHT-B60008",
+		"description": "Clear sky",
+		"date": "2024-02-03T08:42:16.591Z"
+	},
+	{
+		"id": "WEATHER-4889",
+		"flightId": "FLIGHT-FR0069",
+		"description": "Tropical storm",
+		"date": "2023-09-15T08:47:34.064Z"
+	},
+	{
+		"id": "WEATHER-2156",
+		"flightId": "FLIGHT-AR6455",
+		"description": "Overcast",
+		"date": "2023-08-16T04:29:57.583Z"
+	},
+	{
+		"id": "WEATHER-6110",
+		"flightId": "FLIGHT-9R0011",
+		"description": "Windy",
+		"date": "2023-10-26T22:21:48.042Z"
+	},
+	{
+		"id": "WEATHER-5951",
+		"flightId": "FLIGHT-VT8875",
+		"description": "Windy",
+		"date": "2024-04-09T22:30:33.504Z"
+	},
+	{
+		"id": "WEATHER-1434",
+		"flightId": "FLIGHT-CI0534",
+		"description": "Tropical storm",
+		"date": "2023-11-26T15:21:27.833Z"
+	},
+	{
+		"id": "WEATHER-2193",
+		"flightId": "FLIGHT-SK0782",
+		"description": "Windy",
+		"date": "2024-04-06T03:43:36.475Z"
+	},
+	{
+		"id": "WEATHER-4748",
+		"flightId": "FLIGHT-OO0073",
+		"description": "Tropical storm",
+		"date": "2023-08-28T03:06:16.715Z"
+	},
+	{
+		"id": "WEATHER-3209",
+		"flightId": "FLIGHT-AH0006",
+		"description": "Thunderstorm",
+		"date": "2024-05-13T11:53:06.419Z"
+	},
+	{
+		"id": "WEATHER-7884",
+		"flightId": "FLIGHT-BY0917",
+		"description": "Hail",
+		"date": "2023-08-05T00:22:31.810Z"
+	},
+	{
+		"id": "WEATHER-8032",
+		"flightId": "FLIGHT-TU0007",
+		"description": "Snow",
+		"date": "2024-02-04T12:22:12.586Z"
+	},
+	{
+		"id": "WEATHER-8628",
+		"flightId": "FLIGHT-BY0002",
+		"description": "Snow",
+		"date": "2023-12-01T14:39:59.816Z"
+	},
+	{
+		"id": "WEATHER-4176",
+		"flightId": "FLIGHT-UX0825",
+		"description": "Heavy rain",
+		"date": "2023-09-16T03:28:40.451Z"
+	},
+	{
+		"id": "WEATHER-7283",
+		"flightId": "FLIGHT-TK0266",
+		"description": "Thunderstorm",
+		"date": "2024-03-06T19:35:10.041Z"
+	},
+	{
+		"id": "WEATHER-7178",
+		"flightId": "FLIGHT-OB0060",
+		"description": "Light rain",
+		"date": "2023-12-17T13:44:29.560Z"
+	},
+	{
+		"id": "WEATHER-9066",
+		"flightId": "FLIGHT-S70001",
+		"description": "Partly cloudy",
+		"date": "2024-02-06T02:35:08.846Z"
+	},
+	{
+		"id": "WEATHER-7975",
+		"flightId": "FLIGHT-WS0964",
+		"description": "Windy",
+		"date": "2024-05-03T12:41:25.429Z"
+	},
+	{
+		"id": "WEATHER-6381",
+		"flightId": "FLIGHT-OZ0004",
+		"description": "Heavy rain",
+		"date": "2023-09-24T16:59:30.115Z"
+	},
+	{
+		"id": "WEATHER-1801",
+		"flightId": "FLIGHT-6E0736",
+		"description": "Light rain",
+		"date": "2024-04-30T21:12:16.438Z"
+	},
+	{
+		"id": "WEATHER-2264",
+		"flightId": "FLIGHT-WS9605",
+		"description": "Hail",
+		"date": "2024-01-05T03:11:53.570Z"
+	},
+	{
+		"id": "WEATHER-7320",
+		"flightId": "FLIGHT-FJ0003",
+		"description": "Fog",
+		"date": "2024-05-10T06:52:57.010Z"
+	},
+	{
+		"id": "WEATHER-3845",
+		"flightId": "FLIGHT-SG0793",
+		"description": "Blizzard",
+		"date": "2023-12-05T21:56:37.523Z"
+	},
+	{
+		"id": "WEATHER-8237",
+		"flightId": "FLIGHT-G30385",
+		"description": "Blizzard",
+		"date": "2023-11-01T22:03:52.907Z"
+	},
+	{
+		"id": "WEATHER-6085",
+		"flightId": "FLIGHT-U60825",
+		"description": "Heavy rain",
+		"date": "2023-08-04T07:40:25.521Z"
+	},
+	{
+		"id": "WEATHER-5387",
+		"flightId": "FLIGHT-VN0244",
+		"description": "Hail",
+		"date": "2023-08-16T21:09:15.676Z"
+	},
+	{
+		"id": "WEATHER-8877",
+		"flightId": "FLIGHT-AV6542",
+		"description": "Fog",
+		"date": "2024-03-13T08:57:47.887Z"
+	},
+	{
+		"id": "WEATHER-7099",
+		"flightId": "FLIGHT-JA0041",
+		"description": "Heavy rain",
+		"date": "2023-10-16T04:38:04.242Z"
+	},
+	{
+		"id": "WEATHER-7159",
+		"flightId": "FLIGHT-LY0071",
+		"description": "Snow",
+		"date": "2024-03-07T01:05:05.034Z"
+	},
+	{
+		"id": "WEATHER-9569",
+		"flightId": "FLIGHT-SQ0095",
+		"description": "Thunderstorm",
+		"date": "2024-05-26T02:55:38.189Z"
+	},
+	{
+		"id": "WEATHER-1253",
+		"flightId": "FLIGHT-AY0008",
+		"description": "Fog",
+		"date": "2023-06-19T01:37:28.906Z"
+	},
+	{
+		"id": "WEATHER-5461",
+		"flightId": "FLIGHT-TG7477",
+		"description": "Snow",
+		"date": "2023-11-11T23:29:57.738Z"
+	},
+	{
+		"id": "WEATHER-5390",
+		"flightId": "FLIGHT-N40076",
+		"description": "Hail",
+		"date": "2023-10-25T06:42:13.237Z"
+	},
+	{
+		"id": "WEATHER-9750",
+		"flightId": "FLIGHT-MN0003",
+		"description": "Clear sky",
+		"date": "2023-07-24T07:04:26.780Z"
+	},
+	{
+		"id": "WEATHER-4779",
+		"flightId": "FLIGHT-FO0003",
+		"description": "Light rain",
+		"date": "2023-08-13T09:30:27.987Z"
+	},
+	{
+		"id": "WEATHER-4225",
+		"flightId": "FLIGHT-AD4960",
+		"description": "Thunderstorm",
+		"date": "2023-07-27T19:53:45.796Z"
+	},
+	{
+		"id": "WEATHER-9517",
+		"flightId": "FLIGHT-CX0109",
+		"description": "Overcast",
+		"date": "2024-01-31T21:40:39.552Z"
+	},
+	{
+		"id": "WEATHER-8789",
+		"flightId": "FLIGHT-U60020",
+		"description": "Tropical storm",
+		"date": "2023-10-21T02:30:32.498Z"
+	}
+]
