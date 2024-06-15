@@ -1,602 +1,602 @@
 [
 	{
-		"id": "AIRLINE-DL",
-		"name": "Asiana Airlines",
-		"country": "Azerbaijan",
+		"id": "AIRLINE-BA",
+		"name": "Copa Airlines",
+		"country": "Namibia",
 		"year": 2024
 	},
 	{
-		"id": "AIRLINE-AM",
-		"name": "Virgin Atlantic Airways",
-		"country": "Barbados",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-TU",
-		"name": "Air Mauritius",
-		"country": "Solomon Islands",
+		"id": "AIRLINE-NK",
+		"name": "Libyan Airlines",
+		"country": "Cuba",
 		"year": 2023
 	},
 	{
-		"id": "AIRLINE-PC",
-		"name": "Korean Air",
-		"country": "Belgium",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-MS",
-		"name": "Sun Country Airlines",
-		"country": "United States of America",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-VS",
-		"name": "Air Canada",
-		"country": "Sao Tome and Principe",
+		"id": "AIRLINE-NK",
+		"name": "Boliviana de Aviacion",
+		"country": "Lao People's Democratic Republic",
 		"year": 2023
 	},
 	{
-		"id": "AIRLINE-7C",
-		"name": "Linea Aerea Amaszonas",
-		"country": "Algeria",
+		"id": "AIRLINE-CM",
+		"name": "Malaysia Airlines",
+		"country": "Serbia",
 		"year": 2023
 	},
 	{
-		"id": "AIRLINE-F9",
-		"name": "WestJet",
-		"country": "Bangladesh",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-QF",
-		"name": "Southwest Airlines",
-		"country": "Croatia",
+		"id": "AIRLINE-SV",
+		"name": "Ukraine International",
+		"country": "Bolivia",
 		"year": 2023
 	},
 	{
-		"id": "AIRLINE-DL",
-		"name": "Ural Airlines",
-		"country": "Curacao",
+		"id": "AIRLINE-SU",
+		"name": "Cebu Pacific Air",
+		"country": "Oman",
 		"year": 2023
 	},
 	{
-		"id": "AIRLINE-VA",
-		"name": "Air Tahiti Nui",
-		"country": "New Caledonia",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-AK",
-		"name": "Air Mauritius",
-		"country": "Kiribati",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-6E",
-		"name": "TUI Airways",
-		"country": "Western Sahara",
+		"id": "AIRLINE-NK",
+		"name": "IndiGo Airlines",
+		"country": "Chad",
 		"year": 2024
 	},
 	{
 		"id": "AIRLINE-MN",
-		"name": "Juneyao Airlines",
-		"country": "Samoa",
+		"name": "Satena",
+		"country": "Iceland",
 		"year": 2023
 	},
 	{
-		"id": "AIRLINE-2I",
-		"name": "Air Tahiti",
-		"country": "French Polynesia",
+		"id": "AIRLINE-QF",
+		"name": "Fiji Airways",
+		"country": "Namibia",
 		"year": 2024
 	},
 	{
-		"id": "AIRLINE-3U",
-		"name": "Air Europa",
-		"country": "Slovakia",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-AZ",
-		"name": "VOEPASS Linhas Aereas",
-		"country": "Timor-Leste",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-SY",
-		"name": "Virgin Atlantic Airways",
-		"country": "Denmark",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-5J",
-		"name": "AirAsia",
-		"country": "Romania",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-PS",
-		"name": "China Airlines",
-		"country": "Curacao",
+		"id": "AIRLINE-CZ",
+		"name": "VivaAerobus",
+		"country": "Tunisia",
 		"year": 2024
 	},
 	{
-		"id": "AIRLINE-AI",
-		"name": "SunExpress",
-		"country": "Gambia",
+		"id": "AIRLINE-XQ",
+		"name": "El Al",
+		"country": "Pakistan",
 		"year": 2023
 	},
 	{
-		"id": "AIRLINE-MS",
-		"name": "China Airlines",
-		"country": "Gibraltar",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-U2",
-		"name": "SpiceJet",
-		"country": "Guatemala",
+		"id": "AIRLINE-NK",
+		"name": "South African Airways",
+		"country": "Chile",
 		"year": 2024
 	},
 	{
-		"id": "AIRLINE-G4",
-		"name": "Sichuan Airlines",
-		"country": "Congo",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-PR",
-		"name": "Wingo",
-		"country": "Taiwan",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-VN",
-		"name": "Air Europa",
-		"country": "Anguilla",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-G8",
-		"name": "Aegean Airlines",
-		"country": "Cameroon",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-WY",
-		"name": "LATAM Airlines",
-		"country": "Kiribati",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-JT",
-		"name": "EcoJet",
-		"country": "Timor-Leste",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-HO",
+		"id": "AIRLINE-PK",
 		"name": "Spring Airlines",
-		"country": "Nauru",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-8J",
-		"name": "Hawaiian Airlines",
-		"country": "Gambia",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-VN",
-		"name": "JetBlue Airways",
-		"country": "United States Minor Outlying Islands",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-2I",
-		"name": "Star Peru",
-		"country": "Kenya",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-G4",
-		"name": "Finnair",
-		"country": "Afghanistan",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-SB",
-		"name": "Lufthansa",
-		"country": "Finland",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-MK",
-		"name": "Air Tahiti Nui",
-		"country": "Seychelles",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-VS",
-		"name": "Boliviana de Aviacion",
-		"country": "Cape Verde",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-5J",
-		"name": "Virgin Australia",
-		"country": "Trinidad and Tobago",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-MK",
-		"name": "Qatar Airways",
-		"country": "Antarctica",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-PR",
-		"name": "Etihad Airways",
-		"country": "United Arab Emirates",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-MS",
-		"name": "Lufthansa",
-		"country": "Isle of Man",
+		"country": "British Indian Ocean Territory (Chagos Archipelago)",
 		"year": 2023
 	},
 	{
 		"id": "AIRLINE-JL",
-		"name": "Air Europa",
-		"country": "Kuwait",
+		"name": "Spring Airlines",
+		"country": "Argentina",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-AC",
+		"name": "EcoJet",
+		"country": "Mayotte",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-G3",
+		"name": "AirAsia X",
+		"country": "Jordan",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-FD",
+		"name": "Air Tahiti",
+		"country": "Curacao",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-AZ",
+		"name": "Easyfly",
+		"country": "United Kingdom",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-EY",
+		"name": "Oman Air",
+		"country": "Burundi",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-EK",
+		"name": "Gol Linhas Aereas Inteligentes",
+		"country": "Svalbard & Jan Mayen Islands",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-U2",
+		"name": "Flydubai",
+		"country": "Rwanda",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-PC",
+		"name": "Fiji Airways",
+		"country": "Andorra",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-SQ",
+		"name": "Virgin Australia",
+		"country": "Vanuatu",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-WN",
+		"name": "China Eastern Airlines",
+		"country": "Benin",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-UA",
+		"name": "Spring Airlines",
+		"country": "Moldova",
 		"year": 2024
 	},
 	{
 		"id": "AIRLINE-DY",
-		"name": "Emirates Airlines",
+		"name": "EVA Air",
+		"country": "Cayman Islands",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-U2",
+		"name": "EcoJet",
+		"country": "Rwanda",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-VS",
+		"name": "Fiji Airways",
+		"country": "Antarctica",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-8J",
+		"name": "LOT Polish Airlines",
+		"country": "Andorra",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-FA",
+		"name": "AirAsia",
+		"country": "Belgium",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-DL",
+		"name": "Flybondi",
+		"country": "Martinique",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-VE",
+		"name": "Gol Linhas Aereas Inteligentes",
+		"country": "Aland Islands",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-G3",
+		"name": "Copa Airlines",
+		"country": "Isle of Man",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-VS",
+		"name": "Nordwind Airlines",
+		"country": "Isle of Man",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-AD",
+		"name": "FlySafair",
+		"country": "Chile",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-AV",
+		"name": "Asiana Airlines",
+		"country": "Czechia",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-G3",
+		"name": "Alaska Airlines",
+		"country": "Mongolia",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-YX",
+		"name": "Thai Airways",
+		"country": "Nauru",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-MH",
+		"name": "Thai Airways",
+		"country": "Wallis and Futuna",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-TK",
+		"name": "LOT Polish Airlines",
+		"country": "Monaco",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-TG",
+		"name": "Satena",
+		"country": "Nicaragua",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-AY",
+		"name": "VOEPASS Linhas Aereas",
+		"country": "Lesotho",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-SA",
+		"name": "S7 Airlines",
+		"country": "Cayman Islands",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-UX",
+		"name": "Go First",
+		"country": "Micronesia",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-JD",
+		"name": "TUI Airways",
+		"country": "Northern Mariana Islands",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-YX",
+		"name": "IndiGo Airlines",
+		"country": "Panama",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-UX",
+		"name": "Asiana Airlines",
+		"country": "Honduras",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-7C",
+		"name": "Spirit Airlines",
+		"country": "Uganda",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-GA",
+		"name": "Kenya Airways",
+		"country": "Vietnam",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-LA",
+		"name": "British Airways",
+		"country": "Spain",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-VE",
+		"name": "JetSMART",
+		"country": "Bouvet Island",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-FR",
+		"name": "Aerolineas Argentinas",
+		"country": "Guadeloupe",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-SY",
+		"name": "Air Niugini",
 		"country": "Micronesia",
 		"year": 2024
 	},
 	{
-		"id": "AIRLINE-TS",
-		"name": "VOEPASS Linhas Aereas",
-		"country": "Colombia",
+		"id": "AIRLINE-BA",
+		"name": "Ethiopian Airlines",
+		"country": "Virgin Islands, British",
 		"year": 2023
 	},
 	{
-		"id": "AIRLINE-LN",
-		"name": "Kenya Airways",
-		"country": "Armenia",
+		"id": "AIRLINE-DL",
+		"name": "Ryanair",
+		"country": "Bangladesh",
 		"year": 2024
 	},
 	{
-		"id": "AIRLINE-FO",
-		"name": "SpiceJet",
-		"country": "Tuvalu",
+		"id": "AIRLINE-PX",
+		"name": "China Southern Airlines",
+		"country": "Qatar",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-AF",
+		"name": "Cebu Pacific Air",
+		"country": "India",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-PR",
+		"name": "China Eastern Airlines",
+		"country": "Zimbabwe",
 		"year": 2023
 	},
 	{
-		"id": "AIRLINE-XQ",
-		"name": "Star Peru",
-		"country": "Curacao",
+		"id": "AIRLINE-VS",
+		"name": "EVA Air",
+		"country": "Russian Federation",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-NZ",
+		"name": "Ural Airlines",
+		"country": "Turks and Caicos Islands",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-AF",
+		"name": "Singapore Airlines",
+		"country": "France",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-9R",
+		"name": "JetBlue Airways",
+		"country": "Puerto Rico",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-QF",
+		"name": "Copa Airlines",
+		"country": "Cyprus",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-TN",
+		"name": "Norwegian Air Shuttle",
+		"country": "Costa Rica",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-ZF",
+		"name": "Condor",
+		"country": "Guinea-Bissau",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-Y4",
+		"name": "LATAM Airlines",
+		"country": "Finland",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-NK",
+		"name": "JetSMART",
+		"country": "Kenya",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-OO",
+		"name": "TAP Air Portugal",
+		"country": "Tajikistan",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-FD",
+		"name": "Saudia",
+		"country": "China",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-TG",
+		"name": "SriLankan Airlines",
+		"country": "Tokelau",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-VS",
+		"name": "China Airlines",
+		"country": "Marshall Islands",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-AT",
+		"name": "Azul Linhas Aereas Brasileiras",
+		"country": "India",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-DY",
+		"name": "Republic Airways",
+		"country": "Guadeloupe",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-FA",
+		"name": "Virgin Atlantic Airways",
+		"country": "Anguilla",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-WN",
+		"name": "Alaska Airlines",
+		"country": "Fiji",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-TN",
+		"name": "Cathay Pacific",
+		"country": "Bonaire, Sint Eustatius and Saba",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-AI",
+		"name": "Air Tahiti",
+		"country": "United States of America",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-VT",
+		"name": "Sky Airline",
+		"country": "Israel",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-AZ",
+		"name": "Air New Zealand",
+		"country": "United Kingdom",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-6E",
+		"name": "EVA Air",
+		"country": "Sweden",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-VS",
+		"name": "Air New Zealand",
+		"country": "Niger",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-SQ",
+		"name": "Pegasus Airlines",
+		"country": "Iran",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-AZ",
+		"name": "Easyfly",
+		"country": "Honduras",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-KQ",
+		"name": "Pegasus Airlines",
+		"country": "North Macedonia",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-YX",
+		"name": "Copa Airlines",
+		"country": "Bahamas",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-LO",
+		"name": "SAS",
+		"country": "Samoa",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-SB",
+		"name": "Korean Air",
+		"country": "Moldova",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-TG",
+		"name": "Thai Airways",
+		"country": "Solomon Islands",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-SY",
+		"name": "Ethiopian Airlines",
+		"country": "Saudi Arabia",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-TS",
+		"name": "Satena",
+		"country": "Liechtenstein",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-SV",
+		"name": "Qantas Group",
+		"country": "Nepal",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-VE",
+		"name": "Aegean Airlines",
+		"country": "Faroe Islands",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-5J",
+		"name": "Air China",
+		"country": "Pakistan",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-AK",
+		"name": "SkyWest Airlines",
+		"country": "Tonga",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-Z8",
+		"name": "Lufthansa",
+		"country": "Aland Islands",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-2I",
+		"name": "Aegean Airlines",
+		"country": "Papua New Guinea",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-BR",
+		"name": "Malaysia Airlines",
+		"country": "Iraq",
+		"year": 2024
+	},
+	{
+		"id": "AIRLINE-9R",
+		"name": "Malaysia Airlines",
+		"country": "Czechia",
+		"year": 2023
+	},
+	{
+		"id": "AIRLINE-6E",
+		"name": "Thai AirAsia",
+		"country": "Lebanon",
 		"year": 2023
 	},
 	{
 		"id": "AIRLINE-Z8",
 		"name": "Wingo",
-		"country": "Yemen",
+		"country": "Zimbabwe",
 		"year": 2024
-	},
-	{
-		"id": "AIRLINE-QR",
-		"name": "El Al",
-		"country": "Bangladesh",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-S7",
-		"name": "Avianca",
-		"country": "Libyan Arab Jamahiriya",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-XQ",
-		"name": "Air Canada",
-		"country": "North Macedonia",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-MS",
-		"name": "Delta Air Lines",
-		"country": "Costa Rica",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-AM",
-		"name": "Ethiopian Airlines",
-		"country": "Morocco",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-N4",
-		"name": "Juneyao Airlines",
-		"country": "Slovenia",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-LA",
-		"name": "Go First",
-		"country": "Mexico",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-JA",
-		"name": "Saudia",
-		"country": "Niger",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-UX",
-		"name": "China Southern Airlines",
-		"country": "Saint Helena",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-CI",
-		"name": "Egyptair",
-		"country": "Guinea",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-BA",
-		"name": "SriLankan Airlines",
-		"country": "Spain",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-N4",
-		"name": "Lion Air",
-		"country": "Uzbekistan",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-EK",
-		"name": "LATAM Airlines",
-		"country": "Cyprus",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-CA",
-		"name": "Ural Airlines",
-		"country": "Belgium",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-SV",
-		"name": "Qatar Airways",
-		"country": "South Africa",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-D7",
-		"name": "Air Europa",
-		"country": "Eswatini",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-B6",
-		"name": "Thai AirAsia",
-		"country": "France",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-OZ",
-		"name": "AirAsia X",
-		"country": "Poland",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-OZ",
-		"name": "Boliviana de Aviacion",
-		"country": "Ukraine",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-G8",
-		"name": "JetBlue Airways",
-		"country": "Seychelles",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-AA",
-		"name": "Air Transat",
-		"country": "Botswana",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-VS",
-		"name": "Condor",
-		"country": "Cambodia",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-PS",
-		"name": "Emirates Airlines",
-		"country": "Morocco",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-ZF",
-		"name": "EasyJet",
-		"country": "Costa Rica",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-DL",
-		"name": "South African Airways",
-		"country": "Anguilla",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-FJ",
-		"name": "VietJet Air",
-		"country": "Gabon",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-LO",
-		"name": "Qantas Group",
-		"country": "Philippines",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-WY",
-		"name": "Beijing Capital Airlines",
-		"country": "Australia",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-UL",
-		"name": "Air France-KLM",
-		"country": "Chad",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-B6",
-		"name": "Air Arabia",
-		"country": "Heard Island and McDonald Islands",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-EK",
-		"name": "TUI Airways",
-		"country": "Syrian Arab Republic",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-AZ",
-		"name": "Ural Airlines",
-		"country": "Seychelles",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-CI",
-		"name": "El Al",
-		"country": "Jordan",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-CZ",
-		"name": "Qantas Group",
-		"country": "Ecuador",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-FO",
-		"name": "Sky Airline",
-		"country": "Iceland",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-DY",
-		"name": "WestJet",
-		"country": "Bahrain",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-TP",
-		"name": "Easyfly",
-		"country": "Malawi",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-TN",
-		"name": "Azul Linhas Aereas Brasileiras",
-		"country": "Tunisia",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-TP",
-		"name": "Avianca",
-		"country": "Tanzania",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-BY",
-		"name": "Asiana Airlines",
-		"country": "Guam",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-UX",
-		"name": "Garuda Indonesia",
-		"country": "Cook Islands",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-SV",
-		"name": "Sichuan Airlines",
-		"country": "Holy See (Vatican City State)",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-G8",
-		"name": "Allegiant Air",
-		"country": "Palau",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-DL",
-		"name": "Allegiant Air",
-		"country": "Honduras",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-LH",
-		"name": "Oman Air",
-		"country": "Faroe Islands",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-JT",
-		"name": "Lion Air",
-		"country": "Afghanistan",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-CZ",
-		"name": "Delta Air Lines",
-		"country": "Kenya",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-FO",
-		"name": "S7 Airlines",
-		"country": "Algeria",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-W6",
-		"name": "Tunisair",
-		"country": "Svalbard & Jan Mayen Islands",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-N4",
-		"name": "Qatar Airways",
-		"country": "Central African Republic",
-		"year": 2023
-	},
-	{
-		"id": "AIRLINE-DY",
-		"name": "Azul Linhas Aereas Brasileiras",
-		"country": "Malaysia",
-		"year": 2024
-	},
-	{
-		"id": "AIRLINE-BA",
-		"name": "Japan Airlines",
-		"country": "Saint Vincent and the Grenadines",
-		"year": 2023
 	}
 ]

@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { faker } from "@faker-js/faker";
-import { labels } from "~/schemas/aircrafts";
+import { labels } from "~/validators/aircrafts";
 
 const aircraftManufacturers = [
 	"Airbus",
