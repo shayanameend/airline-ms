@@ -1,11 +1,8 @@
 "use client";
 
-import {
-	CaretSortIcon,
-	CheckIcon,
-	PlusCircledIcon,
-} from "@radix-ui/react-icons";
-import * as React from "react";
+import { useState } from "react";
+import { CogIcon, UserIcon } from "lucide-react";
+import { CaretSortIcon, CheckIcon, ExitIcon } from "@radix-ui/react-icons";
 
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { Button } from "~/components/ui/button";
@@ -41,11 +38,12 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "~/components/ui/select";
+
 import { cn } from "~/lib/utils";
 
 const groups = [
 	{
-		label: "Personal Account",
+		label: "My Account",
 		teams: [
 			{
 				label: "Alicia Koch",
@@ -54,7 +52,7 @@ const groups = [
 		],
 	},
 	{
-		label: "Teams",
+		label: "Admins",
 		teams: [
 			{
 				label: "Acme Inc.",
@@ -76,15 +74,12 @@ type PopoverTriggerProps = React.ComponentPropsWithoutRef<
 
 interface TeamSwitcherProps extends PopoverTriggerProps {}
 
-export function TeamSwitcher({ className }: TeamSwitcherProps) {
-	const [open, setOpen] = React.useState(false);
-	const [showNewTeamDialog, setShowNewTeamDialog] = React.useState(false);
-	const [selectedTeam, setSelectedTeam] = React.useState<Team>(
-		groups[0].teams[0],
-	);
+export function AirlineProfile({ className }: TeamSwitcherProps) {
+	const [open, setOpen] = useState(false);
+	const [showSettingsDialog, setShowSettingsDialog] = useState(false);
 
 	return (
-		<Dialog open={showNewTeamDialog} onOpenChange={setShowNewTeamDialog}>
+		<Dialog open={showSettingsDialog} onOpenChange={setShowSettingsDialog}>
 			<Popover open={open} onOpenChange={setOpen}>
 				<PopoverTrigger asChild>
 					<Button
@@ -95,71 +90,44 @@ export function TeamSwitcher({ className }: TeamSwitcherProps) {
 						className={cn("w-[200px] justify-between", className)}
 					>
 						<Avatar className="mr-2 h-5 w-5">
-							<AvatarImage
-								src={`https://avatar.vercel.sh/${selectedTeam.value}.png`}
-								alt={selectedTeam.label}
-								className="grayscale"
-							/>
-							<AvatarFallback>SC</AvatarFallback>
+							<UserIcon className="h-5 w-5" />
 						</Avatar>
-						{selectedTeam.label}
+						Blue Airlines
 						<CaretSortIcon className="ml-auto h-4 w-4 shrink-0 opacity-50" />
 					</Button>
 				</PopoverTrigger>
 				<PopoverContent className="w-[200px] p-0">
 					<Command>
 						<CommandList>
-							<CommandInput placeholder="Search team..." />
-							<CommandEmpty>No team found.</CommandEmpty>
-							{groups.map((group) => (
-								<CommandGroup key={group.label} heading={group.label}>
-									{group.teams.map((team) => (
-										<CommandItem
-											key={team.value}
-											onSelect={() => {
-												setSelectedTeam(team);
-												setOpen(false);
-											}}
-											className="text-sm"
-										>
-											<Avatar className="mr-2 h-5 w-5">
-												<AvatarImage
-													src={`https://avatar.vercel.sh/${team.value}.png`}
-													alt={team.label}
-													className="grayscale"
-												/>
-												<AvatarFallback>SC</AvatarFallback>
-											</Avatar>
-											{team.label}
-											<CheckIcon
-												className={cn(
-													"ml-auto h-4 w-4",
-													selectedTeam.value === team.value
-														? "opacity-100"
-														: "opacity-0",
-												)}
-											/>
-										</CommandItem>
-									))}
-								</CommandGroup>
-							))}
-						</CommandList>
-						<CommandSeparator />
-						<CommandList>
-							<CommandGroup>
+							<CommandInput placeholder="Search actions..." />
+							<CommandEmpty>No action found.</CommandEmpty>
+							<CommandGroup heading={"Account"}>
 								<DialogTrigger asChild>
 									<CommandItem
 										onSelect={() => {
 											setOpen(false);
-											setShowNewTeamDialog(true);
+											setShowSettingsDialog(true);
 										}}
 									>
-										<PlusCircledIcon className="mr-2 h-5 w-5" />
-										Create Team
+										<CogIcon className="mr-2 h-5 w-5" />
+										Settings
+									</CommandItem>
+								</DialogTrigger>
+								<DialogTrigger asChild>
+									<CommandItem
+										onSelect={() => {
+											setOpen(false);
+											setShowSettingsDialog(true);
+										}}
+									>
+										<ExitIcon className="mr-2 h-5 w-5" />
+										Logout
 									</CommandItem>
 								</DialogTrigger>
 							</CommandGroup>
 						</CommandList>
+						<CommandSeparator />
+						<CommandList />
 					</Command>
 				</PopoverContent>
 			</Popover>
@@ -201,7 +169,10 @@ export function TeamSwitcher({ className }: TeamSwitcherProps) {
 					</div>
 				</div>
 				<DialogFooter>
-					<Button variant="outline" onClick={() => setShowNewTeamDialog(false)}>
+					<Button
+						variant="outline"
+						onClick={() => setShowSettingsDialog(false)}
+					>
 						Cancel
 					</Button>
 					<Button type="submit">Continue</Button>

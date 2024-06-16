@@ -27,4 +27,11 @@ export const aircraftSchema = zod.object({
 	capacity: zod.number().min(1),
 });
 
+export const aircraftValidator = zod.object({
+	airlineId: zod.string(),
+	make: zod.string().min(3),
+	model: zod.string().min(1),
+	capacity: zod.number().min(1),
+});
+
 export type Aircraft = zod.infer<typeof aircraftSchema>;

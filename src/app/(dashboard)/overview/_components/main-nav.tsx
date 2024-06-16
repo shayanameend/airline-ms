@@ -14,25 +14,43 @@ export function MainNav({ className, ...props }: HTMLAttributes<HTMLElement>) {
 				href="/examples/dashboard"
 				className="text-sm font-medium transition-colors hover:text-primary"
 			>
+				Overview
+			</Link>
+			<Link
+				href="/examples/dashboard"
+				className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+			>
 				Flights
+				{/* Gr -> Flight Trfaic by Country/Route */}
+				{/* ST -> Routes */}
+				{/* MT -> Flights */}
 			</Link>
 			<Link
 				href="/examples/dashboard"
 				className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
 			>
-				Passenger
+				Bookings
+				{/* Gr -> Bookings Trfaic by Month */}
+				{/* ST -> Passenger */}
+				{/* MT -> Tickets */}
 			</Link>
 			<Link
 				href="/examples/dashboard"
 				className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
 			>
-				Booking
+				Management
+				{/* T -> Pilots */}
+				{/* T -> Crew */}
+				{/* T -> Airports */}
 			</Link>
 			<Link
 				href="/examples/dashboard"
 				className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
 			>
-				Settings
+				Records
+				{/* Gr -> Accidents/Maintenance in Month */}
+				{/* ST -> Maintenance */}
+				{/* MT -> Accidents */}
 			</Link>
 		</nav>
 	);
