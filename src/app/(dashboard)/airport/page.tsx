@@ -4,11 +4,11 @@ import { promises as fs } from "node:fs";
 import { default as path } from "node:path";
 import { z } from "zod";
 
-import { AirlineNavActions } from "~/app/(dashboard)/airline/_components/airline-nav-actions";
 import { DataTable } from "~/components/common/data-table";
+import { AirlineNavActions } from "~/app/(dashboard)/airline/_components/airline-nav-actions";
 
-import { airportSchema } from "~/validators/airport";
 import { airlineColumns } from "./_components/airport-columns";
+import { airportSchema } from "~/validators/airport";
 
 export const metadata: Metadata = {
 	title: "Airlines",

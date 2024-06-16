@@ -3,9 +3,9 @@
 import type { ColumnDef } from "@tanstack/react-table";
 import type { Aircraft } from "~/validators/aircrafts";
 
-import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import { Badge } from "~/components/ui/badge";
 import { Checkbox } from "~/components/ui/checkbox";
+import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 
 import { AircraftsRowActions } from "~/app/(dashboard)/aircrafts/_components/aircrafts-row-actions";
 

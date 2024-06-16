@@ -1,8 +1,8 @@
 "use client";
 
-import { CaretSortIcon, CheckIcon, ExitIcon } from "@radix-ui/react-icons";
-import { CogIcon, UserIcon } from "lucide-react";
 import { useState } from "react";
+import { CogIcon, UserIcon } from "lucide-react";
+import { CaretSortIcon, CheckIcon, ExitIcon } from "@radix-ui/react-icons";
 
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { Button } from "~/components/ui/button";
