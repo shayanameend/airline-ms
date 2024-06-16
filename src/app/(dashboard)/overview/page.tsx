@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
 export default async function OverviewPage() {
 	const response = await fetch(`${domain}/api/overview`, {
-		cache: "no-cache",
+		cache: "no-store",
 	});
 
 	const parsedResponse = await response.json();
