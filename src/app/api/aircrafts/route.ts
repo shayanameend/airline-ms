@@ -4,15 +4,7 @@ import { eq } from "drizzle-orm";
 import { db } from "~/db";
 import { aircraft_table, airline_table } from "~/db/tables";
 import { HttpResponse } from "~/lib/handlers/response-handler";
-
-import { default as zod } from "zod";
-
-export const aircraftValidator = zod.object({
-	airlineId: zod.string(),
-	make: zod.string().min(3),
-	model: zod.string().min(1),
-	capacity: zod.number().min(1),
-});
+import { aircraftValidator } from "~/validators/aircrafts";
 
 export async function GET() {
 	try {

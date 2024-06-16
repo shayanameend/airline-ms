@@ -1,10 +1,12 @@
 "use client";
 
+// TODO: We have to extract out date state to use in api
+
 import type { HTMLAttributes } from "react";
 import type { DateRange } from "react-day-picker";
 
 import { CalendarIcon } from "@radix-ui/react-icons";
-import { addDays, format } from "date-fns";
+import { format, subDays } from "date-fns";
 import { useState } from "react";
 
 import { Button } from "~/components/ui/button";
@@ -14,14 +16,15 @@ import {
 	PopoverContent,
 	PopoverTrigger,
 } from "~/components/ui/popover";
+
 import { cn } from "~/lib/utils";
 
 export function CalendarDateRangePicker({
 	className,
 }: HTMLAttributes<HTMLDivElement>) {
 	const [date, setDate] = useState<DateRange | undefined>({
-		from: new Date(2023, 0, 20),
-		to: addDays(new Date(2023, 0, 20), 20),
+		from: subDays(new Date(), 30),
+		to: new Date(),
 	});
 
 	return (

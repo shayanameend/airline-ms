@@ -1,10 +1,10 @@
 import type { NextRequest as HttpRequest } from "next/server";
 
-import { aircraftValidator } from "~/app/api/aircrafts/route";
 import { eq } from "drizzle-orm";
 import { db } from "~/db";
 import { aircraft_table, airline_table } from "~/db/tables";
 import { HttpResponse } from "~/lib/handlers/response-handler";
+import { aircraftValidator } from "~/validators/aircrafts";
 
 export async function GET(
 	_request: HttpRequest,
