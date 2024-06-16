@@ -1,802 +1,802 @@
 [
   {
-    "id": "TICKET-746",
-    "flightId": "D70512",
-    "passengerId": "PASSENGER-6674",
-    "date": "2024-08-25T12:12:31.617Z",
-    "status": "checked-in",
-    "price": 1294
-  },
-  {
-    "id": "TICKET-913",
-    "flightId": "ZF0057",
-    "passengerId": "PASSENGER-2549",
-    "date": "2024-08-21T03:05:49.099Z",
-    "status": "checked-in",
-    "price": 455
-  },
-  {
-    "id": "TICKET-863",
-    "flightId": "OZ0009",
-    "passengerId": "PASSENGER-1951",
-    "date": "2025-01-20T11:05:26.426Z",
+    "id": "TICKET-794",
+    "flightId": "VA8931",
+    "passengerId": "PASSENGER-1342",
+    "date": "2024-08-12T21:18:50.127Z",
     "status": "cancelled",
-    "price": 1413
+    "price": 1059
   },
   {
-    "id": "TICKET-514",
-    "flightId": "G30696",
-    "passengerId": "PASSENGER-2322",
-    "date": "2024-11-14T15:58:36.004Z",
-    "status": "checked-in",
-    "price": 548
-  },
-  {
-    "id": "TICKET-920",
-    "flightId": "U60005",
-    "passengerId": "PASSENGER-3660",
-    "date": "2025-06-10T02:56:09.753Z",
+    "id": "TICKET-837",
+    "flightId": "WS0076",
+    "passengerId": "PASSENGER-3670",
+    "date": "2024-08-20T10:37:14.897Z",
     "status": "cancelled",
-    "price": 345
+    "price": 405
   },
   {
-    "id": "TICKET-572",
-    "flightId": "AY8364",
-    "passengerId": "PASSENGER-9819",
-    "date": "2024-12-01T09:34:20.048Z",
-    "status": "checked-in",
-    "price": 1459
-  },
-  {
-    "id": "TICKET-944",
-    "flightId": "G83336",
-    "passengerId": "PASSENGER-1133",
-    "date": "2025-03-18T05:18:28.489Z",
+    "id": "TICKET-836",
+    "flightId": "SV0988",
+    "passengerId": "PASSENGER-6724",
+    "date": "2025-01-10T21:23:31.786Z",
     "status": "cancelled",
-    "price": 84
+    "price": 457
   },
   {
-    "id": "TICKET-651",
-    "flightId": "MH0345",
-    "passengerId": "PASSENGER-6653",
-    "date": "2025-01-18T02:55:33.955Z",
+    "id": "TICKET-636",
+    "flightId": "LA0090",
+    "passengerId": "PASSENGER-9935",
+    "date": "2025-04-27T17:11:56.652Z",
+    "status": "cancelled",
+    "price": 1182
+  },
+  {
+    "id": "TICKET-991",
+    "flightId": "SB0001",
+    "passengerId": "PASSENGER-2655",
+    "date": "2025-02-10T04:59:22.283Z",
     "status": "checked-in",
-    "price": 1031
+    "price": 375
   },
   {
-    "id": "TICKET-543",
-    "flightId": "KQ0009",
-    "passengerId": "PASSENGER-1403",
-    "date": "2024-06-30T16:30:02.777Z",
+    "id": "TICKET-524",
+    "flightId": "LA0338",
+    "passengerId": "PASSENGER-7653",
+    "date": "2025-05-13T02:01:11.406Z",
+    "status": "cancelled",
+    "price": 295
+  },
+  {
+    "id": "TICKET-626",
+    "flightId": "QF5869",
+    "passengerId": "PASSENGER-7510",
+    "date": "2024-07-21T13:45:00.536Z",
     "status": "checked-in",
-    "price": 308
+    "price": 223
   },
   {
-    "id": "TICKET-866",
-    "flightId": "LH1795",
-    "passengerId": "PASSENGER-1656",
-    "date": "2025-06-10T19:00:25.366Z",
+    "id": "TICKET-990",
+    "flightId": "F90219",
+    "passengerId": "PASSENGER-6207",
+    "date": "2024-09-16T21:47:11.505Z",
     "status": "booked",
-    "price": 778
-  },
-  {
-    "id": "TICKET-509",
-    "flightId": "VA0003",
-    "passengerId": "PASSENGER-4788",
-    "date": "2025-02-19T15:50:45.547Z",
-    "status": "checked-in",
-    "price": 651
-  },
-  {
-    "id": "TICKET-606",
-    "flightId": "UL0041",
-    "passengerId": "PASSENGER-9220",
-    "date": "2025-02-04T21:48:52.856Z",
-    "status": "cancelled",
-    "price": 398
-  },
-  {
-    "id": "TICKET-916",
-    "flightId": "HO0060",
-    "passengerId": "PASSENGER-4221",
-    "date": "2025-05-25T01:18:57.105Z",
-    "status": "cancelled",
-    "price": 479
-  },
-  {
-    "id": "TICKET-705",
-    "flightId": "GA0009",
-    "passengerId": "PASSENGER-1752",
-    "date": "2024-07-13T04:32:58.993Z",
-    "status": "checked-in",
-    "price": 165
-  },
-  {
-    "id": "TICKET-651",
-    "flightId": "SC0038",
-    "passengerId": "PASSENGER-2635",
-    "date": "2025-03-21T18:06:38.522Z",
-    "status": "booked",
-    "price": 261
-  },
-  {
-    "id": "TICKET-569",
-    "flightId": "OO0007",
-    "passengerId": "PASSENGER-5823",
-    "date": "2024-09-15T15:05:14.666Z",
-    "status": "booked",
-    "price": 882
-  },
-  {
-    "id": "TICKET-750",
-    "flightId": "BR0002",
-    "passengerId": "PASSENGER-5142",
-    "date": "2025-01-13T12:58:51.084Z",
-    "status": "checked-in",
-    "price": 434
-  },
-  {
-    "id": "TICKET-932",
-    "flightId": "QR0004",
-    "passengerId": "PASSENGER-9432",
-    "date": "2024-10-29T17:44:17.300Z",
-    "status": "cancelled",
-    "price": 1079
-  },
-  {
-    "id": "TICKET-869",
-    "flightId": "ET0007",
-    "passengerId": "PASSENGER-1144",
-    "date": "2024-07-13T12:03:55.933Z",
-    "status": "cancelled",
-    "price": 947
-  },
-  {
-    "id": "TICKET-876",
-    "flightId": "OZ0628",
-    "passengerId": "PASSENGER-9930",
-    "date": "2024-09-22T14:46:48.655Z",
-    "status": "checked-in",
-    "price": 469
-  },
-  {
-    "id": "TICKET-811",
-    "flightId": "LY3647",
-    "passengerId": "PASSENGER-4911",
-    "date": "2025-03-13T09:18:28.151Z",
-    "status": "checked-in",
-    "price": 238
-  },
-  {
-    "id": "TICKET-624",
-    "flightId": "S76811",
-    "passengerId": "PASSENGER-2994",
-    "date": "2024-08-20T01:58:05.485Z",
-    "status": "cancelled",
-    "price": 1191
-  },
-  {
-    "id": "TICKET-842",
-    "flightId": "LH0001",
-    "passengerId": "PASSENGER-2151",
-    "date": "2024-07-16T17:02:27.848Z",
-    "status": "cancelled",
-    "price": 156
+    "price": 1281
   },
   {
     "id": "TICKET-581",
-    "flightId": "FO2746",
-    "passengerId": "PASSENGER-1304",
-    "date": "2024-08-31T14:24:01.373Z",
+    "flightId": "LS0013",
+    "passengerId": "PASSENGER-5706",
+    "date": "2024-08-13T20:14:32.016Z",
     "status": "cancelled",
-    "price": 169
+    "price": 1135
   },
   {
-    "id": "TICKET-544",
-    "flightId": "FD0502",
-    "passengerId": "PASSENGER-8712",
-    "date": "2024-07-07T17:39:19.970Z",
-    "status": "booked",
-    "price": 118
-  },
-  {
-    "id": "TICKET-576",
-    "flightId": "FR0036",
-    "passengerId": "PASSENGER-6173",
-    "date": "2025-06-12T17:56:59.503Z",
-    "status": "booked",
-    "price": 374
-  },
-  {
-    "id": "TICKET-922",
-    "flightId": "ZF0057",
-    "passengerId": "PASSENGER-9276",
-    "date": "2024-10-02T14:22:29.790Z",
-    "status": "cancelled",
-    "price": 1189
-  },
-  {
-    "id": "TICKET-610",
-    "flightId": "MK0612",
-    "passengerId": "PASSENGER-8389",
-    "date": "2025-05-11T09:08:51.772Z",
+    "id": "TICKET-920",
+    "flightId": "MK0008",
+    "passengerId": "PASSENGER-7113",
+    "date": "2024-10-12T16:53:27.002Z",
     "status": "checked-in",
+    "price": 846
+  },
+  {
+    "id": "TICKET-788",
+    "flightId": "AF0021",
+    "passengerId": "PASSENGER-3257",
+    "date": "2024-08-05T09:51:51.290Z",
+    "status": "booked",
+    "price": 916
+  },
+  {
+    "id": "TICKET-697",
+    "flightId": "TK0578",
+    "passengerId": "PASSENGER-4937",
+    "date": "2024-09-10T09:16:24.021Z",
+    "status": "booked",
+    "price": 1065
+  },
+  {
+    "id": "TICKET-846",
+    "flightId": "XQ7963",
+    "passengerId": "PASSENGER-3795",
+    "date": "2025-03-20T16:03:59.772Z",
+    "status": "booked",
+    "price": 485
+  },
+  {
+    "id": "TICKET-722",
+    "flightId": "AR3340",
+    "passengerId": "PASSENGER-5434",
+    "date": "2024-07-07T23:03:01.339Z",
+    "status": "cancelled",
+    "price": 1494
+  },
+  {
+    "id": "TICKET-509",
+    "flightId": "TG8669",
+    "passengerId": "PASSENGER-2088",
+    "date": "2024-10-25T04:53:54.649Z",
+    "status": "cancelled",
+    "price": 354
+  },
+  {
+    "id": "TICKET-590",
+    "flightId": "JA0087",
+    "passengerId": "PASSENGER-3006",
+    "date": "2024-08-17T19:13:41.762Z",
+    "status": "booked",
+    "price": 1484
+  },
+  {
+    "id": "TICKET-871",
+    "flightId": "PK0386",
+    "passengerId": "PASSENGER-5414",
+    "date": "2024-09-20T03:22:24.480Z",
+    "status": "cancelled",
+    "price": 174
+  },
+  {
+    "id": "TICKET-620",
+    "flightId": "JT0007",
+    "passengerId": "PASSENGER-7488",
+    "date": "2025-02-14T05:49:49.629Z",
+    "status": "booked",
+    "price": 1129
+  },
+  {
+    "id": "TICKET-878",
+    "flightId": "VE0001",
+    "passengerId": "PASSENGER-5953",
+    "date": "2024-07-06T18:59:08.972Z",
+    "status": "booked",
+    "price": 519
+  },
+  {
+    "id": "TICKET-549",
+    "flightId": "DY0810",
+    "passengerId": "PASSENGER-1408",
+    "date": "2024-08-16T17:04:25.860Z",
+    "status": "checked-in",
+    "price": 588
+  },
+  {
+    "id": "TICKET-745",
+    "flightId": "FR0061",
+    "passengerId": "PASSENGER-9687",
+    "date": "2025-02-15T22:29:32.150Z",
+    "status": "cancelled",
     "price": 467
   },
   {
-    "id": "TICKET-628",
-    "flightId": "AI0007",
-    "passengerId": "PASSENGER-1105",
-    "date": "2025-04-25T11:01:30.148Z",
+    "id": "TICKET-802",
+    "flightId": "G30774",
+    "passengerId": "PASSENGER-9956",
+    "date": "2025-01-05T13:51:54.171Z",
     "status": "checked-in",
-    "price": 1497
+    "price": 632
   },
   {
-    "id": "TICKET-561",
-    "flightId": "HU5185",
-    "passengerId": "PASSENGER-4547",
-    "date": "2024-11-25T07:20:43.534Z",
+    "id": "TICKET-752",
+    "flightId": "Y40066",
+    "passengerId": "PASSENGER-6063",
+    "date": "2025-04-01T13:22:06.473Z",
     "status": "cancelled",
-    "price": 1211
+    "price": 347
   },
   {
-    "id": "TICKET-688",
-    "flightId": "UX0386",
-    "passengerId": "PASSENGER-3616",
-    "date": "2024-09-23T19:51:00.578Z",
-    "status": "cancelled",
-    "price": 443
-  },
-  {
-    "id": "TICKET-564",
-    "flightId": "JT0039",
-    "passengerId": "PASSENGER-6286",
-    "date": "2024-10-05T13:06:02.902Z",
-    "status": "booked",
-    "price": 649
-  },
-  {
-    "id": "TICKET-613",
-    "flightId": "DY0206",
-    "passengerId": "PASSENGER-3055",
-    "date": "2024-11-26T13:24:33.432Z",
-    "status": "cancelled",
-    "price": 191
-  },
-  {
-    "id": "TICKET-827",
-    "flightId": "2I0869",
-    "passengerId": "PASSENGER-2481",
-    "date": "2025-02-11T15:56:42.343Z",
-    "status": "checked-in",
-    "price": 1341
-  },
-  {
-    "id": "TICKET-971",
-    "flightId": "G92833",
-    "passengerId": "PASSENGER-5433",
-    "date": "2025-03-07T07:34:23.071Z",
-    "status": "checked-in",
-    "price": 225
-  },
-  {
-    "id": "TICKET-996",
-    "flightId": "G90001",
-    "passengerId": "PASSENGER-9464",
-    "date": "2024-10-08T01:18:59.193Z",
-    "status": "booked",
-    "price": 571
-  },
-  {
-    "id": "TICKET-560",
-    "flightId": "JD0094",
-    "passengerId": "PASSENGER-6016",
-    "date": "2024-07-20T05:14:42.354Z",
-    "status": "cancelled",
-    "price": 1056
-  },
-  {
-    "id": "TICKET-859",
-    "flightId": "SV0844",
-    "passengerId": "PASSENGER-5629",
-    "date": "2024-07-31T15:38:12.729Z",
-    "status": "cancelled",
-    "price": 450
-  },
-  {
-    "id": "TICKET-777",
-    "flightId": "3U3115",
-    "passengerId": "PASSENGER-2825",
-    "date": "2025-06-12T09:59:25.607Z",
-    "status": "booked",
-    "price": 356
-  },
-  {
-    "id": "TICKET-948",
-    "flightId": "NZ0075",
-    "passengerId": "PASSENGER-7611",
-    "date": "2024-08-25T22:37:33.159Z",
-    "status": "checked-in",
-    "price": 104
-  },
-  {
-    "id": "TICKET-800",
-    "flightId": "UX0074",
-    "passengerId": "PASSENGER-7245",
-    "date": "2024-09-28T02:26:55.611Z",
-    "status": "booked",
-    "price": 1266
-  },
-  {
-    "id": "TICKET-977",
-    "flightId": "TP0006",
-    "passengerId": "PASSENGER-4207",
-    "date": "2024-12-01T07:38:50.985Z",
-    "status": "cancelled",
-    "price": 607
-  },
-  {
-    "id": "TICKET-754",
-    "flightId": "DY0001",
-    "passengerId": "PASSENGER-9098",
-    "date": "2025-05-02T12:01:25.777Z",
-    "status": "booked",
-    "price": 907
-  },
-  {
-    "id": "TICKET-873",
-    "flightId": "A30043",
-    "passengerId": "PASSENGER-6841",
-    "date": "2025-03-16T02:32:39.020Z",
-    "status": "booked",
-    "price": 1464
-  },
-  {
-    "id": "TICKET-905",
-    "flightId": "OB0008",
-    "passengerId": "PASSENGER-3366",
-    "date": "2024-08-12T14:03:34.196Z",
-    "status": "booked",
-    "price": 141
-  },
-  {
-    "id": "TICKET-972",
-    "flightId": "VB0088",
-    "passengerId": "PASSENGER-8580",
-    "date": "2025-04-19T19:51:03.284Z",
-    "status": "cancelled",
-    "price": 1394
-  },
-  {
-    "id": "TICKET-642",
-    "flightId": "FD0006",
-    "passengerId": "PASSENGER-4847",
-    "date": "2024-07-24T02:54:54.418Z",
-    "status": "cancelled",
-    "price": 337
-  },
-  {
-    "id": "TICKET-646",
-    "flightId": "LO0028",
-    "passengerId": "PASSENGER-4915",
-    "date": "2024-06-19T14:29:38.491Z",
-    "status": "checked-in",
-    "price": 247
-  },
-  {
-    "id": "TICKET-850",
-    "flightId": "WY3444",
-    "passengerId": "PASSENGER-1656",
-    "date": "2025-03-07T16:21:02.663Z",
-    "status": "cancelled",
-    "price": 1235
-  },
-  {
-    "id": "TICKET-882",
-    "flightId": "NK0008",
-    "passengerId": "PASSENGER-2880",
-    "date": "2024-06-18T06:34:24.951Z",
-    "status": "booked",
-    "price": 964
-  },
-  {
-    "id": "TICKET-918",
-    "flightId": "U60039",
-    "passengerId": "PASSENGER-7660",
-    "date": "2024-06-30T23:24:38.288Z",
-    "status": "booked",
-    "price": 814
-  },
-  {
-    "id": "TICKET-538",
-    "flightId": "LN0001",
-    "passengerId": "PASSENGER-6398",
-    "date": "2024-07-22T23:58:33.301Z",
+    "id": "TICKET-575",
+    "flightId": "PR0006",
+    "passengerId": "PASSENGER-4988",
+    "date": "2025-05-30T20:41:50.751Z",
     "status": "booked",
     "price": 799
   },
   {
-    "id": "TICKET-709",
-    "flightId": "FO0072",
-    "passengerId": "PASSENGER-2834",
-    "date": "2025-04-10T12:05:36.916Z",
-    "status": "booked",
-    "price": 1069
-  },
-  {
-    "id": "TICKET-503",
-    "flightId": "MU0824",
-    "passengerId": "PASSENGER-9382",
-    "date": "2024-10-02T10:21:14.998Z",
+    "id": "TICKET-595",
+    "flightId": "UX0001",
+    "passengerId": "PASSENGER-4652",
+    "date": "2024-09-28T18:31:03.828Z",
     "status": "checked-in",
-    "price": 274
+    "price": 107
   },
   {
-    "id": "TICKET-808",
-    "flightId": "TU0700",
-    "passengerId": "PASSENGER-4911",
-    "date": "2025-06-12T14:53:59.939Z",
+    "id": "TICKET-768",
+    "flightId": "Z80779",
+    "passengerId": "PASSENGER-5114",
+    "date": "2024-07-15T08:44:32.502Z",
+    "status": "booked",
+    "price": 168
+  },
+  {
+    "id": "TICKET-616",
+    "flightId": "NZ0028",
+    "passengerId": "PASSENGER-8394",
+    "date": "2025-06-09T13:12:44.487Z",
+    "status": "cancelled",
+    "price": 1066
+  },
+  {
+    "id": "TICKET-560",
+    "flightId": "NZ0003",
+    "passengerId": "PASSENGER-7180",
+    "date": "2024-07-28T22:21:29.607Z",
+    "status": "cancelled",
+    "price": 888
+  },
+  {
+    "id": "TICKET-521",
+    "flightId": "9R0919",
+    "passengerId": "PASSENGER-2310",
+    "date": "2025-01-11T16:45:55.094Z",
+    "status": "cancelled",
+    "price": 330
+  },
+  {
+    "id": "TICKET-612",
+    "flightId": "TN0919",
+    "passengerId": "PASSENGER-1841",
+    "date": "2024-08-09T16:01:10.427Z",
+    "status": "booked",
+    "price": 269
+  },
+  {
+    "id": "TICKET-537",
+    "flightId": "9S0567",
+    "passengerId": "PASSENGER-9479",
+    "date": "2024-10-17T23:04:08.368Z",
+    "status": "checked-in",
+    "price": 952
+  },
+  {
+    "id": "TICKET-504",
+    "flightId": "AY0624",
+    "passengerId": "PASSENGER-1552",
+    "date": "2024-08-17T10:46:52.545Z",
+    "status": "cancelled",
+    "price": 1143
+  },
+  {
+    "id": "TICKET-529",
+    "flightId": "NK0319",
+    "passengerId": "PASSENGER-5563",
+    "date": "2025-03-23T13:38:05.663Z",
+    "status": "booked",
+    "price": 614
+  },
+  {
+    "id": "TICKET-802",
+    "flightId": "9S6881",
+    "passengerId": "PASSENGER-8752",
+    "date": "2024-10-06T06:04:10.123Z",
+    "status": "cancelled",
+    "price": 1000
+  },
+  {
+    "id": "TICKET-722",
+    "flightId": "P50050",
+    "passengerId": "PASSENGER-1316",
+    "date": "2025-04-21T06:11:40.384Z",
+    "status": "cancelled",
+    "price": 1000
+  },
+  {
+    "id": "TICKET-925",
+    "flightId": "AY0008",
+    "passengerId": "PASSENGER-3945",
+    "date": "2025-03-30T12:07:11.961Z",
+    "status": "booked",
+    "price": 819
+  },
+  {
+    "id": "TICKET-990",
+    "flightId": "BY0530",
+    "passengerId": "PASSENGER-7566",
+    "date": "2025-03-17T14:54:01.474Z",
+    "status": "checked-in",
+    "price": 933
+  },
+  {
+    "id": "TICKET-681",
+    "flightId": "LN0696",
+    "passengerId": "PASSENGER-4138",
+    "date": "2024-10-10T17:10:08.607Z",
+    "status": "checked-in",
+    "price": 1159
+  },
+  {
+    "id": "TICKET-640",
+    "flightId": "PR0018",
+    "passengerId": "PASSENGER-9128",
+    "date": "2025-04-21T09:48:00.267Z",
+    "status": "checked-in",
+    "price": 546
+  },
+  {
+    "id": "TICKET-769",
+    "flightId": "EK0661",
+    "passengerId": "PASSENGER-2775",
+    "date": "2024-09-16T06:30:44.148Z",
+    "status": "checked-in",
+    "price": 1392
+  },
+  {
+    "id": "TICKET-850",
+    "flightId": "G80573",
+    "passengerId": "PASSENGER-7857",
+    "date": "2024-10-28T07:37:13.394Z",
+    "status": "booked",
+    "price": 744
+  },
+  {
+    "id": "TICKET-641",
+    "flightId": "FO0048",
+    "passengerId": "PASSENGER-1977",
+    "date": "2024-11-13T14:46:00.092Z",
+    "status": "checked-in",
+    "price": 141
+  },
+  {
+    "id": "TICKET-983",
+    "flightId": "SV0349",
+    "passengerId": "PASSENGER-8726",
+    "date": "2024-10-03T11:16:21.843Z",
+    "status": "booked",
+    "price": 1080
+  },
+  {
+    "id": "TICKET-642",
+    "flightId": "CX7377",
+    "passengerId": "PASSENGER-7748",
+    "date": "2024-08-22T03:22:36.462Z",
+    "status": "checked-in",
+    "price": 118
+  },
+  {
+    "id": "TICKET-645",
+    "flightId": "CX0038",
+    "passengerId": "PASSENGER-5697",
+    "date": "2024-09-25T12:45:30.356Z",
+    "status": "booked",
+    "price": 897
+  },
+  {
+    "id": "TICKET-595",
+    "flightId": "AT9016",
+    "passengerId": "PASSENGER-4293",
+    "date": "2024-11-07T16:45:48.999Z",
+    "status": "cancelled",
+    "price": 716
+  },
+  {
+    "id": "TICKET-985",
+    "flightId": "FZ4317",
+    "passengerId": "PASSENGER-8401",
+    "date": "2024-08-12T04:08:38.806Z",
+    "status": "checked-in",
+    "price": 739
+  },
+  {
+    "id": "TICKET-661",
+    "flightId": "2Z0379",
+    "passengerId": "PASSENGER-2775",
+    "date": "2025-03-17T16:07:00.598Z",
+    "status": "booked",
+    "price": 947
+  },
+  {
+    "id": "TICKET-649",
+    "flightId": "AI5817",
+    "passengerId": "PASSENGER-1015",
+    "date": "2024-07-25T17:46:14.428Z",
+    "status": "cancelled",
+    "price": 730
+  },
+  {
+    "id": "TICKET-876",
+    "flightId": "UX0001",
+    "passengerId": "PASSENGER-6749",
+    "date": "2025-04-24T22:03:06.299Z",
+    "status": "cancelled",
+    "price": 249
+  },
+  {
+    "id": "TICKET-726",
+    "flightId": "9R0014",
+    "passengerId": "PASSENGER-2860",
+    "date": "2025-03-10T05:36:53.834Z",
+    "status": "checked-in",
+    "price": 1183
+  },
+  {
+    "id": "TICKET-526",
+    "flightId": "MN0153",
+    "passengerId": "PASSENGER-1931",
+    "date": "2024-07-20T02:00:23.863Z",
+    "status": "checked-in",
+    "price": 435
+  },
+  {
+    "id": "TICKET-512",
+    "flightId": "LA0752",
+    "passengerId": "PASSENGER-5658",
+    "date": "2024-12-05T11:49:57.866Z",
+    "status": "cancelled",
+    "price": 1343
+  },
+  {
+    "id": "TICKET-571",
+    "flightId": "FJ1854",
+    "passengerId": "PASSENGER-5516",
+    "date": "2024-06-20T08:33:58.550Z",
+    "status": "booked",
+    "price": 1064
+  },
+  {
+    "id": "TICKET-983",
+    "flightId": "SY8191",
+    "passengerId": "PASSENGER-6333",
+    "date": "2024-06-28T08:56:16.652Z",
+    "status": "checked-in",
+    "price": 244
+  },
+  {
+    "id": "TICKET-912",
+    "flightId": "AH0007",
+    "passengerId": "PASSENGER-3535",
+    "date": "2025-04-19T08:06:38.737Z",
+    "status": "cancelled",
+    "price": 1279
+  },
+  {
+    "id": "TICKET-960",
+    "flightId": "LA0006",
+    "passengerId": "PASSENGER-5616",
+    "date": "2024-08-07T11:02:45.003Z",
+    "status": "booked",
+    "price": 494
+  },
+  {
+    "id": "TICKET-584",
+    "flightId": "HO8021",
+    "passengerId": "PASSENGER-1989",
+    "date": "2024-11-19T21:17:40.917Z",
     "status": "booked",
     "price": 1476
   },
   {
-    "id": "TICKET-533",
-    "flightId": "CZ0043",
-    "passengerId": "PASSENGER-2589",
-    "date": "2024-12-04T10:16:15.621Z",
-    "status": "booked",
-    "price": 1016
+    "id": "TICKET-524",
+    "flightId": "TS0516",
+    "passengerId": "PASSENGER-3964",
+    "date": "2024-08-30T10:00:01.482Z",
+    "status": "cancelled",
+    "price": 195
   },
   {
-    "id": "TICKET-900",
-    "flightId": "3U0089",
-    "passengerId": "PASSENGER-4759",
-    "date": "2024-12-19T21:18:58.429Z",
+    "id": "TICKET-705",
+    "flightId": "2I0492",
+    "passengerId": "PASSENGER-1722",
+    "date": "2024-11-19T17:59:34.641Z",
     "status": "checked-in",
-    "price": 1340
+    "price": 941
   },
   {
-    "id": "TICKET-539",
-    "flightId": "VJ6710",
-    "passengerId": "PASSENGER-2193",
-    "date": "2024-08-31T08:45:46.122Z",
+    "id": "TICKET-819",
+    "flightId": "VA9389",
+    "passengerId": "PASSENGER-9437",
+    "date": "2025-03-26T14:33:35.565Z",
     "status": "booked",
-    "price": 462
-  },
-  {
-    "id": "TICKET-886",
-    "flightId": "NK0873",
-    "passengerId": "PASSENGER-6820",
-    "date": "2024-12-02T06:39:56.704Z",
-    "status": "cancelled",
-    "price": 76
-  },
-  {
-    "id": "TICKET-509",
-    "flightId": "BA0001",
-    "passengerId": "PASSENGER-8271",
-    "date": "2024-10-07T10:27:44.337Z",
-    "status": "booked",
-    "price": 163
-  },
-  {
-    "id": "TICKET-635",
-    "flightId": "WN0054",
-    "passengerId": "PASSENGER-2832",
-    "date": "2024-08-29T09:39:12.153Z",
-    "status": "cancelled",
-    "price": 107
-  },
-  {
-    "id": "TICKET-503",
-    "flightId": "JA0002",
-    "passengerId": "PASSENGER-4321",
-    "date": "2025-06-08T09:09:46.028Z",
-    "status": "booked",
-    "price": 1091
-  },
-  {
-    "id": "TICKET-750",
-    "flightId": "TS5278",
-    "passengerId": "PASSENGER-2161",
-    "date": "2025-03-08T22:29:41.904Z",
-    "status": "booked",
-    "price": 257
-  },
-  {
-    "id": "TICKET-851",
-    "flightId": "JT0009",
-    "passengerId": "PASSENGER-5681",
-    "date": "2024-07-10T06:23:11.934Z",
-    "status": "cancelled",
-    "price": 430
-  },
-  {
-    "id": "TICKET-637",
-    "flightId": "ZF5142",
-    "passengerId": "PASSENGER-5739",
-    "date": "2024-11-16T09:00:45.046Z",
-    "status": "checked-in",
-    "price": 902
-  },
-  {
-    "id": "TICKET-704",
-    "flightId": "CM0068",
-    "passengerId": "PASSENGER-2004",
-    "date": "2025-04-06T09:52:47.813Z",
-    "status": "booked",
-    "price": 1237
-  },
-  {
-    "id": "TICKET-891",
-    "flightId": "MU0055",
-    "passengerId": "PASSENGER-3020",
-    "date": "2025-03-24T20:33:56.854Z",
-    "status": "cancelled",
-    "price": 934
-  },
-  {
-    "id": "TICKET-663",
-    "flightId": "DE0060",
-    "passengerId": "PASSENGER-3212",
-    "date": "2024-12-02T02:42:40.277Z",
-    "status": "cancelled",
-    "price": 314
-  },
-  {
-    "id": "TICKET-523",
-    "flightId": "TK0009",
-    "passengerId": "PASSENGER-6592",
-    "date": "2024-10-16T04:54:57.496Z",
-    "status": "cancelled",
-    "price": 1170
-  },
-  {
-    "id": "TICKET-911",
-    "flightId": "SU0007",
-    "passengerId": "PASSENGER-7552",
-    "date": "2024-06-28T07:10:17.564Z",
-    "status": "checked-in",
-    "price": 643
-  },
-  {
-    "id": "TICKET-786",
-    "flightId": "LO0352",
-    "passengerId": "PASSENGER-4748",
-    "date": "2024-06-20T03:13:55.703Z",
-    "status": "booked",
-    "price": 1373
-  },
-  {
-    "id": "TICKET-517",
-    "flightId": "BR0009",
-    "passengerId": "PASSENGER-5156",
-    "date": "2024-08-31T02:55:22.379Z",
-    "status": "checked-in",
-    "price": 1407
-  },
-  {
-    "id": "TICKET-518",
-    "flightId": "SQ0002",
-    "passengerId": "PASSENGER-8672",
-    "date": "2024-09-28T20:16:00.126Z",
-    "status": "checked-in",
-    "price": 417
-  },
-  {
-    "id": "TICKET-590",
-    "flightId": "JD3373",
-    "passengerId": "PASSENGER-4588",
-    "date": "2024-12-16T05:47:57.489Z",
-    "status": "booked",
-    "price": 161
-  },
-  {
-    "id": "TICKET-645",
-    "flightId": "FJ0099",
-    "passengerId": "PASSENGER-8062",
-    "date": "2024-11-27T09:58:29.960Z",
-    "status": "booked",
-    "price": 1493
-  },
-  {
-    "id": "TICKET-647",
-    "flightId": "LS5706",
-    "passengerId": "PASSENGER-3317",
-    "date": "2024-12-14T20:31:03.878Z",
-    "status": "checked-in",
-    "price": 736
-  },
-  {
-    "id": "TICKET-615",
-    "flightId": "FZ0063",
-    "passengerId": "PASSENGER-9231",
-    "date": "2025-03-31T19:55:10.614Z",
-    "status": "cancelled",
-    "price": 1080
-  },
-  {
-    "id": "TICKET-603",
-    "flightId": "SU9556",
-    "passengerId": "PASSENGER-4998",
-    "date": "2025-01-11T09:50:31.470Z",
-    "status": "checked-in",
-    "price": 287
-  },
-  {
-    "id": "TICKET-577",
-    "flightId": "F90878",
-    "passengerId": "PASSENGER-9636",
-    "date": "2024-10-26T13:19:17.419Z",
-    "status": "checked-in",
-    "price": 959
-  },
-  {
-    "id": "TICKET-874",
-    "flightId": "Z80004",
-    "passengerId": "PASSENGER-2057",
-    "date": "2025-06-14T09:17:56.852Z",
-    "status": "cancelled",
-    "price": 165
-  },
-  {
-    "id": "TICKET-565",
-    "flightId": "2I0069",
-    "passengerId": "PASSENGER-4115",
-    "date": "2025-05-04T04:32:12.163Z",
-    "status": "booked",
-    "price": 524
-  },
-  {
-    "id": "TICKET-577",
-    "flightId": "SC0005",
-    "passengerId": "PASSENGER-9877",
-    "date": "2024-09-05T09:08:04.390Z",
-    "status": "cancelled",
     "price": 370
   },
   {
-    "id": "TICKET-917",
-    "flightId": "JA8441",
-    "passengerId": "PASSENGER-3621",
-    "date": "2025-02-09T19:44:11.387Z",
+    "id": "TICKET-586",
+    "flightId": "PS0325",
+    "passengerId": "PASSENGER-5199",
+    "date": "2024-06-23T02:05:38.782Z",
     "status": "booked",
-    "price": 1285
+    "price": 986
   },
   {
-    "id": "TICKET-896",
-    "flightId": "DY2594",
-    "passengerId": "PASSENGER-3272",
-    "date": "2025-01-15T10:00:40.923Z",
-    "status": "booked",
-    "price": 236
-  },
-  {
-    "id": "TICKET-590",
-    "flightId": "TU0576",
-    "passengerId": "PASSENGER-1577",
-    "date": "2024-09-30T19:50:04.651Z",
-    "status": "booked",
-    "price": 1319
-  },
-  {
-    "id": "TICKET-832",
-    "flightId": "F90395",
-    "passengerId": "PASSENGER-9947",
-    "date": "2025-03-02T17:58:56.523Z",
+    "id": "TICKET-748",
+    "flightId": "HU0903",
+    "passengerId": "PASSENGER-8708",
+    "date": "2024-10-09T17:11:36.066Z",
     "status": "checked-in",
-    "price": 499
+    "price": 1384
   },
   {
-    "id": "TICKET-915",
-    "flightId": "VJ0366",
-    "passengerId": "PASSENGER-3409",
-    "date": "2024-06-19T01:38:44.355Z",
+    "id": "TICKET-821",
+    "flightId": "FJ0043",
+    "passengerId": "PASSENGER-9562",
+    "date": "2024-07-11T09:56:22.895Z",
+    "status": "cancelled",
+    "price": 465
+  },
+  {
+    "id": "TICKET-712",
+    "flightId": "NZ1910",
+    "passengerId": "PASSENGER-2736",
+    "date": "2024-09-01T21:00:34.840Z",
+    "status": "cancelled",
+    "price": 710
+  },
+  {
+    "id": "TICKET-608",
+    "flightId": "FJ0039",
+    "passengerId": "PASSENGER-3678",
+    "date": "2025-04-22T07:46:26.528Z",
+    "status": "booked",
+    "price": 200
+  },
+  {
+    "id": "TICKET-721",
+    "flightId": "FO0003",
+    "passengerId": "PASSENGER-2580",
+    "date": "2025-03-21T16:10:06.644Z",
+    "status": "cancelled",
+    "price": 1117
+  },
+  {
+    "id": "TICKET-629",
+    "flightId": "AC0902",
+    "passengerId": "PASSENGER-7925",
+    "date": "2024-09-13T23:56:51.121Z",
+    "status": "cancelled",
+    "price": 167
+  },
+  {
+    "id": "TICKET-960",
+    "flightId": "MN7694",
+    "passengerId": "PASSENGER-2945",
+    "date": "2025-01-07T00:09:45.342Z",
+    "status": "booked",
+    "price": 1297
+  },
+  {
+    "id": "TICKET-686",
+    "flightId": "8J1129",
+    "passengerId": "PASSENGER-4388",
+    "date": "2024-09-21T15:38:04.365Z",
+    "status": "cancelled",
+    "price": 204
+  },
+  {
+    "id": "TICKET-862",
+    "flightId": "G80004",
+    "passengerId": "PASSENGER-8349",
+    "date": "2024-09-14T13:28:10.725Z",
+    "status": "cancelled",
+    "price": 653
+  },
+  {
+    "id": "TICKET-532",
+    "flightId": "ZF0032",
+    "passengerId": "PASSENGER-2408",
+    "date": "2024-10-11T00:29:34.463Z",
+    "status": "cancelled",
+    "price": 980
+  },
+  {
+    "id": "TICKET-653",
+    "flightId": "VN9861",
+    "passengerId": "PASSENGER-4667",
+    "date": "2024-11-10T11:52:14.437Z",
     "status": "checked-in",
-    "price": 1288
+    "price": 869
   },
   {
-    "id": "TICKET-803",
-    "flightId": "7C3753",
-    "passengerId": "PASSENGER-1630",
-    "date": "2024-07-31T21:16:55.618Z",
+    "id": "TICKET-671",
+    "flightId": "NK0137",
+    "passengerId": "PASSENGER-2562",
+    "date": "2024-12-31T15:33:21.582Z",
     "status": "booked",
-    "price": 120
+    "price": 1480
   },
   {
-    "id": "TICKET-834",
-    "flightId": "GA0079",
-    "passengerId": "PASSENGER-8876",
-    "date": "2024-09-04T18:28:50.181Z",
+    "id": "TICKET-893",
+    "flightId": "Y40002",
+    "passengerId": "PASSENGER-4070",
+    "date": "2024-09-14T06:00:59.143Z",
+    "status": "checked-in",
+    "price": 74
+  },
+  {
+    "id": "TICKET-908",
+    "flightId": "OZ6543",
+    "passengerId": "PASSENGER-2888",
+    "date": "2024-11-27T04:07:05.122Z",
+    "status": "cancelled",
+    "price": 535
+  },
+  {
+    "id": "TICKET-840",
+    "flightId": "KQ0760",
+    "passengerId": "PASSENGER-9531",
+    "date": "2025-03-25T18:23:34.697Z",
+    "status": "cancelled",
+    "price": 699
+  },
+  {
+    "id": "TICKET-949",
+    "flightId": "PK0001",
+    "passengerId": "PASSENGER-8229",
+    "date": "2025-01-02T13:23:48.320Z",
     "status": "booked",
-    "price": 1422
+    "price": 282
   },
   {
-    "id": "TICKET-501",
-    "flightId": "FR0008",
-    "passengerId": "PASSENGER-6446",
-    "date": "2025-03-20T16:11:04.104Z",
+    "id": "TICKET-940",
+    "flightId": "OB0006",
+    "passengerId": "PASSENGER-5196",
+    "date": "2025-04-10T18:21:36.864Z",
+    "status": "checked-in",
+    "price": 1099
+  },
+  {
+    "id": "TICKET-847",
+    "flightId": "AD0090",
+    "passengerId": "PASSENGER-6235",
+    "date": "2025-04-28T12:19:47.133Z",
+    "status": "cancelled",
+    "price": 1176
+  },
+  {
+    "id": "TICKET-688",
+    "flightId": "GA1384",
+    "passengerId": "PASSENGER-5117",
+    "date": "2025-05-26T18:55:31.382Z",
+    "status": "checked-in",
+    "price": 1009
+  },
+  {
+    "id": "TICKET-802",
+    "flightId": "U26896",
+    "passengerId": "PASSENGER-9485",
+    "date": "2024-12-01T20:32:48.910Z",
+    "status": "checked-in",
+    "price": 752
+  },
+  {
+    "id": "TICKET-910",
+    "flightId": "U20716",
+    "passengerId": "PASSENGER-2935",
+    "date": "2024-11-03T19:14:04.706Z",
+    "status": "checked-in",
+    "price": 438
+  },
+  {
+    "id": "TICKET-635",
+    "flightId": "PS0005",
+    "passengerId": "PASSENGER-4511",
+    "date": "2024-12-15T22:32:24.298Z",
+    "status": "cancelled",
+    "price": 940
+  },
+  {
+    "id": "TICKET-550",
+    "flightId": "LA0008",
+    "passengerId": "PASSENGER-5373",
+    "date": "2024-07-06T15:17:48.261Z",
+    "status": "checked-in",
+    "price": 211
+  },
+  {
+    "id": "TICKET-897",
+    "flightId": "VT1528",
+    "passengerId": "PASSENGER-5893",
+    "date": "2024-08-22T06:54:07.573Z",
     "status": "booked",
-    "price": 77
+    "price": 1420
   },
   {
-    "id": "TICKET-631",
-    "flightId": "AA0807",
-    "passengerId": "PASSENGER-1660",
-    "date": "2024-07-15T01:54:35.483Z",
+    "id": "TICKET-703",
+    "flightId": "JD0056",
+    "passengerId": "PASSENGER-4615",
+    "date": "2024-11-12T12:44:29.028Z",
+    "status": "checked-in",
+    "price": 390
+  },
+  {
+    "id": "TICKET-838",
+    "flightId": "CA0589",
+    "passengerId": "PASSENGER-4474",
+    "date": "2024-10-18T11:45:32.494Z",
     "status": "cancelled",
-    "price": 528
+    "price": 473
   },
   {
-    "id": "TICKET-814",
-    "flightId": "AD0006",
-    "passengerId": "PASSENGER-2417",
-    "date": "2025-03-06T04:56:27.373Z",
-    "status": "cancelled",
-    "price": 1292
+    "id": "TICKET-970",
+    "flightId": "VE0051",
+    "passengerId": "PASSENGER-7046",
+    "date": "2024-08-19T07:21:15.197Z",
+    "status": "checked-in",
+    "price": 561
   },
   {
-    "id": "TICKET-948",
-    "flightId": "A30092",
-    "passengerId": "PASSENGER-4864",
-    "date": "2025-03-30T09:39:33.177Z",
-    "status": "cancelled",
-    "price": 749
-  },
-  {
-    "id": "TICKET-651",
-    "flightId": "JD0085",
-    "passengerId": "PASSENGER-6981",
-    "date": "2025-05-12T19:22:35.783Z",
-    "status": "cancelled",
-    "price": 1405
-  },
-  {
-    "id": "TICKET-584",
-    "flightId": "VB0006",
-    "passengerId": "PASSENGER-1990",
-    "date": "2025-04-15T20:56:25.451Z",
+    "id": "TICKET-831",
+    "flightId": "NK0092",
+    "passengerId": "PASSENGER-8975",
+    "date": "2025-01-15T09:44:04.059Z",
     "status": "booked",
-    "price": 581
+    "price": 559
   },
   {
-    "id": "TICKET-980",
-    "flightId": "VJ0446",
-    "passengerId": "PASSENGER-6357",
-    "date": "2025-05-13T20:48:18.209Z",
+    "id": "TICKET-635",
+    "flightId": "TU0370",
+    "passengerId": "PASSENGER-6632",
+    "date": "2025-06-14T18:58:23.425Z",
     "status": "cancelled",
-    "price": 256
+    "price": 1308
+  },
+  {
+    "id": "TICKET-869",
+    "flightId": "MH0006",
+    "passengerId": "PASSENGER-9316",
+    "date": "2024-09-28T04:54:19.313Z",
+    "status": "checked-in",
+    "price": 680
+  },
+  {
+    "id": "TICKET-844",
+    "flightId": "AD0001",
+    "passengerId": "PASSENGER-6599",
+    "date": "2024-09-20T12:37:38.853Z",
+    "status": "booked",
+    "price": 1134
+  },
+  {
+    "id": "TICKET-914",
+    "flightId": "UX9219",
+    "passengerId": "PASSENGER-2331",
+    "date": "2024-07-09T12:19:44.700Z",
+    "status": "cancelled",
+    "price": 1042
+  },
+  {
+    "id": "TICKET-976",
+    "flightId": "JL1206",
+    "passengerId": "PASSENGER-6644",
+    "date": "2024-06-30T10:34:35.738Z",
+    "status": "booked",
+    "price": 1197
+  },
+  {
+    "id": "TICKET-597",
+    "flightId": "QF0785",
+    "passengerId": "PASSENGER-6530",
+    "date": "2024-10-30T16:37:24.405Z",
+    "status": "checked-in",
+    "price": 720
+  },
+  {
+    "id": "TICKET-520",
+    "flightId": "LH0313",
+    "passengerId": "PASSENGER-4713",
+    "date": "2025-03-14T03:16:57.222Z",
+    "status": "checked-in",
+    "price": 332
   },
   {
     "id": "TICKET-941",
-    "flightId": "CZ0067",
-    "passengerId": "PASSENGER-5006",
-    "date": "2024-12-09T06:02:27.710Z",
-    "status": "checked-in",
-    "price": 1031
-  },
-  {
-    "id": "TICKET-800",
-    "flightId": "P56380",
-    "passengerId": "PASSENGER-6764",
-    "date": "2025-04-13T19:20:59.263Z",
+    "flightId": "YX9782",
+    "passengerId": "PASSENGER-3679",
+    "date": "2025-05-09T23:56:53.682Z",
     "status": "cancelled",
-    "price": 791
+    "price": 158
   },
   {
-    "id": "TICKET-613",
-    "flightId": "2I6455",
-    "passengerId": "PASSENGER-3174",
-    "date": "2024-10-27T09:44:31.478Z",
-    "status": "cancelled",
-    "price": 120
-  },
-  {
-    "id": "TICKET-716",
-    "flightId": "CZ0001",
-    "passengerId": "PASSENGER-3766",
-    "date": "2025-06-02T02:20:50.213Z",
+    "id": "TICKET-875",
+    "flightId": "VT4206",
+    "passengerId": "PASSENGER-6175",
+    "date": "2024-12-07T00:07:15.202Z",
     "status": "booked",
-    "price": 314
+    "price": 437
+  },
+  {
+    "id": "TICKET-981",
+    "flightId": "NH0481",
+    "passengerId": "PASSENGER-2181",
+    "date": "2025-02-14T02:30:35.269Z",
+    "status": "checked-in",
+    "price": 481
   }
 ]
