@@ -4,7 +4,7 @@ import type { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "~/components/ui/checkbox";
 import type { AccidentRecord } from "~/validators/accidentRecord";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { AccidentRecordRowActions } from "~/app/(dashboard)/accidentRecord/_components/accidentRecords-row-actions";
+import { AccidentRecordRowActions } from "~/app/accidentRecord/_components/accidentRecords-row-actions";
 
 export const accidentRecordColumns: ColumnDef<AccidentRecord>[] = [
 	{

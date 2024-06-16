@@ -6,8 +6,8 @@ import { z } from "zod";
 
 import { DataTable } from "~/components/common/data-table";
 
-import { tasksColumns } from "~/app/(dashboard)/tasks/_components/tasks-columns";
-import { TasksNavActions } from "~/app/(dashboard)/tasks/_components/tasks-nav-actions";
+import { tasksColumns } from "~/app/tasks/_components/tasks-columns";
+import { TasksNavActions } from "~/app/tasks/_components/tasks-nav-actions";
 
 import { taskSchema } from "~/validators/tasks";
 

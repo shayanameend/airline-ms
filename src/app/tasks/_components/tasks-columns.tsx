@@ -6,7 +6,7 @@ import { Badge } from "~/components/ui/badge";
 import { Checkbox } from "~/components/ui/checkbox";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 
-import { TasksRowActions } from "~/app/(dashboard)/tasks/_components/tasks-row-actions";
+import { TasksRowActions } from "~/app/tasks/_components/tasks-row-actions";
 
 import { type Task, labels, priorities, statuses } from "~/validators/tasks";
 

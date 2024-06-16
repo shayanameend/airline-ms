@@ -5,27 +5,27 @@ import { default as path } from "node:path";
 import { z } from "zod";
 
 import { DataTable } from "~/components/common/data-table";
-import { AirlineNavActions } from "~/app/(dashboard)/airline/_components/airline-nav-actions";
+import { AirlineNavActions } from "~/app/airline/_components/airline-nav-actions";
 
-import { airlineColumns } from "./_components/airline-columns";
-import { airlineSchema } from "~/validators/airline";
+import { airlineColumns } from "./_components/airport-columns";
+import { airportSchema } from "~/validators/airport";
 
 export const metadata: Metadata = {
 	title: "Airlines",
 };
 
-async function getAirline() {
+async function getAirports() {
 	const data = await fs.readFile(
-		path.join(process.cwd(), "src/seeds/airlines.json"),
+		path.join(process.cwd(), "src/seeds/airports.json"),
 	);
 
-	const airline = JSON.parse(data.toString());
+	const airports = JSON.parse(data.toString());
 
-	return z.array(airlineSchema).parse(airline);
+	return z.array(airportSchema).parse(airports);
 }
 
-export default async function TasksPage() {
-	const data = await getAirline();
+export default async function AirportsPage() {
+	const data = await getAirports();
 
 	return (
 		<>

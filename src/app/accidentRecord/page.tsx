@@ -4,7 +4,7 @@ import { default as path } from "node:path";
 import { z } from "zod";
 
 import { DataTable } from "~/components/common/data-table";
-import { AccidentRecordNavActions } from "~/app/(dashboard)/accidentRecord/_components/accidentRecords-nav-actions";
+import { AccidentRecordNavActions } from "~/app/accidentRecord/_components/accidentRecords-nav-actions";
 
 import { accidentRecordColumns } from "./_components/accidentRecord-columns";
 import { accidentRecordSchema } from "~/validators/accidentRecord";

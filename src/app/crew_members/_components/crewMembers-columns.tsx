@@ -4,7 +4,7 @@ import type { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "~/components/ui/checkbox";
 import type { CrewMember } from "~/validators/crewMember";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { CrewMembersRowActions } from "~/app/(dashboard)/crew_members/_components/crewMembers-row-actions";
+import { CrewMembersRowActions } from "~/app/crew_members/_components/crewMembers-row-actions";
 
 export const crewMemberColumns: ColumnDef<CrewMember>[] = [
 	{

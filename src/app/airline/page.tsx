@@ -5,27 +5,27 @@ import { default as path } from "node:path";
 import { z } from "zod";
 
 import { DataTable } from "~/components/common/data-table";
-import { AirlineNavActions } from "~/app/(dashboard)/airline/_components/airline-nav-actions";
+import { AirlineNavActions } from "~/app/airline/_components/airline-nav-actions";
 
-import { crewMemberColumns } from "./_components/crewMembers-columns";
-import { crewMember as crewMemberSchema } from "~/validators/crewMember";
+import { airlineColumns } from "./_components/airline-columns";
+import { airlineSchema } from "~/validators/airline";
 
 export const metadata: Metadata = {
 	title: "Airlines",
 };
 
-async function getCrewMembers() {
+async function getAirline() {
 	const data = await fs.readFile(
-		path.join(process.cwd(), "src/seeds/crew_members.json"),
+		path.join(process.cwd(), "src/seeds/airlines.json"),
 	);
 
 	const airline = JSON.parse(data.toString());
 
-	return z.array(crewMemberSchema).parse(airline);
+	return z.array(airlineSchema).parse(airline);
 }
 
 export default async function TasksPage() {
-	const data = await getCrewMembers();
+	const data = await getAirline();
 
 	return (
 		<>
@@ -41,7 +41,7 @@ export default async function TasksPage() {
 						<AirlineNavActions />
 					</div>
 				</div>
-				<DataTable columns={crewMemberColumns} data={data} />
+				<DataTable columns={airlineColumns} data={data} />
 			</div>
 		</>
 	);

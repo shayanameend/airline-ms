@@ -4,7 +4,7 @@ import type { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "~/components/ui/checkbox";
 import type { Airport } from "~/validators/airport";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { AirportRowActions } from "~/app/(dashboard)/airport/_components/airport-row-actions";
+import { AirportRowActions } from "~/app/airport/_components/airport-row-actions";
 
 export const airlineColumns: ColumnDef<Airport>[] = [
 	{
