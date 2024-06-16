@@ -70,7 +70,6 @@ export const ticket_table = sqliteTable("ticket", {
 	flightId: text("flight_id").notNull(),
 	passengerId: text("passenger_id").notNull(),
 	date: text("date").notNull(),
-	status: text("status").notNull(),
 	price: integer("price").notNull(),
 });
 

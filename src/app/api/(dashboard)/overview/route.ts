@@ -12,43 +12,25 @@ export async function GET(_request: HttpRequest) {
 	try {
 		const numberOfActiveFlights = (
 			await db
-				.select({
-					count: count(),
-				})
+				.select()
 				.from(flight_table)
 				.where(eq(flight_table.status, "active"))
-		)[0].count;
+		).length;
 
 		const numberOfScheduledFlights = (
 			await db
-				.select({
-					count: count(),
-				})
+				.select()
 				.from(flight_table)
 				.where(eq(flight_table.status, "scheduled"))
-		)[0].count;
+		).length;
 
-		const numberOfTicketsSold = (
-			await db
-				.select({
-					count: count(),
-				})
-				.from(ticket_table)
-		)[0].count;
+		const numberOfTicketsSold = (await db.select().from(ticket_table)).length;
 
-		const numberOfPassengers = (
-			await db
-				.select({
-					count: count(),
-				})
-				.from(passenger_table)
-		)[0].count;
+		const numberOfPassengers = (await db.select().from(passenger_table)).length;
 
 		const passengerInJan = (
 			await db
-				.select({
-					count: count(),
-				})
+				.select()
 				.from(passenger_table)
 				.where(
 					and(
@@ -62,13 +44,11 @@ export async function GET(_request: HttpRequest) {
 						),
 					),
 				)
-		)[0].count;
+		).length;
 
 		const passengerInFeb = (
 			await db
-				.select({
-					count: count(),
-				})
+				.select()
 				.from(passenger_table)
 				.where(
 					and(
@@ -82,13 +62,11 @@ export async function GET(_request: HttpRequest) {
 						),
 					),
 				)
-		)[0].count;
+		).length;
 
 		const passengerInMar = (
 			await db
-				.select({
-					count: count(),
-				})
+				.select()
 				.from(passenger_table)
 				.where(
 					and(
@@ -102,13 +80,11 @@ export async function GET(_request: HttpRequest) {
 						),
 					),
 				)
-		)[0].count;
+		).length;
 
 		const passengerInApr = (
 			await db
-				.select({
-					count: count(),
-				})
+				.select()
 				.from(passenger_table)
 				.where(
 					and(
@@ -122,13 +98,11 @@ export async function GET(_request: HttpRequest) {
 						),
 					),
 				)
-		)[0].count;
+		).length;
 
 		const passengerInMay = (
 			await db
-				.select({
-					count: count(),
-				})
+				.select()
 				.from(passenger_table)
 				.where(
 					and(
@@ -142,13 +116,11 @@ export async function GET(_request: HttpRequest) {
 						),
 					),
 				)
-		)[0].count;
+		).length;
 
 		const passengerInJun = (
 			await db
-				.select({
-					count: count(),
-				})
+				.select()
 				.from(passenger_table)
 				.where(
 					and(
@@ -162,13 +134,11 @@ export async function GET(_request: HttpRequest) {
 						),
 					),
 				)
-		)[0].count;
+		).length;
 
 		const passengerInJul = (
 			await db
-				.select({
-					count: count(),
-				})
+				.select()
 				.from(passenger_table)
 				.where(
 					and(
@@ -182,13 +152,11 @@ export async function GET(_request: HttpRequest) {
 						),
 					),
 				)
-		)[0].count;
+		).length;
 
 		const passengerInAug = (
 			await db
-				.select({
-					count: count(),
-				})
+				.select()
 				.from(passenger_table)
 				.where(
 					and(
@@ -202,13 +170,11 @@ export async function GET(_request: HttpRequest) {
 						),
 					),
 				)
-		)[0].count;
+		).length;
 
 		const passengerInSep = (
 			await db
-				.select({
-					count: count(),
-				})
+				.select()
 				.from(passenger_table)
 				.where(
 					and(
@@ -222,13 +188,11 @@ export async function GET(_request: HttpRequest) {
 						),
 					),
 				)
-		)[0].count;
+		).length;
 
 		const passengerInOct = (
 			await db
-				.select({
-					count: count(),
-				})
+				.select()
 				.from(passenger_table)
 				.where(
 					and(
@@ -242,13 +206,11 @@ export async function GET(_request: HttpRequest) {
 						),
 					),
 				)
-		)[0].count;
+		).length;
 
 		const passengerInNov = (
 			await db
-				.select({
-					count: count(),
-				})
+				.select()
 				.from(passenger_table)
 				.where(
 					and(
@@ -262,13 +224,11 @@ export async function GET(_request: HttpRequest) {
 						),
 					),
 				)
-		)[0].count;
+		).length;
 
 		const passengerInDec = (
 			await db
-				.select({
-					count: count(),
-				})
+				.select()
 				.from(passenger_table)
 				.where(
 					and(
@@ -282,7 +242,7 @@ export async function GET(_request: HttpRequest) {
 						),
 					),
 				)
-		)[0].count;
+		).length;
 
 		const passengerTraficData = [
 			{
@@ -346,7 +306,13 @@ export async function GET(_request: HttpRequest) {
 				passenger_table,
 				eq(passenger_table.id, ticket_table.passengerId),
 			)
-			.where(eq(ticket_table.status, "scheduled"))
+			.innerJoin(
+				flight_table,
+				and(
+					eq(flight_table.id, ticket_table.flightId),
+					eq(flight_table.status, "scheduled"),
+				),
+			)
 			.orderBy(desc(ticket_table.date))
 			.limit(5);
 

@@ -2,7 +2,7 @@ import type { PropsWithChildren } from "react";
 
 import { ThemeMenuButon } from "~/components/common/theme-menu-button";
 import { MainNav } from "./overview/_components/main-nav";
-import { TeamSwitcher } from "./overview/_components/team-switcher";
+import { AirlineProfile } from "./overview/_components/team-switcher";
 
 import { cn } from "~/lib/utils";
 
@@ -13,7 +13,7 @@ export default function DashboardLayout({
 		<div className="flex flex-col">
 			<div className="border-b">
 				<div className="flex h-16 items-center px-4">
-					<TeamSwitcher />
+					<AirlineProfile />
 					<div className="ml-auto flex items-center space-x-4">
 						<MainNav className="mx-6" />
 						<ThemeMenuButon
