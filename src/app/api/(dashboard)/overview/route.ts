@@ -1,12 +1,14 @@
-"use server";
+import type { NextRequest as HttpRequest } from "next/server";
 
-import { getUnixTime } from "date-fns";
-import { and, desc, eq, gte, lt } from "drizzle-orm";
+import { and, count, desc, eq, gte, lt } from "drizzle-orm";
 import { db } from "~/db";
 import { flight_table, passenger_table, ticket_table } from "~/db/tables";
-import { ServerResponse } from "~/lib/handlers/response-handler";
+import { HttpResponse } from "~/lib/handlers/response-handler";
+import { getUnixTime } from "date-fns";
 
-export async function getOverviewData() {
+export const dynamic = "force-dynamic";
+
+export async function GET(_request: HttpRequest) {
 	try {
 		const numberOfActiveFlights = (
 			await db
@@ -314,7 +316,7 @@ export async function getOverviewData() {
 			.orderBy(desc(ticket_table.date))
 			.limit(5);
 
-		return ServerResponse.success(
+		return HttpResponse.success(
 			{
 				numberOfActiveFlights,
 				numberOfScheduledFlights,
@@ -330,15 +332,8 @@ export async function getOverviewData() {
 	} catch (error) {
 		console.error(error);
 
-		return ServerResponse.server_error(
-			{
-				numberOfActiveFlights: 0,
-				numberOfScheduledFlights: 0,
-				numberOfTicketsSold: 0,
-				numberOfPassengers: 0,
-				passengerTraficData: [],
-				recentBookingsData: [],
-			},
+		return HttpResponse.server_error(
+			{},
 			{
 				message: "Failed to retrieve overview details",
 			},
