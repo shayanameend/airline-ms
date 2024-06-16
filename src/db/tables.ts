@@ -40,6 +40,7 @@ export const flight_table = sqliteTable("flight", {
 	departure: text("departure").notNull(),
 	arrival: text("arrival").notNull(),
 	status: text("status").notNull(),
+	price: integer("price").notNull(),
 });
 
 export const pilot_table = sqliteTable("pilot", {
@@ -70,7 +71,6 @@ export const ticket_table = sqliteTable("ticket", {
 	flightId: text("flight_id").notNull(),
 	passengerId: text("passenger_id").notNull(),
 	date: text("date").notNull(),
-	price: integer("price").notNull(),
 });
 
 export const maintenance_record_table = sqliteTable("maintenance_record", {
