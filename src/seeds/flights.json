@@ -1,1002 +1,1002 @@
 [
-  {
-    "id": "VA7357",
-    "airlineId": "AIRLINE-9R",
-    "arrivalAirportId": "AIRPORT-VIE",
-    "departureAirportId": "AIRPORT-CTU",
-    "aircraftId": "AIRCRAFT-8015",
-    "departure": "2024-10-09T12:33:13.920Z",
-    "arrival": "2025-03-05T13:36:03.548Z",
-    "status": "arrived"
-  },
-  {
-    "id": "PR8421",
-    "airlineId": "AIRLINE-TN",
-    "arrivalAirportId": "AIRPORT-FCO",
-    "departureAirportId": "AIRPORT-KUL",
-    "aircraftId": "AIRCRAFT-2524",
-    "departure": "2025-06-04T12:52:25.721Z",
-    "arrival": "2025-01-28T18:11:04.896Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "DE0009",
-    "airlineId": "AIRLINE-WN",
-    "arrivalAirportId": "AIRPORT-FRA",
-    "departureAirportId": "AIRPORT-GEA",
-    "aircraftId": "AIRCRAFT-8299",
-    "departure": "2025-01-01T02:12:13.057Z",
-    "arrival": "2025-03-14T09:58:02.062Z",
-    "status": "arrived"
-  },
-  {
-    "id": "NH7224",
-    "airlineId": "AIRLINE-DY",
-    "arrivalAirportId": "AIRPORT-TXL",
-    "departureAirportId": "AIRPORT-SYD",
-    "aircraftId": "AIRCRAFT-3884",
-    "departure": "2025-02-24T05:42:05.787Z",
-    "arrival": "2024-11-23T03:57:03.669Z",
-    "status": "departed"
-  },
-  {
-    "id": "LH0009",
-    "airlineId": "AIRLINE-TP",
-    "arrivalAirportId": "AIRPORT-FRA",
-    "departureAirportId": "AIRPORT-DMK",
-    "aircraftId": "AIRCRAFT-7622",
-    "departure": "2024-11-21T11:41:33.320Z",
-    "arrival": "2024-08-20T13:34:14.320Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "TP0019",
-    "airlineId": "AIRLINE-PX",
-    "arrivalAirportId": "AIRPORT-IAH",
-    "departureAirportId": "AIRPORT-JED",
-    "aircraftId": "AIRCRAFT-3282",
-    "departure": "2024-08-16T07:27:31.117Z",
-    "arrival": "2025-02-23T04:21:42.726Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "PR2962",
-    "airlineId": "AIRLINE-ZF",
-    "arrivalAirportId": "AIRPORT-ALG",
-    "departureAirportId": "AIRPORT-EWR",
-    "aircraftId": "AIRCRAFT-5698",
-    "departure": "2024-07-05T16:18:26.593Z",
-    "arrival": "2025-03-17T08:30:59.492Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "UX0009",
-    "airlineId": "AIRLINE-H2",
-    "arrivalAirportId": "AIRPORT-OSL",
-    "departureAirportId": "AIRPORT-GIG",
-    "aircraftId": "AIRCRAFT-6824",
-    "departure": "2025-03-24T11:58:02.887Z",
-    "arrival": "2024-12-30T15:57:19.249Z",
-    "status": "delayed"
-  },
-  {
-    "id": "QR6627",
-    "airlineId": "AIRLINE-WS",
-    "arrivalAirportId": "AIRPORT-CDG",
-    "departureAirportId": "AIRPORT-HND",
-    "aircraftId": "AIRCRAFT-5163",
-    "departure": "2024-07-14T07:14:25.311Z",
-    "arrival": "2025-02-11T12:13:30.115Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "6E0002",
-    "airlineId": "AIRLINE-EY",
-    "arrivalAirportId": "AIRPORT-MEL",
-    "departureAirportId": "AIRPORT-ADD",
-    "aircraftId": "AIRCRAFT-4273",
-    "departure": "2024-10-03T06:35:09.536Z",
-    "arrival": "2024-10-09T18:42:15.181Z",
-    "status": "delayed"
-  },
-  {
-    "id": "WS0004",
-    "airlineId": "AIRLINE-9R",
-    "arrivalAirportId": "AIRPORT-GEA",
-    "departureAirportId": "AIRPORT-CLT",
-    "aircraftId": "AIRCRAFT-4348",
-    "departure": "2024-09-17T05:13:27.035Z",
-    "arrival": "2024-06-20T12:08:28.661Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "2I0500",
-    "airlineId": "AIRLINE-DY",
-    "arrivalAirportId": "AIRPORT-HND",
-    "departureAirportId": "AIRPORT-CHC",
-    "aircraftId": "AIRCRAFT-2119",
-    "departure": "2025-05-31T02:50:18.410Z",
-    "arrival": "2025-04-05T06:28:04.064Z",
-    "status": "cancelled"
-  },
-  {
-    "id": "JL0009",
-    "airlineId": "AIRLINE-BA",
-    "arrivalAirportId": "AIRPORT-REC",
-    "departureAirportId": "AIRPORT-BOG",
-    "aircraftId": "AIRCRAFT-2576",
-    "departure": "2024-08-10T02:51:46.482Z",
-    "arrival": "2025-05-22T03:37:38.210Z",
-    "status": "departed"
-  },
-  {
-    "id": "B66533",
-    "airlineId": "AIRLINE-AZ",
-    "arrivalAirportId": "AIRPORT-BEL",
-    "departureAirportId": "AIRPORT-ZIA",
-    "aircraftId": "AIRCRAFT-2713",
-    "departure": "2024-06-25T15:39:28.363Z",
-    "arrival": "2024-10-19T22:11:11.569Z",
-    "status": "arrived"
-  },
-  {
-    "id": "XQ0020",
-    "airlineId": "AIRLINE-VT",
-    "arrivalAirportId": "AIRPORT-IST",
-    "departureAirportId": "AIRPORT-MAD",
-    "aircraftId": "AIRCRAFT-1235",
-    "departure": "2025-06-14T07:36:08.868Z",
-    "arrival": "2024-07-13T01:25:48.833Z",
-    "status": "cancelled"
-  },
-  {
-    "id": "N40097",
-    "airlineId": "AIRLINE-PK",
-    "arrivalAirportId": "AIRPORT-CGK",
-    "departureAirportId": "AIRPORT-JED",
-    "aircraftId": "AIRCRAFT-8770",
-    "departure": "2025-06-13T05:11:18.245Z",
-    "arrival": "2024-09-26T01:06:25.153Z",
-    "status": "cancelled"
-  },
-  {
-    "id": "UA0002",
-    "airlineId": "AIRLINE-OB",
-    "arrivalAirportId": "AIRPORT-HKG",
-    "departureAirportId": "AIRPORT-MDE",
-    "aircraftId": "AIRCRAFT-5777",
-    "departure": "2025-03-19T20:09:02.194Z",
-    "arrival": "2024-08-27T07:39:13.097Z",
-    "status": "delayed"
-  },
-  {
-    "id": "D76621",
-    "airlineId": "AIRLINE-EY",
-    "arrivalAirportId": "AIRPORT-ZIA",
-    "departureAirportId": "AIRPORT-CLO",
-    "aircraftId": "AIRCRAFT-3520",
-    "departure": "2024-10-20T23:37:37.345Z",
-    "arrival": "2024-11-30T09:22:10.883Z",
-    "status": "arrived"
-  },
-  {
-    "id": "AZ0062",
-    "airlineId": "AIRLINE-U2",
-    "arrivalAirportId": "AIRPORT-CLT",
-    "departureAirportId": "AIRPORT-DEL",
-    "aircraftId": "AIRCRAFT-9982",
-    "departure": "2024-12-21T17:07:19.527Z",
-    "arrival": "2025-01-07T12:17:35.416Z",
-    "status": "cancelled"
-  },
-  {
-    "id": "W60494",
-    "airlineId": "AIRLINE-AV",
-    "arrivalAirportId": "AIRPORT-BOG",
-    "departureAirportId": "AIRPORT-SGN",
-    "aircraftId": "AIRCRAFT-6453",
-    "departure": "2024-09-16T05:54:26.304Z",
-    "arrival": "2025-04-30T18:56:22.421Z",
-    "status": "departed"
-  },
-  {
-    "id": "GA8753",
-    "airlineId": "AIRLINE-OO",
-    "arrivalAirportId": "AIRPORT-ATL",
-    "departureAirportId": "AIRPORT-OSL",
-    "aircraftId": "AIRCRAFT-2438",
-    "departure": "2024-09-27T07:08:27.057Z",
-    "arrival": "2024-08-21T10:09:46.635Z",
-    "status": "arrived"
-  },
-  {
-    "id": "CX0527",
-    "airlineId": "AIRLINE-BA",
-    "arrivalAirportId": "AIRPORT-REC",
-    "departureAirportId": "AIRPORT-BOG",
-    "aircraftId": "AIRCRAFT-7498",
-    "departure": "2024-08-06T18:23:33.657Z",
-    "arrival": "2025-01-13T09:58:54.354Z",
-    "status": "arrived"
-  },
-  {
-    "id": "VJ0045",
-    "airlineId": "AIRLINE-EK",
-    "arrivalAirportId": "AIRPORT-DFW",
-    "departureAirportId": "AIRPORT-LOS",
-    "aircraftId": "AIRCRAFT-8206",
-    "departure": "2024-08-12T17:52:49.214Z",
-    "arrival": "2025-02-04T01:05:38.668Z",
-    "status": "delayed"
-  },
-  {
-    "id": "SC5745",
-    "airlineId": "AIRLINE-Y4",
-    "arrivalAirportId": "AIRPORT-MEL",
-    "departureAirportId": "AIRPORT-DMK",
-    "aircraftId": "AIRCRAFT-2965",
-    "departure": "2025-01-25T19:46:29.383Z",
-    "arrival": "2025-03-22T09:49:15.658Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "KQ0044",
-    "airlineId": "AIRLINE-SG",
-    "arrivalAirportId": "AIRPORT-PER",
-    "departureAirportId": "AIRPORT-LOS",
-    "aircraftId": "AIRCRAFT-7182",
-    "departure": "2024-11-14T12:52:59.940Z",
-    "arrival": "2025-04-15T22:52:01.955Z",
-    "status": "departed"
-  },
-  {
-    "id": "SV6596",
-    "airlineId": "AIRLINE-AY",
-    "arrivalAirportId": "AIRPORT-ARN",
-    "departureAirportId": "AIRPORT-HBA",
-    "aircraftId": "AIRCRAFT-3006",
-    "departure": "2025-01-04T11:28:26.591Z",
-    "arrival": "2025-01-24T18:00:30.458Z",
-    "status": "arrived"
-  },
-  {
-    "id": "SQ0632",
-    "airlineId": "AIRLINE-AI",
-    "arrivalAirportId": "AIRPORT-HBA",
-    "departureAirportId": "AIRPORT-SHA",
-    "aircraftId": "AIRCRAFT-6806",
-    "departure": "2025-03-09T17:41:53.380Z",
-    "arrival": "2024-12-13T00:54:59.794Z",
-    "status": "cancelled"
-  },
-  {
-    "id": "ET0022",
-    "airlineId": "AIRLINE-FZ",
-    "arrivalAirportId": "AIRPORT-PHX",
-    "departureAirportId": "AIRPORT-CPH",
-    "aircraftId": "AIRCRAFT-6786",
-    "departure": "2025-01-18T10:12:36.548Z",
-    "arrival": "2025-06-03T12:35:49.698Z",
-    "status": "departed"
-  },
-  {
-    "id": "HU5341",
-    "airlineId": "AIRLINE-W6",
-    "arrivalAirportId": "AIRPORT-CBR",
-    "departureAirportId": "AIRPORT-BCN",
-    "aircraftId": "AIRCRAFT-4522",
-    "departure": "2025-05-29T03:07:27.373Z",
-    "arrival": "2024-10-26T06:40:36.739Z",
-    "status": "delayed"
-  },
-  {
-    "id": "8J0004",
-    "airlineId": "AIRLINE-MU",
-    "arrivalAirportId": "AIRPORT-LAS",
-    "departureAirportId": "AIRPORT-OOL",
-    "aircraftId": "AIRCRAFT-3378",
-    "departure": "2025-05-16T19:58:14.159Z",
-    "arrival": "2025-01-05T16:24:41.282Z",
-    "status": "cancelled"
-  },
-  {
-    "id": "AA0009",
-    "airlineId": "AIRLINE-JD",
-    "arrivalAirportId": "AIRPORT-CPH",
-    "departureAirportId": "AIRPORT-FLL",
-    "aircraftId": "AIRCRAFT-6806",
-    "departure": "2025-05-19T20:32:38.104Z",
-    "arrival": "2025-02-25T10:11:45.046Z",
-    "status": "arrived"
-  },
-  {
-    "id": "ET0042",
-    "airlineId": "AIRLINE-2Z",
-    "arrivalAirportId": "AIRPORT-ICN",
-    "departureAirportId": "AIRPORT-ATH",
-    "aircraftId": "AIRCRAFT-2049",
-    "departure": "2024-07-28T00:24:01.324Z",
-    "arrival": "2024-06-20T14:57:21.200Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "AY1169",
-    "airlineId": "AIRLINE-AM",
-    "arrivalAirportId": "AIRPORT-CWB",
-    "departureAirportId": "AIRPORT-AMS",
-    "aircraftId": "AIRCRAFT-6128",
-    "departure": "2025-02-13T16:40:33.255Z",
-    "arrival": "2025-05-27T02:36:33.837Z",
-    "status": "arrived"
-  },
-  {
-    "id": "JL3451",
-    "airlineId": "AIRLINE-CI",
-    "arrivalAirportId": "AIRPORT-VIE",
-    "departureAirportId": "AIRPORT-DFW",
-    "aircraftId": "AIRCRAFT-9554",
-    "departure": "2024-08-18T23:52:36.263Z",
-    "arrival": "2025-03-13T19:08:10.278Z",
-    "status": "departed"
-  },
-  {
-    "id": "5J0150",
-    "airlineId": "AIRLINE-AT",
-    "arrivalAirportId": "AIRPORT-DME",
-    "departureAirportId": "AIRPORT-LIM",
-    "aircraftId": "AIRCRAFT-5787",
-    "departure": "2025-03-24T10:11:24.085Z",
-    "arrival": "2025-04-16T23:47:36.080Z",
-    "status": "cancelled"
-  },
-  {
-    "id": "2I0066",
-    "airlineId": "AIRLINE-AY",
-    "arrivalAirportId": "AIRPORT-CPT",
-    "departureAirportId": "AIRPORT-CKG",
-    "aircraftId": "AIRCRAFT-4079",
-    "departure": "2024-09-07T01:30:07.801Z",
-    "arrival": "2025-04-12T00:28:58.862Z",
-    "status": "arrived"
-  },
-  {
-    "id": "HA0314",
-    "airlineId": "AIRLINE-AI",
-    "arrivalAirportId": "AIRPORT-HBA",
-    "departureAirportId": "AIRPORT-CPT",
-    "aircraftId": "AIRCRAFT-3427",
-    "departure": "2024-08-20T07:09:21.401Z",
-    "arrival": "2024-10-12T01:10:54.250Z",
-    "status": "cancelled"
-  },
-  {
-    "id": "BR0001",
-    "airlineId": "AIRLINE-FJ",
-    "arrivalAirportId": "AIRPORT-ATL",
-    "departureAirportId": "AIRPORT-CMN",
-    "aircraftId": "AIRCRAFT-9546",
-    "departure": "2025-04-27T22:57:28.437Z",
-    "arrival": "2025-06-05T23:16:40.656Z",
-    "status": "delayed"
-  },
-  {
-    "id": "UA0369",
-    "airlineId": "AIRLINE-QF",
-    "arrivalAirportId": "AIRPORT-FOR",
-    "departureAirportId": "AIRPORT-TUN",
-    "aircraftId": "AIRCRAFT-1784",
-    "departure": "2025-03-11T18:46:30.010Z",
-    "arrival": "2024-08-19T10:40:35.277Z",
-    "status": "delayed"
-  },
-  {
-    "id": "SQ0004",
-    "airlineId": "AIRLINE-NZ",
-    "arrivalAirportId": "AIRPORT-PHX",
-    "departureAirportId": "AIRPORT-SHA",
-    "aircraftId": "AIRCRAFT-9272",
-    "departure": "2025-05-19T21:53:59.239Z",
-    "arrival": "2025-03-29T18:41:12.591Z",
-    "status": "arrived"
-  },
-  {
-    "id": "Z80700",
-    "airlineId": "AIRLINE-AV",
-    "arrivalAirportId": "AIRPORT-PEK",
-    "departureAirportId": "AIRPORT-KMG",
-    "aircraftId": "AIRCRAFT-9997",
-    "departure": "2025-02-14T01:06:41.869Z",
-    "arrival": "2024-08-12T03:24:58.067Z",
-    "status": "cancelled"
-  },
-  {
-    "id": "NH0047",
-    "airlineId": "AIRLINE-UL",
-    "arrivalAirportId": "AIRPORT-ATL",
-    "departureAirportId": "AIRPORT-DUB",
-    "aircraftId": "AIRCRAFT-2099",
-    "departure": "2024-10-09T08:04:52.363Z",
-    "arrival": "2024-12-10T06:01:07.390Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "SK0395",
-    "airlineId": "AIRLINE-9R",
-    "arrivalAirportId": "AIRPORT-LIM",
-    "departureAirportId": "AIRPORT-CKG",
-    "aircraftId": "AIRCRAFT-4957",
-    "departure": "2024-07-07T09:13:33.233Z",
-    "arrival": "2024-08-01T04:10:32.459Z",
-    "status": "delayed"
-  },
-  {
-    "id": "OB4481",
-    "airlineId": "AIRLINE-UX",
-    "arrivalAirportId": "AIRPORT-ALG",
-    "departureAirportId": "AIRPORT-BOG",
-    "aircraftId": "AIRCRAFT-2878",
-    "departure": "2024-11-25T08:57:19.644Z",
-    "arrival": "2024-06-30T06:36:31.008Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "JL7274",
-    "airlineId": "AIRLINE-VN",
-    "arrivalAirportId": "AIRPORT-CNF",
-    "departureAirportId": "AIRPORT-TUN",
-    "aircraftId": "AIRCRAFT-1901",
-    "departure": "2024-11-08T04:29:58.544Z",
-    "arrival": "2025-04-12T11:53:45.516Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "VA0095",
-    "airlineId": "AIRLINE-VE",
-    "arrivalAirportId": "AIRPORT-LAS",
-    "departureAirportId": "AIRPORT-ADL",
-    "aircraftId": "AIRCRAFT-7016",
-    "departure": "2025-05-21T19:46:00.916Z",
-    "arrival": "2025-04-04T13:00:33.831Z",
-    "status": "cancelled"
-  },
-  {
-    "id": "VN0098",
-    "airlineId": "AIRLINE-AA",
-    "arrivalAirportId": "AIRPORT-HNL",
-    "departureAirportId": "AIRPORT-CWB",
-    "aircraftId": "AIRCRAFT-8840",
-    "departure": "2024-11-14T02:42:42.182Z",
-    "arrival": "2024-09-28T20:31:52.736Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "BA0400",
-    "airlineId": "AIRLINE-EY",
-    "arrivalAirportId": "AIRPORT-LOS",
-    "departureAirportId": "AIRPORT-LOS",
-    "aircraftId": "AIRCRAFT-5969",
-    "departure": "2024-12-08T05:17:15.360Z",
-    "arrival": "2024-10-11T12:32:17.413Z",
-    "status": "arrived"
-  },
-  {
-    "id": "AM0480",
-    "airlineId": "AIRLINE-FZ",
-    "arrivalAirportId": "AIRPORT-MIA",
-    "departureAirportId": "AIRPORT-BCN",
-    "aircraftId": "AIRCRAFT-7552",
-    "departure": "2024-11-27T00:32:52.820Z",
-    "arrival": "2025-06-06T22:38:53.990Z",
-    "status": "departed"
-  },
-  {
-    "id": "PS0005",
-    "airlineId": "AIRLINE-AV",
-    "arrivalAirportId": "AIRPORT-CNF",
-    "departureAirportId": "AIRPORT-CJU",
-    "aircraftId": "AIRCRAFT-3706",
-    "departure": "2024-07-23T18:23:10.609Z",
-    "arrival": "2024-07-17T01:54:33.391Z",
-    "status": "cancelled"
-  },
-  {
-    "id": "JT7350",
-    "airlineId": "AIRLINE-JD",
-    "arrivalAirportId": "AIRPORT-MSP",
-    "departureAirportId": "AIRPORT-MNL",
-    "aircraftId": "AIRCRAFT-6487",
-    "departure": "2025-06-07T03:37:32.352Z",
-    "arrival": "2024-10-26T16:13:06.930Z",
-    "status": "arrived"
-  },
-  {
-    "id": "FJ0087",
-    "airlineId": "AIRLINE-HU",
-    "arrivalAirportId": "AIRPORT-BEL",
-    "departureAirportId": "AIRPORT-SSA",
-    "aircraftId": "AIRCRAFT-4783",
-    "departure": "2025-01-26T13:10:44.511Z",
-    "arrival": "2024-11-08T23:44:46.524Z",
-    "status": "departed"
-  },
-  {
-    "id": "OB0246",
-    "airlineId": "AIRLINE-3U",
-    "arrivalAirportId": "AIRPORT-BSB",
-    "departureAirportId": "AIRPORT-BSB",
-    "aircraftId": "AIRCRAFT-3242",
-    "departure": "2024-12-15T15:40:41.309Z",
-    "arrival": "2024-09-22T10:17:24.173Z",
-    "status": "arrived"
-  },
-  {
-    "id": "VS0958",
-    "airlineId": "AIRLINE-CX",
-    "arrivalAirportId": "AIRPORT-AKL",
-    "departureAirportId": "AIRPORT-FCO",
-    "aircraftId": "AIRCRAFT-3165",
-    "departure": "2024-11-30T06:02:17.032Z",
-    "arrival": "2025-02-08T07:37:03.884Z",
-    "status": "delayed"
-  },
-  {
-    "id": "AI3731",
-    "airlineId": "AIRLINE-SQ",
-    "arrivalAirportId": "AIRPORT-CWB",
-    "departureAirportId": "AIRPORT-MCO",
-    "aircraftId": "AIRCRAFT-7481",
-    "departure": "2025-01-05T07:45:56.417Z",
-    "arrival": "2025-01-07T04:25:40.529Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "TP0007",
-    "airlineId": "AIRLINE-MK",
-    "arrivalAirportId": "AIRPORT-LIM",
-    "departureAirportId": "AIRPORT-DMK",
-    "aircraftId": "AIRCRAFT-1623",
-    "departure": "2025-02-28T22:00:27.174Z",
-    "arrival": "2025-01-10T01:28:15.355Z",
-    "status": "delayed"
-  },
-  {
-    "id": "WS0055",
-    "airlineId": "AIRLINE-FZ",
-    "arrivalAirportId": "AIRPORT-CGK",
-    "departureAirportId": "AIRPORT-EWR",
-    "aircraftId": "AIRCRAFT-4356",
-    "departure": "2024-08-30T04:06:40.994Z",
-    "arrival": "2024-09-12T16:13:34.601Z",
-    "status": "arrived"
-  },
-  {
-    "id": "MN0060",
-    "airlineId": "AIRLINE-VT",
-    "arrivalAirportId": "AIRPORT-IST",
-    "departureAirportId": "AIRPORT-GEA",
-    "aircraftId": "AIRCRAFT-4128",
-    "departure": "2024-07-24T07:14:49.883Z",
-    "arrival": "2025-01-30T07:53:28.355Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "WN0030",
-    "airlineId": "AIRLINE-N4",
-    "arrivalAirportId": "AIRPORT-PVG",
-    "departureAirportId": "AIRPORT-FRA",
-    "aircraftId": "AIRCRAFT-6453",
-    "departure": "2024-08-29T15:33:18.432Z",
-    "arrival": "2025-04-12T00:28:46.873Z",
-    "status": "departed"
-  },
-  {
-    "id": "Y40008",
-    "airlineId": "AIRLINE-OB",
-    "arrivalAirportId": "AIRPORT-ALG",
-    "departureAirportId": "AIRPORT-BSB",
-    "aircraftId": "AIRCRAFT-3087",
-    "departure": "2024-06-28T04:50:49.486Z",
-    "arrival": "2024-08-20T07:00:08.699Z",
-    "status": "departed"
-  },
-  {
-    "id": "TU0005",
-    "airlineId": "AIRLINE-TK",
-    "arrivalAirportId": "AIRPORT-CWB",
-    "departureAirportId": "AIRPORT-SDU",
-    "aircraftId": "AIRCRAFT-3346",
-    "departure": "2024-07-14T00:58:42.283Z",
-    "arrival": "2025-03-04T10:17:00.582Z",
-    "status": "cancelled"
-  },
-  {
-    "id": "AH0003",
-    "airlineId": "AIRLINE-AT",
-    "arrivalAirportId": "AIRPORT-MDE",
-    "departureAirportId": "AIRPORT-DME",
-    "aircraftId": "AIRCRAFT-8969",
-    "departure": "2024-11-16T14:15:47.973Z",
-    "arrival": "2024-09-27T20:01:50.765Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "AV0004",
-    "airlineId": "AIRLINE-AD",
-    "arrivalAirportId": "AIRPORT-FLL",
-    "departureAirportId": "AIRPORT-JNB",
-    "aircraftId": "AIRCRAFT-5499",
-    "departure": "2024-10-24T15:07:32.897Z",
-    "arrival": "2024-10-12T19:54:50.669Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "AK9699",
-    "airlineId": "AIRLINE-CX",
-    "arrivalAirportId": "AIRPORT-SVO",
-    "departureAirportId": "AIRPORT-GRU",
-    "aircraftId": "AIRCRAFT-4863",
-    "departure": "2024-11-27T09:42:42.017Z",
-    "arrival": "2025-02-22T07:01:03.282Z",
-    "status": "delayed"
-  },
-  {
-    "id": "LO3384",
-    "airlineId": "AIRLINE-UA",
-    "arrivalAirportId": "AIRPORT-HBA",
-    "departureAirportId": "AIRPORT-OSL",
-    "aircraftId": "AIRCRAFT-1857",
-    "departure": "2024-11-20T12:02:15.534Z",
-    "arrival": "2024-12-25T02:32:12.452Z",
-    "status": "departed"
-  },
-  {
-    "id": "U20170",
-    "airlineId": "AIRLINE-DY",
-    "arrivalAirportId": "AIRPORT-CJU",
-    "departureAirportId": "AIRPORT-ATH",
-    "aircraftId": "AIRCRAFT-8472",
-    "departure": "2025-01-06T08:17:13.957Z",
-    "arrival": "2024-09-18T16:48:08.699Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "KE0058",
-    "airlineId": "AIRLINE-KE",
-    "arrivalAirportId": "AIRPORT-SFO",
-    "departureAirportId": "AIRPORT-MAD",
-    "aircraftId": "AIRCRAFT-6909",
-    "departure": "2025-06-14T18:03:57.523Z",
-    "arrival": "2025-02-15T08:47:48.519Z",
-    "status": "cancelled"
-  },
-  {
-    "id": "AV0387",
-    "airlineId": "AIRLINE-UX",
-    "arrivalAirportId": "AIRPORT-LHR",
-    "departureAirportId": "AIRPORT-HRG",
-    "aircraftId": "AIRCRAFT-4220",
-    "departure": "2025-06-05T13:03:14.980Z",
-    "arrival": "2024-12-22T09:44:19.200Z",
-    "status": "delayed"
-  },
-  {
-    "id": "CI0008",
-    "airlineId": "AIRLINE-AM",
-    "arrivalAirportId": "AIRPORT-BCN",
-    "departureAirportId": "AIRPORT-ATL",
-    "aircraftId": "AIRCRAFT-4234",
-    "departure": "2024-10-14T23:23:09.365Z",
-    "arrival": "2024-08-07T19:05:56.727Z",
-    "status": "departed"
-  },
-  {
-    "id": "7C0007",
-    "airlineId": "AIRLINE-SA",
-    "arrivalAirportId": "AIRPORT-BCN",
-    "departureAirportId": "AIRPORT-SFO",
-    "aircraftId": "AIRCRAFT-7137",
-    "departure": "2025-03-31T20:57:48.114Z",
-    "arrival": "2025-05-09T11:39:40.120Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "Y40009",
-    "airlineId": "AIRLINE-HU",
-    "arrivalAirportId": "AIRPORT-CJU",
-    "departureAirportId": "AIRPORT-YVR",
-    "aircraftId": "AIRCRAFT-8848",
-    "departure": "2025-03-26T18:33:48.332Z",
-    "arrival": "2025-02-23T02:19:52.282Z",
-    "status": "arrived"
-  },
-  {
-    "id": "MH0071",
-    "airlineId": "AIRLINE-SA",
-    "arrivalAirportId": "AIRPORT-MAD",
-    "departureAirportId": "AIRPORT-SSA",
-    "aircraftId": "AIRCRAFT-1583",
-    "departure": "2024-08-30T16:59:49.987Z",
-    "arrival": "2024-10-27T11:37:39.135Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "OO0330",
-    "airlineId": "AIRLINE-BR",
-    "arrivalAirportId": "AIRPORT-CLT",
-    "departureAirportId": "AIRPORT-MUC",
-    "aircraftId": "AIRCRAFT-2903",
-    "departure": "2025-06-08T07:48:06.628Z",
-    "arrival": "2024-09-09T16:11:07.730Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "AC0705",
-    "airlineId": "AIRLINE-Z8",
-    "arrivalAirportId": "AIRPORT-ADL",
-    "departureAirportId": "AIRPORT-VKO",
-    "aircraftId": "AIRCRAFT-1003",
-    "departure": "2024-11-13T19:59:52.551Z",
-    "arrival": "2025-04-15T20:38:12.066Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "CA0001",
-    "airlineId": "AIRLINE-SU",
-    "arrivalAirportId": "AIRPORT-SEA",
-    "departureAirportId": "AIRPORT-ATH",
-    "aircraftId": "AIRCRAFT-3858",
-    "departure": "2024-08-28T08:00:58.588Z",
-    "arrival": "2024-08-25T16:38:19.001Z",
-    "status": "departed"
-  },
-  {
-    "id": "KQ0517",
-    "airlineId": "AIRLINE-LH",
-    "arrivalAirportId": "AIRPORT-CDG",
-    "departureAirportId": "AIRPORT-CAI",
-    "aircraftId": "AIRCRAFT-1118",
-    "departure": "2025-04-30T15:09:32.974Z",
-    "arrival": "2025-05-10T04:08:34.420Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "OZ3436",
-    "airlineId": "AIRLINE-HA",
-    "arrivalAirportId": "AIRPORT-HRG",
-    "departureAirportId": "AIRPORT-SVO",
-    "aircraftId": "AIRCRAFT-4275",
-    "departure": "2024-09-21T06:53:11.474Z",
-    "arrival": "2025-04-21T23:47:04.279Z",
-    "status": "cancelled"
-  },
-  {
-    "id": "DY0960",
-    "airlineId": "AIRLINE-VS",
-    "arrivalAirportId": "AIRPORT-FRA",
-    "departureAirportId": "AIRPORT-WLG",
-    "aircraftId": "AIRCRAFT-6981",
-    "departure": "2024-10-17T10:32:08.887Z",
-    "arrival": "2025-03-03T02:56:38.501Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "6E0023",
-    "airlineId": "AIRLINE-LO",
-    "arrivalAirportId": "AIRPORT-SDU",
-    "departureAirportId": "AIRPORT-SYD",
-    "aircraftId": "AIRCRAFT-6576",
-    "departure": "2025-02-06T01:57:30.975Z",
-    "arrival": "2024-10-12T14:44:54.927Z",
-    "status": "arrived"
-  },
-  {
-    "id": "7C0733",
-    "airlineId": "AIRLINE-6E",
-    "arrivalAirportId": "AIRPORT-WLG",
-    "departureAirportId": "AIRPORT-POA",
-    "aircraftId": "AIRCRAFT-7465",
-    "departure": "2025-04-07T19:00:53.974Z",
-    "arrival": "2025-06-10T04:59:31.284Z",
-    "status": "cancelled"
-  },
-  {
-    "id": "NZ0050",
-    "airlineId": "AIRLINE-OO",
-    "arrivalAirportId": "AIRPORT-DFW",
-    "departureAirportId": "AIRPORT-MEL",
-    "aircraftId": "AIRCRAFT-1026",
-    "departure": "2025-05-13T20:54:27.387Z",
-    "arrival": "2024-09-26T19:43:20.169Z",
-    "status": "departed"
-  },
-  {
-    "id": "SA9100",
-    "airlineId": "AIRLINE-ZF",
-    "arrivalAirportId": "AIRPORT-BRU",
-    "departureAirportId": "AIRPORT-CNS",
-    "aircraftId": "AIRCRAFT-5277",
-    "departure": "2025-03-09T11:12:18.751Z",
-    "arrival": "2025-04-15T14:27:49.452Z",
-    "status": "arrived"
-  },
-  {
-    "id": "JD0532",
-    "airlineId": "AIRLINE-FZ",
-    "arrivalAirportId": "AIRPORT-CAI",
-    "departureAirportId": "AIRPORT-SDU",
-    "aircraftId": "AIRCRAFT-3530",
-    "departure": "2025-02-16T06:46:19.676Z",
-    "arrival": "2024-11-21T14:17:17.389Z",
-    "status": "departed"
-  },
-  {
-    "id": "PK0024",
-    "airlineId": "AIRLINE-MN",
-    "arrivalAirportId": "AIRPORT-BOM",
-    "departureAirportId": "AIRPORT-WLG",
-    "aircraftId": "AIRCRAFT-6192",
-    "departure": "2025-01-19T00:56:47.950Z",
-    "arrival": "2025-05-07T06:24:04.817Z",
-    "status": "delayed"
-  },
-  {
-    "id": "PS0022",
-    "airlineId": "AIRLINE-Z8",
-    "arrivalAirportId": "AIRPORT-CAI",
-    "departureAirportId": "AIRPORT-SYD",
-    "aircraftId": "AIRCRAFT-9505",
-    "departure": "2024-07-27T00:13:57.623Z",
-    "arrival": "2024-07-16T23:31:36.805Z",
-    "status": "delayed"
-  },
-  {
-    "id": "VN0227",
-    "airlineId": "AIRLINE-AI",
-    "arrivalAirportId": "AIRPORT-ARN",
-    "departureAirportId": "AIRPORT-JED",
-    "aircraftId": "AIRCRAFT-7873",
-    "departure": "2025-04-12T01:31:03.459Z",
-    "arrival": "2024-09-23T16:04:28.628Z",
-    "status": "arrived"
-  },
-  {
-    "id": "JT0082",
-    "airlineId": "AIRLINE-UA",
-    "arrivalAirportId": "AIRPORT-BSB",
-    "departureAirportId": "AIRPORT-SDU",
-    "aircraftId": "AIRCRAFT-8455",
-    "departure": "2025-05-27T08:13:59.113Z",
-    "arrival": "2024-09-04T16:52:05.628Z",
-    "status": "delayed"
-  },
-  {
-    "id": "JT4062",
-    "airlineId": "AIRLINE-8J",
-    "arrivalAirportId": "AIRPORT-ZIA",
-    "departureAirportId": "AIRPORT-GIG",
-    "aircraftId": "AIRCRAFT-3408",
-    "departure": "2024-07-30T00:25:13.723Z",
-    "arrival": "2025-01-25T10:37:47.342Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "TS5977",
-    "airlineId": "AIRLINE-TS",
-    "arrivalAirportId": "AIRPORT-BKK",
-    "departureAirportId": "AIRPORT-JNB",
-    "aircraftId": "AIRCRAFT-3402",
-    "departure": "2024-08-19T09:19:15.179Z",
-    "arrival": "2025-05-09T12:16:17.474Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "LO0661",
-    "airlineId": "AIRLINE-JA",
-    "arrivalAirportId": "AIRPORT-CKG",
-    "departureAirportId": "AIRPORT-CDG",
-    "aircraftId": "AIRCRAFT-3648",
-    "departure": "2025-02-04T13:23:18.661Z",
-    "arrival": "2024-11-14T20:12:59.489Z",
-    "status": "cancelled"
-  },
-  {
-    "id": "FD0021",
-    "airlineId": "AIRLINE-H2",
-    "arrivalAirportId": "AIRPORT-OGG",
-    "departureAirportId": "AIRPORT-LOS",
-    "aircraftId": "AIRCRAFT-8696",
-    "departure": "2024-10-31T23:02:46.185Z",
-    "arrival": "2025-05-07T16:48:26.888Z",
-    "status": "delayed"
-  },
-  {
-    "id": "TG0372",
-    "airlineId": "AIRLINE-3U",
-    "arrivalAirportId": "AIRPORT-SEA",
-    "departureAirportId": "AIRPORT-HEL",
-    "aircraftId": "AIRCRAFT-2266",
-    "departure": "2025-03-03T13:31:13.154Z",
-    "arrival": "2024-06-18T12:50:25.932Z",
-    "status": "delayed"
-  },
-  {
-    "id": "6E0001",
-    "airlineId": "AIRLINE-VJ",
-    "arrivalAirportId": "AIRPORT-LAS",
-    "departureAirportId": "AIRPORT-VIE",
-    "aircraftId": "AIRCRAFT-5645",
-    "departure": "2024-09-19T00:53:45.813Z",
-    "arrival": "2024-06-28T21:03:33.014Z",
-    "status": "departed"
-  },
-  {
-    "id": "YX0027",
-    "airlineId": "AIRLINE-VE",
-    "arrivalAirportId": "AIRPORT-CJU",
-    "departureAirportId": "AIRPORT-TPE",
-    "aircraftId": "AIRCRAFT-5399",
-    "departure": "2024-11-23T18:57:45.104Z",
-    "arrival": "2024-09-08T07:02:12.421Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "SA0068",
-    "airlineId": "AIRLINE-VE",
-    "arrivalAirportId": "AIRPORT-BSB",
-    "departureAirportId": "AIRPORT-BNE",
-    "aircraftId": "AIRCRAFT-3389",
-    "departure": "2025-04-22T09:10:30.893Z",
-    "arrival": "2025-01-03T11:49:20.995Z",
-    "status": "departed"
-  },
-  {
-    "id": "LH0662",
-    "airlineId": "AIRLINE-KE",
-    "arrivalAirportId": "AIRPORT-CMN",
-    "departureAirportId": "AIRPORT-CNF",
-    "aircraftId": "AIRCRAFT-6114",
-    "departure": "2024-07-03T09:00:39.632Z",
-    "arrival": "2025-06-12T19:59:45.982Z",
-    "status": "cancelled"
-  },
-  {
-    "id": "TU0001",
-    "airlineId": "AIRLINE-FD",
-    "arrivalAirportId": "AIRPORT-CNF",
-    "departureAirportId": "AIRPORT-DFW",
-    "aircraftId": "AIRCRAFT-6151",
-    "departure": "2025-02-13T02:45:33.224Z",
-    "arrival": "2025-04-01T10:56:54.762Z",
-    "status": "cancelled"
-  },
-  {
-    "id": "G40446",
-    "airlineId": "AIRLINE-OZ",
-    "arrivalAirportId": "AIRPORT-KMG",
-    "departureAirportId": "AIRPORT-BOG",
-    "aircraftId": "AIRCRAFT-9562",
-    "departure": "2025-03-03T20:33:34.611Z",
-    "arrival": "2025-05-08T07:24:40.640Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "JT0830",
-    "airlineId": "AIRLINE-ET",
-    "arrivalAirportId": "AIRPORT-ALG",
-    "departureAirportId": "AIRPORT-ATL",
-    "aircraftId": "AIRCRAFT-1017",
-    "departure": "2025-06-13T03:58:48.940Z",
-    "arrival": "2024-12-15T08:38:25.749Z",
-    "status": "scheduled"
-  },
-  {
-    "id": "HA4443",
-    "airlineId": "AIRLINE-BA",
-    "arrivalAirportId": "AIRPORT-DXB",
-    "departureAirportId": "AIRPORT-DXB",
-    "aircraftId": "AIRCRAFT-1859",
-    "departure": "2024-11-13T04:55:41.769Z",
-    "arrival": "2025-03-24T09:43:09.075Z",
-    "status": "arrived"
-  }
+	{
+		"id": "VA7357",
+		"airlineId": "AIRLINE-9R",
+		"arrivalAirportId": "AIRPORT-VIE",
+		"departureAirportId": "AIRPORT-CTU",
+		"aircraftId": "AIRCRAFT-8015",
+		"departure": "2024-10-09T12:33:13.920Z",
+		"arrival": "2025-03-05T13:36:03.548Z",
+		"status": "arrived"
+	},
+	{
+		"id": "PR8421",
+		"airlineId": "AIRLINE-TN",
+		"arrivalAirportId": "AIRPORT-FCO",
+		"departureAirportId": "AIRPORT-KUL",
+		"aircraftId": "AIRCRAFT-2524",
+		"departure": "2025-06-04T12:52:25.721Z",
+		"arrival": "2025-01-28T18:11:04.896Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "DE0009",
+		"airlineId": "AIRLINE-WN",
+		"arrivalAirportId": "AIRPORT-FRA",
+		"departureAirportId": "AIRPORT-GEA",
+		"aircraftId": "AIRCRAFT-8299",
+		"departure": "2025-01-01T02:12:13.057Z",
+		"arrival": "2025-03-14T09:58:02.062Z",
+		"status": "arrived"
+	},
+	{
+		"id": "NH7224",
+		"airlineId": "AIRLINE-DY",
+		"arrivalAirportId": "AIRPORT-TXL",
+		"departureAirportId": "AIRPORT-SYD",
+		"aircraftId": "AIRCRAFT-3884",
+		"departure": "2025-02-24T05:42:05.787Z",
+		"arrival": "2024-11-23T03:57:03.669Z",
+		"status": "departed"
+	},
+	{
+		"id": "LH0009",
+		"airlineId": "AIRLINE-TP",
+		"arrivalAirportId": "AIRPORT-FRA",
+		"departureAirportId": "AIRPORT-DMK",
+		"aircraftId": "AIRCRAFT-7622",
+		"departure": "2024-11-21T11:41:33.320Z",
+		"arrival": "2024-08-20T13:34:14.320Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "TP0019",
+		"airlineId": "AIRLINE-PX",
+		"arrivalAirportId": "AIRPORT-IAH",
+		"departureAirportId": "AIRPORT-JED",
+		"aircraftId": "AIRCRAFT-3282",
+		"departure": "2024-08-16T07:27:31.117Z",
+		"arrival": "2025-02-23T04:21:42.726Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "PR2962",
+		"airlineId": "AIRLINE-ZF",
+		"arrivalAirportId": "AIRPORT-ALG",
+		"departureAirportId": "AIRPORT-EWR",
+		"aircraftId": "AIRCRAFT-5698",
+		"departure": "2024-07-05T16:18:26.593Z",
+		"arrival": "2025-03-17T08:30:59.492Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "UX0009",
+		"airlineId": "AIRLINE-H2",
+		"arrivalAirportId": "AIRPORT-OSL",
+		"departureAirportId": "AIRPORT-GIG",
+		"aircraftId": "AIRCRAFT-6824",
+		"departure": "2025-03-24T11:58:02.887Z",
+		"arrival": "2024-12-30T15:57:19.249Z",
+		"status": "delayed"
+	},
+	{
+		"id": "QR6627",
+		"airlineId": "AIRLINE-WS",
+		"arrivalAirportId": "AIRPORT-CDG",
+		"departureAirportId": "AIRPORT-HND",
+		"aircraftId": "AIRCRAFT-5163",
+		"departure": "2024-07-14T07:14:25.311Z",
+		"arrival": "2025-02-11T12:13:30.115Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "6E0002",
+		"airlineId": "AIRLINE-EY",
+		"arrivalAirportId": "AIRPORT-MEL",
+		"departureAirportId": "AIRPORT-ADD",
+		"aircraftId": "AIRCRAFT-4273",
+		"departure": "2024-10-03T06:35:09.536Z",
+		"arrival": "2024-10-09T18:42:15.181Z",
+		"status": "delayed"
+	},
+	{
+		"id": "WS0004",
+		"airlineId": "AIRLINE-9R",
+		"arrivalAirportId": "AIRPORT-GEA",
+		"departureAirportId": "AIRPORT-CLT",
+		"aircraftId": "AIRCRAFT-4348",
+		"departure": "2024-09-17T05:13:27.035Z",
+		"arrival": "2024-06-20T12:08:28.661Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "2I0500",
+		"airlineId": "AIRLINE-DY",
+		"arrivalAirportId": "AIRPORT-HND",
+		"departureAirportId": "AIRPORT-CHC",
+		"aircraftId": "AIRCRAFT-2119",
+		"departure": "2025-05-31T02:50:18.410Z",
+		"arrival": "2025-04-05T06:28:04.064Z",
+		"status": "cancelled"
+	},
+	{
+		"id": "JL0009",
+		"airlineId": "AIRLINE-BA",
+		"arrivalAirportId": "AIRPORT-REC",
+		"departureAirportId": "AIRPORT-BOG",
+		"aircraftId": "AIRCRAFT-2576",
+		"departure": "2024-08-10T02:51:46.482Z",
+		"arrival": "2025-05-22T03:37:38.210Z",
+		"status": "departed"
+	},
+	{
+		"id": "B66533",
+		"airlineId": "AIRLINE-AZ",
+		"arrivalAirportId": "AIRPORT-BEL",
+		"departureAirportId": "AIRPORT-ZIA",
+		"aircraftId": "AIRCRAFT-2713",
+		"departure": "2024-06-25T15:39:28.363Z",
+		"arrival": "2024-10-19T22:11:11.569Z",
+		"status": "arrived"
+	},
+	{
+		"id": "XQ0020",
+		"airlineId": "AIRLINE-VT",
+		"arrivalAirportId": "AIRPORT-IST",
+		"departureAirportId": "AIRPORT-MAD",
+		"aircraftId": "AIRCRAFT-1235",
+		"departure": "2025-06-14T07:36:08.868Z",
+		"arrival": "2024-07-13T01:25:48.833Z",
+		"status": "cancelled"
+	},
+	{
+		"id": "N40097",
+		"airlineId": "AIRLINE-PK",
+		"arrivalAirportId": "AIRPORT-CGK",
+		"departureAirportId": "AIRPORT-JED",
+		"aircraftId": "AIRCRAFT-8770",
+		"departure": "2025-06-13T05:11:18.245Z",
+		"arrival": "2024-09-26T01:06:25.153Z",
+		"status": "cancelled"
+	},
+	{
+		"id": "UA0002",
+		"airlineId": "AIRLINE-OB",
+		"arrivalAirportId": "AIRPORT-HKG",
+		"departureAirportId": "AIRPORT-MDE",
+		"aircraftId": "AIRCRAFT-5777",
+		"departure": "2025-03-19T20:09:02.194Z",
+		"arrival": "2024-08-27T07:39:13.097Z",
+		"status": "delayed"
+	},
+	{
+		"id": "D76621",
+		"airlineId": "AIRLINE-EY",
+		"arrivalAirportId": "AIRPORT-ZIA",
+		"departureAirportId": "AIRPORT-CLO",
+		"aircraftId": "AIRCRAFT-3520",
+		"departure": "2024-10-20T23:37:37.345Z",
+		"arrival": "2024-11-30T09:22:10.883Z",
+		"status": "arrived"
+	},
+	{
+		"id": "AZ0062",
+		"airlineId": "AIRLINE-U2",
+		"arrivalAirportId": "AIRPORT-CLT",
+		"departureAirportId": "AIRPORT-DEL",
+		"aircraftId": "AIRCRAFT-9982",
+		"departure": "2024-12-21T17:07:19.527Z",
+		"arrival": "2025-01-07T12:17:35.416Z",
+		"status": "cancelled"
+	},
+	{
+		"id": "W60494",
+		"airlineId": "AIRLINE-AV",
+		"arrivalAirportId": "AIRPORT-BOG",
+		"departureAirportId": "AIRPORT-SGN",
+		"aircraftId": "AIRCRAFT-6453",
+		"departure": "2024-09-16T05:54:26.304Z",
+		"arrival": "2025-04-30T18:56:22.421Z",
+		"status": "departed"
+	},
+	{
+		"id": "GA8753",
+		"airlineId": "AIRLINE-OO",
+		"arrivalAirportId": "AIRPORT-ATL",
+		"departureAirportId": "AIRPORT-OSL",
+		"aircraftId": "AIRCRAFT-2438",
+		"departure": "2024-09-27T07:08:27.057Z",
+		"arrival": "2024-08-21T10:09:46.635Z",
+		"status": "arrived"
+	},
+	{
+		"id": "CX0527",
+		"airlineId": "AIRLINE-BA",
+		"arrivalAirportId": "AIRPORT-REC",
+		"departureAirportId": "AIRPORT-BOG",
+		"aircraftId": "AIRCRAFT-7498",
+		"departure": "2024-08-06T18:23:33.657Z",
+		"arrival": "2025-01-13T09:58:54.354Z",
+		"status": "arrived"
+	},
+	{
+		"id": "VJ0045",
+		"airlineId": "AIRLINE-EK",
+		"arrivalAirportId": "AIRPORT-DFW",
+		"departureAirportId": "AIRPORT-LOS",
+		"aircraftId": "AIRCRAFT-8206",
+		"departure": "2024-08-12T17:52:49.214Z",
+		"arrival": "2025-02-04T01:05:38.668Z",
+		"status": "delayed"
+	},
+	{
+		"id": "SC5745",
+		"airlineId": "AIRLINE-Y4",
+		"arrivalAirportId": "AIRPORT-MEL",
+		"departureAirportId": "AIRPORT-DMK",
+		"aircraftId": "AIRCRAFT-2965",
+		"departure": "2025-01-25T19:46:29.383Z",
+		"arrival": "2025-03-22T09:49:15.658Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "KQ0044",
+		"airlineId": "AIRLINE-SG",
+		"arrivalAirportId": "AIRPORT-PER",
+		"departureAirportId": "AIRPORT-LOS",
+		"aircraftId": "AIRCRAFT-7182",
+		"departure": "2024-11-14T12:52:59.940Z",
+		"arrival": "2025-04-15T22:52:01.955Z",
+		"status": "departed"
+	},
+	{
+		"id": "SV6596",
+		"airlineId": "AIRLINE-AY",
+		"arrivalAirportId": "AIRPORT-ARN",
+		"departureAirportId": "AIRPORT-HBA",
+		"aircraftId": "AIRCRAFT-3006",
+		"departure": "2025-01-04T11:28:26.591Z",
+		"arrival": "2025-01-24T18:00:30.458Z",
+		"status": "arrived"
+	},
+	{
+		"id": "SQ0632",
+		"airlineId": "AIRLINE-AI",
+		"arrivalAirportId": "AIRPORT-HBA",
+		"departureAirportId": "AIRPORT-SHA",
+		"aircraftId": "AIRCRAFT-6806",
+		"departure": "2025-03-09T17:41:53.380Z",
+		"arrival": "2024-12-13T00:54:59.794Z",
+		"status": "cancelled"
+	},
+	{
+		"id": "ET0022",
+		"airlineId": "AIRLINE-FZ",
+		"arrivalAirportId": "AIRPORT-PHX",
+		"departureAirportId": "AIRPORT-CPH",
+		"aircraftId": "AIRCRAFT-6786",
+		"departure": "2025-01-18T10:12:36.548Z",
+		"arrival": "2025-06-03T12:35:49.698Z",
+		"status": "departed"
+	},
+	{
+		"id": "HU5341",
+		"airlineId": "AIRLINE-W6",
+		"arrivalAirportId": "AIRPORT-CBR",
+		"departureAirportId": "AIRPORT-BCN",
+		"aircraftId": "AIRCRAFT-4522",
+		"departure": "2025-05-29T03:07:27.373Z",
+		"arrival": "2024-10-26T06:40:36.739Z",
+		"status": "delayed"
+	},
+	{
+		"id": "8J0004",
+		"airlineId": "AIRLINE-MU",
+		"arrivalAirportId": "AIRPORT-LAS",
+		"departureAirportId": "AIRPORT-OOL",
+		"aircraftId": "AIRCRAFT-3378",
+		"departure": "2025-05-16T19:58:14.159Z",
+		"arrival": "2025-01-05T16:24:41.282Z",
+		"status": "cancelled"
+	},
+	{
+		"id": "AA0009",
+		"airlineId": "AIRLINE-JD",
+		"arrivalAirportId": "AIRPORT-CPH",
+		"departureAirportId": "AIRPORT-FLL",
+		"aircraftId": "AIRCRAFT-6806",
+		"departure": "2025-05-19T20:32:38.104Z",
+		"arrival": "2025-02-25T10:11:45.046Z",
+		"status": "arrived"
+	},
+	{
+		"id": "ET0042",
+		"airlineId": "AIRLINE-2Z",
+		"arrivalAirportId": "AIRPORT-ICN",
+		"departureAirportId": "AIRPORT-ATH",
+		"aircraftId": "AIRCRAFT-2049",
+		"departure": "2024-07-28T00:24:01.324Z",
+		"arrival": "2024-06-20T14:57:21.200Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "AY1169",
+		"airlineId": "AIRLINE-AM",
+		"arrivalAirportId": "AIRPORT-CWB",
+		"departureAirportId": "AIRPORT-AMS",
+		"aircraftId": "AIRCRAFT-6128",
+		"departure": "2025-02-13T16:40:33.255Z",
+		"arrival": "2025-05-27T02:36:33.837Z",
+		"status": "arrived"
+	},
+	{
+		"id": "JL3451",
+		"airlineId": "AIRLINE-CI",
+		"arrivalAirportId": "AIRPORT-VIE",
+		"departureAirportId": "AIRPORT-DFW",
+		"aircraftId": "AIRCRAFT-9554",
+		"departure": "2024-08-18T23:52:36.263Z",
+		"arrival": "2025-03-13T19:08:10.278Z",
+		"status": "departed"
+	},
+	{
+		"id": "5J0150",
+		"airlineId": "AIRLINE-AT",
+		"arrivalAirportId": "AIRPORT-DME",
+		"departureAirportId": "AIRPORT-LIM",
+		"aircraftId": "AIRCRAFT-5787",
+		"departure": "2025-03-24T10:11:24.085Z",
+		"arrival": "2025-04-16T23:47:36.080Z",
+		"status": "cancelled"
+	},
+	{
+		"id": "2I0066",
+		"airlineId": "AIRLINE-AY",
+		"arrivalAirportId": "AIRPORT-CPT",
+		"departureAirportId": "AIRPORT-CKG",
+		"aircraftId": "AIRCRAFT-4079",
+		"departure": "2024-09-07T01:30:07.801Z",
+		"arrival": "2025-04-12T00:28:58.862Z",
+		"status": "arrived"
+	},
+	{
+		"id": "HA0314",
+		"airlineId": "AIRLINE-AI",
+		"arrivalAirportId": "AIRPORT-HBA",
+		"departureAirportId": "AIRPORT-CPT",
+		"aircraftId": "AIRCRAFT-3427",
+		"departure": "2024-08-20T07:09:21.401Z",
+		"arrival": "2024-10-12T01:10:54.250Z",
+		"status": "cancelled"
+	},
+	{
+		"id": "BR0001",
+		"airlineId": "AIRLINE-FJ",
+		"arrivalAirportId": "AIRPORT-ATL",
+		"departureAirportId": "AIRPORT-CMN",
+		"aircraftId": "AIRCRAFT-9546",
+		"departure": "2025-04-27T22:57:28.437Z",
+		"arrival": "2025-06-05T23:16:40.656Z",
+		"status": "delayed"
+	},
+	{
+		"id": "UA0369",
+		"airlineId": "AIRLINE-QF",
+		"arrivalAirportId": "AIRPORT-FOR",
+		"departureAirportId": "AIRPORT-TUN",
+		"aircraftId": "AIRCRAFT-1784",
+		"departure": "2025-03-11T18:46:30.010Z",
+		"arrival": "2024-08-19T10:40:35.277Z",
+		"status": "delayed"
+	},
+	{
+		"id": "SQ0004",
+		"airlineId": "AIRLINE-NZ",
+		"arrivalAirportId": "AIRPORT-PHX",
+		"departureAirportId": "AIRPORT-SHA",
+		"aircraftId": "AIRCRAFT-9272",
+		"departure": "2025-05-19T21:53:59.239Z",
+		"arrival": "2025-03-29T18:41:12.591Z",
+		"status": "arrived"
+	},
+	{
+		"id": "Z80700",
+		"airlineId": "AIRLINE-AV",
+		"arrivalAirportId": "AIRPORT-PEK",
+		"departureAirportId": "AIRPORT-KMG",
+		"aircraftId": "AIRCRAFT-9997",
+		"departure": "2025-02-14T01:06:41.869Z",
+		"arrival": "2024-08-12T03:24:58.067Z",
+		"status": "cancelled"
+	},
+	{
+		"id": "NH0047",
+		"airlineId": "AIRLINE-UL",
+		"arrivalAirportId": "AIRPORT-ATL",
+		"departureAirportId": "AIRPORT-DUB",
+		"aircraftId": "AIRCRAFT-2099",
+		"departure": "2024-10-09T08:04:52.363Z",
+		"arrival": "2024-12-10T06:01:07.390Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "SK0395",
+		"airlineId": "AIRLINE-9R",
+		"arrivalAirportId": "AIRPORT-LIM",
+		"departureAirportId": "AIRPORT-CKG",
+		"aircraftId": "AIRCRAFT-4957",
+		"departure": "2024-07-07T09:13:33.233Z",
+		"arrival": "2024-08-01T04:10:32.459Z",
+		"status": "delayed"
+	},
+	{
+		"id": "OB4481",
+		"airlineId": "AIRLINE-UX",
+		"arrivalAirportId": "AIRPORT-ALG",
+		"departureAirportId": "AIRPORT-BOG",
+		"aircraftId": "AIRCRAFT-2878",
+		"departure": "2024-11-25T08:57:19.644Z",
+		"arrival": "2024-06-30T06:36:31.008Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "JL7274",
+		"airlineId": "AIRLINE-VN",
+		"arrivalAirportId": "AIRPORT-CNF",
+		"departureAirportId": "AIRPORT-TUN",
+		"aircraftId": "AIRCRAFT-1901",
+		"departure": "2024-11-08T04:29:58.544Z",
+		"arrival": "2025-04-12T11:53:45.516Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "VA0095",
+		"airlineId": "AIRLINE-VE",
+		"arrivalAirportId": "AIRPORT-LAS",
+		"departureAirportId": "AIRPORT-ADL",
+		"aircraftId": "AIRCRAFT-7016",
+		"departure": "2025-05-21T19:46:00.916Z",
+		"arrival": "2025-04-04T13:00:33.831Z",
+		"status": "cancelled"
+	},
+	{
+		"id": "VN0098",
+		"airlineId": "AIRLINE-AA",
+		"arrivalAirportId": "AIRPORT-HNL",
+		"departureAirportId": "AIRPORT-CWB",
+		"aircraftId": "AIRCRAFT-8840",
+		"departure": "2024-11-14T02:42:42.182Z",
+		"arrival": "2024-09-28T20:31:52.736Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "BA0400",
+		"airlineId": "AIRLINE-EY",
+		"arrivalAirportId": "AIRPORT-LOS",
+		"departureAirportId": "AIRPORT-LOS",
+		"aircraftId": "AIRCRAFT-5969",
+		"departure": "2024-12-08T05:17:15.360Z",
+		"arrival": "2024-10-11T12:32:17.413Z",
+		"status": "arrived"
+	},
+	{
+		"id": "AM0480",
+		"airlineId": "AIRLINE-FZ",
+		"arrivalAirportId": "AIRPORT-MIA",
+		"departureAirportId": "AIRPORT-BCN",
+		"aircraftId": "AIRCRAFT-7552",
+		"departure": "2024-11-27T00:32:52.820Z",
+		"arrival": "2025-06-06T22:38:53.990Z",
+		"status": "departed"
+	},
+	{
+		"id": "PS0005",
+		"airlineId": "AIRLINE-AV",
+		"arrivalAirportId": "AIRPORT-CNF",
+		"departureAirportId": "AIRPORT-CJU",
+		"aircraftId": "AIRCRAFT-3706",
+		"departure": "2024-07-23T18:23:10.609Z",
+		"arrival": "2024-07-17T01:54:33.391Z",
+		"status": "cancelled"
+	},
+	{
+		"id": "JT7350",
+		"airlineId": "AIRLINE-JD",
+		"arrivalAirportId": "AIRPORT-MSP",
+		"departureAirportId": "AIRPORT-MNL",
+		"aircraftId": "AIRCRAFT-6487",
+		"departure": "2025-06-07T03:37:32.352Z",
+		"arrival": "2024-10-26T16:13:06.930Z",
+		"status": "arrived"
+	},
+	{
+		"id": "FJ0087",
+		"airlineId": "AIRLINE-HU",
+		"arrivalAirportId": "AIRPORT-BEL",
+		"departureAirportId": "AIRPORT-SSA",
+		"aircraftId": "AIRCRAFT-4783",
+		"departure": "2025-01-26T13:10:44.511Z",
+		"arrival": "2024-11-08T23:44:46.524Z",
+		"status": "departed"
+	},
+	{
+		"id": "OB0246",
+		"airlineId": "AIRLINE-3U",
+		"arrivalAirportId": "AIRPORT-BSB",
+		"departureAirportId": "AIRPORT-BSB",
+		"aircraftId": "AIRCRAFT-3242",
+		"departure": "2024-12-15T15:40:41.309Z",
+		"arrival": "2024-09-22T10:17:24.173Z",
+		"status": "arrived"
+	},
+	{
+		"id": "VS0958",
+		"airlineId": "AIRLINE-CX",
+		"arrivalAirportId": "AIRPORT-AKL",
+		"departureAirportId": "AIRPORT-FCO",
+		"aircraftId": "AIRCRAFT-3165",
+		"departure": "2024-11-30T06:02:17.032Z",
+		"arrival": "2025-02-08T07:37:03.884Z",
+		"status": "delayed"
+	},
+	{
+		"id": "AI3731",
+		"airlineId": "AIRLINE-SQ",
+		"arrivalAirportId": "AIRPORT-CWB",
+		"departureAirportId": "AIRPORT-MCO",
+		"aircraftId": "AIRCRAFT-7481",
+		"departure": "2025-01-05T07:45:56.417Z",
+		"arrival": "2025-01-07T04:25:40.529Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "TP0007",
+		"airlineId": "AIRLINE-MK",
+		"arrivalAirportId": "AIRPORT-LIM",
+		"departureAirportId": "AIRPORT-DMK",
+		"aircraftId": "AIRCRAFT-1623",
+		"departure": "2025-02-28T22:00:27.174Z",
+		"arrival": "2025-01-10T01:28:15.355Z",
+		"status": "delayed"
+	},
+	{
+		"id": "WS0055",
+		"airlineId": "AIRLINE-FZ",
+		"arrivalAirportId": "AIRPORT-CGK",
+		"departureAirportId": "AIRPORT-EWR",
+		"aircraftId": "AIRCRAFT-4356",
+		"departure": "2024-08-30T04:06:40.994Z",
+		"arrival": "2024-09-12T16:13:34.601Z",
+		"status": "arrived"
+	},
+	{
+		"id": "MN0060",
+		"airlineId": "AIRLINE-VT",
+		"arrivalAirportId": "AIRPORT-IST",
+		"departureAirportId": "AIRPORT-GEA",
+		"aircraftId": "AIRCRAFT-4128",
+		"departure": "2024-07-24T07:14:49.883Z",
+		"arrival": "2025-01-30T07:53:28.355Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "WN0030",
+		"airlineId": "AIRLINE-N4",
+		"arrivalAirportId": "AIRPORT-PVG",
+		"departureAirportId": "AIRPORT-FRA",
+		"aircraftId": "AIRCRAFT-6453",
+		"departure": "2024-08-29T15:33:18.432Z",
+		"arrival": "2025-04-12T00:28:46.873Z",
+		"status": "departed"
+	},
+	{
+		"id": "Y40008",
+		"airlineId": "AIRLINE-OB",
+		"arrivalAirportId": "AIRPORT-ALG",
+		"departureAirportId": "AIRPORT-BSB",
+		"aircraftId": "AIRCRAFT-3087",
+		"departure": "2024-06-28T04:50:49.486Z",
+		"arrival": "2024-08-20T07:00:08.699Z",
+		"status": "departed"
+	},
+	{
+		"id": "TU0005",
+		"airlineId": "AIRLINE-TK",
+		"arrivalAirportId": "AIRPORT-CWB",
+		"departureAirportId": "AIRPORT-SDU",
+		"aircraftId": "AIRCRAFT-3346",
+		"departure": "2024-07-14T00:58:42.283Z",
+		"arrival": "2025-03-04T10:17:00.582Z",
+		"status": "cancelled"
+	},
+	{
+		"id": "AH0003",
+		"airlineId": "AIRLINE-AT",
+		"arrivalAirportId": "AIRPORT-MDE",
+		"departureAirportId": "AIRPORT-DME",
+		"aircraftId": "AIRCRAFT-8969",
+		"departure": "2024-11-16T14:15:47.973Z",
+		"arrival": "2024-09-27T20:01:50.765Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "AV0004",
+		"airlineId": "AIRLINE-AD",
+		"arrivalAirportId": "AIRPORT-FLL",
+		"departureAirportId": "AIRPORT-JNB",
+		"aircraftId": "AIRCRAFT-5499",
+		"departure": "2024-10-24T15:07:32.897Z",
+		"arrival": "2024-10-12T19:54:50.669Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "AK9699",
+		"airlineId": "AIRLINE-CX",
+		"arrivalAirportId": "AIRPORT-SVO",
+		"departureAirportId": "AIRPORT-GRU",
+		"aircraftId": "AIRCRAFT-4863",
+		"departure": "2024-11-27T09:42:42.017Z",
+		"arrival": "2025-02-22T07:01:03.282Z",
+		"status": "delayed"
+	},
+	{
+		"id": "LO3384",
+		"airlineId": "AIRLINE-UA",
+		"arrivalAirportId": "AIRPORT-HBA",
+		"departureAirportId": "AIRPORT-OSL",
+		"aircraftId": "AIRCRAFT-1857",
+		"departure": "2024-11-20T12:02:15.534Z",
+		"arrival": "2024-12-25T02:32:12.452Z",
+		"status": "departed"
+	},
+	{
+		"id": "U20170",
+		"airlineId": "AIRLINE-DY",
+		"arrivalAirportId": "AIRPORT-CJU",
+		"departureAirportId": "AIRPORT-ATH",
+		"aircraftId": "AIRCRAFT-8472",
+		"departure": "2025-01-06T08:17:13.957Z",
+		"arrival": "2024-09-18T16:48:08.699Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "KE0058",
+		"airlineId": "AIRLINE-KE",
+		"arrivalAirportId": "AIRPORT-SFO",
+		"departureAirportId": "AIRPORT-MAD",
+		"aircraftId": "AIRCRAFT-6909",
+		"departure": "2025-06-14T18:03:57.523Z",
+		"arrival": "2025-02-15T08:47:48.519Z",
+		"status": "cancelled"
+	},
+	{
+		"id": "AV0387",
+		"airlineId": "AIRLINE-UX",
+		"arrivalAirportId": "AIRPORT-LHR",
+		"departureAirportId": "AIRPORT-HRG",
+		"aircraftId": "AIRCRAFT-4220",
+		"departure": "2025-06-05T13:03:14.980Z",
+		"arrival": "2024-12-22T09:44:19.200Z",
+		"status": "delayed"
+	},
+	{
+		"id": "CI0008",
+		"airlineId": "AIRLINE-AM",
+		"arrivalAirportId": "AIRPORT-BCN",
+		"departureAirportId": "AIRPORT-ATL",
+		"aircraftId": "AIRCRAFT-4234",
+		"departure": "2024-10-14T23:23:09.365Z",
+		"arrival": "2024-08-07T19:05:56.727Z",
+		"status": "departed"
+	},
+	{
+		"id": "7C0007",
+		"airlineId": "AIRLINE-SA",
+		"arrivalAirportId": "AIRPORT-BCN",
+		"departureAirportId": "AIRPORT-SFO",
+		"aircraftId": "AIRCRAFT-7137",
+		"departure": "2025-03-31T20:57:48.114Z",
+		"arrival": "2025-05-09T11:39:40.120Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "Y40009",
+		"airlineId": "AIRLINE-HU",
+		"arrivalAirportId": "AIRPORT-CJU",
+		"departureAirportId": "AIRPORT-YVR",
+		"aircraftId": "AIRCRAFT-8848",
+		"departure": "2025-03-26T18:33:48.332Z",
+		"arrival": "2025-02-23T02:19:52.282Z",
+		"status": "arrived"
+	},
+	{
+		"id": "MH0071",
+		"airlineId": "AIRLINE-SA",
+		"arrivalAirportId": "AIRPORT-MAD",
+		"departureAirportId": "AIRPORT-SSA",
+		"aircraftId": "AIRCRAFT-1583",
+		"departure": "2024-08-30T16:59:49.987Z",
+		"arrival": "2024-10-27T11:37:39.135Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "OO0330",
+		"airlineId": "AIRLINE-BR",
+		"arrivalAirportId": "AIRPORT-CLT",
+		"departureAirportId": "AIRPORT-MUC",
+		"aircraftId": "AIRCRAFT-2903",
+		"departure": "2025-06-08T07:48:06.628Z",
+		"arrival": "2024-09-09T16:11:07.730Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "AC0705",
+		"airlineId": "AIRLINE-Z8",
+		"arrivalAirportId": "AIRPORT-ADL",
+		"departureAirportId": "AIRPORT-VKO",
+		"aircraftId": "AIRCRAFT-1003",
+		"departure": "2024-11-13T19:59:52.551Z",
+		"arrival": "2025-04-15T20:38:12.066Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "CA0001",
+		"airlineId": "AIRLINE-SU",
+		"arrivalAirportId": "AIRPORT-SEA",
+		"departureAirportId": "AIRPORT-ATH",
+		"aircraftId": "AIRCRAFT-3858",
+		"departure": "2024-08-28T08:00:58.588Z",
+		"arrival": "2024-08-25T16:38:19.001Z",
+		"status": "departed"
+	},
+	{
+		"id": "KQ0517",
+		"airlineId": "AIRLINE-LH",
+		"arrivalAirportId": "AIRPORT-CDG",
+		"departureAirportId": "AIRPORT-CAI",
+		"aircraftId": "AIRCRAFT-1118",
+		"departure": "2025-04-30T15:09:32.974Z",
+		"arrival": "2025-05-10T04:08:34.420Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "OZ3436",
+		"airlineId": "AIRLINE-HA",
+		"arrivalAirportId": "AIRPORT-HRG",
+		"departureAirportId": "AIRPORT-SVO",
+		"aircraftId": "AIRCRAFT-4275",
+		"departure": "2024-09-21T06:53:11.474Z",
+		"arrival": "2025-04-21T23:47:04.279Z",
+		"status": "cancelled"
+	},
+	{
+		"id": "DY0960",
+		"airlineId": "AIRLINE-VS",
+		"arrivalAirportId": "AIRPORT-FRA",
+		"departureAirportId": "AIRPORT-WLG",
+		"aircraftId": "AIRCRAFT-6981",
+		"departure": "2024-10-17T10:32:08.887Z",
+		"arrival": "2025-03-03T02:56:38.501Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "6E0023",
+		"airlineId": "AIRLINE-LO",
+		"arrivalAirportId": "AIRPORT-SDU",
+		"departureAirportId": "AIRPORT-SYD",
+		"aircraftId": "AIRCRAFT-6576",
+		"departure": "2025-02-06T01:57:30.975Z",
+		"arrival": "2024-10-12T14:44:54.927Z",
+		"status": "arrived"
+	},
+	{
+		"id": "7C0733",
+		"airlineId": "AIRLINE-6E",
+		"arrivalAirportId": "AIRPORT-WLG",
+		"departureAirportId": "AIRPORT-POA",
+		"aircraftId": "AIRCRAFT-7465",
+		"departure": "2025-04-07T19:00:53.974Z",
+		"arrival": "2025-06-10T04:59:31.284Z",
+		"status": "cancelled"
+	},
+	{
+		"id": "NZ0050",
+		"airlineId": "AIRLINE-OO",
+		"arrivalAirportId": "AIRPORT-DFW",
+		"departureAirportId": "AIRPORT-MEL",
+		"aircraftId": "AIRCRAFT-1026",
+		"departure": "2025-05-13T20:54:27.387Z",
+		"arrival": "2024-09-26T19:43:20.169Z",
+		"status": "departed"
+	},
+	{
+		"id": "SA9100",
+		"airlineId": "AIRLINE-ZF",
+		"arrivalAirportId": "AIRPORT-BRU",
+		"departureAirportId": "AIRPORT-CNS",
+		"aircraftId": "AIRCRAFT-5277",
+		"departure": "2025-03-09T11:12:18.751Z",
+		"arrival": "2025-04-15T14:27:49.452Z",
+		"status": "arrived"
+	},
+	{
+		"id": "JD0532",
+		"airlineId": "AIRLINE-FZ",
+		"arrivalAirportId": "AIRPORT-CAI",
+		"departureAirportId": "AIRPORT-SDU",
+		"aircraftId": "AIRCRAFT-3530",
+		"departure": "2025-02-16T06:46:19.676Z",
+		"arrival": "2024-11-21T14:17:17.389Z",
+		"status": "departed"
+	},
+	{
+		"id": "PK0024",
+		"airlineId": "AIRLINE-MN",
+		"arrivalAirportId": "AIRPORT-BOM",
+		"departureAirportId": "AIRPORT-WLG",
+		"aircraftId": "AIRCRAFT-6192",
+		"departure": "2025-01-19T00:56:47.950Z",
+		"arrival": "2025-05-07T06:24:04.817Z",
+		"status": "delayed"
+	},
+	{
+		"id": "PS0022",
+		"airlineId": "AIRLINE-Z8",
+		"arrivalAirportId": "AIRPORT-CAI",
+		"departureAirportId": "AIRPORT-SYD",
+		"aircraftId": "AIRCRAFT-9505",
+		"departure": "2024-07-27T00:13:57.623Z",
+		"arrival": "2024-07-16T23:31:36.805Z",
+		"status": "delayed"
+	},
+	{
+		"id": "VN0227",
+		"airlineId": "AIRLINE-AI",
+		"arrivalAirportId": "AIRPORT-ARN",
+		"departureAirportId": "AIRPORT-JED",
+		"aircraftId": "AIRCRAFT-7873",
+		"departure": "2025-04-12T01:31:03.459Z",
+		"arrival": "2024-09-23T16:04:28.628Z",
+		"status": "arrived"
+	},
+	{
+		"id": "JT0082",
+		"airlineId": "AIRLINE-UA",
+		"arrivalAirportId": "AIRPORT-BSB",
+		"departureAirportId": "AIRPORT-SDU",
+		"aircraftId": "AIRCRAFT-8455",
+		"departure": "2025-05-27T08:13:59.113Z",
+		"arrival": "2024-09-04T16:52:05.628Z",
+		"status": "delayed"
+	},
+	{
+		"id": "JT4062",
+		"airlineId": "AIRLINE-8J",
+		"arrivalAirportId": "AIRPORT-ZIA",
+		"departureAirportId": "AIRPORT-GIG",
+		"aircraftId": "AIRCRAFT-3408",
+		"departure": "2024-07-30T00:25:13.723Z",
+		"arrival": "2025-01-25T10:37:47.342Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "TS5977",
+		"airlineId": "AIRLINE-TS",
+		"arrivalAirportId": "AIRPORT-BKK",
+		"departureAirportId": "AIRPORT-JNB",
+		"aircraftId": "AIRCRAFT-3402",
+		"departure": "2024-08-19T09:19:15.179Z",
+		"arrival": "2025-05-09T12:16:17.474Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "LO0661",
+		"airlineId": "AIRLINE-JA",
+		"arrivalAirportId": "AIRPORT-CKG",
+		"departureAirportId": "AIRPORT-CDG",
+		"aircraftId": "AIRCRAFT-3648",
+		"departure": "2025-02-04T13:23:18.661Z",
+		"arrival": "2024-11-14T20:12:59.489Z",
+		"status": "cancelled"
+	},
+	{
+		"id": "FD0021",
+		"airlineId": "AIRLINE-H2",
+		"arrivalAirportId": "AIRPORT-OGG",
+		"departureAirportId": "AIRPORT-LOS",
+		"aircraftId": "AIRCRAFT-8696",
+		"departure": "2024-10-31T23:02:46.185Z",
+		"arrival": "2025-05-07T16:48:26.888Z",
+		"status": "delayed"
+	},
+	{
+		"id": "TG0372",
+		"airlineId": "AIRLINE-3U",
+		"arrivalAirportId": "AIRPORT-SEA",
+		"departureAirportId": "AIRPORT-HEL",
+		"aircraftId": "AIRCRAFT-2266",
+		"departure": "2025-03-03T13:31:13.154Z",
+		"arrival": "2024-06-18T12:50:25.932Z",
+		"status": "delayed"
+	},
+	{
+		"id": "6E0001",
+		"airlineId": "AIRLINE-VJ",
+		"arrivalAirportId": "AIRPORT-LAS",
+		"departureAirportId": "AIRPORT-VIE",
+		"aircraftId": "AIRCRAFT-5645",
+		"departure": "2024-09-19T00:53:45.813Z",
+		"arrival": "2024-06-28T21:03:33.014Z",
+		"status": "departed"
+	},
+	{
+		"id": "YX0027",
+		"airlineId": "AIRLINE-VE",
+		"arrivalAirportId": "AIRPORT-CJU",
+		"departureAirportId": "AIRPORT-TPE",
+		"aircraftId": "AIRCRAFT-5399",
+		"departure": "2024-11-23T18:57:45.104Z",
+		"arrival": "2024-09-08T07:02:12.421Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "SA0068",
+		"airlineId": "AIRLINE-VE",
+		"arrivalAirportId": "AIRPORT-BSB",
+		"departureAirportId": "AIRPORT-BNE",
+		"aircraftId": "AIRCRAFT-3389",
+		"departure": "2025-04-22T09:10:30.893Z",
+		"arrival": "2025-01-03T11:49:20.995Z",
+		"status": "departed"
+	},
+	{
+		"id": "LH0662",
+		"airlineId": "AIRLINE-KE",
+		"arrivalAirportId": "AIRPORT-CMN",
+		"departureAirportId": "AIRPORT-CNF",
+		"aircraftId": "AIRCRAFT-6114",
+		"departure": "2024-07-03T09:00:39.632Z",
+		"arrival": "2025-06-12T19:59:45.982Z",
+		"status": "cancelled"
+	},
+	{
+		"id": "TU0001",
+		"airlineId": "AIRLINE-FD",
+		"arrivalAirportId": "AIRPORT-CNF",
+		"departureAirportId": "AIRPORT-DFW",
+		"aircraftId": "AIRCRAFT-6151",
+		"departure": "2025-02-13T02:45:33.224Z",
+		"arrival": "2025-04-01T10:56:54.762Z",
+		"status": "cancelled"
+	},
+	{
+		"id": "G40446",
+		"airlineId": "AIRLINE-OZ",
+		"arrivalAirportId": "AIRPORT-KMG",
+		"departureAirportId": "AIRPORT-BOG",
+		"aircraftId": "AIRCRAFT-9562",
+		"departure": "2025-03-03T20:33:34.611Z",
+		"arrival": "2025-05-08T07:24:40.640Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "JT0830",
+		"airlineId": "AIRLINE-ET",
+		"arrivalAirportId": "AIRPORT-ALG",
+		"departureAirportId": "AIRPORT-ATL",
+		"aircraftId": "AIRCRAFT-1017",
+		"departure": "2025-06-13T03:58:48.940Z",
+		"arrival": "2024-12-15T08:38:25.749Z",
+		"status": "scheduled"
+	},
+	{
+		"id": "HA4443",
+		"airlineId": "AIRLINE-BA",
+		"arrivalAirportId": "AIRPORT-DXB",
+		"departureAirportId": "AIRPORT-DXB",
+		"aircraftId": "AIRCRAFT-1859",
+		"departure": "2024-11-13T04:55:41.769Z",
+		"arrival": "2025-03-24T09:43:09.075Z",
+		"status": "arrived"
+	}
 ]

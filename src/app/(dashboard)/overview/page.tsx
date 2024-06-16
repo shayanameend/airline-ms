@@ -1,24 +1,17 @@
 import type { Metadata } from "next";
-
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from "~/components/ui/card";
-
-// import { CalendarDateRangePicker } from "~/app/(dashboard)/overview/_components/date-range-picker";
-import { PassengerTraffic } from "~/app/(dashboard)/overview/_components/overview";
-import { RecentBookings } from "~/app/(dashboard)/overview/_components/recent-sales";
 import {
 	ActivitySquareIcon,
 	CalendarCheckIcon,
 	CreditCardIcon,
 	UsersIcon,
 } from "lucide-react";
-
+import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
+// import { CalendarDateRangePicker } from "~/app/(dashboard)/overview/_components/date-range-picker";
+import { PassengerTraffic } from "~/app/(dashboard)/overview/_components/overview";
+import { RecentBookings } from "~/app/(dashboard)/overview/_components/recent-sales";
 import { getOverviewData } from "~/server/overview";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
 	title: "Overview",
@@ -46,7 +39,7 @@ export default async function OverviewPage() {
 					</CardHeader>
 					<CardContent>
 						<div className="text-2xl font-bold">
-							{response.data?.numberOfActiveFlights}
+							{response.data.numberOfActiveFlights}
 						</div>
 						<p className="text-xs text-muted-foreground" />
 					</CardContent>
@@ -60,7 +53,7 @@ export default async function OverviewPage() {
 					</CardHeader>
 					<CardContent>
 						<div className="text-2xl font-bold">
-							{response.data?.numberOfScheduledFlights}
+							{response.data.numberOfScheduledFlights}
 						</div>
 						<p className="text-xs text-muted-foreground" />
 					</CardContent>
@@ -72,7 +65,7 @@ export default async function OverviewPage() {
 					</CardHeader>
 					<CardContent>
 						<div className="text-2xl font-bold">
-							{response.data?.numberOfTicketsSold}
+							{response.data.numberOfTicketsSold}
 						</div>
 						<p className="text-xs text-muted-foreground" />
 					</CardContent>
@@ -86,7 +79,7 @@ export default async function OverviewPage() {
 					</CardHeader>
 					<CardContent>
 						<div className="text-2xl font-bold">
-							{response.data?.numberOfPassengers}
+							{response.data.numberOfPassengers}
 						</div>
 						<p className="text-xs text-muted-foreground" />
 					</CardContent>
@@ -98,7 +91,7 @@ export default async function OverviewPage() {
 						<CardTitle>Passenger Traffic</CardTitle>
 					</CardHeader>
 					<CardContent className="pl-2">
-						<PassengerTraffic data={response.data?.passengerTraficData || []} />
+						<PassengerTraffic data={response.data.passengerTraficData || []} />
 					</CardContent>
 				</Card>
 				<Card className="col-span-3">
@@ -106,7 +99,7 @@ export default async function OverviewPage() {
 						<CardTitle>Recent Bookings</CardTitle>
 					</CardHeader>
 					<CardContent>
-						<RecentBookings data={response.data?.recentBookingsData || []} />
+						<RecentBookings data={response.data.recentBookingsData || []} />
 					</CardContent>
 				</Card>
 			</div>
