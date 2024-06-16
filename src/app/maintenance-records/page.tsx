@@ -4,7 +4,7 @@ import { default as path } from "node:path";
 import { z } from "zod";
 
 import { DataTable } from "~/components/common/data-table";
-import { MaintenanceRecordNavActions } from "~/app/(dashboard)/maintenance-records/_components/maintenance-records-nav-actions";
+import { MaintenanceRecordNavActions } from "~/app/maintenance-records/_components/maintenance-records-nav-actions";
 
 import { MaintenanceRecordColumns } from "./_components/maintenance-records-columns";
 import { maintenanceRecordsSchema } from "~/validators/maintenance-records";

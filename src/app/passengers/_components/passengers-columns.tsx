@@ -2,11 +2,11 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "~/components/ui/checkbox";
-import type { Airline } from "~/validators/airlines";
+import type { Passenger } from "~/validators/passengers";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { AirlineRowActions } from "~/app/(dashboard)/airlines/_components/airline-row-actions";
+import { PassengerRowActions } from "~/app/passengers/_components/passengers-row-actions";
 
-export const airlineColumns: ColumnDef<Airline>[] = [
+export const passengerColumns: ColumnDef<Passenger>[] = [
 	{
 		id: "select",
 		header: ({ table }) => (
@@ -34,7 +34,7 @@ export const airlineColumns: ColumnDef<Airline>[] = [
 	{
 		accessorKey: "id",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Id" />
+			<DataTableColumnHeader column={column} title="Passenger Id" />
 		),
 		cell: ({ row }) => <div className="w-[80px]">{row.getValue("id")}</div>,
 		enableSorting: false,
@@ -50,23 +50,14 @@ export const airlineColumns: ColumnDef<Airline>[] = [
 		enableHiding: false,
 	},
 	{
-		accessorKey: "country",
+		accessorKey: "phone",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Country" />
+			<DataTableColumnHeader column={column} title="Phone number" />
 		),
-		cell: ({ row }) => (
-			<div className="w-[80px]">{row.getValue("country")}</div>
-		),
-	},
-	{
-		accessorKey: "year",
-		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Year" />
-		),
-		cell: ({ row }) => <div className="w-[80px]">{row.getValue("year")}</div>,
+		cell: ({ row }) => <div className="w-[80px]">{row.getValue("phone")}</div>,
 	},
 	{
 		id: "actions",
-		cell: ({ row }) => <AirlineRowActions row={row} />,
+		cell: ({ row }) => <PassengerRowActions row={row} />,
 	},
 ];

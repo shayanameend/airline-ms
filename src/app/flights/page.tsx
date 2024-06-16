@@ -5,7 +5,7 @@ import { default as path } from "node:path";
 import { z } from "zod";
 
 import { DataTable } from "~/components/common/data-table";
-import { FlightNavActions } from "~/app/(dashboard)/flights/_components/flight-nav-actions";
+import { FlightNavActions } from "~/app/flights/_components/flight-nav-actions";
 
 import { flightColumns } from "./_components/flight-columns";
 import { flightSchema } from "~/validators/flights";

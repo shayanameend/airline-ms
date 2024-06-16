@@ -2,11 +2,11 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "~/components/ui/checkbox";
-import type { AccidentRecord } from "~/validators/accident-record";
+import type { Airport } from "~/validators/airports";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { AccidentRecordRowActions } from "~/app/(dashboard)/accident-records/_components/accident-records-row-actions";
+import { AirportRowActions } from "~/app/airports/_components/airport-row-actions";
 
-export const accidentRecordColumns: ColumnDef<AccidentRecord>[] = [
+export const airportColumns: ColumnDef<Airport>[] = [
 	{
 		id: "select",
 		header: ({ table }) => (
@@ -41,35 +41,31 @@ export const accidentRecordColumns: ColumnDef<AccidentRecord>[] = [
 		enableHiding: false,
 	},
 	{
-		accessorKey: "flightId",
+		accessorKey: "name",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Flight ID" />
+			<DataTableColumnHeader column={column} title="Name" />
 		),
-		cell: ({ row }) => (
-			<div className="w-[80px]">{row.getValue("flightId")}</div>
-		),
-		enableSorting: false,
+		cell: ({ row }) => <div className="w-[80px]">{row.getValue("name")}</div>,
 		enableHiding: false,
 	},
 	{
-		accessorKey: "description",
+		accessorKey: "city",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Description" />
+			<DataTableColumnHeader column={column} title="City" />
 		),
-		cell: ({ row }) => (
-			<div className="w-[80px]">{row.getValue("description")}</div>
-		),
-		enableSorting: false,
+		cell: ({ row }) => <div className="w-[80px]">{row.getValue("city")}</div>,
 	},
 	{
-		accessorKey: "date",
+		accessorKey: "country",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Date" />
+			<DataTableColumnHeader column={column} title="Country" />
 		),
-		cell: ({ row }) => <div className="w-[80px]">{row.getValue("date")}</div>,
+		cell: ({ row }) => (
+			<div className="w-[80px]">{row.getValue("country")}</div>
+		),
 	},
 	{
 		id: "actions",
-		cell: ({ row }) => <AccidentRecordRowActions row={row} />,
+		cell: ({ row }) => <AirportRowActions row={row} />,
 	},
 ];

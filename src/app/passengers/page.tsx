@@ -5,7 +5,7 @@ import { default as path } from "node:path";
 import { z } from "zod";
 
 import { DataTable } from "~/components/common/data-table";
-import { PassengerNavActions } from "~/app/(dashboard)/passengers/_components/passengers-nav-actions";
+import { PassengerNavActions } from "~/app/passengers/_components/passengers-nav-actions";
 import { passengerColumns } from "./_components/passengers-columns";
 import { passengersSchema } from "~/validators/passengers";
 

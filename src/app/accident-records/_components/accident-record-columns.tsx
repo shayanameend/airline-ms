@@ -2,11 +2,11 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "~/components/ui/checkbox";
-import type { Passenger } from "~/validators/passengers";
+import type { AccidentRecord } from "~/validators/accident-record";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { PassengerRowActions } from "~/app/(dashboard)/passengers/_components/passengers-row-actions";
+import { AccidentRecordRowActions } from "~/app/accident-records/_components/accident-records-row-actions";
 
-export const passengerColumns: ColumnDef<Passenger>[] = [
+export const accidentRecordColumns: ColumnDef<AccidentRecord>[] = [
 	{
 		id: "select",
 		header: ({ table }) => (
@@ -34,30 +34,42 @@ export const passengerColumns: ColumnDef<Passenger>[] = [
 	{
 		accessorKey: "id",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Passenger Id" />
+			<DataTableColumnHeader column={column} title="Id" />
 		),
 		cell: ({ row }) => <div className="w-[80px]">{row.getValue("id")}</div>,
 		enableSorting: false,
 		enableHiding: false,
 	},
 	{
-		accessorKey: "name",
+		accessorKey: "flightId",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Name" />
+			<DataTableColumnHeader column={column} title="Flight ID" />
 		),
-		cell: ({ row }) => <div className="w-[80px]">{row.getValue("name")}</div>,
+		cell: ({ row }) => (
+			<div className="w-[80px]">{row.getValue("flightId")}</div>
+		),
 		enableSorting: false,
 		enableHiding: false,
 	},
 	{
-		accessorKey: "phone",
+		accessorKey: "description",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Phone number" />
+			<DataTableColumnHeader column={column} title="Description" />
 		),
-		cell: ({ row }) => <div className="w-[80px]">{row.getValue("phone")}</div>,
+		cell: ({ row }) => (
+			<div className="w-[80px]">{row.getValue("description")}</div>
+		),
+		enableSorting: false,
+	},
+	{
+		accessorKey: "date",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Date" />
+		),
+		cell: ({ row }) => <div className="w-[80px]">{row.getValue("date")}</div>,
 	},
 	{
 		id: "actions",
-		cell: ({ row }) => <PassengerRowActions row={row} />,
+		cell: ({ row }) => <AccidentRecordRowActions row={row} />,
 	},
 ];

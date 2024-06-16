@@ -2,11 +2,11 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "~/components/ui/checkbox";
-import type { CrewMember } from "~/validators/crew-members";
+import type { Airline } from "~/validators/airlines";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { CrewMembersRowActions } from "~/app/(dashboard)/crew-members/_components/crew-members-row-actions";
+import { AirlineRowActions } from "~/app/airlines/_components/airline-row-actions";
 
-export const crewMemberColumns: ColumnDef<CrewMember>[] = [
+export const airlineColumns: ColumnDef<Airline>[] = [
 	{
 		id: "select",
 		header: ({ table }) => (
@@ -41,31 +41,32 @@ export const crewMemberColumns: ColumnDef<CrewMember>[] = [
 		enableHiding: false,
 	},
 	{
-		accessorKey: "airlineId",
-		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Airline Id" />
-		),
-		cell: ({ row }) => (
-			<div className="w-[80px]">{row.getValue("airlineId")}</div>
-		),
-		enableHiding: false,
-	},
-	{
 		accessorKey: "name",
 		header: ({ column }) => (
 			<DataTableColumnHeader column={column} title="Name" />
 		),
 		cell: ({ row }) => <div className="w-[80px]">{row.getValue("name")}</div>,
+		enableSorting: false,
+		enableHiding: false,
 	},
 	{
-		accessorKey: "role",
+		accessorKey: "country",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Role" />
+			<DataTableColumnHeader column={column} title="Country" />
 		),
-		cell: ({ row }) => <div className="w-[80px]">{row.getValue("role")}</div>,
+		cell: ({ row }) => (
+			<div className="w-[80px]">{row.getValue("country")}</div>
+		),
+	},
+	{
+		accessorKey: "year",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Year" />
+		),
+		cell: ({ row }) => <div className="w-[80px]">{row.getValue("year")}</div>,
 	},
 	{
 		id: "actions",
-		cell: ({ row }) => <CrewMembersRowActions row={row} />,
+		cell: ({ row }) => <AirlineRowActions row={row} />,
 	},
 ];

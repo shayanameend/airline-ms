@@ -6,7 +6,7 @@ import { Badge } from "~/components/ui/badge";
 
 import type { Flights } from "~/validators/flights";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { FlightsRowActions } from "~/app/(dashboard)/flights/_components/flight-row-actions";
+import { FlightsRowActions } from "~/app/flights/_components/flight-row-actions";
 
 export const flightColumns: ColumnDef<Flights>[] = [
 	{
