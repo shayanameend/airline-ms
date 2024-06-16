@@ -18,18 +18,14 @@ import {
 	UsersIcon,
 } from "lucide-react";
 
-import { domain } from "~/lib/env";
+import { getOverviewData } from "~/server/overview";
 
 export const metadata: Metadata = {
 	title: "Overview",
 };
 
 export default async function OverviewPage() {
-	const response = await fetch(`${domain}/api/overview`, {
-		cache: "no-cache",
-	});
-
-	const parsedResponse = await response.json();
+	const response = await getOverviewData();
 
 	return (
 		<>
@@ -50,7 +46,7 @@ export default async function OverviewPage() {
 					</CardHeader>
 					<CardContent>
 						<div className="text-2xl font-bold">
-							{parsedResponse.data.numberOfActiveFlights}
+							{response.data?.numberOfActiveFlights}
 						</div>
 						<p className="text-xs text-muted-foreground" />
 					</CardContent>
@@ -64,7 +60,7 @@ export default async function OverviewPage() {
 					</CardHeader>
 					<CardContent>
 						<div className="text-2xl font-bold">
-							{parsedResponse.data.numberOfScheduledFlights}
+							{response.data?.numberOfScheduledFlights}
 						</div>
 						<p className="text-xs text-muted-foreground" />
 					</CardContent>
@@ -76,7 +72,7 @@ export default async function OverviewPage() {
 					</CardHeader>
 					<CardContent>
 						<div className="text-2xl font-bold">
-							{parsedResponse.data.numberOfTicketsSold}
+							{response.data?.numberOfTicketsSold}
 						</div>
 						<p className="text-xs text-muted-foreground" />
 					</CardContent>
@@ -90,7 +86,7 @@ export default async function OverviewPage() {
 					</CardHeader>
 					<CardContent>
 						<div className="text-2xl font-bold">
-							{parsedResponse.data.numberOfPassengers}
+							{response.data?.numberOfPassengers}
 						</div>
 						<p className="text-xs text-muted-foreground" />
 					</CardContent>
@@ -102,9 +98,7 @@ export default async function OverviewPage() {
 						<CardTitle>Passenger Traffic</CardTitle>
 					</CardHeader>
 					<CardContent className="pl-2">
-						<PassengerTraffic
-							data={parsedResponse.data.passengerTraficData || []}
-						/>
+						<PassengerTraffic data={response.data?.passengerTraficData || []} />
 					</CardContent>
 				</Card>
 				<Card className="col-span-3">
@@ -112,9 +106,7 @@ export default async function OverviewPage() {
 						<CardTitle>Recent Bookings</CardTitle>
 					</CardHeader>
 					<CardContent>
-						<RecentBookings
-							data={parsedResponse.data.recentBookingsData || []}
-						/>
+						<RecentBookings data={response.data?.recentBookingsData || []} />
 					</CardContent>
 				</Card>
 			</div>
