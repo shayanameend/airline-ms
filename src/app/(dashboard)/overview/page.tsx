@@ -20,6 +20,8 @@ import {
 
 import { domain } from "~/lib/env";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
 	title: "Overview",
 };
