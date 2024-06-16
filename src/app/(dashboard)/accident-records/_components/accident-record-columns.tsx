@@ -2,9 +2,9 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "~/components/ui/checkbox";
-import type { AccidentRecord } from "~/validators/accidentRecord";
+import type { AccidentRecord } from "~/validators/accident-record";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { AccidentRecordRowActions } from "~/app/(dashboard)/accidentRecord/_components/accidentRecords-row-actions";
+import { AccidentRecordRowActions } from "~/app/(dashboard)/accident-records/_components/accident-records-row-actions";
 
 export const accidentRecordColumns: ColumnDef<AccidentRecord>[] = [
 	{

@@ -13,16 +13,16 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 
-import { airlineSchema } from "~/validators/airline";
+import { maintenanceRecordsSchema } from "~/validators/maintenance-records";
 
-interface AirlineRowActionsProps<TData> {
+interface MaintenanceRecordRowActions<TData> {
 	row: Row<TData>;
 }
 
-export function AirlineRowActions<TData>({
+export function MaintenanceRecordRowActions<TData>({
 	row,
-}: AirlineRowActionsProps<TData>) {
-	const airline = airlineSchema.parse(row.original);
+}: MaintenanceRecordRowActions<TData>) {
+	const maintenanceRecords = maintenanceRecordsSchema.parse(row.original);
 
 	return (
 		<DropdownMenu>

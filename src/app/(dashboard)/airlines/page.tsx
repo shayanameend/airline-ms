@@ -5,10 +5,10 @@ import { default as path } from "node:path";
 import { z } from "zod";
 
 import { DataTable } from "~/components/common/data-table";
-import { AirlineNavActions } from "~/app/(dashboard)/airline/_components/airline-nav-actions";
+import { AirlineNavActions } from "~/app/(dashboard)/airlines/_components/airline-nav-actions";
 
 import { airlineColumns } from "./_components/airline-columns";
-import { airlineSchema } from "~/validators/airline";
+import { airlineSchema } from "~/validators/airlines";
 
 export const metadata: Metadata = {
 	title: "Airlines",

@@ -5,13 +5,13 @@ import { default as path } from "node:path";
 import { z } from "zod";
 
 import { DataTable } from "~/components/common/data-table";
-import { AirlineNavActions } from "~/app/(dashboard)/airline/_components/airline-nav-actions";
+import { AirlineNavActions } from "~/app/(dashboard)/airlines/_components/airline-nav-actions";
 
-import { crewMemberColumns } from "./_components/crewMembers-columns";
-import { crewMember as crewMemberSchema } from "~/validators/crewMember";
+import { crewMemberColumns } from "./_components/crew-members-columns";
+import { crewMember as crewMemberSchema } from "~/validators/crew-members";
 
 export const metadata: Metadata = {
-	title: "Airlines",
+	title: "Crew Members",
 };
 
 async function getCrewMembers() {
@@ -32,9 +32,9 @@ export default async function TasksPage() {
 			<div className="hidden h-full flex-1 flex-col space-y-8 p-8 md:flex">
 				<div className="flex items-center justify-between space-y-2">
 					<div>
-						<h2 className="text-2xl font-bold tracking-tight">Airline</h2>
+						<h2 className="text-2xl font-bold tracking-tight">Crew Members</h2>
 						<p className="text-muted-foreground">
-							Here&apos;s a list of your airlines for this month!
+							Here&apos;s a list of your Crew Members!
 						</p>
 					</div>
 					<div className="flex items-center space-x-2">

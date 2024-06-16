@@ -2,11 +2,11 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "~/components/ui/checkbox";
-import type { CrewMember } from "~/validators/crewMember";
+import type { MaintenanceRecord } from "~/validators/maintenance-records";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { CrewMembersRowActions } from "~/app/(dashboard)/crew_members/_components/crewMembers-row-actions";
+import { MaintenanceRecordRowActions } from "~/app/(dashboard)/maintenance-records/_components/maintenance-records-row-actions";
 
-export const crewMemberColumns: ColumnDef<CrewMember>[] = [
+export const MaintenanceRecordColumns: ColumnDef<MaintenanceRecord>[] = [
 	{
 		id: "select",
 		header: ({ table }) => (
@@ -41,31 +41,35 @@ export const crewMemberColumns: ColumnDef<CrewMember>[] = [
 		enableHiding: false,
 	},
 	{
-		accessorKey: "airlineId",
+		accessorKey: "aircraftId",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Airline Id" />
+			<DataTableColumnHeader column={column} title="Aircraft ID" />
 		),
 		cell: ({ row }) => (
-			<div className="w-[80px]">{row.getValue("airlineId")}</div>
+			<div className="w-[80px]">{row.getValue("aircraftId")}</div>
 		),
+		enableSorting: false,
 		enableHiding: false,
 	},
 	{
-		accessorKey: "name",
+		accessorKey: "description",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Name" />
+			<DataTableColumnHeader column={column} title="Description" />
 		),
-		cell: ({ row }) => <div className="w-[80px]">{row.getValue("name")}</div>,
+		cell: ({ row }) => (
+			<div className="w-[80px]">{row.getValue("description")}</div>
+		),
+		enableSorting: false,
 	},
 	{
-		accessorKey: "role",
+		accessorKey: "date",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Role" />
+			<DataTableColumnHeader column={column} title="Date" />
 		),
-		cell: ({ row }) => <div className="w-[80px]">{row.getValue("role")}</div>,
+		cell: ({ row }) => <div className="w-[80px]">{row.getValue("date")}</div>,
 	},
 	{
 		id: "actions",
-		cell: ({ row }) => <CrewMembersRowActions row={row} />,
+		cell: ({ row }) => <MaintenanceRecordRowActions row={row} />,
 	},
 ];

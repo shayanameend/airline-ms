@@ -2,11 +2,11 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "~/components/ui/checkbox";
-import type { Airport } from "~/validators/airport";
+import type { CrewMember } from "~/validators/crew-members";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { AirportRowActions } from "~/app/(dashboard)/airport/_components/airport-row-actions";
+import { CrewMembersRowActions } from "~/app/(dashboard)/crew-members/_components/crew-members-row-actions";
 
-export const airlineColumns: ColumnDef<Airport>[] = [
+export const crewMemberColumns: ColumnDef<CrewMember>[] = [
 	{
 		id: "select",
 		header: ({ table }) => (
@@ -41,31 +41,31 @@ export const airlineColumns: ColumnDef<Airport>[] = [
 		enableHiding: false,
 	},
 	{
+		accessorKey: "airlineId",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Airline Id" />
+		),
+		cell: ({ row }) => (
+			<div className="w-[80px]">{row.getValue("airlineId")}</div>
+		),
+		enableHiding: false,
+	},
+	{
 		accessorKey: "name",
 		header: ({ column }) => (
 			<DataTableColumnHeader column={column} title="Name" />
 		),
 		cell: ({ row }) => <div className="w-[80px]">{row.getValue("name")}</div>,
-		enableHiding: false,
 	},
 	{
-		accessorKey: "city",
+		accessorKey: "role",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="City" />
+			<DataTableColumnHeader column={column} title="Role" />
 		),
-		cell: ({ row }) => <div className="w-[80px]">{row.getValue("city")}</div>,
-	},
-	{
-		accessorKey: "country",
-		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Country" />
-		),
-		cell: ({ row }) => (
-			<div className="w-[80px]">{row.getValue("country")}</div>
-		),
+		cell: ({ row }) => <div className="w-[80px]">{row.getValue("role")}</div>,
 	},
 	{
 		id: "actions",
-		cell: ({ row }) => <AirportRowActions row={row} />,
+		cell: ({ row }) => <CrewMembersRowActions row={row} />,
 	},
 ];

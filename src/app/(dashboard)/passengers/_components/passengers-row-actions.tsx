@@ -8,26 +8,21 @@ import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
-	DropdownMenuRadioGroup,
-	DropdownMenuRadioItem,
 	DropdownMenuSeparator,
 	DropdownMenuShortcut,
-	DropdownMenuSub,
-	DropdownMenuSubContent,
-	DropdownMenuSubTrigger,
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 
-import { accidentRecordSchema } from "~/validators/accidentRecord";
+import { flightSchema, statuses } from "~/validators/flights";
 
-interface AccidentRecordRowActions<TData> {
+interface PassengerRowActionsProps<TData> {
 	row: Row<TData>;
 }
 
-export function AccidentRecordRowActions<TData>({
+export function PassengerRowActions<TData>({
 	row,
-}: AccidentRecordRowActions<TData>) {
-	const aircraft = accidentRecordSchema.parse(row.original);
+}: PassengerRowActionsProps<TData>) {
+	const flight = flightSchema.parse(row.original);
 
 	return (
 		<DropdownMenu>

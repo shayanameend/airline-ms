@@ -14,7 +14,7 @@ const flights = Array.from({ length: 100 }, () => ({
 	aircraftId: `AIRCRAFT-${faker.number.int({ min: 1000, max: 9999 })}`, // reference to aircraft_table
 	departure: faker.date.future().toISOString(),
 	arrival: faker.date.future().toISOString(),
-	status: faker.helpers.arrayElement([
+	statuses: faker.helpers.arrayElement([
 		"scheduled",
 		"delayed",
 		"cancelled",
