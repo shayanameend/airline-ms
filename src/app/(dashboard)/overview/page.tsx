@@ -18,12 +18,14 @@ import {
 	UsersIcon,
 } from "lucide-react";
 
+import { domain } from "~/lib/env";
+
 export const metadata: Metadata = {
 	title: "Overview",
 };
 
 export default async function OverviewPage() {
-	const response = await fetch("http://localhost:3000/api/overview", {
+	const response = await fetch(`${domain}/api/overview`, {
 		cache: "no-cache",
 	});
 
