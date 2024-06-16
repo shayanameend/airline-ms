@@ -8,7 +8,7 @@ import { DataTable } from "~/components/common/data-table";
 import { AirlineNavActions } from "~/app/airline/_components/airline-nav-actions";
 
 import { crewMemberColumns } from "./_components/crewMembers-columns";
-import { crewMember as crewMemberSchema } from "~/validators/crewMember";
+import { crewMember as crewMemberSchema } from "~/validators/crew-members";
 
 export const metadata: Metadata = {
 	title: "Airlines",

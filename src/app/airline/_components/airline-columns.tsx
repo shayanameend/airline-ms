@@ -2,7 +2,7 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "~/components/ui/checkbox";
-import type { Airline } from "~/validators/airline";
+import type { Airline } from "~/validators/airlines";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import { AirlineRowActions } from "~/app/airline/_components/airline-row-actions";
 

@@ -8,7 +8,7 @@ import { DataTable } from "~/components/common/data-table";
 import { AirlineNavActions } from "~/app/airline/_components/airline-nav-actions";
 
 import { airlineColumns } from "./_components/airline-columns";
-import { airlineSchema } from "~/validators/airline";
+import { airlineSchema } from "~/validators/airlines";
 
 export const metadata: Metadata = {
 	title: "Airlines",

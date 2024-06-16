@@ -2,7 +2,7 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "~/components/ui/checkbox";
-import type { CrewMember } from "~/validators/crewMember";
+import type { CrewMember } from "~/validators/crew-members";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import { CrewMembersRowActions } from "~/app/crew_members/_components/crewMembers-row-actions";
 
