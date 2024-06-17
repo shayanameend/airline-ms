@@ -1,9 +1,9 @@
 import zod from "zod";
 
-export const statuses = [
+export const flightStatuses = [
 	{
-		value: "sheduled",
-		label: "Sheduled",
+		value: "scheduled",
+		label: "Scheduled",
 	},
 	{
 		value: "delayed",
@@ -23,18 +23,24 @@ export const statuses = [
 	},
 ];
 
-export const flightSchema = zod.object({
+const flightStatusValues = flightStatuses.map((status) => status.value) as [
+	string,
+	...string[],
+];
+
+export const flightValidator = zod.object({
 	id: zod.string(),
-	airlineId: zod.string(),
-	arrivalAirportId: zod.string(),
-	departureAirportId: zod.string(),
-	aircraftId: zod.string(),
-	departure: zod.string(),
-	arrival: zod.string(),
-	statuses: zod.object({
-		value: zod.string(),
-		label: zod.string(),
-	}),
+	aircraftMake: zod.string(),
+	aircraftModel: zod.string(),
+	routeId: zod.string(),
+	departureTime: zod.number(),
+	arrivalTime: zod.number(),
+	status: zod.enum(flightStatusValues),
+	price: zod.number(),
+	departureCity: zod.string(),
+	departureCountry: zod.string(),
+	arrivalCity: zod.string(),
+	arrivalCountry: zod.string(),
 });
 
-export type Flights = zod.infer<typeof flightSchema>;
+export type Flight = zod.infer<typeof flightValidator>;

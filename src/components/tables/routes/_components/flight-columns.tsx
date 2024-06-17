@@ -4,11 +4,11 @@ import type { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "~/components/ui/checkbox";
 import { Badge } from "~/components/ui/badge";
 
-import type { Flights } from "~/validators/flights";
+import type { Flight } from "~/validators/flights";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { FlightsRowActions } from "~/app/flights/_components/flight-row-actions";
+import { FlightsRowActions } from "~/components/tables/routes/_components/flight-row-actions";
 
-export const flightColumns: ColumnDef<Flights>[] = [
+export const flightColumns: ColumnDef<Flight>[] = [
 	{
 		id: "select",
 		header: ({ table }) => (
@@ -42,7 +42,7 @@ export const flightColumns: ColumnDef<Flights>[] = [
 			return (
 				<div className="w-[80px]">
 					<span>{row.getValue("id")}</span>
-					<Badge variant="secondary">{row.original.statuses.label}</Badge>
+					<Badge variant="secondary">{row.original.status}</Badge>
 				</div>
 			);
 		},

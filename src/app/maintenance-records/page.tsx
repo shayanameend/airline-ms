@@ -34,9 +34,6 @@ export default async function maintenancePage() {
 						<h2 className="text-2xl font-bold tracking-tight">
 							Maintenance Records
 						</h2>
-						<p className="text-muted-foreground">
-							Here&apos;s a list of your Maintenance Records for this month!
-						</p>
 					</div>
 					<div className="flex items-center space-x-2">
 						<MaintenanceRecordNavActions />

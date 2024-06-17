@@ -1,40 +1,16 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
-import { Checkbox } from "~/components/ui/checkbox";
 import type { Passenger } from "~/validators/passengers";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { PassengerRowActions } from "~/app/passengers/_components/passengers-row-actions";
+import { PassengerRowActions } from "~/components/tables/passengers/_components/passengers-row-actions";
+import { fromUnixTime } from "date-fns";
 
 export const passengerColumns: ColumnDef<Passenger>[] = [
 	{
-		id: "select",
-		header: ({ table }) => (
-			<Checkbox
-				checked={
-					table.getIsAllPageRowsSelected() ||
-					(table.getIsSomePageRowsSelected() && "indeterminate")
-				}
-				onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-				aria-label="Select all"
-				className="translate-y-[2px]"
-			/>
-		),
-		cell: ({ row }) => (
-			<Checkbox
-				checked={row.getIsSelected()}
-				onCheckedChange={(value) => row.toggleSelected(!!value)}
-				aria-label="Select row"
-				className="translate-y-[2px]"
-			/>
-		),
-		enableSorting: false,
-		enableHiding: false,
-	},
-	{
 		accessorKey: "id",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Passenger Id" />
+			<DataTableColumnHeader column={column} title="Id" />
 		),
 		cell: ({ row }) => <div className="w-[80px]">{row.getValue("id")}</div>,
 		enableSorting: false,
@@ -52,9 +28,20 @@ export const passengerColumns: ColumnDef<Passenger>[] = [
 	{
 		accessorKey: "phone",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Phone number" />
+			<DataTableColumnHeader column={column} title="Phone" />
 		),
 		cell: ({ row }) => <div className="w-[80px]">{row.getValue("phone")}</div>,
+	},
+	{
+		accessorKey: "registerationDate",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Date" />
+		),
+		cell: ({ row }) => (
+			<div className="w-[80px]" suppressHydrationWarning>
+				{fromUnixTime(row.getValue("registerationDate")).toLocaleDateString()}
+			</div>
+		),
 	},
 	{
 		id: "actions",

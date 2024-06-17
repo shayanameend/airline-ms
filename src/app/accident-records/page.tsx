@@ -34,9 +34,6 @@ export default async function TasksPage() {
 						<h2 className="text-2xl font-bold tracking-tight">
 							Accident Records
 						</h2>
-						<p className="text-muted-foreground">
-							Here&apos;s a list of your Accident Records for this month!
-						</p>
 					</div>
 					<div className="flex items-center space-x-2">
 						<AccidentRecordNavActions />

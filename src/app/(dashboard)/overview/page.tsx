@@ -1,23 +1,13 @@
 import type { Metadata } from "next";
-
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from "~/components/ui/card";
-
-// import { CalendarDateRangePicker } from "~/app/(dashboard)/overview/_components/date-range-picker";
-import { PassengerTraffic } from "~/app/(dashboard)/overview/_components/overview";
-import { RecentBookings } from "~/app/(dashboard)/overview/_components/recent-sales";
 import {
 	ActivitySquareIcon,
 	CalendarCheckIcon,
 	CreditCardIcon,
 	UsersIcon,
 } from "lucide-react";
-
+import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
+import { PassengerTraffic } from "~/app/(dashboard)/overview/_components/overview";
+import { RecentBookings } from "~/app/(dashboard)/overview/_components/recent-sales";
 import { domain } from "~/lib/env";
 
 export const dynamic = "force-dynamic";
@@ -35,13 +25,6 @@ export default async function OverviewPage() {
 
 	return (
 		<>
-			{/* <div className="flex items-center justify-between space-y-2">
-				<h2 className="text-3xl font-bold tracking-tight">Overview</h2>
-				<div className="flex items-center space-x-2">
-					<CalendarDateRangePicker />
-					<Button>Download</Button>
-				</div>
-			</div> */}
 			<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
 				<Card>
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

@@ -24,7 +24,7 @@ export default function DashboardLayout({
 					</div>
 				</div>
 			</div>
-			<main className="flex-1 space-y-4 p-8 pt-6">{children}</main>
+			<main className="flex-1 space-y-4 p-4 pt-6">{children}</main>
 			<footer />
 		</div>
 	);

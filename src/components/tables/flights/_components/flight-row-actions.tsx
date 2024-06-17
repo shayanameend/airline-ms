@@ -18,16 +18,16 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 
-import { accidentRecordSchema } from "~/validators/accident-record";
+import { flightValidator, flightStatuses } from "~/validators/flights";
 
-interface AccidentRecordRowActions<TData> {
+interface FlightsRowActionsProps<TData> {
 	row: Row<TData>;
 }
 
-export function AccidentRecordRowActions<TData>({
+export function FlightsRowActions<TData>({
 	row,
-}: AccidentRecordRowActions<TData>) {
-	const aircraft = accidentRecordSchema.parse(row.original);
+}: FlightsRowActionsProps<TData>) {
+	const flight = flightValidator.parse(row.original);
 
 	return (
 		<DropdownMenu>
@@ -44,6 +44,22 @@ export function AccidentRecordRowActions<TData>({
 				<DropdownMenuItem>Edit</DropdownMenuItem>
 				<DropdownMenuItem>Make a copy</DropdownMenuItem>
 				<DropdownMenuItem>Favorite</DropdownMenuItem>
+				<DropdownMenuSeparator />
+				<DropdownMenuSub>
+					<DropdownMenuSubTrigger>Labels</DropdownMenuSubTrigger>
+					<DropdownMenuSubContent>
+						<DropdownMenuRadioGroup value={flight.status}>
+							{flightStatuses.map((statuses) => (
+								<DropdownMenuRadioItem
+									key={statuses.value}
+									value={statuses.value}
+								>
+									{statuses.label}
+								</DropdownMenuRadioItem>
+							))}
+						</DropdownMenuRadioGroup>
+					</DropdownMenuSubContent>
+				</DropdownMenuSub>
 				<DropdownMenuSeparator />
 				<DropdownMenuItem>
 					Delete

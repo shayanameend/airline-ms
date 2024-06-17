@@ -5,10 +5,10 @@ import { default as path } from "node:path";
 import { z } from "zod";
 
 import { DataTable } from "~/components/common/data-table";
-import { FlightNavActions } from "~/app/flights/_components/flight-nav-actions";
+import { FlightNavActions } from "~/components/tables/routes/_components/flight-nav-actions";
 
 import { flightColumns } from "./_components/flight-columns";
-import { flightSchema } from "~/validators/flights";
+import { flightValidator } from "~/validators/flights";
 
 export const metadata: Metadata = {
 	title: "Flights",
@@ -21,7 +21,7 @@ async function getFlights() {
 
 	const flights = JSON.parse(data.toString());
 
-	return z.array(flightSchema).parse(flights);
+	return z.array(flightValidator).parse(flights);
 }
 
 export default async function FlightsPage() {
@@ -33,9 +33,6 @@ export default async function FlightsPage() {
 				<div className="flex items-center justify-between space-y-2">
 					<div>
 						<h2 className="text-2xl font-bold tracking-tight">Flights</h2>
-						<p className="text-muted-foreground">
-							Here&apos;s a list of your flights for this month!
-						</p>
 					</div>
 					<div className="flex items-center space-x-2">
 						<FlightNavActions />

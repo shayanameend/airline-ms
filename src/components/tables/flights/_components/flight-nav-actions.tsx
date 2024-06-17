@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
+import { PlusIcon } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import {
 	DropdownMenu,
@@ -11,15 +11,12 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 
-export function AccidentRecordNavActions() {
+export function FlightNavActions() {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
-				<Button variant="ghost" className="relative h-8 w-8 rounded-full">
-					<Avatar className="h-9 w-9">
-						<AvatarImage src="/avatars/03.png" alt="@shadcn" />
-						<AvatarFallback>SC</AvatarFallback>
-					</Avatar>
+				<Button size="icon" className="relative h-8 w-8">
+					<PlusIcon size={18} />
 				</Button>
 			</DropdownMenuTrigger>
 			<DropdownMenuContent className="w-56" align="end" forceMount>

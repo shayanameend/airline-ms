@@ -37,8 +37,8 @@ export const flight_table = sqliteTable("flight", {
 	airlineId: text("airline_id").notNull(),
 	routeId: text("route_id").notNull(),
 	aircraftId: text("aircraft_id").notNull(),
-	departure: text("departure").notNull(),
-	arrival: text("arrival").notNull(),
+	departure: integer("departure").notNull(),
+	arrival: integer("arrival").notNull(),
 	status: text("status").notNull(),
 	price: integer("price").notNull(),
 });

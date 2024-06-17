@@ -1,6 +1,6 @@
 "use client";
 
-import { default as zod } from "zod";
+import type { default as zod } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "~/components/ui/button";
@@ -15,15 +15,7 @@ import {
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
 import { createPassenger } from "~/server/passengers";
-
-export const PassengerSchemaValidator = zod.object({
-	name: zod.string().min(3, {
-		message: "Name must be at least 3 characters.",
-	}),
-	phone: zod.string().min(11, {
-		message: "Phone must be at least 11 characters.",
-	}),
-});
+import { PassengerSchemaValidator } from "~/validators/passengers";
 
 export default function PassengerForm() {
 	const form = useForm<zod.infer<typeof PassengerSchemaValidator>>({

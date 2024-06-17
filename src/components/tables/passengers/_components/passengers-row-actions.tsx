@@ -8,27 +8,18 @@ import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
-	DropdownMenuRadioGroup,
-	DropdownMenuRadioItem,
 	DropdownMenuSeparator,
 	DropdownMenuShortcut,
-	DropdownMenuSub,
-	DropdownMenuSubContent,
-	DropdownMenuSubTrigger,
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 
-import { flightSchema, statuses } from "~/validators/flights";
-
-interface FlightsRowActionsProps<TData> {
+interface PassengerRowActionsProps<TData> {
 	row: Row<TData>;
 }
 
-export function FlightsRowActions<TData>({
+export function PassengerRowActions<TData>({
 	row,
-}: FlightsRowActionsProps<TData>) {
-	const flight = flightSchema.parse(row.original);
-
+}: PassengerRowActionsProps<TData>) {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
@@ -42,24 +33,6 @@ export function FlightsRowActions<TData>({
 			</DropdownMenuTrigger>
 			<DropdownMenuContent align="end" className="w-[160px]">
 				<DropdownMenuItem>Edit</DropdownMenuItem>
-				<DropdownMenuItem>Make a copy</DropdownMenuItem>
-				<DropdownMenuItem>Favorite</DropdownMenuItem>
-				<DropdownMenuSeparator />
-				<DropdownMenuSub>
-					<DropdownMenuSubTrigger>Labels</DropdownMenuSubTrigger>
-					<DropdownMenuSubContent>
-						<DropdownMenuRadioGroup value={flight.statuses.value}>
-							{statuses.map((statuses) => (
-								<DropdownMenuRadioItem
-									key={statuses.value}
-									value={statuses.value}
-								>
-									{statuses.label}
-								</DropdownMenuRadioItem>
-							))}
-						</DropdownMenuRadioGroup>
-					</DropdownMenuSubContent>
-				</DropdownMenuSub>
 				<DropdownMenuSeparator />
 				<DropdownMenuItem>
 					Delete
