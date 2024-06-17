@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
 import {
 	ActivitySquareIcon,
 	CalendarCheckIcon,
 	CreditCardIcon,
 	UsersIcon,
 } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
+import type { Metadata } from "next";
 import { PassengerTraffic } from "~/app/(dashboard)/overview/_components/overview";
 import { RecentBookings } from "~/app/(dashboard)/overview/_components/recent-sales";
+import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { domain } from "~/lib/env";
 
 export const dynamic = "force-dynamic";

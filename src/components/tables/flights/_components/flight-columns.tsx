@@ -1,11 +1,11 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
-import { Badge } from "~/components/ui/badge";
-import { flightStatuses, type Flight } from "~/validators/flights";
+import { fromUnixTime } from "date-fns";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import { FlightsRowActions } from "~/components/tables/flights/_components/flight-row-actions";
-import { fromUnixTime } from "date-fns";
+import { Badge } from "~/components/ui/badge";
+import { type Flight, flightStatuses } from "~/validators/flights";
 
 export const flightColumns: ColumnDef<Flight>[] = [
 	{
@@ -19,7 +19,7 @@ export const flightColumns: ColumnDef<Flight>[] = [
 			)?.label;
 
 			return (
-				<div className="w-[80px] space-y-4">
+				<div className="w-[128px] space-y-4">
 					<span>{row.getValue("id")}</span>
 					<Badge variant="secondary">{label}</Badge>
 				</div>
@@ -33,7 +33,7 @@ export const flightColumns: ColumnDef<Flight>[] = [
 		),
 		cell: ({ row }) => (
 			<>
-				<div className="w-[84px]">{row.original.routeId}</div>
+				<div className="w-[128px]">{row.original.routeId}</div>
 				<div>
 					{row.original.departureCity}, {row.original.departureCountry}
 				</div>

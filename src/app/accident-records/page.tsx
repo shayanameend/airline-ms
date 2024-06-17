@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
 import { promises as fs } from "node:fs";
 import { default as path } from "node:path";
+import type { Metadata } from "next";
 import { z } from "zod";
 
-import { DataTable } from "~/components/common/data-table";
 import { AccidentRecordNavActions } from "~/app/accident-records/_components/accident-records-nav-actions";
+import { DataTable } from "~/components/common/data-table";
 
-import { accidentRecordColumns } from "./_components/accident-record-columns";
 import { accidentRecordSchema } from "~/validators/accident-record";
+import { accidentRecordColumns } from "./_components/accident-record-columns";
 
 export const metadata: Metadata = {
 	title: "Accident Records",

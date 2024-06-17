@@ -1,10 +1,10 @@
 import type { NextRequest as HttpRequest } from "next/server";
 
+import { getUnixTime } from "date-fns";
 import { and, count, desc, eq, gte, lt } from "drizzle-orm";
 import { db } from "~/db";
 import { flight_table, passenger_table, ticket_table } from "~/db/tables";
 import { HttpResponse } from "~/lib/handlers/response-handler";
-import { getUnixTime } from "date-fns";
 
 export const dynamic = "force-dynamic";
 

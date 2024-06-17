@@ -1,10 +1,10 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
-import type { Passenger } from "~/validators/passengers";
+import { fromUnixTime } from "date-fns";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import { PassengerRowActions } from "~/components/tables/passengers/_components/passengers-row-actions";
-import { fromUnixTime } from "date-fns";
+import type { Passenger } from "~/validators/passengers";
 
 export const passengerColumns: ColumnDef<Passenger>[] = [
 	{

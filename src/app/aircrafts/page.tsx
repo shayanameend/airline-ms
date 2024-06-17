@@ -6,8 +6,8 @@ import { z } from "zod";
 
 import { DataTable } from "~/components/common/data-table";
 
-import { AircraftsNavActions } from "~/app/aircrafts/_components/aircrafts-nav-actions";
 import { aircraftsColumns } from "~/app/aircrafts/_components/aircrafts-columns";
+import { AircraftsNavActions } from "~/app/aircrafts/_components/aircrafts-nav-actions";
 
 import { aircraftSchema } from "~/validators/aircrafts";
 

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { DataTable } from "~/components/common/data-table";
 import { PassengerNavActions } from "~/components/tables/passengers/_components/passengers-nav-actions";
-import { passengerColumns } from "./_components/passengers-columns";
 import { getPassengers } from "~/server/passengers";
+import { passengerColumns } from "./_components/passengers-columns";
 
 export const metadata: Metadata = {
 	title: "Passengers",

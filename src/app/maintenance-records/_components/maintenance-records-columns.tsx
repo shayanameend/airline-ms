@@ -1,10 +1,10 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
+import { MaintenanceRecordRowActions } from "~/app/maintenance-records/_components/maintenance-records-row-actions";
+import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import { Checkbox } from "~/components/ui/checkbox";
 import type { MaintenanceRecord } from "~/validators/maintenance-records";
-import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { MaintenanceRecordRowActions } from "~/app/maintenance-records/_components/maintenance-records-row-actions";
 
 export const MaintenanceRecordColumns: ColumnDef<MaintenanceRecord>[] = [
 	{

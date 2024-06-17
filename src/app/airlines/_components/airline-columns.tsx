@@ -1,10 +1,10 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
+import { AirlineRowActions } from "~/app/airlines/_components/airline-row-actions";
+import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import { Checkbox } from "~/components/ui/checkbox";
 import type { Airline } from "~/validators/airlines";
-import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { AirlineRowActions } from "~/app/airlines/_components/airline-row-actions";
 
 export const airlineColumns: ColumnDef<Airline>[] = [
 	{

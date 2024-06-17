@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { DataTable } from "~/components/common/data-table";
+import { getFlights } from "~/server/flights";
 import { flightColumns } from "./_components/flight-columns";
 import { FlightNavActions } from "./_components/flight-nav-actions";
-import { getFlights } from "~/server/flights";
 
 export const metadata: Metadata = {
 	title: "Flights",

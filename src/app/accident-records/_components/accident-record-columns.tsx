@@ -1,10 +1,10 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
+import { AccidentRecordRowActions } from "~/app/accident-records/_components/accident-records-row-actions";
+import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import { Checkbox } from "~/components/ui/checkbox";
 import type { AccidentRecord } from "~/validators/accident-record";
-import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { AccidentRecordRowActions } from "~/app/accident-records/_components/accident-records-row-actions";
 
 export const accidentRecordColumns: ColumnDef<AccidentRecord>[] = [
 	{

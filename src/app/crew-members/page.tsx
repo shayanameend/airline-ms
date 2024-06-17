@@ -4,11 +4,11 @@ import { promises as fs } from "node:fs";
 import { default as path } from "node:path";
 import { z } from "zod";
 
-import { DataTable } from "~/components/common/data-table";
 import { AirlineNavActions } from "~/app/airlines/_components/airline-nav-actions";
+import { DataTable } from "~/components/common/data-table";
 
-import { crewMemberColumns } from "./_components/crew-members-columns";
 import { crewMember as crewMemberSchema } from "~/validators/crew-members";
+import { crewMemberColumns } from "./_components/crew-members-columns";
 
 export const metadata: Metadata = {
 	title: "Crew Members",

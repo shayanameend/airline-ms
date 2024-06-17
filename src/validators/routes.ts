@@ -1,9 +1,11 @@
 import zod from "zod";
 
-export const routesSchema = zod.object({
+export const routeDataValidator = zod.object({
 	id: zod.string(),
-	departureAirportId: zod.string(),
-	arrivalAirportId: zod.number(),
+	departureCity: zod.string(),
+	departureCountry: zod.string(),
+	arrivalCity: zod.string(),
+	arrivalCountry: zod.string(),
 });
 
-export type Routes = zod.infer<typeof routesSchema>;
+export type Route = zod.infer<typeof routeDataValidator>;
