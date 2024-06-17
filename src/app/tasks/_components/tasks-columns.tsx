@@ -2,9 +2,9 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 
+import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import { Badge } from "~/components/ui/badge";
 import { Checkbox } from "~/components/ui/checkbox";
-import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 
 import { TasksRowActions } from "~/app/tasks/_components/tasks-row-actions";
 

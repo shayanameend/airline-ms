@@ -1,6 +1,6 @@
+import { getUnixTime } from "date-fns";
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 import { v4 as uuid } from "uuid";
-import { getUnixTime } from "date-fns";
 
 export const airline_table = sqliteTable("airline", {
 	id: text("id").primaryKey().$default(uuid),
@@ -37,9 +37,10 @@ export const flight_table = sqliteTable("flight", {
 	airlineId: text("airline_id").notNull(),
 	routeId: text("route_id").notNull(),
 	aircraftId: text("aircraft_id").notNull(),
-	departure: text("departure").notNull(),
-	arrival: text("arrival").notNull(),
+	departure: integer("departure").notNull(),
+	arrival: integer("arrival").notNull(),
 	status: text("status").notNull(),
+	price: integer("price").notNull(),
 });
 
 export const pilot_table = sqliteTable("pilot", {
@@ -69,8 +70,7 @@ export const ticket_table = sqliteTable("ticket", {
 	id: text("id").primaryKey().$default(uuid),
 	flightId: text("flight_id").notNull(),
 	passengerId: text("passenger_id").notNull(),
-	date: text("date").notNull(),
-	price: integer("price").notNull(),
+	date: integer("date").notNull(),
 });
 
 export const maintenance_record_table = sqliteTable("maintenance_record", {

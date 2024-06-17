@@ -6,8 +6,8 @@ import { z } from "zod";
 
 import { DataTable } from "~/components/common/data-table";
 
-import { AircraftsNavActions } from "~/app/aircrafts/_components/aircrafts-nav-actions";
 import { aircraftsColumns } from "~/app/aircrafts/_components/aircrafts-columns";
+import { AircraftsNavActions } from "~/app/aircrafts/_components/aircrafts-nav-actions";
 
 import { aircraftSchema } from "~/validators/aircrafts";
 
@@ -34,9 +34,6 @@ export default async function TasksPage() {
 				<div className="flex items-center justify-between space-y-2">
 					<div>
 						<h2 className="text-2xl font-bold tracking-tight">Aircrafts</h2>
-						<p className="text-muted-foreground">
-							Here&apos;s a list of your aircrafts for this month!
-						</p>
 					</div>
 					<div className="flex items-center space-x-2">
 						<AircraftsNavActions />

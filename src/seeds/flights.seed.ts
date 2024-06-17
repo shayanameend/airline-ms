@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { faker } from "@faker-js/faker";
-import { statuses } from "~/validators/flights";
+import { flightStatuses } from "~/validators/flights";
 
 const flights = Array.from({ length: 100 }, () => ({
 	// id: `FLIGHT-${faker.number.int({ min: 1000, max: 9999 })}`,
@@ -15,7 +15,7 @@ const flights = Array.from({ length: 100 }, () => ({
 	aircraftId: `AIRCRAFT-${faker.number.int({ min: 1000, max: 9999 })}`, // reference to aircraft_table
 	departure: faker.date.future().toISOString(),
 	arrival: faker.date.future().toISOString(),
-	statuses: faker.helpers.arrayElement(statuses),
+	statuses: faker.helpers.arrayElement(flightStatuses),
 }));
 
 export default function () {
