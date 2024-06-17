@@ -7,7 +7,7 @@ import { z } from "zod";
 import { AirlineNavActions } from "~/app/airlines/_components/airline-nav-actions";
 import { DataTable } from "~/components/common/data-table";
 
-import { crewMember as crewMemberSchema } from "~/validators/crew-members";
+import { crewMemberDataValidator as crewMemberSchema } from "~/validators/crew-members";
 import { crewMemberColumns } from "./_components/crew-members-columns";
 
 export const metadata: Metadata = {

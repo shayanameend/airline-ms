@@ -28,7 +28,7 @@ const flightStatusValues = flightStatuses.map((status) => status.value) as [
 	...string[],
 ];
 
-export const flightValidator = zod.object({
+export const flightTableDataValidator = zod.object({
 	id: zod.string(),
 	aircraftMake: zod.string(),
 	aircraftModel: zod.string(),
@@ -43,4 +43,16 @@ export const flightValidator = zod.object({
 	arrivalCountry: zod.string(),
 });
 
-export type Flight = zod.infer<typeof flightValidator>;
+export type FlightTableData = zod.infer<typeof flightTableDataValidator>;
+
+export const flightFormDataValidator = zod.object({
+	airlineId: zod.string(),
+	aircraftId: zod.string(),
+	routeId: zod.string(),
+	departure: zod.number(),
+	arrival: zod.number(),
+	status: zod.enum(flightStatusValues),
+	price: zod.number(),
+});
+
+export type FlightFormData = zod.infer<typeof flightFormDataValidator>;

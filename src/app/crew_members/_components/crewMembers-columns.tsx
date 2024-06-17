@@ -4,9 +4,9 @@ import type { ColumnDef } from "@tanstack/react-table";
 import { CrewMembersRowActions } from "~/app/crew_members/_components/crewMembers-row-actions";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import { Checkbox } from "~/components/ui/checkbox";
-import type { CrewMember } from "~/validators/crew-members";
+import type { CrewMemberData } from "~/validators/crew-members";
 
-export const crewMemberColumns: ColumnDef<CrewMember>[] = [
+export const crewMemberColumns: ColumnDef<CrewMemberData>[] = [
 	{
 		id: "select",
 		header: ({ table }) => (

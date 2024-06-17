@@ -4,9 +4,9 @@ import type { ColumnDef } from "@tanstack/react-table";
 import { AirportRowActions } from "~/app/airport/_components/airport-row-actions";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import { Checkbox } from "~/components/ui/checkbox";
-import type { Airport } from "~/validators/airports";
+import type { AirportInput } from "~/validators/airports";
 
-export const airlineColumns: ColumnDef<Airport>[] = [
+export const airlineColumns: ColumnDef<AirportInput>[] = [
 	{
 		id: "select",
 		header: ({ table }) => (

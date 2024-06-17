@@ -1,7 +1,7 @@
 "use client";
 
-import type { Row } from "@tanstack/react-table";
 import { DotsHorizontalIcon } from "@radix-ui/react-icons";
+import type { Row } from "@tanstack/react-table";
 import { Button } from "~/components/ui/button";
 import {
 	DropdownMenu,

@@ -1,6 +1,15 @@
 import zod from "zod";
 
-export const PassengerSchemaValidator = zod.object({
+export const passengersTableDataValidator = zod.object({
+	id: zod.string(),
+	name: zod.string(),
+	phone: zod.string(),
+	registerationDate: zod.number(),
+});
+
+export type PassengerTableData = zod.infer<typeof passengersTableDataValidator>;
+
+export const passengerFormDataValidator = zod.object({
 	name: zod.string().min(3, {
 		message: "Name must be at least 3 characters.",
 	}),
@@ -9,11 +18,4 @@ export const PassengerSchemaValidator = zod.object({
 	}),
 });
 
-export const passengersSchema = zod.object({
-	id: zod.string(),
-	name: zod.string(),
-	phone: zod.string(),
-	registerationDate: zod.number(),
-});
-
-export type Passenger = zod.infer<typeof passengersSchema>;
+export type PassengerFormData = zod.infer<typeof passengerFormDataValidator>;

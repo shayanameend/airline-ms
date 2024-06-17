@@ -59,6 +59,7 @@ export const crew_member_table = sqliteTable("crew_member", {
 
 export const passenger_table = sqliteTable("passenger", {
 	id: text("id").primaryKey().$default(uuid),
+	airlineId: text("airline_id").notNull(),
 	name: text("name").notNull(),
 	phone: text("phone").notNull(),
 	registerationDate: integer("registeration_date")
@@ -76,13 +77,6 @@ export const ticket_table = sqliteTable("ticket", {
 export const maintenance_record_table = sqliteTable("maintenance_record", {
 	id: text("id").primaryKey().$default(uuid),
 	aircraftId: text("aircraft_id").notNull(),
-	description: text("description").notNull(),
-	date: text("date").notNull(),
-});
-
-export const weather_record_table = sqliteTable("weather_record", {
-	id: text("id").primaryKey().$default(uuid),
-	flightId: text("flight_id").notNull(),
 	description: text("description").notNull(),
 	date: text("date").notNull(),
 });

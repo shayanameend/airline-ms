@@ -1,14 +1,27 @@
 "use server";
 
+import { eq } from "drizzle-orm";
 import type { default as zod } from "zod";
 import { db } from "~/db";
 import { passenger_table } from "~/db/tables";
+import { airlineId } from "~/lib/env";
 import { ServerResponse } from "~/lib/handlers/response-handler";
-import type { PassengerSchemaValidator } from "~/validators/passengers";
+import type {
+	PassengerFormData,
+	passengerFormDataValidator,
+} from "~/validators/passengers";
 
 export async function getPassengers() {
 	try {
-		const passengers = await db.select().from(passenger_table);
+		const passengers = await db
+			.select({
+				id: passenger_table.id,
+				name: passenger_table.name,
+				phone: passenger_table.phone,
+				registerationDate: passenger_table.registerationDate,
+			})
+			.from(passenger_table)
+			.where(eq(passenger_table.airlineId, airlineId));
 
 		return ServerResponse.success(
 			{
@@ -32,11 +45,12 @@ export async function getPassengers() {
 	}
 }
 
-export async function createPassenger(
-	data: zod.infer<typeof PassengerSchemaValidator>,
-) {
+export async function createPassenger(data: PassengerFormData) {
 	try {
-		const passenger = await db.insert(passenger_table).values(data).returning();
+		const passenger = await db
+			.insert(passenger_table)
+			.values({ ...data, airlineId })
+			.returning();
 
 		return ServerResponse.success(
 			{

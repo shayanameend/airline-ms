@@ -1,12 +1,12 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
-import { Checkbox } from "~/components/ui/checkbox";
-import type { Pilot } from "~/validators/pilots";
-import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import { PilotRowActions } from "~/app/(dashboard)/pilots/_components/pilots-row-actions";
+import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
+import { Checkbox } from "~/components/ui/checkbox";
+import type { PilotInput } from "~/validators/pilots";
 
-export const PilotColumns: ColumnDef<Pilot>[] = [
+export const PilotColumns: ColumnDef<PilotInput>[] = [
 	{
 		id: "select",
 		header: ({ table }) => (

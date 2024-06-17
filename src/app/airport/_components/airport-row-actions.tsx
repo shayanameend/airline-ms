@@ -13,7 +13,7 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 
-import { airportSchema } from "~/validators/airports";
+import { airportInputValidator } from "~/validators/airports";
 
 interface AirportRowActionsProps<TData> {
 	row: Row<TData>;
@@ -22,7 +22,7 @@ interface AirportRowActionsProps<TData> {
 export function AirportRowActions<TData>({
 	row,
 }: AirportRowActionsProps<TData>) {
-	const airport = airportSchema.parse(row.original);
+	const airport = airportInputValidator.parse(row.original);
 
 	return (
 		<DropdownMenu>

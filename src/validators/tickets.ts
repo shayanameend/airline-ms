@@ -14,6 +14,11 @@ export const statuses = [
 	},
 ];
 
+const statusValues = statuses.map((status) => status.value) as [
+	string,
+	...string[],
+];
+
 export const ticketDataValidator = zod.object({
 	id: zod.string(),
 	dateTime: zod.number(),
@@ -27,6 +32,17 @@ export const ticketDataValidator = zod.object({
 	arrivalCountry: zod.string(),
 	price: zod.number(),
 });
+
+export type TicketData = zod.infer<typeof ticketDataValidator>;
+
+export const ticketInputValidator = zod.object({
+	passengerId: zod.string(),
+	flightId: zod.string(),
+	date: zod.number(),
+	price: zod.number(),
+});
+
+export type TicketInput = zod.infer<typeof ticketInputValidator>;
 
 export const ticketsSchema = zod.object({
 	id: zod.string(),

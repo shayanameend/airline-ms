@@ -1,7 +1,7 @@
 import { DataTable } from "~/components/common/data-table";
 import { TicketsNavActions } from "~/components/tables/tickets/_components/tickets-nav-actions";
-import { ticketsColumns } from "./_components/tickets-columns";
 import { getTickets } from "~/server/tickets";
+import { ticketsColumns } from "./_components/tickets-columns";
 
 export async function TicketsTable() {
 	const response = await getTickets();

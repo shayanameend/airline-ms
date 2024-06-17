@@ -21,6 +21,7 @@ export const airline_relations = relations(airline_table, ({ many }) => ({
 	flights: many(flight_table),
 	pilots: many(pilot_table),
 	crewMembers: many(crew_member_table),
+	passengers: many(passenger_table),
 }));
 
 export const airport_relations = relations(airport_table, ({ one, many }) => ({
@@ -93,9 +94,16 @@ export const crew_member_relations = relations(
 	}),
 );
 
-export const passenger_relations = relations(passenger_table, ({ many }) => ({
-	tickets: many(ticket_table),
-}));
+export const passenger_relations = relations(
+	passenger_table,
+	({ one, many }) => ({
+		tickets: many(ticket_table),
+		airline: one(airline_table, {
+			fields: [passenger_table.airlineId],
+			references: [airline_table.id],
+		}),
+	}),
+);
 
 export const ticket_relations = relations(ticket_table, ({ one }) => ({
 	flight: one(flight_table, {

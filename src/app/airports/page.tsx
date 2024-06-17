@@ -7,7 +7,7 @@ import { z } from "zod";
 import { AirportNavActions } from "~/app/airports/_components/airport-nav-actions";
 import { DataTable } from "~/components/common/data-table";
 
-import { airportSchema } from "~/validators/airports";
+import { airportInputValidator } from "~/validators/airports";
 import { airportColumns } from "./_components/airport-columns";
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ async function getAirports() {
 
 	const airports = JSON.parse(data.toString());
 
-	return z.array(airportSchema).parse(airports);
+	return z.array(airportInputValidator).parse(airports);
 }
 
 export default async function AirportsPage() {

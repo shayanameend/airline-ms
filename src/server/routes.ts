@@ -5,6 +5,7 @@ import { alias } from "drizzle-orm/sqlite-core";
 import { db } from "~/db";
 import { airport_table, route_table } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
+import type { RouteInput } from "~/validators/routes";
 
 export async function getRoutes() {
 	try {
@@ -18,6 +19,7 @@ export async function getRoutes() {
 				departureCountry: departure_airport_table.country,
 				arrivalCity: arrival_airport_table.city,
 				arrivalCountry: arrival_airport_table.country,
+				duration: route_table.duration,
 			})
 			.from(route_table)
 			.innerJoin(
@@ -46,6 +48,32 @@ export async function getRoutes() {
 			},
 			{
 				message: "An error occurred while retrieving routes.",
+			},
+		);
+	}
+}
+
+export async function createRoute(data: RouteInput) {
+	try {
+		const route = await db.insert(route_table).values(data).returning();
+
+		return ServerResponse.success(
+			{
+				route,
+			},
+			{
+				message: "Route created successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				route: [],
+			},
+			{
+				message: "An error occurred while creating route.",
 			},
 		);
 	}

@@ -8,4 +8,12 @@ export const routeDataValidator = zod.object({
 	arrivalCountry: zod.string(),
 });
 
-export type Route = zod.infer<typeof routeDataValidator>;
+export type RouteData = zod.infer<typeof routeDataValidator>;
+
+export const routeInputValidator = zod.object({
+	departureAirportId: zod.string(),
+	arrivalAirportId: zod.string(),
+	duration: zod.number(),
+});
+
+export type RouteInput = zod.infer<typeof routeInputValidator>;

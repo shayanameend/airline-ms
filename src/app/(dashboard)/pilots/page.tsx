@@ -4,10 +4,10 @@ import { promises as fs } from "node:fs";
 import { default as path } from "node:path";
 import { z } from "zod";
 
-import { DataTable } from "~/components/common/data-table";
 import { PilotNavActions } from "~/app/(dashboard)/pilots/_components/pilots-nav-actions";
+import { DataTable } from "~/components/common/data-table";
+import { pilotsInputValidator } from "~/validators/pilots";
 import { PilotColumns } from "./_components/pilots-columns";
-import { pilotsSchema } from "~/validators/pilots";
 
 export const metadata: Metadata = {
 	title: "Pilots",
@@ -20,7 +20,7 @@ async function getPilots() {
 
 	const pilots = JSON.parse(data.toString());
 
-	return z.array(pilotsSchema).parse(pilots);
+	return z.array(pilotsInputValidator).parse(pilots);
 }
 
 export default async function PilotsPage() {

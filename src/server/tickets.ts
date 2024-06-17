@@ -11,6 +11,7 @@ import {
 	ticket_table,
 } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
+import type { TicketInput } from "~/validators/tickets";
 
 export async function getTickets() {
 	try {
@@ -64,6 +65,32 @@ export async function getTickets() {
 			},
 			{
 				message: "An error occurred while retrieving tickets.",
+			},
+		);
+	}
+}
+
+export async function createTicket(data: TicketInput) {
+	try {
+		const ticket = await db.insert(ticket_table).values(data).returning();
+
+		return ServerResponse.success(
+			{
+				ticket,
+			},
+			{
+				message: "Ticket created successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				ticket: [],
+			},
+			{
+				message: "An error occurred while creating ticket.",
 			},
 		);
 	}

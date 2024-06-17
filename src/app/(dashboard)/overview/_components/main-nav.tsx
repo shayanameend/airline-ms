@@ -1,8 +1,8 @@
 "use client";
 
-import type { HTMLAttributes } from "react";
-import { usePathname } from "next/navigation";
 import { default as Link } from "next/link";
+import { usePathname } from "next/navigation";
+import type { HTMLAttributes } from "react";
 import { cn } from "~/lib/utils";
 
 const routes = [

@@ -9,7 +9,9 @@ import {
 	flight_table,
 	route_table,
 } from "~/db/tables";
+import { airlineId } from "~/lib/env";
 import { ServerResponse } from "~/lib/handlers/response-handler";
+import type { FlightFormData } from "~/validators/flights";
 
 export async function getFlights() {
 	try {
@@ -32,6 +34,7 @@ export async function getFlights() {
 				arrivalCountry: arrival_airport_table.country,
 			})
 			.from(flight_table)
+			.where(eq(flight_table.airlineId, airlineId))
 			.innerJoin(route_table, eq(route_table.id, flight_table.routeId))
 			.innerJoin(aircraft_table, eq(aircraft_table.id, flight_table.aircraftId))
 			.innerJoin(
@@ -60,6 +63,32 @@ export async function getFlights() {
 			},
 			{
 				message: "An error occurred while retrieving flights.",
+			},
+		);
+	}
+}
+
+export async function createFlight(data: FlightFormData) {
+	try {
+		const flight = await db.insert(flight_table).values(data).returning();
+
+		return ServerResponse.success(
+			{
+				flight,
+			},
+			{
+				message: "Flight created successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				flight: [],
+			},
+			{
+				message: "An error occurred while creating flight.",
 			},
 		);
 	}

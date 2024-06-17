@@ -15,18 +15,18 @@ import {
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
 import { createPassenger } from "~/server/passengers";
-import { PassengerSchemaValidator } from "~/validators/passengers";
+import { passengerFormDataValidator } from "~/validators/passengers";
 
 export default function PassengerForm() {
-	const form = useForm<zod.infer<typeof PassengerSchemaValidator>>({
-		resolver: zodResolver(PassengerSchemaValidator),
+	const form = useForm<zod.infer<typeof passengerFormDataValidator>>({
+		resolver: zodResolver(passengerFormDataValidator),
 		defaultValues: {
 			name: "",
 			phone: "",
 		},
 	});
 
-	function onSubmit(data: zod.infer<typeof PassengerSchemaValidator>) {
+	function onSubmit(data: zod.infer<typeof passengerFormDataValidator>) {
 		createPassenger(data).then((response) => {
 			toast({
 				title: "You submitted the following values:",

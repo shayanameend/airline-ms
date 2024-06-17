@@ -1,8 +1,8 @@
 "use client";
 
-import { default as zod } from "zod";
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { default as zod } from "zod";
 import { Button } from "~/components/ui/button";
 import {
 	Form,
@@ -14,27 +14,27 @@ import {
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
-// import { createPilot } from "~/server/pilots";
+// import { createTicket } from "~/server/tickets";
 
-export const PilotSchemaValidator = zod.object({
-	airlineId: zod.string().min(1, {
-		message: "Required Field.",
+export const TicketSchemaValidator = zod.object({
+	flightId: zod.string().min(1, {
+		message: "Flight ID can't be null.",
 	}),
-	name: zod.string().min(1, {
-		message: "Required Field.",
+	passengerId: zod.string().min(1, {
+		message: "Passenger ID can't be null.",
 	}),
-	flightHours: zod.string().min(1, {
+	date: zod.string().min(1, {
 		message: "Required field.",
 	}),
 });
 
-export default function PilotForm() {
-	const form = useForm<zod.infer<typeof PilotSchemaValidator>>({
-		resolver: zodResolver(PilotSchemaValidator),
+export default function TicketForm() {
+	const form = useForm<zod.infer<typeof TicketSchemaValidator>>({
+		resolver: zodResolver(TicketSchemaValidator),
 		defaultValues: {
-			airlineId: "",
-			name: "",
-			flightHours: "",
+			flightId: "",
+			passengerId: "",
+			date: "",
 		},
 	});
 	// function onSubmit(data: zod.infer<typeof TicketSchemaValidator>) {
@@ -59,10 +59,10 @@ export default function PilotForm() {
 			>
 				<FormField
 					control={form.control}
-					name="airlineId"
+					name="flightId"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Enter airline Id</FormLabel>
+							<FormLabel>Enter Flight Id</FormLabel>
 							<FormControl>
 								<Input placeholder="AA-245" {...field} />
 							</FormControl>
@@ -72,12 +72,12 @@ export default function PilotForm() {
 				/>
 				<FormField
 					control={form.control}
-					name="name"
+					name="passengerId"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Enter name</FormLabel>
+							<FormLabel>Enter Passenger Id</FormLabel>
 							<FormControl>
-								<Input placeholder="John Doe" {...field} />
+								<Input placeholder="3423" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -85,12 +85,12 @@ export default function PilotForm() {
 				/>
 				<FormField
 					control={form.control}
-					name="flightHours"
+					name="date"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Enter flighthours</FormLabel>
+							<FormLabel>Enter date</FormLabel>
 							<FormControl>
-								<Input placeholder="43 hrs" {...field} />
+								<Input placeholder="dd/mm/yy" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>

@@ -1,8 +1,8 @@
 "use client";
 
-import { default as zod } from "zod";
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { default as zod } from "zod";
 import { Button } from "~/components/ui/button";
 import {
 	Form,
@@ -14,32 +14,33 @@ import {
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
-// import { createCrewMember } from "~/server/crew-members";
+// import { createAircraft } from "~/server/aircrafts";
 
-export const CrewMemberSchemaValidator = zod.object({
+export const AircraftSchemaValidator = zod.object({
 	airlineId: zod.string().min(11, {
-		message: "Phone must be at least 11 characters.",
+		message: "Required field",
 	}),
-	name: zod.string().min(3, {
-		message: "Name must be at least 3 characters.",
+	make: zod.string().min(3, {
+		message: "Make must be at least 3 characters.",
 	}),
-	role: zod.string().min(11, {
-		message: "Required field.",
+	model: zod.string().min(1, {
+		message: "Required field",
+	}),
+	capacity: zod.number().min(1, {
+		message: "Required field",
 	}),
 });
 
-export default function CrewMemberForm() {
-	const form = useForm<zod.infer<typeof CrewMemberSchemaValidator>>({
-		resolver: zodResolver(CrewMemberSchemaValidator),
+export default function AircraftForm() {
+	const form = useForm<zod.infer<typeof AircraftSchemaValidator>>({
+		resolver: zodResolver(AircraftSchemaValidator),
 		defaultValues: {
-			airlineId: "",
-			name: "",
-			role: "",
+			airlineId: process.env.NEXT_PUBLIC_AIRLINE_ID,
 		},
 	});
 
-	// function onSubmit(data: zod.infer<typeof CrewMemberSchemaValidator>) {
-	// 	createCrewMember(data).then((response) => {
+	// function onSubmit(data: zod.infer<typeof AircraftSchemaValidator>) {
+	// 	createAircraft(data).then((response) => {
 	// 		toast({
 	// 			title: "You submitted the following values:",
 	// 			description: (
@@ -56,16 +57,17 @@ export default function CrewMemberForm() {
 	return (
 		<Form {...form}>
 			<form
-			//  onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6"
+				//  onSubmit={form.handleSubmit(onSubmit)}
+				className="w-2/3 space-y-6"
 			>
 				<FormField
 					control={form.control}
-					name="airlineId"
+					name="make"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Enter Airline ID</FormLabel>
+							<FormLabel>Manufacturer</FormLabel>
 							<FormControl>
-								<Input placeholder="AA-21" {...field} />
+								<Input placeholder="e.g. Boeing" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -73,12 +75,12 @@ export default function CrewMemberForm() {
 				/>
 				<FormField
 					control={form.control}
-					name="name"
+					name="model"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Enter your Full Name</FormLabel>
+							<FormLabel>Model</FormLabel>
 							<FormControl>
-								<Input placeholder="e.g. John Doe" {...field} />
+								<Input placeholder="e.g. 747" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -86,12 +88,12 @@ export default function CrewMemberForm() {
 				/>
 				<FormField
 					control={form.control}
-					name="role"
+					name="capacity"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Enter your role</FormLabel>
+							<FormLabel>Capacity</FormLabel>
 							<FormControl>
-								<Input placeholder="e.g. Pilot" {...field} />
+								<Input placeholder="e.g. 54" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>

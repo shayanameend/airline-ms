@@ -13,7 +13,7 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 
-import { crewMember as crewMembersSchema } from "~/validators/crew-members";
+import { crewMemberDataValidator as crewMembersSchema } from "~/validators/crew-members";
 
 interface CrewMembersRowActionsProps<TData> {
 	row: Row<TData>;

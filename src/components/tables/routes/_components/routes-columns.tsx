@@ -4,9 +4,9 @@ import type { ColumnDef } from "@tanstack/react-table";
 import { fromUnixTime } from "date-fns";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import { RoutesRowActions } from "~/components/tables/routes/_components/routes-row-actions";
-import type { Route } from "~/validators/routes";
+import type { RouteData } from "~/validators/routes";
 
-export const routesColumns: ColumnDef<Route>[] = [
+export const routesColumns: ColumnDef<RouteData>[] = [
 	{
 		accessorKey: "id",
 		header: ({ column }) => (

@@ -1,8 +1,8 @@
 "use client";
 
-import { default as zod } from "zod";
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { default as zod } from "zod";
 import { Button } from "~/components/ui/button";
 import {
 	Form,
@@ -14,31 +14,32 @@ import {
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
-// import { createRoute } from "~/server/routes";
+// import { createCrewMember } from "~/server/crew-members";
 
-export const RouteSchemaValidator = zod.object({
-	departureAirportId: zod.string().min(1, {
-		message: "Required Field.",
+export const CrewMemberSchemaValidator = zod.object({
+	airlineId: zod.string().min(11, {
+		message: "Phone must be at least 11 characters.",
 	}),
-	arrivalAirportId: zod.string().min(1, {
-		message: "Required Field.",
+	name: zod.string().min(3, {
+		message: "Name must be at least 3 characters.",
 	}),
-	duration: zod.string().min(1, {
+	role: zod.string().min(11, {
 		message: "Required field.",
 	}),
 });
 
-export default function RouteForm() {
-	const form = useForm<zod.infer<typeof RouteSchemaValidator>>({
-		resolver: zodResolver(RouteSchemaValidator),
+export default function CrewMemberForm() {
+	const form = useForm<zod.infer<typeof CrewMemberSchemaValidator>>({
+		resolver: zodResolver(CrewMemberSchemaValidator),
 		defaultValues: {
-			departureAirportId: "",
-			arrivalAirportId: "",
-			duration: "",
+			airlineId: "",
+			name: "",
+			role: "",
 		},
 	});
-	// function onSubmit(data: zod.infer<typeof TicketSchemaValidator>) {
-	// 	createTicket(data).then((response) => {
+
+	// function onSubmit(data: zod.infer<typeof CrewMemberSchemaValidator>) {
+	// 	createCrewMember(data).then((response) => {
 	// 		toast({
 	// 			title: "You submitted the following values:",
 	// 			description: (
@@ -55,16 +56,16 @@ export default function RouteForm() {
 	return (
 		<Form {...form}>
 			<form
-			// onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6"
+			//  onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6"
 			>
 				<FormField
 					control={form.control}
-					name="departureAirportId"
+					name="airlineId"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Enter departure Id</FormLabel>
+							<FormLabel>Enter Airline ID</FormLabel>
 							<FormControl>
-								<Input placeholder="AA-245" {...field} />
+								<Input placeholder="AA-21" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -72,12 +73,12 @@ export default function RouteForm() {
 				/>
 				<FormField
 					control={form.control}
-					name="arrivalAirportId"
+					name="name"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Enter arrival Id</FormLabel>
+							<FormLabel>Enter your Full Name</FormLabel>
 							<FormControl>
-								<Input placeholder="AA-324" {...field} />
+								<Input placeholder="e.g. John Doe" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -85,12 +86,12 @@ export default function RouteForm() {
 				/>
 				<FormField
 					control={form.control}
-					name="duration"
+					name="role"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Enter duration of flight</FormLabel>
+							<FormLabel>Enter your role</FormLabel>
 							<FormControl>
-								<Input placeholder="4 hrs" {...field} />
+								<Input placeholder="e.g. Pilot" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
