@@ -26,8 +26,6 @@ export const routesColumns: ColumnDef<Route>[] = [
 				{row.original.departureCity}, {row.original.departureCountry}
 			</div>
 		),
-		enableSorting: false,
-		enableHiding: false,
 	},
 	{
 		accessorKey: "arrival",
