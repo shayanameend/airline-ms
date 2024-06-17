@@ -1,28 +1,23 @@
-import type { Metadata } from "next";
 import { DataTable } from "~/components/common/data-table";
-import { PassengerNavActions } from "~/components/tables/passengers/_components/passengers-nav-actions";
-import { getPassengers } from "~/server/passengers";
-import { passengerColumns } from "./_components/passengers-columns";
+import { TicketsNavActions } from "~/components/tables/tickets/_components/tickets-nav-actions";
+import { ticketsColumns } from "./_components/tickets-columns";
+import { getTickets } from "~/server/tickets";
 
-export const metadata: Metadata = {
-	title: "Passengers",
-};
-
-export async function PassengersTable() {
-	const response = await getPassengers();
+export async function TicketsTable() {
+	const response = await getTickets();
 
 	return (
 		<>
 			<div className="hidden h-full flex-1 flex-col space-y-8 md:flex">
 				<div className="flex items-center justify-between space-y-2">
 					<div>
-						<h2 className="text-2xl font-bold tracking-tight">Passengers</h2>
+						<h2 className="text-2xl font-bold tracking-tight">Tickets</h2>
 					</div>
 					<div className="flex items-center space-x-2">
-						<PassengerNavActions />
+						<TicketsNavActions />
 					</div>
 				</div>
-				<DataTable columns={passengerColumns} data={response.data.passengers} />
+				<DataTable columns={ticketsColumns} data={response.data.tickets} />
 			</div>
 		</>
 	);

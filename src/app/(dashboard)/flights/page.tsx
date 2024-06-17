@@ -12,7 +12,7 @@ export default async function FlightsPage(): Promise<AwaitedReactNode> {
 	return (
 		<>
 			<div className="" />
-			<div className="grid items-start gap-4 md:grid-cols-2 lg:grid-cols-12">
+			<div className="grid md:items-start gap-4 md:grid-cols-2 lg:grid-cols-12">
 				<Card className="col-span-8 pt-4">
 					<CardContent>
 						<FlightsTable />

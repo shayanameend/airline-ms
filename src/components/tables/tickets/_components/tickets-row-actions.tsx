@@ -13,13 +13,13 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 
-interface PassengerRowActionsProps<TData> {
+interface TicektsRowActionsProps<TData> {
 	row: Row<TData>;
 }
 
-export function PassengerRowActions<TData>({
+export function TicketsRowActions<TData>({
 	row,
-}: PassengerRowActionsProps<TData>) {
+}: TicektsRowActionsProps<TData>) {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>

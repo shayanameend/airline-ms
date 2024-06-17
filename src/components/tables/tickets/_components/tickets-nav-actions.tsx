@@ -11,7 +11,7 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 
-export function PassengerNavActions() {
+export function TicketsNavActions() {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
