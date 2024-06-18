@@ -43,10 +43,10 @@ export const ticketsColumns: ColumnDef<TicketData>[] = [
 
 			return (
 				<>
-					<div className="w-[128px]">
+					<div className="w-[96px]">
 						{row.original.departureTime.toLocaleString()}
 					</div>
-					<div className="w-[128px]">
+					<div className="w-[96px]">
 						{row.original.arrivalTime.toLocaleString()}
 					</div>
 				</>
