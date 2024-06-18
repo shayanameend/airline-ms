@@ -3,7 +3,7 @@
 import type { ColumnDef } from "@tanstack/react-table";
 import { fromUnixTime } from "date-fns";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { PassengerRowActions } from "~/components/tables/passengers/_components/passengers-row-actions";
+import { TicketsRowActions } from "~/components/tables/tickets/_components/tickets-row-actions";
 import type { TicketData } from "~/validators/tickets";
 
 export const ticketsColumns: ColumnDef<TicketData>[] = [
@@ -89,6 +89,6 @@ export const ticketsColumns: ColumnDef<TicketData>[] = [
 	},
 	{
 		id: "actions",
-		cell: ({ row }) => <PassengerRowActions row={row} />,
+		cell: ({ row }) => <TicketsRowActions row={row} />,
 	},
 ];
