@@ -82,13 +82,6 @@ export const ticketsColumns: ColumnDef<TicketData>[] = [
 		),
 	},
 	{
-		accessorKey: "status",
-		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Status" />
-		),
-		cell: ({ row }) => <div className="w-[128px]">{row.original.status}</div>,
-	},
-	{
 		accessorKey: "price",
 		header: ({ column }) => (
 			<DataTableColumnHeader column={column} title="Price" />

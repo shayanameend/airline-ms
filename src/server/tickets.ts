@@ -40,7 +40,6 @@ export async function getTickets() {
 				arrivalAirport: arrival_airport_table.name,
 				arrivalCity: arrival_airport_table.city,
 				arrivalCountry: arrival_airport_table.country,
-				status: flight_table.status,
 				price: flight_table.price,
 				date: ticket_table.date,
 			})

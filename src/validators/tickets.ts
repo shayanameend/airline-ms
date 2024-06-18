@@ -15,7 +15,6 @@ export const ticketDataValidator = zod.object({
 	arrivalCity: zod.string(),
 	arrivalCountry: zod.string(),
 	arrivalTime: zod.date(),
-	status: zod.string(),
 	price: zod.number(),
 	date: zod.date(),
 });
