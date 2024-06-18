@@ -46,6 +46,7 @@ export const ticketsColumns: ColumnDef<TicketData>[] = [
 					<div className="w-[96px]">
 						{row.original.departureTime.toLocaleString()}
 					</div>
+					<br />
 					<div className="w-[96px]">
 						{row.original.arrivalTime.toLocaleString()}
 					</div>
@@ -61,6 +62,7 @@ export const ticketsColumns: ColumnDef<TicketData>[] = [
 		cell: ({ row }) => (
 			<>
 				<div className="w-[128px]">{row.original.departureAirport}</div>
+				<br />
 				<div>
 					{row.original.departureCity}, {row.original.departureCountry}
 				</div>
@@ -75,6 +77,7 @@ export const ticketsColumns: ColumnDef<TicketData>[] = [
 		cell: ({ row }) => (
 			<>
 				<div className="w-[128px]">{row.original.arrivalAirport}</div>
+				<br />
 				<div>
 					{row.original.arrivalCity}, {row.original.arrivalCountry}
 				</div>
