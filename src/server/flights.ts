@@ -9,9 +9,10 @@ import {
 	flight_table,
 	route_table,
 } from "~/db/tables";
-import { airlineId } from "~/lib/env";
 import { ServerResponse } from "~/lib/handlers/response-handler";
 import type { FlightFormData } from "~/validators/flights";
+
+const airlineId = "9df66ccb-c8b7-4752-8323-2632050650a4";
 
 export async function getFlights() {
 	try {

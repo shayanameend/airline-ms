@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import type { AwaitedReactNode } from "react";
-import { FlightsTable } from "~/components/tables/flights";
 import { PassengersTable } from "~/components/tables/passengers";
 import { TicketsTable } from "~/components/tables/tickets";
 import { Card, CardContent } from "~/components/ui/card";

@@ -1,10 +1,18 @@
 import zod from "zod";
 
-export const airlineSchema = zod.object({
+export const airlineDataValidaor = zod.object({
 	id: zod.string(),
 	name: zod.string(),
 	country: zod.string(),
 	year: zod.number().min(1),
 });
 
-export type Airline = zod.infer<typeof airlineSchema>;
+export type AirlineData = zod.infer<typeof airlineDataValidaor>;
+
+export const airlineInputValidator = zod.object({
+	name: zod.string(),
+	country: zod.string(),
+	year: zod.number().min(1),
+});
+
+export type AirlineInput = zod.infer<typeof airlineInputValidator>;

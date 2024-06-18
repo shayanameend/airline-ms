@@ -1,12 +1,12 @@
 "use server";
 
 import { eq } from "drizzle-orm";
-import type { default as zod } from "zod";
-import type { AircraftSchemaValidator } from "~/app/forms/aircraft/page";
+import type { AircraftInput } from "~/validators/aircrafts";
 import { db } from "~/db";
 import { aircraft_table } from "~/db/tables";
-import { airlineId } from "~/lib/env";
 import { ServerResponse } from "~/lib/handlers/response-handler";
+
+const airlineId = "9df66ccb-c8b7-4752-8323-2632050650a4";
 
 export async function getAircrafts() {
 	try {
@@ -37,9 +37,7 @@ export async function getAircrafts() {
 	}
 }
 
-export async function createAircraft(
-	data: zod.infer<typeof AircraftSchemaValidator>,
-) {
+export async function createAircraft(data: AircraftInput) {
 	try {
 		const aircraft = await db.insert(aircraft_table).values(data).returning();
 

@@ -13,6 +13,8 @@ import {
 import { ServerResponse } from "~/lib/handlers/response-handler";
 import type { TicketInput } from "~/validators/tickets";
 
+const airlineId = "9df66ccb-c8b7-4752-8323-2632050650a4";
+
 export async function getTickets() {
 	try {
 		const departure_airport_table = alias(airport_table, "departure_airport");

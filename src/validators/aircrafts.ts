@@ -1,6 +1,6 @@
 import zod from "zod";
 
-export const labels = [
+export const aircraftStatuses = [
 	{
 		value: "operable",
 		label: "Operable",

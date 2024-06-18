@@ -1,5 +1,5 @@
-import { CopyIcon, PlusIcon } from "lucide-react";
-import { PassengerForm } from "~/app/forms/passenger/page";
+import { PlusIcon } from "lucide-react";
+import { PassengerForm } from "~/components/forms/passenger-form";
 import { Button } from "~/components/ui/button";
 import {
 	Dialog,
