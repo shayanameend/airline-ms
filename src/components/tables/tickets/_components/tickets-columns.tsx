@@ -4,40 +4,40 @@ import type { ColumnDef } from "@tanstack/react-table";
 import { fromUnixTime } from "date-fns";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import { PassengerRowActions } from "~/components/tables/passengers/_components/passengers-row-actions";
-import type { Ticket } from "~/validators/tickets";
+import type { TicketData } from "~/validators/tickets";
 
-export const ticketsColumns: ColumnDef<Ticket>[] = [
+export const ticketsColumns: ColumnDef<TicketData>[] = [
 	{
-		accessorKey: "id",
+		accessorKey: "ticket",
 		header: ({ column }) => (
 			<DataTableColumnHeader column={column} title="Ticket" />
 		),
-		cell: ({ row }) => <div className="w-[128px]">{row.getValue("id")}</div>,
+		cell: ({ row }) => <div className="w-[128px]">{row.original.id}</div>,
 		enableSorting: false,
 		enableHiding: false,
 	},
 	{
-		accessorKey: "flight",
+		accessorKey: "name",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Flight" />
-		),
-		cell: ({ row }) => <div className="w-[128px]">{row.original.flightId}</div>,
-		enableSorting: false,
-		enableHiding: false,
-	},
-	{
-		accessorKey: "passengerName",
-		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Passenger" />
+			<DataTableColumnHeader column={column} title="Name" />
 		),
 		cell: ({ row }) => (
-			<div className="w-[84px]">{row.getValue("passengerName")}</div>
+			<div className="w-[128px]">{row.original.passengerName}</div>
 		),
 	},
 	{
-		accessorKey: "departureAirport",
+		accessorKey: "phone",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Departure" />
+			<DataTableColumnHeader column={column} title="Phone" />
+		),
+		cell: ({ row }) => (
+			<div className="w-[128px]">{row.original.passengerPhone}</div>
+		),
+	},
+	{
+		accessorKey: "departureLocation",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Departure Location" />
 		),
 		cell: ({ row }) => (
 			<>
@@ -49,9 +49,9 @@ export const ticketsColumns: ColumnDef<Ticket>[] = [
 		),
 	},
 	{
-		accessorKey: "arrivalAirport",
+		accessorKey: "arrivalLocation",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Arrival" />
+			<DataTableColumnHeader column={column} title="Arrival Location" />
 		),
 		cell: ({ row }) => (
 			<>
@@ -63,11 +63,18 @@ export const ticketsColumns: ColumnDef<Ticket>[] = [
 		),
 	},
 	{
+		accessorKey: "status",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Status" />
+		),
+		cell: ({ row }) => <div className="w-[128px]">{row.original.status}</div>,
+	},
+	{
 		accessorKey: "price",
 		header: ({ column }) => (
 			<DataTableColumnHeader column={column} title="Price" />
 		),
-		cell: ({ row }) => <div className="w-[96px]">${row.getValue("price")}</div>,
+		cell: ({ row }) => <div className="w-[128px]">${row.original.price}</div>,
 	},
 	{
 		accessorKey: "date",
@@ -76,7 +83,7 @@ export const ticketsColumns: ColumnDef<Ticket>[] = [
 		),
 		cell: ({ row }) => (
 			<div className="w-[96px]" suppressHydrationWarning>
-				{fromUnixTime(row.getValue("date")).toLocaleString()}
+				{row.original.date.toLocaleString()}
 			</div>
 		),
 	},

@@ -7,7 +7,7 @@ import { crew_member_table } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
 import type { CrewMemberInput } from "~/validators/crew-members";
 
-const airlineId = "9df66ccb-c8b7-4752-8323-2632050650a4";
+const airlineId = "21e8b789-1eb9-429b-a5ac-e83be75bad6b";
 
 export async function getCrewMembers() {
 	try {

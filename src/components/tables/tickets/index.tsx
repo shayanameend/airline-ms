@@ -1,21 +1,21 @@
 import { DataTable } from "~/components/common/data-table";
 import { TicketsNavActions } from "~/components/tables/tickets/_components/tickets-nav-actions";
-import { getTickets } from "~/server/tickets";
 import { ticketsColumns } from "./_components/tickets-columns";
 import type { PassengerData } from "~/validators/passengers";
 import type { FlightData } from "~/validators/flights";
+import type { TicketData } from "~/validators/tickets";
 
 interface TicketsTableProps {
 	passengers: PassengerData[];
 	flights: FlightData[];
+	tickets: TicketData[];
 }
 
 export async function TicketsTable({
 	passengers,
 	flights,
+	tickets,
 }: Readonly<TicketsTableProps>) {
-	const response = await getTickets();
-
 	return (
 		<>
 			<div className="hidden h-full flex-1 flex-col space-y-8 md:flex">
@@ -27,7 +27,7 @@ export async function TicketsTable({
 						<TicketsNavActions passengers={passengers} flights={flights} />
 					</div>
 				</div>
-				<DataTable columns={ticketsColumns} data={response.data.tickets} />
+				<DataTable columns={ticketsColumns} data={tickets} />
 			</div>
 		</>
 	);

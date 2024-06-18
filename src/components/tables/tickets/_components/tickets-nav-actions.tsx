@@ -29,7 +29,7 @@ export function TicketsNavActions({
 					<PlusIcon className="h-4 w-4" />
 				</Button>
 			</DialogTrigger>
-			<DialogContent className="sm:max-w-md">
+			<DialogContent>
 				<DialogHeader>
 					<DialogTitle>New Ticket</DialogTitle>
 					<DialogDescription>

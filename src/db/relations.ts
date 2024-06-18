@@ -15,19 +15,11 @@ import {
 import { crewMembersToFlightsJoin, pilotsToFlightsJoin } from "./joins";
 
 export const airline_relations = relations(airline_table, ({ many }) => ({
-	airports: many(airport_table),
 	aircrafts: many(aircraft_table),
 	flights: many(flight_table),
 	pilots: many(pilot_table),
 	crewMembers: many(crew_member_table),
 	passengers: many(passenger_table),
-}));
-
-export const airport_relations = relations(airport_table, ({ one, many }) => ({
-	airline: one(airline_table, {
-		fields: [airport_table.airlineId],
-		references: [airline_table.id],
-	}),
 }));
 
 export const aircraft_relations = relations(

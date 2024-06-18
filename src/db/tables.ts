@@ -4,14 +4,15 @@ import { v4 as uuid } from "uuid";
 
 export const airline_table = sqliteTable("airline", {
 	id: text("id").primaryKey().$default(uuid),
-	name: text("name").notNull(),
+	name: text("name").unique().notNull(),
+	email: text("email").unique().notNull(),
+	password: text("password").notNull(),
 	country: text("country").notNull(),
 	year: integer("year").notNull(),
 });
 
 export const airport_table = sqliteTable("airport", {
 	id: text("id").primaryKey().$default(uuid),
-	airlineId: text("airline_id").notNull(),
 	name: text("name").notNull(),
 	city: text("city").notNull(),
 	country: text("country").notNull(),
@@ -20,6 +21,7 @@ export const airport_table = sqliteTable("airport", {
 export const aircraft_table = sqliteTable("aircraft", {
 	id: text("id").primaryKey().$default(uuid),
 	airlineId: text("airline_id").notNull(),
+	status: text("status").notNull(),
 	make: text("make").notNull(),
 	model: text("model").notNull(),
 	capacity: integer("capacity").notNull(),
@@ -61,7 +63,7 @@ export const passenger_table = sqliteTable("passenger", {
 	id: text("id").primaryKey().$default(uuid),
 	airlineId: text("airline_id").notNull(),
 	name: text("name").notNull(),
-	phone: text("phone").notNull(),
+	phone: text("phone").unique().notNull(),
 	registerationDate: integer("registeration_date")
 		.notNull()
 		.$default(() => getUnixTime(new Date())),

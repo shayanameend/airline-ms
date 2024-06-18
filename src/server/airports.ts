@@ -1,20 +1,13 @@
 "use server";
 
-import { eq } from "drizzle-orm";
 import { db } from "~/db";
 import { airport_table } from "~/db/tables";
-
 import { ServerResponse } from "~/lib/handlers/response-handler";
 import type { AirportInput } from "~/validators/airports";
 
-const airlineId = "9df66ccb-c8b7-4752-8323-2632050650a4";
-
 export async function getAirports() {
 	try {
-		const airports = await db
-			.select()
-			.from(airport_table)
-			.where(eq(airport_table.airlineId, airlineId));
+		const airports = await db.select().from(airport_table);
 
 		return ServerResponse.success(
 			{

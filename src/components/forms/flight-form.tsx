@@ -26,7 +26,6 @@ import {
 import type { PassengerData } from "~/validators/passengers";
 import type { FlightData } from "~/validators/flights";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import { useState } from "react";
 
 interface TicketFormProps {
 	passengers: PassengerData[];
@@ -74,29 +73,6 @@ export function TicketForm({
 		}
 	}
 
-	const [departure, setDeparture] = useState("");
-	const [arrival, setArrival] = useState("");
-
-	const filteredFlights = flights.filter((flight) => {
-		const [departureCity, departureCountry] = departure.split(", ");
-		const [arrivalCity, arrivalCountry] = arrival.split(", ");
-
-		return (
-			(departureCity === undefined ||
-				departureCity === "" ||
-				departureCity === flight.departureCity) &&
-			(departureCountry === undefined ||
-				departureCountry === "" ||
-				departureCountry === flight.departureCountry) &&
-			(arrivalCity === undefined ||
-				arrivalCity === "" ||
-				arrivalCity === flight.arrivalCity) &&
-			(arrivalCountry === undefined ||
-				arrivalCountry === "" ||
-				arrivalCountry === flight.arrivalCountry)
-		);
-	});
-
 	return (
 		<Form {...form}>
 			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -135,13 +111,7 @@ export function TicketForm({
 								<FormItem>
 									<FormLabel>Passenger</FormLabel>
 									<Select
-										onValueChange={(value) => {
-											field.onChange(value);
-											form.setValue(
-												"passengerPhone",
-												passengers.find((p) => p.name === value)?.phone || "",
-											);
-										}}
+										onValueChange={field.onChange}
 										defaultValue={field.value}
 									>
 										<FormControl>
@@ -157,6 +127,7 @@ export function TicketForm({
 											))}
 										</SelectContent>
 									</Select>
+
 									<FormMessage />
 								</FormItem>
 							)}
@@ -167,26 +138,14 @@ export function TicketForm({
 				<FormItem>
 					<FormLabel>Departure</FormLabel>
 					<FormControl>
-						<Input
-							value={departure}
-							onChange={(event) => {
-								setDeparture(event.target.value);
-							}}
-							placeholder="Karachi, Pakistan"
-						/>
+						<Input placeholder="Karachi, Pakistan" />
 					</FormControl>
 				</FormItem>
 
 				<FormItem>
 					<FormLabel>Arrival</FormLabel>
 					<FormControl>
-						<Input
-							value={arrival}
-							onChange={(event) => {
-								setArrival(event.target.value);
-							}}
-							placeholder="New York, USA"
-						/>
+						<Input placeholder="New York, USA" />
 					</FormControl>
 				</FormItem>
 
@@ -199,25 +158,15 @@ export function TicketForm({
 							<Select onValueChange={field.onChange} defaultValue={field.value}>
 								<FormControl>
 									<SelectTrigger>
-										<SelectValue
-											placeholder={
-												filteredFlights.length > 0
-													? "Select a flight"
-													: "No flights"
-											}
-										/>
+										<SelectValue placeholder="Select a flight" />
 									</SelectTrigger>
 								</FormControl>
 								<SelectContent>
-									{filteredFlights.map((flight) => (
+									{flights.map((flight) => (
 										<SelectItem key={flight.id} value={flight.id}>
-											<div className="flex items-center space-x-8">
-												<div>
-													{flight.departureTime.toLocaleString()},{" "}
-													{flight.departureAirport}
-												</div>
-												<div>${flight.price}</div>
-											</div>
+											{flight.departureCity}, {flight.departureCountry}
+											{" -> "}
+											{flight.arrivalCity}, {flight.arrivalCountry}
 										</SelectItem>
 									))}
 								</SelectContent>

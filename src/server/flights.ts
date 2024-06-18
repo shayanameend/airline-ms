@@ -1,5 +1,6 @@
 "use server";
 
+import { fromUnixTime } from "date-fns";
 import { eq } from "drizzle-orm";
 import { alias } from "drizzle-orm/sqlite-core";
 import { db } from "~/db";
@@ -10,9 +11,9 @@ import {
 	route_table,
 } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
-import type { FlightFormData } from "~/validators/flights";
+import type { FlightInput } from "~/validators/flights";
 
-const airlineId = "9df66ccb-c8b7-4752-8323-2632050650a4";
+const airlineId = "21e8b789-1eb9-429b-a5ac-e83be75bad6b";
 
 export async function getFlights() {
 	try {
@@ -31,8 +32,10 @@ export async function getFlights() {
 				price: flight_table.price,
 				departureCity: departure_airport_table.city,
 				departureCountry: departure_airport_table.country,
+				departureAirport: departure_airport_table.name,
 				arrivalCity: arrival_airport_table.city,
 				arrivalCountry: arrival_airport_table.country,
+				arrivalAirport: arrival_airport_table.name,
 			})
 			.from(flight_table)
 			.where(eq(flight_table.airlineId, airlineId))
@@ -49,7 +52,11 @@ export async function getFlights() {
 
 		return ServerResponse.success(
 			{
-				flights,
+				flights: flights.map((flight) => ({
+					...flight,
+					departureTime: fromUnixTime(flight.departureTime),
+					arrivalTime: fromUnixTime(flight.arrivalTime),
+				})),
 			},
 			{
 				message: "Flights retrieved successfully.",
@@ -69,7 +76,7 @@ export async function getFlights() {
 	}
 }
 
-export async function createFlight(data: FlightFormData) {
+export async function createFlight(data: FlightInput) {
 	try {
 		const flight = await db.insert(flight_table).values(data).returning();
 

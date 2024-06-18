@@ -33,14 +33,16 @@ export const flightDataValidator = zod.object({
 	aircraftMake: zod.string(),
 	aircraftModel: zod.string(),
 	routeId: zod.string(),
-	departureTime: zod.number(),
-	arrivalTime: zod.number(),
+	departureTime: zod.date(),
+	arrivalTime: zod.date(),
 	status: zod.enum(flightStatusValues),
 	price: zod.number(),
 	departureCity: zod.string(),
 	departureCountry: zod.string(),
+	departureAirport: zod.string(),
 	arrivalCity: zod.string(),
 	arrivalCountry: zod.string(),
+	arrivalAirport: zod.string(),
 });
 
 export type FlightData = zod.infer<typeof flightDataValidator>;
