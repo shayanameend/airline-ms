@@ -1,7 +1,9 @@
 "use server";
 
+import { fromUnixTime, getUnixTime } from "date-fns";
 import { eq } from "drizzle-orm";
 import { alias } from "drizzle-orm/sqlite-core";
+import { revalidatePath } from "next/cache";
 import { db } from "~/db";
 import {
 	airport_table,
@@ -23,7 +25,7 @@ export async function getTickets() {
 		const tickets = await db
 			.select({
 				id: ticket_table.id,
-				dateTime: ticket_table.date,
+				date: ticket_table.date,
 				passengerName: passenger_table.name,
 				flightId: flight_table.id,
 				departureAirport: departure_airport_table.name,
@@ -52,7 +54,10 @@ export async function getTickets() {
 
 		return ServerResponse.success(
 			{
-				tickets,
+				tickets: tickets.map((ticket) => ({
+					...ticket,
+					date: fromUnixTime(ticket.date),
+				})),
 			},
 			{
 				message: "Tickets retrieved successfully.",
@@ -95,5 +100,7 @@ export async function createTicket(data: TicketInput) {
 				message: "An error occurred while creating ticket.",
 			},
 		);
+	} finally {
+		revalidatePath("/bookings");
 	}
 }

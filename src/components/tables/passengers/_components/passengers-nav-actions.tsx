@@ -11,7 +11,7 @@ import {
 	DialogTrigger,
 } from "~/components/ui/dialog";
 
-export function PassengerNavActions() {
+export function PassengersNavActions() {
 	return (
 		<Dialog>
 			<DialogTrigger asChild>

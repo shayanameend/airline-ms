@@ -1,12 +1,7 @@
-import type { Metadata } from "next";
 import { DataTable } from "~/components/common/data-table";
-import { PassengerNavActions } from "~/components/tables/passengers/_components/passengers-nav-actions";
+import { PassengersNavActions } from "~/components/tables/passengers/_components/passengers-nav-actions";
 import { getPassengers } from "~/server/passengers";
 import { passengerColumns } from "./_components/passengers-columns";
-
-export const metadata: Metadata = {
-	title: "Passengers",
-};
 
 export async function PassengersTable() {
 	const response = await getPassengers();
@@ -19,7 +14,7 @@ export async function PassengersTable() {
 						<h2 className="text-2xl font-bold tracking-tight">Passengers</h2>
 					</div>
 					<div className="flex items-center space-x-2">
-						<PassengerNavActions />
+						<PassengersNavActions />
 					</div>
 				</div>
 				<DataTable columns={passengerColumns} data={response.data.passengers} />

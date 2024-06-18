@@ -10,7 +10,7 @@ export const ticketsColumns: ColumnDef<Ticket>[] = [
 	{
 		accessorKey: "id",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Id" />
+			<DataTableColumnHeader column={column} title="Ticket" />
 		),
 		cell: ({ row }) => <div className="w-[128px]">{row.getValue("id")}</div>,
 		enableSorting: false,
@@ -63,13 +63,20 @@ export const ticketsColumns: ColumnDef<Ticket>[] = [
 		),
 	},
 	{
-		accessorKey: "dateTime",
+		accessorKey: "price",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Price" />
+		),
+		cell: ({ row }) => <div className="w-[96px]">${row.getValue("price")}</div>,
+	},
+	{
+		accessorKey: "date",
 		header: ({ column }) => (
 			<DataTableColumnHeader column={column} title="Date" />
 		),
 		cell: ({ row }) => (
 			<div className="w-[96px]" suppressHydrationWarning>
-				{fromUnixTime(row.getValue("dateTime")).toLocaleString()}
+				{fromUnixTime(row.getValue("date")).toLocaleString()}
 			</div>
 		),
 	},

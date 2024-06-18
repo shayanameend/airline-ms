@@ -21,7 +21,7 @@ const statusValues = statuses.map((status) => status.value) as [
 
 export const ticketDataValidator = zod.object({
 	id: zod.string(),
-	dateTime: zod.number(),
+	date: zod.date(),
 	passengerName: zod.string(),
 	flightId: zod.string(),
 	departureAirport: zod.string(),
@@ -30,7 +30,6 @@ export const ticketDataValidator = zod.object({
 	arrivalAirport: zod.string(),
 	arrivalCity: zod.string(),
 	arrivalCountry: zod.string(),
-	price: zod.number(),
 });
 
 export type TicketData = zod.infer<typeof ticketDataValidator>;
@@ -38,8 +37,6 @@ export type TicketData = zod.infer<typeof ticketDataValidator>;
 export const ticketInputValidator = zod.object({
 	passengerId: zod.string(),
 	flightId: zod.string(),
-	date: zod.number(),
-	price: zod.number(),
 });
 
 export type TicketInput = zod.infer<typeof ticketInputValidator>;

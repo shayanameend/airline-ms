@@ -10,7 +10,7 @@ export const passengerColumns: ColumnDef<PassengerData>[] = [
 	{
 		accessorKey: "id",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Id" />
+			<DataTableColumnHeader column={column} title="Passenger" />
 		),
 		cell: ({ row }) => <div className="w-[80px]">{row.getValue("id")}</div>,
 		enableSorting: false,
