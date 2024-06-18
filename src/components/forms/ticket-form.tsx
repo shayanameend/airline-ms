@@ -145,7 +145,7 @@ export function TicketForm({
 												passengers.find((p) => p.name === value)?.phone || "",
 											);
 										}}
-										defaultValue={field.value}
+										value={field.value}
 									>
 										<FormControl>
 											<SelectTrigger>
@@ -202,7 +202,7 @@ export function TicketForm({
 					render={({ field }) => (
 						<FormItem>
 							<FormLabel>Flight</FormLabel>
-							<Select onValueChange={field.onChange} defaultValue={field.value}>
+							<Select onValueChange={field.onChange} value={field.value}>
 								<FormControl>
 									<SelectTrigger>
 										<SelectValue
@@ -238,7 +238,23 @@ export function TicketForm({
 							<Button variant="outline">Cancel</Button>
 						</CloseDialog>
 					)}
-					<Button type="submit">Submit</Button>
+					{form.formState.errors.root ||
+					form.formState.errors.flightId ||
+					form.formState.errors.passengerName ||
+					form.formState.errors.passengerPhone ||
+					form.getValues("flightId") === "" ||
+					form.getValues("passengerName") === "" ||
+					form.getValues("passengerPhone") === "" ? (
+						<Button disabled type="submit">
+							Submit
+						</Button>
+					) : (
+						// CloseDialog && (
+						// 	<CloseDialog asChild>
+						<Button type="submit">Submit</Button>
+						// </CloseDialog>
+						// )
+					)}
 				</div>
 			</form>
 		</Form>
