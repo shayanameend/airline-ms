@@ -15,23 +15,22 @@ export const labels = [
 	},
 ];
 
-export const aircraftSchema = zod.object({
+export const aircraftDataValidator = zod.object({
 	id: zod.string(),
-	airlineId: zod.string(),
-	label: zod.object({
-		value: zod.string(),
-		label: zod.string(),
-	}),
 	make: zod.string(),
 	model: zod.string(),
 	capacity: zod.number().min(1),
 });
 
-export const aircraftValidator = zod.object({
+export type AircraftData = zod.infer<typeof aircraftDataValidator>;
+
+export const aircraftInputValidator = zod.object({
 	airlineId: zod.string(),
-	make: zod.string().min(3),
-	model: zod.string().min(1),
-	capacity: zod.number().min(1),
+	make: zod.string(),
+	model: zod.string(),
+	capacity: zod.number().min(1, {
+		message: "Capacity must be greater than 0.",
+	}),
 });
 
-export type Aircraft = zod.infer<typeof aircraftSchema>;
+export type AircraftInput = zod.infer<typeof aircraftInputValidator>;

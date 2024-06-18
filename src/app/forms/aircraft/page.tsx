@@ -2,7 +2,6 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { default as zod } from "zod";
 import { Button } from "~/components/ui/button";
 import {
 	Form,
@@ -14,28 +13,17 @@ import {
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
+import {
+	type AircraftInput,
+	aircraftInputValidator,
+} from "~/validators/aircrafts";
 // import { createAircraft } from "~/server/aircrafts";
 
-export const AircraftSchemaValidator = zod.object({
-	airlineId: zod.string().min(11, {
-		message: "Required field",
-	}),
-	make: zod.string().min(3, {
-		message: "Make must be at least 3 characters.",
-	}),
-	model: zod.string().min(1, {
-		message: "Required field",
-	}),
-	capacity: zod.number().min(1, {
-		message: "Required field",
-	}),
-});
-
 export default function AircraftForm() {
-	const form = useForm<zod.infer<typeof AircraftSchemaValidator>>({
-		resolver: zodResolver(AircraftSchemaValidator),
+	const form = useForm<AircraftInput>({
+		resolver: zodResolver(aircraftInputValidator),
 		defaultValues: {
-			airlineId: process.env.NEXT_PUBLIC_AIRLINE_ID,
+			airlineId: "9df66ccb-c8b7-4752-8323-2632050650a4",
 		},
 	});
 

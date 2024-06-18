@@ -11,7 +11,6 @@ import {
 	pilot_table,
 	route_table,
 	ticket_table,
-	weather_record_table,
 } from "~/db/tables";
 import { crewMembersToFlightsJoin, pilotsToFlightsJoin } from "./joins";
 
@@ -70,7 +69,6 @@ export const flight_relations = relations(flight_table, ({ one, many }) => ({
 	}),
 	tickets: many(ticket_table),
 	accident_records: many(accident_record_table),
-	weather_records: many(weather_record_table),
 	pilotsToFlights: many(pilotsToFlightsJoin),
 	crewMembersToFlights: many(crewMembersToFlightsJoin),
 }));
@@ -122,16 +120,6 @@ export const maintenance_record_relations = relations(
 		aircraft: one(aircraft_table, {
 			fields: [maintenance_record_table.aircraftId],
 			references: [aircraft_table.id],
-		}),
-	}),
-);
-
-export const weather_record_relations = relations(
-	weather_record_table,
-	({ one }) => ({
-		flight: one(flight_table, {
-			fields: [weather_record_table.flightId],
-			references: [flight_table.id],
 		}),
 	}),
 );

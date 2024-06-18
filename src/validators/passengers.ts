@@ -1,21 +1,40 @@
 import zod from "zod";
 
-export const passengersTableDataValidator = zod.object({
-	id: zod.string(),
-	name: zod.string(),
-	phone: zod.string(),
-	registerationDate: zod.number(),
-});
-
-export type PassengerTableData = zod.infer<typeof passengersTableDataValidator>;
-
-export const passengerFormDataValidator = zod.object({
-	name: zod.string().min(3, {
-		message: "Name must be at least 3 characters.",
+export const passengerDataValidator = zod.object({
+	id: zod.string({
+		message: "ID is required.",
 	}),
-	phone: zod.string().min(11, {
-		message: "Phone must be at least 11 characters.",
+	name: zod.string({
+		message: "Name is required.",
+	}),
+	phone: zod.string({
+		message: "Phone is required.",
+	}),
+	registerationDate: zod.number({
+		message: "Registeration Date is required.",
 	}),
 });
 
-export type PassengerFormData = zod.infer<typeof passengerFormDataValidator>;
+export type PassengerData = zod.infer<typeof passengerDataValidator>;
+
+export const passengerInputValidator = zod.object({
+	airlineId: zod.string({
+		message: "Airline ID is required.",
+	}),
+	name: zod
+		.string({
+			message: "Name is required.",
+		})
+		.min(3, {
+			message: "Name must be at least 3 characters long.",
+		}),
+	phone: zod
+		.string({
+			message: "Phone is required.",
+		})
+		.min(11, {
+			message: "Phone must be at least 11 characters long.",
+		}),
+});
+
+export type PassengerInput = zod.infer<typeof passengerInputValidator>;
