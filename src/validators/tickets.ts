@@ -23,9 +23,15 @@ export const ticketDataValidator = zod.object({
 export type TicketData = zod.infer<typeof ticketDataValidator>;
 
 export const ticketInputValidator = zod.object({
-	passengerName: zod.string(),
-	passengerPhone: zod.string(),
-	flightId: zod.string(),
+	passengerName: zod.string().min(3, {
+		message: "Name must be at least 3 characters long",
+	}),
+	passengerPhone: zod.string().min(11, {
+		message: "Phone number must be at least 11 characters long",
+	}),
+	flightId: zod.string().min(1, {
+		message: "Flight must be selected",
+	}),
 });
 
 export type TicketInput = zod.infer<typeof ticketInputValidator>;

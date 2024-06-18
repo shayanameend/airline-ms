@@ -6,6 +6,7 @@ import { Button } from "~/components/ui/button";
 import {
 	Form,
 	FormControl,
+	FormDescription,
 	FormField,
 	FormItem,
 	FormLabel,
@@ -105,7 +106,7 @@ export function TicketForm({
 						<TabsTrigger value="new">New Passenger</TabsTrigger>
 						<TabsTrigger value="old">Old Passenger</TabsTrigger>
 					</TabsList>
-					<TabsContent value="new" className="pt-6 space-y-6">
+					<TabsContent value="new" className="pt-6 space-x-6 flex items-center">
 						<FormField
 							control={form.control}
 							name="passengerName"
@@ -113,6 +114,7 @@ export function TicketForm({
 								<FormItem>
 									<FormLabel>Passenger Name</FormLabel>
 									<Input placeholder="John Doe" {...field} />
+									<FormMessage />
 								</FormItem>
 							)}
 						/>
@@ -123,16 +125,17 @@ export function TicketForm({
 								<FormItem>
 									<FormLabel>Passenger Phone</FormLabel>
 									<Input placeholder="03123456789" {...field} />
+									<FormMessage />
 								</FormItem>
 							)}
 						/>
 					</TabsContent>
-					<TabsContent value="old" className="pt-6">
+					<TabsContent value="old">
 						<FormField
 							control={form.control}
 							name="passengerName"
 							render={({ field }) => (
-								<FormItem>
+								<FormItem className="-mt-4">
 									<FormLabel>Passenger</FormLabel>
 									<Select
 										onValueChange={(value) => {
@@ -157,39 +160,42 @@ export function TicketForm({
 											))}
 										</SelectContent>
 									</Select>
-									<FormMessage />
+									{form.formState.errors.passengerName && (
+										<FormDescription className="text-destructive">
+											Passenger must be selected
+										</FormDescription>
+									)}
 								</FormItem>
 							)}
 						/>
 					</TabsContent>
 				</Tabs>
-
-				<FormItem>
-					<FormLabel>Departure</FormLabel>
-					<FormControl>
-						<Input
-							value={departure}
-							onChange={(event) => {
-								setDeparture(event.target.value);
-							}}
-							placeholder="Karachi, Pakistan"
-						/>
-					</FormControl>
-				</FormItem>
-
-				<FormItem>
-					<FormLabel>Arrival</FormLabel>
-					<FormControl>
-						<Input
-							value={arrival}
-							onChange={(event) => {
-								setArrival(event.target.value);
-							}}
-							placeholder="New York, USA"
-						/>
-					</FormControl>
-				</FormItem>
-
+				<div className="space-x-6 flex items-center">
+					<FormItem>
+						<FormLabel>Departure</FormLabel>
+						<FormControl>
+							<Input
+								value={departure}
+								onChange={(event) => {
+									setDeparture(event.target.value);
+								}}
+								placeholder="Karachi, Pakistan"
+							/>
+						</FormControl>
+					</FormItem>
+					<FormItem>
+						<FormLabel>Arrival</FormLabel>
+						<FormControl>
+							<Input
+								value={arrival}
+								onChange={(event) => {
+									setArrival(event.target.value);
+								}}
+								placeholder="New York, USA"
+							/>
+						</FormControl>
+					</FormItem>
+				</div>
 				<FormField
 					control={form.control}
 					name="flightId"
@@ -226,18 +232,14 @@ export function TicketForm({
 						</FormItem>
 					)}
 				/>
-				{CloseDialog ? (
-					<div className="flex space-x-4">
+				<div className="flex space-x-4">
+					{CloseDialog && (
 						<CloseDialog asChild>
 							<Button variant="outline">Cancel</Button>
 						</CloseDialog>
-						<CloseDialog asChild>
-							<Button type="submit">Submit</Button>
-						</CloseDialog>
-					</div>
-				) : (
+					)}
 					<Button type="submit">Submit</Button>
-				)}
+				</div>
 			</form>
 		</Form>
 	);
