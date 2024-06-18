@@ -1,16 +1,13 @@
-import type { Metadata } from "next";
 import { DataTable } from "~/components/common/data-table";
-import { getFlights } from "~/server/flights";
 import { flightColumns } from "./_components/flight-columns";
 import { FlightNavActions } from "./_components/flight-nav-actions";
+import type { FlightData } from "~/validators/flights";
 
-export const metadata: Metadata = {
-	title: "Flights",
-};
+interface FlightsTableProps {
+	flights: FlightData[];
+}
 
-export async function FlightsTable() {
-	const response = await getFlights();
-
+export async function FlightsTable({ flights }: Readonly<FlightsTableProps>) {
 	return (
 		<>
 			<div className="hidden h-full flex-1 flex-col space-y-8 md:flex">
@@ -22,7 +19,7 @@ export async function FlightsTable() {
 						<FlightNavActions />
 					</div>
 				</div>
-				<DataTable columns={flightColumns} data={response.data.flights} />
+				<DataTable columns={flightColumns} data={flights} />
 			</div>
 		</>
 	);

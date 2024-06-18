@@ -1,29 +1,23 @@
 import type { Metadata } from "next";
 import type { AwaitedReactNode } from "react";
 import { FlightsTable } from "~/components/tables/flights";
-import { RoutesTable } from "~/components/tables/routes";
 import { Card, CardContent } from "~/components/ui/card";
+import { getFlights } from "~/server/flights";
 
 export const metadata: Metadata = {
 	title: "Bookings",
 };
 
 export default async function FlightsPage(): Promise<AwaitedReactNode> {
+	const flightsResponse = await getFlights();
+
 	return (
-		<>
-			<div className="" />
-			<div className="grid md:items-start gap-4 md:grid-cols-2 lg:grid-cols-12">
-				<Card className="col-span-8 pt-4">
-					<CardContent>
-						<FlightsTable />
-					</CardContent>
-				</Card>
-				<Card className="col-span-4 pt-4">
-					<CardContent>
-						<RoutesTable />
-					</CardContent>
-				</Card>
-			</div>
-		</>
+		<section className="min-h-screen">
+			<Card className="col-span-8 pt-4">
+				<CardContent>
+					<FlightsTable flights={flightsResponse.data.flights} />
+				</CardContent>
+			</Card>
+		</section>
 	);
 }

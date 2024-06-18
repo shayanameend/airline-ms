@@ -9,22 +9,28 @@ import { type FlightData, flightStatuses } from "~/validators/flights";
 
 export const flightColumns: ColumnDef<FlightData>[] = [
 	{
-		accessorKey: "id",
+		accessorKey: "flight",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Id" />
+			<DataTableColumnHeader column={column} title="Flight" />
 		),
 		cell: ({ row }) => {
-			const label = flightStatuses.find(
-				(item) => item.value === row.original.status,
-			)?.label;
-
 			return (
-				<div className="w-[128px] space-y-4">
-					<span>{row.getValue("id")}</span>
-					<Badge variant="secondary">{label}</Badge>
+				<div className="w-[128px]">
+					<span>{row.original.id}</span>
 				</div>
 			);
 		},
+	},
+	{
+		accessorKey: "aircraft",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Aircraft" />
+		),
+		cell: ({ row }) => (
+			<div className="w-[128px]">
+				{row.original.aircraftMake}, {row.original.aircraftModel}
+			</div>
+		),
 	},
 	{
 		accessorKey: "route",
@@ -33,7 +39,6 @@ export const flightColumns: ColumnDef<FlightData>[] = [
 		),
 		cell: ({ row }) => (
 			<>
-				<div className="w-[128px]">{row.original.routeId}</div>
 				<div>
 					{row.original.departureCity}, {row.original.departureCountry}
 				</div>
@@ -43,26 +48,20 @@ export const flightColumns: ColumnDef<FlightData>[] = [
 			</>
 		),
 	},
-	{
-		accessorKey: "aircraft",
-		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Aircraft" />
-		),
-		cell: ({ row }) => (
-			<div className="w-[80px]">
-				{row.original.aircraftMake}, {row.original.aircraftModel}
-			</div>
-		),
-	},
+
 	{
 		accessorKey: "departureTime",
 		header: ({ column }) => (
 			<DataTableColumnHeader column={column} title="Departure Time" />
 		),
 		cell: ({ row }) => (
-			<div className="w-[84px]" suppressHydrationWarning>
-				{fromUnixTime(row.getValue("departureTime")).toLocaleString()}
-			</div>
+			<>
+				<div>{row.original.departureAirport}</div>
+				<br />
+				<div className="w-[84px]" suppressHydrationWarning>
+					{fromUnixTime(row.getValue("departureTime")).toLocaleString()}
+				</div>
+			</>
 		),
 	},
 	{
@@ -71,10 +70,21 @@ export const flightColumns: ColumnDef<FlightData>[] = [
 			<DataTableColumnHeader column={column} title="Arrival Time" />
 		),
 		cell: ({ row }) => (
-			<div className="w-[84px]" suppressHydrationWarning>
-				{fromUnixTime(row.getValue("arrivalTime")).toLocaleString()}
-			</div>
+			<>
+				<div>{row.original.arrivalAirport}</div>
+				<br />
+				<div className="w-[84px]" suppressHydrationWarning>
+					{fromUnixTime(row.getValue("arrivalTime")).toLocaleString()}
+				</div>
+			</>
 		),
+	},
+	{
+		accessorKey: "price",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Price" />
+		),
+		cell: ({ row }) => <div className="w-[84px]">${row.original.price}</div>,
 	},
 	{
 		id: "actions",
