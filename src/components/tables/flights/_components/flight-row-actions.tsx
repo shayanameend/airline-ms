@@ -18,7 +18,7 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 
-import { flightStatuses, flightTableDataValidator } from "~/validators/flights";
+import { flightStatuses, flightDataValidator } from "~/validators/flights";
 
 interface FlightsRowActionsProps<TData> {
 	row: Row<TData>;
@@ -27,7 +27,7 @@ interface FlightsRowActionsProps<TData> {
 export function FlightsRowActions<TData>({
 	row,
 }: FlightsRowActionsProps<TData>) {
-	const flight = flightTableDataValidator.parse(row.original);
+	const flight = flightDataValidator.parse(row.original);
 
 	return (
 		<DropdownMenu>

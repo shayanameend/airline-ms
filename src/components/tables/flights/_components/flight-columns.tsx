@@ -5,9 +5,9 @@ import { fromUnixTime } from "date-fns";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import { FlightsRowActions } from "~/components/tables/flights/_components/flight-row-actions";
 import { Badge } from "~/components/ui/badge";
-import { type FlightTableData, flightStatuses } from "~/validators/flights";
+import { type FlightData, flightStatuses } from "~/validators/flights";
 
-export const flightColumns: ColumnDef<FlightTableData>[] = [
+export const flightColumns: ColumnDef<FlightData>[] = [
 	{
 		accessorKey: "id",
 		header: ({ column }) => (
