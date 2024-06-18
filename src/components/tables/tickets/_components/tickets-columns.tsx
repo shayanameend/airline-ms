@@ -1,7 +1,6 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
-import { fromUnixTime } from "date-fns";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import { TicketsRowActions } from "~/components/tables/tickets/_components/tickets-row-actions";
 import type { TicketData } from "~/validators/tickets";
@@ -33,6 +32,26 @@ export const ticketsColumns: ColumnDef<TicketData>[] = [
 		cell: ({ row }) => (
 			<div className="w-[128px]">{row.original.passengerPhone}</div>
 		),
+	},
+	{
+		accessorKey: "flightTimings",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Flight Timings" />
+		),
+		cell: ({ row }) => {
+			console.log(row.original.departureTime);
+
+			return (
+				<>
+					<div className="w-[128px]">
+						{row.original.departureTime.toLocaleString()}
+					</div>
+					<div className="w-[128px]">
+						{row.original.arrivalTime.toLocaleString()}
+					</div>
+				</>
+			);
+		},
 	},
 	{
 		accessorKey: "departureLocation",

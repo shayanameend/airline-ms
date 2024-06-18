@@ -35,7 +35,7 @@ export async function getTickets() {
 				departureAirport: departure_airport_table.name,
 				departureCity: departure_airport_table.city,
 				departureCountry: departure_airport_table.country,
-				deprecateTime: flight_table.departure,
+				departureTime: flight_table.departure,
 				arrivalTime: flight_table.arrival,
 				arrivalAirport: arrival_airport_table.name,
 				arrivalCity: arrival_airport_table.city,
@@ -68,7 +68,7 @@ export async function getTickets() {
 			{
 				tickets: tickets.map((ticket) => ({
 					...ticket,
-					deprecateTime: fromUnixTime(ticket.deprecateTime),
+					departureTime: fromUnixTime(ticket.departureTime),
 					arrivalTime: fromUnixTime(ticket.arrivalTime),
 					date: fromUnixTime(ticket.date),
 				})),
