@@ -54,6 +54,12 @@ export const flightCreateDataValidator = zod.object({
 	aircraftId: zod.string().min(1, {
 		message: "Aircraft is required",
 	}),
+	aircraftPilotId: zod.string().min(1, {
+		message: "Aircraft pilot is required",
+	}),
+	aircraftCrewIds: zod.array(zod.string()).min(1, {
+		message: "Aircraft crew is required",
+	}),
 	routeId: zod.string().min(1, {
 		message: "Route is required",
 	}),

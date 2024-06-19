@@ -19,7 +19,6 @@ import type { AircraftData } from "~/validators/aircrafts";
 import {
 	type FlightCreateData,
 	flightCreateDataValidator,
-	flightStatuses,
 } from "~/validators/flights";
 import { DateTimePicker } from "../ui/date-time";
 import {
@@ -224,7 +223,25 @@ export function FlightForm({
 						render={({ field }) => (
 							<FormItem className="flex-1">
 								<FormLabel>Aircaft</FormLabel>
-								<Select onValueChange={field.onChange} value={field.value}>
+								<Select
+									onValueChange={(value: string) => {
+										field.onChange(value);
+
+										const aircraft = aircrafts.find(
+											(aircraft) => aircraft.id === value,
+										);
+
+										if (aircraft?.pilotId && aircraft?.crewMemberIds) {
+											form.setValue("aircraftPilotId", aircraft.pilotId);
+
+											form.setValue(
+												"aircraftCrewIds",
+												aircraft.crewMemberIds.split(", "),
+											);
+										}
+									}}
+									value={field.value}
+								>
 									<FormControl>
 										<SelectTrigger>
 											<SelectValue
