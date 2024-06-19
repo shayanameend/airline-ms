@@ -9,11 +9,9 @@ export const routesColumns: ColumnDef<RouteData>[] = [
 	{
 		accessorKey: "id",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Id" />
+			<DataTableColumnHeader column={column} title="Route" />
 		),
-		cell: ({ row }) => <div className="w-[84px]">{row.getValue("id")}</div>,
-		enableSorting: false,
-		enableHiding: false,
+		cell: ({ row }) => <div className="w-[128px]">{row.getValue("id")}</div>,
 	},
 	{
 		accessorKey: "departure",
@@ -21,7 +19,7 @@ export const routesColumns: ColumnDef<RouteData>[] = [
 			<DataTableColumnHeader column={column} title="Departure" />
 		),
 		cell: ({ row }) => (
-			<div className="w-[84px]">
+			<div className="w-[128px]">
 				{row.original.departureCity}, {row.original.departureCountry}
 			</div>
 		),
@@ -32,9 +30,18 @@ export const routesColumns: ColumnDef<RouteData>[] = [
 			<DataTableColumnHeader column={column} title="Arrival" />
 		),
 		cell: ({ row }) => (
-			<div className="w-[84px]">
+			<div className="w-[128px]">
 				{row.original.arrivalCity}, {row.original.arrivalCountry}
 			</div>
+		),
+	},
+	{
+		accessorKey: "durationMinutes",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Duration (Mins)" />
+		),
+		cell: ({ row }) => (
+			<div className="w-[128px]">{row.original.durationMinutes}</div>
 		),
 	},
 	{

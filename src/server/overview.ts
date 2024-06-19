@@ -329,7 +329,14 @@ export async function getOverviewData() {
 		console.error(error);
 
 		return ServerResponse.server_error(
-			{},
+			{
+				numberOfActiveFlights: 0,
+				numberOfScheduledFlights: 0,
+				numberOfTicketsSold: 0,
+				numberOfPassengers: 0,
+				passengerTraficData: [],
+				recentBookingsData: [],
+			},
 			{
 				message: "Failed to retrieve overview details",
 			},

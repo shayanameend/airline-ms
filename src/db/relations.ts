@@ -12,7 +12,7 @@ import {
 	route_table,
 	ticket_table,
 } from "~/db/tables";
-import { crewMembersToFlightsJoin, pilotsToFlightsJoin } from "./joins";
+import { crewMembersToFlightsJoin, pilotsToFlightsJoin } from "~/db/joins";
 
 export const airline_relations = relations(airline_table, ({ many }) => ({
 	aircrafts: many(aircraft_table),
@@ -39,15 +39,26 @@ export const aircraft_relations = relations(
 	}),
 );
 
+export const airport_relations = relations(airport_table, ({ many }) => ({
+	arrivalRoutes: many(route_table, {
+		relationName: "arrivalAirport",
+	}),
+	departureRoutes: many(route_table, {
+		relationName: "departureAirport",
+	}),
+}));
+
 export const route_relations = relations(route_table, ({ one, many }) => ({
 	flights: many(flight_table),
 	arrivalAirport: one(airport_table, {
 		fields: [route_table.arrivalAirportId],
 		references: [airport_table.id],
+		relationName: "arrivalAirport",
 	}),
 	departureAirport: one(airport_table, {
 		fields: [route_table.departureAirportId],
 		references: [airport_table.id],
+		relationName: "departureAirport",
 	}),
 }));
 

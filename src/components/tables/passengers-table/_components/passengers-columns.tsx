@@ -12,25 +12,21 @@ export const passengerColumns: ColumnDef<PassengerData>[] = [
 		header: ({ column }) => (
 			<DataTableColumnHeader column={column} title="Passenger" />
 		),
-		cell: ({ row }) => <div className="w-[80px]">{row.getValue("id")}</div>,
-		enableSorting: false,
-		enableHiding: false,
+		cell: ({ row }) => <div className="w-[128px]">{row.getValue("id")}</div>,
 	},
 	{
 		accessorKey: "name",
 		header: ({ column }) => (
 			<DataTableColumnHeader column={column} title="Name" />
 		),
-		cell: ({ row }) => <div className="w-[80px]">{row.getValue("name")}</div>,
-		enableSorting: false,
-		enableHiding: false,
+		cell: ({ row }) => <div className="w-[128px]">{row.getValue("name")}</div>,
 	},
 	{
 		accessorKey: "phone",
 		header: ({ column }) => (
 			<DataTableColumnHeader column={column} title="Phone" />
 		),
-		cell: ({ row }) => <div className="w-[80px]">{row.getValue("phone")}</div>,
+		cell: ({ row }) => <div className="w-[128px]">{row.getValue("phone")}</div>,
 	},
 	{
 		accessorKey: "registerationDate",

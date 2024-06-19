@@ -1,6 +1,7 @@
 "use server";
 
 import { eq } from "drizzle-orm";
+import { revalidatePath } from "next/cache";
 import { db } from "~/db";
 import { pilot_table } from "~/db/tables";
 
@@ -61,6 +62,8 @@ export async function createPilot(data: PilotInput) {
 				message: "An error occurred while creating pilot.",
 			},
 		);
+	} finally {
+		revalidatePath("/management");
 	}
 }
 

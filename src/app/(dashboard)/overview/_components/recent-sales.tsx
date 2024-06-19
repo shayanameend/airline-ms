@@ -1,3 +1,4 @@
+import { fromUnixTime } from "date-fns";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 
 export function RecentBookings({
@@ -6,7 +7,7 @@ export function RecentBookings({
 	data: {
 		name: string;
 		phone: string;
-		date: string;
+		date: number;
 	}[];
 }) {
 	return (
@@ -22,7 +23,9 @@ export function RecentBookings({
 						<p className="text-sm font-medium leading-none">{item.name}</p>
 						<p className="text-sm text-muted-foreground">{item.phone}</p>
 					</div>
-					<div className="ml-auto font-medium">{item.date}</div>
+					<div className="ml-auto font-medium">
+						{fromUnixTime(item.date).toLocaleString()}
+					</div>
 				</div>
 			))}
 		</div>

@@ -12,8 +12,6 @@ export const pilotColumns: ColumnDef<PilotData>[] = [
 			<DataTableColumnHeader column={column} title="Crew Member" />
 		),
 		cell: ({ row }) => <div className="w-[128px]">{row.getValue("id")}</div>,
-		enableSorting: false,
-		enableHiding: false,
 	},
 	{
 		accessorKey: "name",
@@ -21,6 +19,17 @@ export const pilotColumns: ColumnDef<PilotData>[] = [
 			<DataTableColumnHeader column={column} title="Name" />
 		),
 		cell: ({ row }) => <div className="w-[128px]">{row.getValue("name")}</div>,
+	},
+	{
+		accessorKey: "aircraftId",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Aircraft" />
+		),
+		cell: ({ row }) => (
+			<div className="w-[128px]">
+				{row.getValue("aircraftId") || "Not Assigned"}
+			</div>
+		),
 	},
 	{
 		accessorKey: "flightHours",

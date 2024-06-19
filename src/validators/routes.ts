@@ -6,6 +6,7 @@ export const routeDataValidator = zod.object({
 	departureCountry: zod.string(),
 	arrivalCity: zod.string(),
 	arrivalCountry: zod.string(),
+	durationMinutes: zod.number(),
 });
 
 export type RouteData = zod.infer<typeof routeDataValidator>;

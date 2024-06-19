@@ -1,6 +1,7 @@
 "use server";
 
 import { eq } from "drizzle-orm";
+import { revalidatePath } from "next/cache";
 import { db } from "~/db";
 import { crew_member_table } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
@@ -63,6 +64,8 @@ export async function createCrewMember(data: CrewMemberInput) {
 				message: "An error occurred while creating crew member.",
 			},
 		);
+	} finally {
+		revalidatePath("/management");
 	}
 }
 

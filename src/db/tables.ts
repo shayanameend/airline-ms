@@ -21,13 +21,12 @@ export const airport_table = sqliteTable("airport", {
 export const aircraft_table = sqliteTable("aircraft", {
 	id: text("id").primaryKey().$default(uuid),
 	airlineId: text("airline_id").notNull(),
-	status: text("status").notNull(),
+	status: text("status").notNull().default("operable"),
 	make: text("make").notNull(),
 	model: text("model").notNull(),
 	capacity: integer("capacity").notNull(),
 	passengerCount: integer("passenger_count").notNull().default(0),
-	pilotId: text("pilot_id"),
-	crewMemberId: text("crew_member_id"),
+	pilotId: text("pilot_id").notNull(),
 });
 
 export const route_table = sqliteTable("route", {
@@ -40,7 +39,7 @@ export const route_table = sqliteTable("route", {
 export const flight_table = sqliteTable("flight", {
 	id: text("id").primaryKey().$default(uuid),
 	airlineId: text("airline_id").notNull(),
-	routeId: text("route_id").notNull(), // unique composite
+	routeId: text("route_id").notNull(),
 	aircraftId: text("aircraft_id").notNull(),
 	departure: integer("departure").notNull(),
 	arrival: integer("arrival").notNull(),
@@ -53,7 +52,7 @@ export const pilot_table = sqliteTable("pilot", {
 	airlineId: text("airline_id").notNull(),
 	aircraftId: text("aircraft_id").references(() => aircraft_table.id),
 	name: text("name").notNull(),
-	flightHours: integer("flight_hours").notNull(),
+	flightHours: integer("flight_hours").notNull().default(0),
 });
 
 export const crew_member_table = sqliteTable("crew_member", {

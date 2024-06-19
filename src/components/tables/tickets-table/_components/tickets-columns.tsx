@@ -12,8 +12,6 @@ export const ticketsColumns: ColumnDef<TicketData>[] = [
 			<DataTableColumnHeader column={column} title="Ticket" />
 		),
 		cell: ({ row }) => <div className="w-[128px]">{row.original.id}</div>,
-		enableSorting: false,
-		enableHiding: false,
 	},
 	{
 		accessorKey: "name",
@@ -43,11 +41,11 @@ export const ticketsColumns: ColumnDef<TicketData>[] = [
 
 			return (
 				<>
-					<div className="w-[96px]">
+					<div className="w-[128px]">
 						{row.original.departureTime.toLocaleString()}
 					</div>
 					<br />
-					<div className="w-[96px]">
+					<div className="w-[128px]">
 						{row.original.arrivalTime.toLocaleString()}
 					</div>
 				</>

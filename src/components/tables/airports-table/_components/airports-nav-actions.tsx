@@ -1,5 +1,5 @@
 import { PlusIcon } from "lucide-react";
-import { PilotForm } from "~/components/forms/pilot-form";
+import { PassengerForm } from "~/components/forms/passenger-form";
 import { Button } from "~/components/ui/button";
 import {
 	Dialog,
@@ -10,11 +10,8 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "~/components/ui/dialog";
-import { getAircrafts } from "~/server/aircrafts";
 
-export async function PilotsNavActions() {
-	const aircraftsResponse = await getAircrafts();
-
+export function AirportsNavActions() {
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
@@ -24,15 +21,12 @@ export async function PilotsNavActions() {
 			</DialogTrigger>
 			<DialogContent>
 				<DialogHeader>
-					<DialogTitle>New Pilots</DialogTitle>
+					<DialogTitle>New Passenger</DialogTitle>
 					<DialogDescription>
-						Please fill out the form below to create a new pilot.
+						Please fill out the form below to create a new passenger.
 					</DialogDescription>
 				</DialogHeader>
-				<PilotForm
-					aircrafts={aircraftsResponse.data.aircrafts}
-					CloseDialog={DialogClose}
-				/>
+				<PassengerForm Close={DialogClose} />
 			</DialogContent>
 		</Dialog>
 	);

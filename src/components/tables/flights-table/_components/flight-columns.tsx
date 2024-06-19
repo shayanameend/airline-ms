@@ -83,7 +83,7 @@ export const flightColumns: ColumnDef<FlightData>[] = [
 		header: ({ column }) => (
 			<DataTableColumnHeader column={column} title="Price" />
 		),
-		cell: ({ row }) => <div className="w-[84px]">${row.original.price}</div>,
+		cell: ({ row }) => <div className="w-[128px]">${row.original.price}</div>,
 	},
 	{
 		id: "actions",

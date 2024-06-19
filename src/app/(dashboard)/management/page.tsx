@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import { CrewMembersTable } from "~/components/tables/crew-members-table";
 import { PilotsTable } from "~/components/tables/pilots-table";
 import { AircraftsTable } from "~/components/tables/aircrafts-table";
+import { AirportsTable } from "~/components/tables/airports-table";
 
 export const metadata: Metadata = {
 	title: "Management",
@@ -16,11 +17,12 @@ export default async function ManagementPage(): Promise<AwaitedReactNode> {
 	return (
 		<section className="min-h-screen">
 			<Tabs defaultValue="passengers">
-				<TabsList className="grid w-full grid-cols-5">
+				<TabsList className="grid w-full grid-cols-6">
 					<TabsTrigger value="passengers">Passengers</TabsTrigger>
 					<TabsTrigger value="crew-members">Crew Members</TabsTrigger>
 					<TabsTrigger value="pilots">Pilots</TabsTrigger>
 					<TabsTrigger value="aircrafts">Aircrafts</TabsTrigger>
+					<TabsTrigger value="airports">Airports</TabsTrigger>
 					<TabsTrigger value="routes">Routes</TabsTrigger>
 				</TabsList>
 				<TabsContent value="passengers">
@@ -48,6 +50,13 @@ export default async function ManagementPage(): Promise<AwaitedReactNode> {
 					<Card>
 						<CardContent>
 							<AircraftsTable />
+						</CardContent>
+					</Card>
+				</TabsContent>
+				<TabsContent value="airports">
+					<Card>
+						<CardContent>
+							<AirportsTable />
 						</CardContent>
 					</Card>
 				</TabsContent>

@@ -8,20 +8,14 @@ import type { Metadata } from "next";
 import { PassengerTraffic } from "./_components/overview";
 import { RecentBookings } from "./_components/recent-sales";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
-import { domain } from "~/lib/env";
-
-export const dynamic = "force-dynamic";
+import { getOverviewData } from "~/server/overview";
 
 export const metadata: Metadata = {
 	title: "Overview",
 };
 
 export default async function OverviewPage() {
-	const response = await fetch(`${domain}/api/overview`, {
-		cache: "no-store",
-	});
-
-	const parsedResponse = await response.json();
+	const parsedResponse = await getOverviewData();
 
 	return (
 		<>
@@ -56,7 +50,9 @@ export default async function OverviewPage() {
 				</Card>
 				<Card>
 					<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-						<CardTitle className="text-sm font-medium">Tickets Sold</CardTitle>
+						<CardTitle className="text-sm font-medium">
+							Total Bookings
+						</CardTitle>
 						<CreditCardIcon size={18} className="text-muted-foreground" />
 					</CardHeader>
 					<CardContent>

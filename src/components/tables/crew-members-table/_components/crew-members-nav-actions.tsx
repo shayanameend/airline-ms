@@ -1,4 +1,5 @@
 import { PlusIcon } from "lucide-react";
+import { CrewMemberForm } from "~/components/forms/crew-member-form";
 import { Button } from "~/components/ui/button";
 import {
 	Dialog,
@@ -9,8 +10,11 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "~/components/ui/dialog";
+import { getAircrafts } from "~/server/aircrafts";
 
-export function CrewMembersNavActions() {
+export async function CrewMembersNavActions() {
+	const aircraftsResponse = await getAircrafts();
+
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
@@ -25,7 +29,10 @@ export function CrewMembersNavActions() {
 						Please fill out the form below to create a new crew member.
 					</DialogDescription>
 				</DialogHeader>
-				{/* <CrewMembersForm Close={DialogClose} /> */}
+				<CrewMemberForm
+					aircrafts={aircraftsResponse.data.aircrafts}
+					CloseDialog={DialogClose}
+				/>
 			</DialogContent>
 		</Dialog>
 	);
