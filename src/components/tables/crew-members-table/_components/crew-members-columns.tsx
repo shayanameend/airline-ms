@@ -2,8 +2,8 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { CrewMembersRowActions } from "./crew-members-row-actions";
 import type { CrewMemberData } from "~/validators/crew-members";
+import { CrewMembersRowActions } from "./crew-members-row-actions";
 
 export const crewMembersColumns: ColumnDef<CrewMemberData>[] = [
 	{

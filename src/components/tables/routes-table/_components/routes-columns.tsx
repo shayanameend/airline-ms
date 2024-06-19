@@ -2,10 +2,10 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
+import type { RouteReadData } from "~/validators/routes";
 import { RoutesRowActions } from "./routes-row-actions";
-import type { RouteData } from "~/validators/routes";
 
-export const routesColumns: ColumnDef<RouteData>[] = [
+export const routesColumns: ColumnDef<RouteReadData>[] = [
 	{
 		accessorKey: "id",
 		header: ({ column }) => (
@@ -19,9 +19,12 @@ export const routesColumns: ColumnDef<RouteData>[] = [
 			<DataTableColumnHeader column={column} title="Departure" />
 		),
 		cell: ({ row }) => (
-			<div className="w-[128px]">
-				{row.original.departureCity}, {row.original.departureCountry}
-			</div>
+			<>
+				<div className="w-[128px]">{row.original.departureAirport}</div>
+				<div className="w-[128px]">
+					{row.original.departureCity}, {row.original.departureCountry}
+				</div>
+			</>
 		),
 	},
 	{
@@ -30,9 +33,12 @@ export const routesColumns: ColumnDef<RouteData>[] = [
 			<DataTableColumnHeader column={column} title="Arrival" />
 		),
 		cell: ({ row }) => (
-			<div className="w-[128px]">
-				{row.original.arrivalCity}, {row.original.arrivalCountry}
-			</div>
+			<>
+				<div className="w-[128px]">{row.original.arrivalAirport}</div>
+				<div className="w-[128px]">
+					{row.original.arrivalCity}, {row.original.arrivalCountry}
+				</div>
+			</>
 		),
 	},
 	{

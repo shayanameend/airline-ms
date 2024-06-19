@@ -1,8 +1,8 @@
 import { DataTable } from "~/components/common/data-table";
 import { RoutesNavActions } from "~/components/tables/routes-table/_components/routes-nav-actions";
+import { getAirports } from "~/server/airports";
 import { getRoutes } from "~/server/routes";
 import { routesColumns } from "./_components/routes-columns";
-import { getAirports } from "~/server/airports";
 
 export async function RoutesTable() {
 	const airportsResponse = await getAirports();

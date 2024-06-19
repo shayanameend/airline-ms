@@ -1,8 +1,10 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "~/components/ui/button";
+import type { DialogClose } from "~/components/ui/dialog";
 import {
 	Form,
 	FormControl,
@@ -15,8 +17,9 @@ import {
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
 import { createTicket } from "~/server/tickets";
+import type { FlightData } from "~/validators/flights";
+import type { PassengerData } from "~/validators/passengers";
 import { type TicketInput, ticketInputValidator } from "~/validators/tickets";
-import type { DialogClose } from "~/components/ui/dialog";
 import {
 	Select,
 	SelectContent,
@@ -24,10 +27,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "../ui/select";
-import type { PassengerData } from "~/validators/passengers";
-import type { FlightData } from "~/validators/flights";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import { useState } from "react";
 
 interface TicketFormProps {
 	passengers: PassengerData[];

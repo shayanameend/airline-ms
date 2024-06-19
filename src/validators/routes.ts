@@ -1,20 +1,22 @@
 import zod from "zod";
 
-export const routeDataValidator = zod.object({
+export const routeReadDataValidator = zod.object({
 	id: zod.string(),
 	departureCity: zod.string(),
 	departureCountry: zod.string(),
+	departureAirport: zod.string(),
 	arrivalCity: zod.string(),
 	arrivalCountry: zod.string(),
-	durationMinutes: zod.number(),
+	arrivalAirport: zod.string(),
+	durationMinutes: zod.coerce.number(),
 });
 
-export type RouteData = zod.infer<typeof routeDataValidator>;
+export type RouteReadData = zod.infer<typeof routeReadDataValidator>;
 
-export const routeInputValidator = zod.object({
+export const routeCreateDataValidator = zod.object({
 	departureAirportId: zod.string(),
 	arrivalAirportId: zod.string(),
-	duration: zod.number(),
+	durationMinutes: zod.coerce.number(),
 });
 
-export type RouteInput = zod.infer<typeof routeInputValidator>;
+export type RouteCreateData = zod.infer<typeof routeCreateDataValidator>;

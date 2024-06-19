@@ -1,5 +1,5 @@
 import { PlusIcon } from "lucide-react";
-import { PassengerForm } from "~/components/forms/passenger-form";
+import { AirportForm } from "~/components/forms/airport-form";
 import { Button } from "~/components/ui/button";
 import {
 	Dialog,
@@ -21,12 +21,12 @@ export function AirportsNavActions() {
 			</DialogTrigger>
 			<DialogContent>
 				<DialogHeader>
-					<DialogTitle>New Passenger</DialogTitle>
+					<DialogTitle>New Airport</DialogTitle>
 					<DialogDescription>
-						Please fill out the form below to create a new passenger.
+						Please fill out the form below to create a new airport.
 					</DialogDescription>
 				</DialogHeader>
-				<PassengerForm Close={DialogClose} />
+				<AirportForm CloseDialog={DialogClose} />
 			</DialogContent>
 		</Dialog>
 	);

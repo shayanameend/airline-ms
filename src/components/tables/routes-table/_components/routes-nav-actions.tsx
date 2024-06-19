@@ -1,4 +1,5 @@
 import { PlusIcon } from "lucide-react";
+import { RouteForm } from "~/components/forms/route-form";
 import { Button } from "~/components/ui/button";
 import {
 	Dialog,
@@ -32,7 +33,7 @@ export function RoutesNavActions({
 						Please fill out the form below to create a new route.
 					</DialogDescription>
 				</DialogHeader>
-				{/* <RoutesForm airports={airports} CloseDialog={DialogClose} /> */}
+				<RouteForm airports={airports} CloseDialog={DialogClose} />
 			</DialogContent>
 		</Dialog>
 	);

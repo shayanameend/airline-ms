@@ -7,8 +7,8 @@ import { passenger_table } from "~/db/tables";
 
 import { ServerResponse } from "~/lib/handlers/response-handler";
 import {
-	passengerInputValidator,
 	type PassengerInput,
+	passengerInputValidator,
 } from "~/validators/passengers";
 
 const airlineId = "21e8b789-1eb9-429b-a5ac-e83be75bad6b";

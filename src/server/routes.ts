@@ -2,10 +2,11 @@
 
 import { eq } from "drizzle-orm";
 import { alias } from "drizzle-orm/sqlite-core";
+import { revalidatePath } from "next/cache";
 import { db } from "~/db";
 import { airport_table, route_table } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
-import type { RouteInput } from "~/validators/routes";
+import type { RouteCreateData } from "~/validators/routes";
 
 const airlineId = "21e8b789-1eb9-429b-a5ac-e83be75bad6b";
 
@@ -19,9 +20,11 @@ export async function getRoutes() {
 				id: route_table.id,
 				departureCity: departure_airport_table.city,
 				departureCountry: departure_airport_table.country,
+				departureAirport: departure_airport_table.name,
 				arrivalCity: arrival_airport_table.city,
 				arrivalCountry: arrival_airport_table.country,
-				duration: route_table.durationMinutes,
+				arrivalAirport: departure_airport_table.name,
+				durationMinutes: route_table.durationMinutes,
 			})
 			.from(route_table)
 			.innerJoin(
@@ -55,7 +58,7 @@ export async function getRoutes() {
 	}
 }
 
-export async function createRoute(data: RouteInput) {
+export async function createRoute(data: RouteCreateData) {
 	try {
 		const routes = await db.insert(route_table).values(data).returning();
 
@@ -78,10 +81,16 @@ export async function createRoute(data: RouteInput) {
 				message: "An error occurred while creating route.",
 			},
 		);
+	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
+		revalidatePath("/bookings");
+		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }
 
-export async function updateRoute(id: string, data: RouteInput) {
+export async function updateRoute(id: string, data: RouteCreateData) {
 	try {
 		const routes = await db
 			.update(route_table)
@@ -108,6 +117,12 @@ export async function updateRoute(id: string, data: RouteInput) {
 				message: "An error occurred while updating route.",
 			},
 		);
+	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
+		revalidatePath("/bookings");
+		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }
 
@@ -134,5 +149,11 @@ export async function deleteRoute(id: string) {
 				message: "An error occurred while deleting route.",
 			},
 		);
+	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
+		revalidatePath("/bookings");
+		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }

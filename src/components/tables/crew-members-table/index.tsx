@@ -1,6 +1,6 @@
 import { DataTable } from "~/components/common/data-table";
-import { crewMembersColumns } from "./_components/crew-members-columns";
 import { getCrewMembers } from "~/server/crew-members";
+import { crewMembersColumns } from "./_components/crew-members-columns";
 import { CrewMembersNavActions } from "./_components/crew-members-nav-actions";
 
 export async function CrewMembersTable() {

@@ -2,8 +2,8 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { PilotsRowAction } from "./pilots-row-actions";
 import type { PilotData } from "~/validators/pilots";
+import { PilotsRowAction } from "./pilots-row-actions";
 
 export const pilotColumns: ColumnDef<PilotData>[] = [
 	{

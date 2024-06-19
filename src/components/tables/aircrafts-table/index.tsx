@@ -1,6 +1,6 @@
 import { DataTable } from "~/components/common/data-table";
-import { aircraftsColumns } from "./_components/aircrafts-columns";
 import { getAircrafts } from "~/server/aircrafts";
+import { aircraftsColumns } from "./_components/aircrafts-columns";
 import { AircraftsNavActions } from "./_components/aircrafts-nav-actions";
 
 export async function AircraftsTable() {

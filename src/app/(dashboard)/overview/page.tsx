@@ -5,10 +5,10 @@ import {
 	UsersIcon,
 } from "lucide-react";
 import type { Metadata } from "next";
-import { PassengerTraffic } from "./_components/overview";
-import { RecentBookings } from "./_components/recent-sales";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { getOverviewData } from "~/server/overview";
+import { PassengerTraffic } from "./_components/overview";
+import { RecentBookings } from "./_components/recent-sales";
 
 export const metadata: Metadata = {
 	title: "Overview",

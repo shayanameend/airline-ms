@@ -1,10 +1,10 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
-import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { AircraftsRowActions } from "./aircrafts-row-actions";
-import type { AircraftData } from "~/validators/aircrafts";
 import { Fragment } from "react";
+import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
+import type { AircraftData } from "~/validators/aircrafts";
+import { AircraftsRowActions } from "./aircrafts-row-actions";
 
 export const aircraftsColumns: ColumnDef<AircraftData>[] = [
 	{

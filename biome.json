@@ -13,6 +13,6 @@
 		"enabled": true
 	},
 	"files": {
-		"ignore": ["node_modules/", ".next/"]
+		"ignore": ["node_modules/", ".next/", "src/components/ui"]
 	}
 }

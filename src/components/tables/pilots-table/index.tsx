@@ -1,6 +1,6 @@
 import { DataTable } from "~/components/common/data-table";
-import { pilotColumns } from "./_components/pilots-columns";
 import { getPilots } from "~/server/pilots";
+import { pilotColumns } from "./_components/pilots-columns";
 import { PilotsNavActions } from "./_components/pilots-nav-actions";
 
 export async function PilotsTable() {

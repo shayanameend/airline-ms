@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import type { AwaitedReactNode } from "react";
-import { Card, CardContent } from "~/components/ui/card";
-import { PassengersTable } from "~/components/tables/passengers-table";
-import { RoutesTable } from "~/components/tables/routes-table";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
-import { CrewMembersTable } from "~/components/tables/crew-members-table";
-import { PilotsTable } from "~/components/tables/pilots-table";
 import { AircraftsTable } from "~/components/tables/aircrafts-table";
 import { AirportsTable } from "~/components/tables/airports-table";
+import { CrewMembersTable } from "~/components/tables/crew-members-table";
+import { PassengersTable } from "~/components/tables/passengers-table";
+import { PilotsTable } from "~/components/tables/pilots-table";
+import { RoutesTable } from "~/components/tables/routes-table";
+import { Card, CardContent } from "~/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 
 export const metadata: Metadata = {
 	title: "Management",

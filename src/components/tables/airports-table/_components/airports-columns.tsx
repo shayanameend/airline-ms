@@ -2,8 +2,8 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { AirportsRowActions } from "./airports-row-actions";
 import type { AirportData } from "~/validators/airports";
+import { AirportsRowActions } from "./airports-row-actions";
 
 export const airportsColumns: ColumnDef<AirportData>[] = [
 	{

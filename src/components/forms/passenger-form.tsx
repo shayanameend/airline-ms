@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "~/components/ui/button";
+import type { DialogClose } from "~/components/ui/dialog";
 import {
 	Form,
 	FormControl,
@@ -18,7 +19,6 @@ import {
 	type PassengerInput,
 	passengerInputValidator,
 } from "~/validators/passengers";
-import type { DialogClose } from "~/components/ui/dialog";
 
 interface PassengerFormProps {
 	Close?: typeof DialogClose;

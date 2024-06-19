@@ -1,7 +1,7 @@
 import { DataTable } from "~/components/common/data-table";
-import { AirportsNavActions } from "./_components/airports-nav-actions";
-import { airportsColumns } from "./_components/airports-columns";
 import { getAirports } from "~/server/airports";
+import { airportsColumns } from "./_components/airports-columns";
+import { AirportsNavActions } from "./_components/airports-nav-actions";
 
 export async function AirportsTable() {
 	const response = await getAirports();

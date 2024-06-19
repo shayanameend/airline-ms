@@ -1,4 +1,5 @@
 import { relations } from "drizzle-orm";
+import { crewMembersToFlightsJoin, pilotsToFlightsJoin } from "~/db/joins";
 import {
 	accident_record_table,
 	aircraft_table,
@@ -12,7 +13,6 @@ import {
 	route_table,
 	ticket_table,
 } from "~/db/tables";
-import { crewMembersToFlightsJoin, pilotsToFlightsJoin } from "~/db/joins";
 
 export const airline_relations = relations(airline_table, ({ many }) => ({
 	aircrafts: many(aircraft_table),

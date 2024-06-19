@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "~/components/ui/button";
+import type { DialogClose } from "~/components/ui/dialog";
 import {
 	Form,
 	FormControl,
@@ -11,6 +12,11 @@ import {
 	FormLabel,
 	FormMessage,
 } from "~/components/ui/form";
+import { Input } from "~/components/ui/input";
+import { toast } from "~/components/ui/use-toast";
+import { createPilot } from "~/server/pilots";
+import type { AircraftData } from "~/validators/aircrafts";
+import { type PilotInput, pilotsInputValidator } from "~/validators/pilots";
 import {
 	Select,
 	SelectContent,
@@ -18,12 +24,6 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "../ui/select";
-import { Input } from "~/components/ui/input";
-import { toast } from "~/components/ui/use-toast";
-import { createPilot } from "~/server/pilots";
-import { type PilotInput, pilotsInputValidator } from "~/validators/pilots";
-import type { DialogClose } from "~/components/ui/dialog";
-import type { AircraftData } from "~/validators/aircrafts";
 
 interface PilotFormProps {
 	aircrafts: AircraftData[];

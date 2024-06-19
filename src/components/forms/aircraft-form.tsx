@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "~/components/ui/button";
+import type { DialogClose } from "~/components/ui/dialog";
 import {
 	Form,
 	FormControl,
@@ -11,6 +12,18 @@ import {
 	FormLabel,
 	FormMessage,
 } from "~/components/ui/form";
+import { Input } from "~/components/ui/input";
+import { toast } from "~/components/ui/use-toast";
+import { createAircraft } from "~/server/aircrafts";
+import { createCrewMember } from "~/server/crew-members";
+import {
+	type AircraftData,
+	type AircraftInput,
+	aircraftInputValidator,
+} from "~/validators/aircrafts";
+import type { CrewMemberData } from "~/validators/crew-members";
+import type { PilotData } from "~/validators/pilots";
+import MultipleSelector, { type Option } from "../ui/multi-select";
 import {
 	Select,
 	SelectContent,
@@ -18,19 +31,6 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "../ui/select";
-import { Input } from "~/components/ui/input";
-import { toast } from "~/components/ui/use-toast";
-import type { DialogClose } from "~/components/ui/dialog";
-import {
-	aircraftInputValidator,
-	type AircraftData,
-	type AircraftInput,
-} from "~/validators/aircrafts";
-import type { CrewMemberData } from "~/validators/crew-members";
-import { createCrewMember } from "~/server/crew-members";
-import type { PilotData } from "~/validators/pilots";
-import { createAircraft } from "~/server/aircrafts";
-import MultipleSelector, { type Option } from "../ui/multi-select";
 
 interface AircraftFormProps {
 	pilots: PilotData[];

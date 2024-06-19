@@ -14,49 +14,35 @@ import {
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
-import { createCrewMember } from "~/server/crew-members";
-import { createPilot } from "~/server/pilots";
-import type { AircraftData } from "~/validators/aircrafts";
+import { createAirport } from "~/server/airports";
 import {
-	type CrewMemberInput,
-	crewMemberInputValidator,
-} from "~/validators/crew-members";
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
-} from "../ui/select";
+	type AirportInput,
+	airportInputValidator,
+} from "~/validators/airports";
 
-interface CrewMemberFormProps {
-	aircrafts: AircraftData[];
+interface AirportFormProps {
 	CloseDialog?: typeof DialogClose;
 }
 
-export function CrewMemberForm({
-	aircrafts,
-	CloseDialog,
-}: Readonly<CrewMemberFormProps>) {
-	const form = useForm<CrewMemberInput>({
-		resolver: zodResolver(crewMemberInputValidator),
+export function AirportForm({ CloseDialog }: Readonly<AirportFormProps>) {
+	const form = useForm<AirportInput>({
+		resolver: zodResolver(airportInputValidator),
 		defaultValues: {
-			airlineId: "21e8b789-1eb9-429b-a5ac-e83be75bad6b",
-			aircraftId: null,
 			name: "",
-			role: "",
+			city: "",
+			country: "",
 		},
 	});
 
-	async function onSubmit(data: CrewMemberInput) {
+	async function onSubmit(data: AirportInput) {
 		try {
-			const response = await createCrewMember(data);
+			const response = await createAirport(data);
 
 			toast({
 				title: response.message,
 				description: (
 					<pre className="mt-1 w-[340px] rounded-md p-1">
-						<code>{JSON.stringify(response.data.crewMember, null, 2)}</code>
+						<code>{JSON.stringify(response.data.airport, null, 2)}</code>
 					</pre>
 				),
 				variant: "default",
@@ -82,9 +68,9 @@ export function CrewMemberForm({
 					name="name"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Full Name</FormLabel>
+							<FormLabel>Name</FormLabel>
 							<FormControl>
-								<Input placeholder="John Doe" {...field} />
+								<Input placeholder="Nantional Karachi Airport" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -92,12 +78,12 @@ export function CrewMemberForm({
 				/>
 				<FormField
 					control={form.control}
-					name="role"
+					name="city"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Role</FormLabel>
+							<FormLabel>City</FormLabel>
 							<FormControl>
-								<Input placeholder="host" {...field} />
+								<Input placeholder="Karachi" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -105,27 +91,13 @@ export function CrewMemberForm({
 				/>
 				<FormField
 					control={form.control}
-					name="aircraftId"
+					name="country"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Aircaft</FormLabel>
-							<Select
-								onValueChange={field.onChange}
-								value={field.value || undefined}
-							>
-								<FormControl>
-									<SelectTrigger>
-										<SelectValue placeholder="Select an aircraft" />
-									</SelectTrigger>
-								</FormControl>
-								<SelectContent>
-									{aircrafts.map((aircraft) => (
-										<SelectItem key={aircraft.id} value={aircraft.id}>
-											{aircraft.make} {aircraft.model}
-										</SelectItem>
-									))}
-								</SelectContent>
-							</Select>
+							<FormLabel>Country</FormLabel>
+							<FormControl>
+								<Input placeholder="Pakistan" {...field} />
+							</FormControl>
 							<FormMessage />
 						</FormItem>
 					)}
@@ -139,14 +111,12 @@ export function CrewMemberForm({
 					<Button
 						disabled={
 							form.formState.errors.root !== undefined ||
-							form.formState.errors.airlineId !== undefined ||
-							form.formState.errors.aircraftId !== undefined ||
 							form.formState.errors.name !== undefined ||
-							form.formState.errors.role !== undefined ||
-							form.getValues("airlineId") === "" ||
-							form.getValues("aircraftId") === "" ||
+							form.formState.errors.city !== undefined ||
+							form.formState.errors.country !== undefined ||
 							form.getValues("name") === "" ||
-							form.getValues("role") === undefined
+							form.getValues("city") === "" ||
+							form.getValues("country") === ""
 						}
 						type="submit"
 					>

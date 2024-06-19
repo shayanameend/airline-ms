@@ -4,6 +4,16 @@ import { DotsHorizontalIcon } from "@radix-ui/react-icons";
 import type { Row } from "@tanstack/react-table";
 import { Button } from "~/components/ui/button";
 import {
+	Dialog,
+	DialogClose,
+	DialogContent,
+	DialogDescription,
+	DialogFooter,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger,
+} from "~/components/ui/dialog";
+import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
@@ -11,29 +21,21 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 import { toast } from "~/components/ui/use-toast";
-import {
-	Dialog,
-	DialogContent,
-	DialogDescription,
-	DialogFooter,
-	DialogHeader,
-	DialogTitle,
-	DialogTrigger,
-	DialogClose,
-} from "~/components/ui/dialog";
-import type { RouteData } from "~/validators/routes";
+import { deleteRoute } from "~/server/routes";
+import type { RouteReadData } from "~/validators/routes";
 
 interface RoutesRowActionsProps {
-	row: Row<RouteData>;
+	row: Row<RouteReadData>;
 }
 
 export function RoutesRowActions({ row }: RoutesRowActionsProps) {
 	const routeDeleteHandler = async () => {
-		// const response = await deleteRoute(row.original.id);
-		// toast({
-		// 	title: response.message,
-		// 	variant: "default",
-		// });
+		const response = await deleteRoute(row.original.id);
+
+		toast({
+			title: response.message,
+			variant: "default",
+		});
 	};
 
 	return (

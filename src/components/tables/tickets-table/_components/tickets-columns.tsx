@@ -2,8 +2,8 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { TicketsRowActions } from "./tickets-row-actions";
 import type { TicketData } from "~/validators/tickets";
+import { TicketsRowActions } from "./tickets-row-actions";
 
 export const ticketsColumns: ColumnDef<TicketData>[] = [
 	{

@@ -1,7 +1,7 @@
 import { DataTable } from "~/components/common/data-table";
-import { PassengersNavActions } from "./_components/passengers-nav-actions";
 import { getPassengers } from "~/server/passengers";
 import { passengerColumns } from "./_components/passengers-columns";
+import { PassengersNavActions } from "./_components/passengers-nav-actions";
 
 export async function PassengersTable() {
 	const response = await getPassengers();

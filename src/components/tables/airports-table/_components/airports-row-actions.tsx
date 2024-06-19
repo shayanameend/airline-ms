@@ -1,9 +1,18 @@
 "use client";
 
-import type { Row } from "@tanstack/react-table";
-
 import { DotsHorizontalIcon } from "@radix-ui/react-icons";
+import type { Row } from "@tanstack/react-table";
 import { Button } from "~/components/ui/button";
+import {
+	Dialog,
+	DialogClose,
+	DialogContent,
+	DialogDescription,
+	DialogFooter,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger,
+} from "~/components/ui/dialog";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -11,16 +20,7 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 import { toast } from "~/components/ui/use-toast";
-import {
-	Dialog,
-	DialogContent,
-	DialogDescription,
-	DialogFooter,
-	DialogHeader,
-	DialogTitle,
-	DialogTrigger,
-	DialogClose,
-} from "~/components/ui/dialog";
+import { deleteAirport } from "~/server/airports";
 import type { AirportData } from "~/validators/airports";
 
 interface AirportsRowActionsProps {
@@ -29,11 +29,12 @@ interface AirportsRowActionsProps {
 
 export function AirportsRowActions({ row }: AirportsRowActionsProps) {
 	const airportDeleteHandler = async () => {
-		// const response = await deletePassenger(row.original.id);
-		// toast({
-		// 	title: response.message,
-		// 	variant: "default",
-		// });
+		const response = await deleteAirport(row.original.id);
+
+		toast({
+			title: response.message,
+			variant: "default",
+		});
 	};
 
 	return (
