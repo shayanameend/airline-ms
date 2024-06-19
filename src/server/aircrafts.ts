@@ -11,7 +11,14 @@ const airlineId = "21e8b789-1eb9-429b-a5ac-e83be75bad6b";
 export async function getAircrafts() {
 	try {
 		const aircrafts = await db
-			.select()
+			.select({
+				id: aircraft_table.id,
+				make: aircraft_table.make,
+				model: aircraft_table.model,
+				status: aircraft_table.status,
+				capacity: aircraft_table.capacity,
+				passengerCount: aircraft_table.passengerCount,
+			})
 			.from(aircraft_table)
 			.where(eq(aircraft_table.airlineId, airlineId));
 

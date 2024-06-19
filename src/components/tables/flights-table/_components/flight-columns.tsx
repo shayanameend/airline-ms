@@ -3,9 +3,8 @@
 import type { ColumnDef } from "@tanstack/react-table";
 import { fromUnixTime } from "date-fns";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { FlightsRowActions } from "~/components/tables/flights/_components/flight-row-actions";
-import { Badge } from "~/components/ui/badge";
-import { type FlightData, flightStatuses } from "~/validators/flights";
+import { FlightsRowActions } from "./flight-row-actions";
+import type { FlightData } from "~/validators/flights";
 
 export const flightColumns: ColumnDef<FlightData>[] = [
 	{

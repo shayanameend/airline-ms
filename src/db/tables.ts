@@ -25,6 +25,7 @@ export const aircraft_table = sqliteTable("aircraft", {
 	make: text("make").notNull(),
 	model: text("model").notNull(),
 	capacity: integer("capacity").notNull(),
+	passengerCount: integer("passenger_count").notNull().default(0),
 });
 
 export const route_table = sqliteTable("route", {

@@ -11,9 +11,7 @@ import {
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
-import { deleteTicket } from "~/server/tickets";
 import { toast } from "~/components/ui/use-toast";
-import type { TicketData } from "~/validators/tickets";
 import {
 	Dialog,
 	DialogContent,
@@ -22,21 +20,21 @@ import {
 	DialogHeader,
 	DialogTitle,
 	DialogTrigger,
+	DialogClose,
 } from "~/components/ui/dialog";
-import { DialogClose } from "@radix-ui/react-dialog";
+import type { FlightData } from "~/validators/flights";
 
-interface TicektsRowActionsProps {
-	row: Row<TicketData>;
+interface FlightsRowActionsProps {
+	row: Row<FlightData>;
 }
 
-export function TicketsRowActions({ row }: TicektsRowActionsProps) {
-	const ticektDeleteHandler = async () => {
-		const response = await deleteTicket(row.original.id);
-
-		toast({
-			title: response.message,
-			variant: "default",
-		});
+export function FlightsRowActions({ row }: FlightsRowActionsProps) {
+	const flightDeleteHandler = async () => {
+		// const response = await deleteFlight(row.original.id);
+		// toast({
+		// 	title: response.message,
+		// 	variant: "default",
+		// });
 	};
 
 	return (
@@ -75,7 +73,7 @@ export function TicketsRowActions({ row }: TicektsRowActionsProps) {
 					</DialogClose>
 					<DialogClose asChild>
 						<Button
-							onClick={ticektDeleteHandler}
+							onClick={flightDeleteHandler}
 							type="button"
 							variant="destructive"
 						>

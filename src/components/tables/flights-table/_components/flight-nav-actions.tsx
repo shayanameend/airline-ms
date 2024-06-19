@@ -33,7 +33,7 @@ export function FlightNavActions({
 				<DialogHeader>
 					<DialogTitle>New FLight</DialogTitle>
 					<DialogDescription>
-						Please fill out the form below to create a new ticket.
+						Please fill out the form below to create a new flight.
 					</DialogDescription>
 				</DialogHeader>
 				<FlightForm

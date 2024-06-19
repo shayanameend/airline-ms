@@ -1,5 +1,4 @@
 import { PlusIcon } from "lucide-react";
-import { PassengerForm } from "~/components/forms/passenger-form";
 import { Button } from "~/components/ui/button";
 import {
 	Dialog,
@@ -11,7 +10,7 @@ import {
 	DialogTrigger,
 } from "~/components/ui/dialog";
 
-export function PassengersNavActions() {
+export function CrewMembersNavActions() {
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
@@ -19,14 +18,14 @@ export function PassengersNavActions() {
 					<PlusIcon className="h-4 w-4" />
 				</Button>
 			</DialogTrigger>
-			<DialogContent className="sm:max-w-md">
+			<DialogContent>
 				<DialogHeader>
-					<DialogTitle>New Passenger</DialogTitle>
+					<DialogTitle>New Crew Member</DialogTitle>
 					<DialogDescription>
-						Please fill out the form below to create a new passenger.
+						Please fill out the form below to create a new crew member.
 					</DialogDescription>
 				</DialogHeader>
-				<PassengerForm Close={DialogClose} />
+				{/* <CrewMembersForm Close={DialogClose} /> */}
 			</DialogContent>
 		</Dialog>
 	);

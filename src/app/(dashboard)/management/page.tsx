@@ -1,21 +1,18 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import type { Metadata } from "next";
 import type { AwaitedReactNode } from "react";
-import { FlightsTable } from "~/components/tables/flights";
 import { Card, CardContent } from "~/components/ui/card";
-import { getAircrafts } from "~/server/aircrafts";
-import { getFlights } from "~/server/flights";
-import { RoutesTable } from "~/components/tables/routes";
-import { PassengersTable } from "~/components/tables/passengers";
+import { PassengersTable } from "~/components/tables/passengers-table";
+import { RoutesTable } from "~/components/tables/routes-table";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
+import { CrewMembersTable } from "~/components/tables/crew-members-table";
+import { PilotsTable } from "~/components/tables/pilots-table";
+import { AircraftsTable } from "~/components/tables/aircrafts-table";
 
 export const metadata: Metadata = {
 	title: "Management",
 };
 
 export default async function ManagementPage(): Promise<AwaitedReactNode> {
-	const flightsResponse = await getFlights();
-	const aircraftsResponse = await getAircrafts();
-
 	return (
 		<section className="min-h-screen">
 			<Tabs defaultValue="passengers">
@@ -36,28 +33,28 @@ export default async function ManagementPage(): Promise<AwaitedReactNode> {
 				<TabsContent value="crew-members">
 					<Card>
 						<CardContent>
-							<PassengersTable />
+							<CrewMembersTable />
 						</CardContent>
 					</Card>
 				</TabsContent>
 				<TabsContent value="pilots">
 					<Card>
 						<CardContent>
-							<RoutesTable />
+							<PilotsTable />
 						</CardContent>
 					</Card>
 				</TabsContent>
 				<TabsContent value="aircrafts">
 					<Card>
 						<CardContent>
-							<RoutesTable />
+							<AircraftsTable />
 						</CardContent>
 					</Card>
 				</TabsContent>
 				<TabsContent value="routes">
 					<Card>
 						<CardContent>
-							<PassengersTable />
+							<RoutesTable />
 						</CardContent>
 					</Card>
 				</TabsContent>
