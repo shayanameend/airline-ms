@@ -17,7 +17,7 @@ import {
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
 import { createTicket } from "~/server/tickets";
-import type { FlightData } from "~/validators/flights";
+import type { FlightReadData } from "~/validators/flights";
 import type { PassengerData } from "~/validators/passengers";
 import { type TicketInput, ticketInputValidator } from "~/validators/tickets";
 import {
@@ -31,7 +31,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 
 interface TicketFormProps {
 	passengers: PassengerData[];
-	flights: FlightData[];
+	flights: FlightReadData[];
 	CloseDialog?: typeof DialogClose;
 }
 

@@ -17,8 +17,8 @@ import { toast } from "~/components/ui/use-toast";
 import { createFlight } from "~/server/flights";
 import type { AircraftData } from "~/validators/aircrafts";
 import {
-	type FlightInput,
-	flightInputValidator,
+	type FlightCreateData,
+	flightCreateDataValidator,
 	flightStatuses,
 } from "~/validators/flights";
 import { DateTimePicker } from "../ui/date-time";
@@ -29,31 +29,33 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "../ui/select";
+import { useState } from "react";
+import type { RouteReadData } from "~/validators/routes";
+import { addMinutes } from "date-fns";
 
 interface FlightFormProps {
 	aircrafts: AircraftData[];
+	routes: RouteReadData[];
 	CloseDialog?: typeof DialogClose;
 }
 
 export function FlightForm({
 	aircrafts,
+	routes,
 	CloseDialog,
 }: Readonly<FlightFormProps>) {
-	const form = useForm<FlightInput>({
-		resolver: zodResolver(flightInputValidator),
+	const form = useForm<FlightCreateData>({
+		resolver: zodResolver(flightCreateDataValidator),
 		defaultValues: {
 			airlineId: "21e8b789-1eb9-429b-a5ac-e83be75bad6b",
 			aircraftId: "",
-			departureLocation: "",
-			arrivalLocation: "",
+			routeId: "",
 			departure: new Date(),
-			arrival: new Date(),
-			status: "scheduled",
 			price: 0,
 		},
 	});
 
-	async function onSubmit(data: FlightInput) {
+	async function onSubmit(data: FlightCreateData) {
 		try {
 			const response = await createFlight(data);
 
@@ -87,37 +89,102 @@ export function FlightForm({
 		}
 	}
 
+	const [departure, setDeparture] = useState("");
+	const [arrival, setArrival] = useState("");
+
+	const filteredRoutes = routes.filter((route) => {
+		const [departureCity, departureCountry] = departure.split(", ");
+		const [arrivalCity, arrivalCountry] = arrival.split(", ");
+
+		return (
+			(departureCity === undefined ||
+				departureCity === "" ||
+				route.departureCity.startsWith(departureCity)) &&
+			(departureCountry === undefined ||
+				departureCountry === "" ||
+				route.departureCountry.startsWith(departureCountry)) &&
+			(arrivalCity === undefined ||
+				arrivalCity === "" ||
+				route.arrivalCity.startsWith(arrivalCity)) &&
+			(arrivalCountry === undefined ||
+				arrivalCountry === "" ||
+				route.arrivalCountry.startsWith(arrivalCountry))
+		);
+	});
+
 	return (
 		<Form {...form}>
 			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
 				<div className="space-x-6 flex items-center">
-					<FormField
-						control={form.control}
-						name="departureLocation"
-						render={({ field }) => (
-							<FormItem>
-								<FormLabel>Departure</FormLabel>
-								<FormControl>
-									<Input placeholder="Karachi, Pakistan" {...field} />
-								</FormControl>
-								<FormMessage />
-							</FormItem>
-						)}
-					/>
-					<FormField
-						control={form.control}
-						name="arrivalLocation"
-						render={({ field }) => (
-							<FormItem>
-								<FormLabel>Arrival</FormLabel>
-								<FormControl>
-									<Input placeholder="New York, USA" {...field} />
-								</FormControl>
-								<FormMessage />
-							</FormItem>
-						)}
-					/>
+					<FormItem>
+						<FormLabel>Departure</FormLabel>
+						<FormControl>
+							<Input
+								value={departure}
+								onChange={(event) => {
+									setDeparture(event.target.value);
+								}}
+								placeholder="Karachi, Pakistan"
+							/>
+						</FormControl>
+					</FormItem>
+					<FormItem>
+						<FormLabel>Arrival</FormLabel>
+						<FormControl>
+							<Input
+								value={arrival}
+								onChange={(event) => {
+									setArrival(event.target.value);
+								}}
+								placeholder="New York, USA"
+							/>
+						</FormControl>
+					</FormItem>
 				</div>
+				<FormField
+					control={form.control}
+					name="routeId"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Route</FormLabel>
+							<Select
+								onValueChange={(value: string) => {
+									field.onChange(value);
+
+									const route = routes.find((route) => route.id === value);
+
+									if (route) {
+										form.setValue(
+											"departure",
+											addMinutes(new Date(), route.durationMinutes),
+										);
+									}
+								}}
+								value={field.value}
+							>
+								<FormControl>
+									<SelectTrigger>
+										<SelectValue
+											placeholder={
+												filteredRoutes.length > 0
+													? "Select a route"
+													: "No routes"
+											}
+										/>
+									</SelectTrigger>
+								</FormControl>
+								<SelectContent>
+									{filteredRoutes.map((route) => (
+										<SelectItem key={route.id} value={route.id}>
+											{route.departureAirport} to {route.arrivalAirport}
+										</SelectItem>
+									))}
+								</SelectContent>
+							</Select>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
 				<FormField
 					control={form.control}
 					name="departure"
@@ -135,81 +202,46 @@ export function FlightForm({
 						</FormItem>
 					)}
 				/>
-				<FormField
-					control={form.control}
-					name="arrival"
-					render={({ field }) => (
-						<FormItem>
-							<FormLabel htmlFor="datetime">Arrival</FormLabel>
-							<FormControl>
-								<DateTimePicker
-									granularity="second"
-									jsDate={field.value}
-									onJsDateChange={field.onChange}
-								/>
-							</FormControl>
-							<FormMessage />
-						</FormItem>
-					)}
-				/>
-				<FormField
-					control={form.control}
-					name="aircraftId"
-					render={({ field }) => (
-						<FormItem>
-							<FormLabel>Aircaft</FormLabel>
-							<Select onValueChange={field.onChange} value={field.value}>
-								<FormControl>
-									<SelectTrigger>
-										<SelectValue placeholder="Select an aircraft" />
-									</SelectTrigger>
-								</FormControl>
-								<SelectContent>
-									{aircrafts.map((aircraft) => (
-										<SelectItem key={aircraft.id} value={aircraft.id}>
-											{aircraft.make} {aircraft.model}
-										</SelectItem>
-									))}
-								</SelectContent>
-							</Select>
-							<FormMessage />
-						</FormItem>
-					)}
-				/>
 				<div className="space-x-6 flex items-center">
 					<FormField
 						control={form.control}
-						name="price"
+						name="aircraftId"
 						render={({ field }) => (
-							<FormItem>
-								<FormLabel>Price</FormLabel>
-								<FormControl>
-									<Input type="number" placeholder="Price" {...field} />
-								</FormControl>
+							<FormItem className="flex-1">
+								<FormLabel>Aircaft</FormLabel>
+								<Select onValueChange={field.onChange} value={field.value}>
+									<FormControl>
+										<SelectTrigger>
+											<SelectValue
+												placeholder={
+													aircrafts.length > 0
+														? "Select an aircraft"
+														: "No aircrafts"
+												}
+											/>
+										</SelectTrigger>
+									</FormControl>
+									<SelectContent>
+										{aircrafts.map((aircraft) => (
+											<SelectItem key={aircraft.id} value={aircraft.id}>
+												{aircraft.make} {aircraft.model}
+											</SelectItem>
+										))}
+									</SelectContent>
+								</Select>
 								<FormMessage />
 							</FormItem>
 						)}
 					/>
 					<FormField
 						control={form.control}
-						name="status"
+						name="price"
 						render={({ field }) => (
-							<FormItem>
-								<FormLabel>Fligth Status</FormLabel>
-								<Select onValueChange={field.onChange} value={field.value}>
-									<FormControl>
-										<SelectTrigger>
-											<SelectValue placeholder="Select a flight status" />
-										</SelectTrigger>
-									</FormControl>
-									<SelectContent>
-										{flightStatuses.map((status) => (
-											<SelectItem key={status.label} value={status.value}>
-												{status.label}
-											</SelectItem>
-										))}
-									</SelectContent>
-								</Select>
+							<FormItem className="flex-1">
+								<FormLabel>Price</FormLabel>
+								<FormControl>
+									<Input type="number" placeholder="Price" {...field} />
+								</FormControl>
 								<FormMessage />
 							</FormItem>
 						)}
@@ -224,16 +256,13 @@ export function FlightForm({
 					<Button
 						disabled={
 							form.formState.errors.root !== undefined ||
-							form.formState.errors.departureLocation !== undefined ||
-							form.formState.errors.arrivalLocation !== undefined ||
+							form.formState.errors.routeId !== undefined ||
 							form.formState.errors.departure !== undefined ||
 							form.formState.errors.aircraftId !== undefined ||
-							form.formState.errors.status !== undefined ||
 							form.formState.errors.price !== undefined ||
-							form.getValues("departureLocation") === "" ||
-							form.getValues("arrivalLocation") === "" ||
+							form.getValues("routeId") === "" ||
+							form.getValues("departure") === undefined ||
 							form.getValues("aircraftId") === "" ||
-							form.getValues("status") === "" ||
 							form.getValues("price") === undefined
 						}
 						type="submit"

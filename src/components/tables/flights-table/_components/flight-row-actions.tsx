@@ -22,10 +22,10 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 import { toast } from "~/components/ui/use-toast";
-import type { FlightData } from "~/validators/flights";
+import type { FlightReadData } from "~/validators/flights";
 
 interface FlightsRowActionsProps {
-	row: Row<FlightData>;
+	row: Row<FlightReadData>;
 }
 
 export function FlightsRowActions({ row }: FlightsRowActionsProps) {

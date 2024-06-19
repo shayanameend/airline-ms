@@ -1,5 +1,5 @@
 import { DataTable } from "~/components/common/data-table";
-import type { FlightData } from "~/validators/flights";
+import type { FlightReadData } from "~/validators/flights";
 import type { PassengerData } from "~/validators/passengers";
 import type { TicketData } from "~/validators/tickets";
 import { ticketsColumns } from "./_components/tickets-columns";
@@ -7,7 +7,7 @@ import { TicketsNavActions } from "./_components/tickets-nav-actions";
 
 interface TicketsTableProps {
 	passengers: PassengerData[];
-	flights: FlightData[];
+	flights: FlightReadData[];
 	tickets: TicketData[];
 }
 

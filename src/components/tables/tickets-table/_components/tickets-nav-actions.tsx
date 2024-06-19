@@ -10,12 +10,12 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "~/components/ui/dialog";
-import type { FlightData } from "~/validators/flights";
+import type { FlightReadData } from "~/validators/flights";
 import type { PassengerData } from "~/validators/passengers";
 
 interface TicketsNavActionsProps {
 	passengers: PassengerData[];
-	flights: FlightData[];
+	flights: FlightReadData[];
 }
 
 export function TicketsNavActions({

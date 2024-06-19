@@ -11,15 +11,15 @@ import {
 	DialogTrigger,
 } from "~/components/ui/dialog";
 import type { AircraftData } from "~/validators/aircrafts";
-import type { FlightData } from "~/validators/flights";
+import type { RouteReadData } from "~/validators/routes";
 
 interface FlightNavActionsProps {
-	flights: FlightData[];
+	routes: RouteReadData[];
 	aircrafts: AircraftData[];
 }
 
 export function FlightNavActions({
-	flights,
+	routes,
 	aircrafts,
 }: Readonly<FlightNavActionsProps>) {
 	return (
@@ -37,7 +37,7 @@ export function FlightNavActions({
 					</DialogDescription>
 				</DialogHeader>
 				<FlightForm
-					flights={flights}
+					routes={routes}
 					aircrafts={aircrafts}
 					CloseDialog={DialogClose}
 				/>
