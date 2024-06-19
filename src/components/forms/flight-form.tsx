@@ -13,8 +13,6 @@ import {
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
-import { createTicket } from "~/server/tickets";
-import { type TicketInput, ticketInputValidator } from "~/validators/tickets";
 import type { DialogClose } from "~/components/ui/dialog";
 import {
 	Select,
@@ -26,24 +24,21 @@ import {
 import {
 	flightInputValidator,
 	flightStatuses,
-	type FlightData,
 	type FlightInput,
 } from "~/validators/flights";
 import type { AircraftData } from "~/validators/aircrafts";
 import { createFlight } from "~/server/flights";
 import { DateTimePicker } from "../ui/date-time";
 
-interface TicketFormProps {
-	flights: FlightData[];
+interface FlightFormProps {
 	aircrafts: AircraftData[];
 	CloseDialog?: typeof DialogClose;
 }
 
 export function FlightForm({
-	flights,
 	aircrafts,
 	CloseDialog,
-}: Readonly<TicketFormProps>) {
+}: Readonly<FlightFormProps>) {
 	const form = useForm<FlightInput>({
 		resolver: zodResolver(flightInputValidator),
 		defaultValues: {

@@ -34,11 +34,11 @@ export async function getAirlines() {
 
 export async function createAirline(data: AirlineInput) {
 	try {
-		const airline = await db.insert(airline_table).values(data).returning();
+		const airlines = await db.insert(airline_table).values(data).returning();
 
 		return ServerResponse.success(
 			{
-				airline: airline[0],
+				airline: airlines[0],
 			},
 			{
 				message: "Airline created successfully.",
@@ -60,7 +60,7 @@ export async function createAirline(data: AirlineInput) {
 
 export async function updateAirline(id: string, data: AirlineInput) {
 	try {
-		const airline = await db
+		const airlines = await db
 			.update(airline_table)
 			.set(data)
 			.where(eq(airline_table.id, id))
@@ -68,7 +68,7 @@ export async function updateAirline(id: string, data: AirlineInput) {
 
 		return ServerResponse.success(
 			{
-				airline: airline[0],
+				airline: airlines[0],
 			},
 			{
 				message: "Airline updated successfully.",

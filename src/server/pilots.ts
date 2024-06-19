@@ -40,11 +40,11 @@ export async function getPilots() {
 
 export async function createPilot(data: PilotInput) {
 	try {
-		const pilot = await db.insert(pilot_table).values(data).returning();
+		const pilots = await db.insert(pilot_table).values(data).returning();
 
 		return ServerResponse.success(
 			{
-				pilot,
+				pilot: pilots[0],
 			},
 			{
 				message: "Pilot created successfully.",
@@ -59,6 +59,62 @@ export async function createPilot(data: PilotInput) {
 			},
 			{
 				message: "An error occurred while creating pilot.",
+			},
+		);
+	}
+}
+
+export async function updatePilot(id: string, data: PilotInput) {
+	try {
+		const pilots = await db
+			.update(pilot_table)
+			.set(data)
+			.where(eq(pilot_table.id, id))
+			.returning();
+
+		return ServerResponse.success(
+			{
+				pilot: pilots[0],
+			},
+			{
+				message: "Pilot updated successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				pilot: [],
+			},
+			{
+				message: "An error occurred while updating pilot.",
+			},
+		);
+	}
+}
+
+export async function deletePilot(id: string) {
+	try {
+		await db.delete(pilot_table).where(eq(pilot_table.id, id));
+
+		return ServerResponse.success(
+			{
+				pilot: null,
+			},
+			{
+				message: "Pilot deleted successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				pilot: null,
+			},
+			{
+				message: "An error occurred while deleting pilot.",
 			},
 		);
 	}

@@ -93,3 +93,76 @@ export async function createPassenger(data: PassengerInput) {
 		revalidatePath("/bookings");
 	}
 }
+
+export async function updatePassenger(id: string, data: PassengerInput) {
+	try {
+		const parsedData = passengerInputValidator.safeParse(data);
+
+		if (!parsedData.success) {
+			return ServerResponse.bad_request(
+				{
+					passenger: null,
+				},
+				{
+					message: "Invalid passenger data.",
+				},
+			);
+		}
+
+		const passengers = await db
+			.update(passenger_table)
+			.set(parsedData.data)
+			.where(eq(passenger_table.id, id))
+			.returning();
+
+		return ServerResponse.success(
+			{
+				passenger: passengers[0],
+			},
+			{
+				message: "Passenger updated successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				passenger: null,
+			},
+			{
+				message: "An error occurred while updating the passenger.",
+			},
+		);
+	} finally {
+		revalidatePath("/bookings");
+	}
+}
+
+export async function deletePassenger(id: string) {
+	try {
+		await db.delete(passenger_table).where(eq(passenger_table.id, id));
+
+		return ServerResponse.success(
+			{
+				passenger: null,
+			},
+			{
+				message: "Passenger deleted successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				passenger: null,
+			},
+			{
+				message: "An error occurred while deleting the passenger.",
+			},
+		);
+	} finally {
+		revalidatePath("/bookings");
+	}
+}

@@ -21,7 +21,7 @@ export async function getRoutes() {
 				departureCountry: departure_airport_table.country,
 				arrivalCity: arrival_airport_table.city,
 				arrivalCountry: arrival_airport_table.country,
-				duration: route_table.duration,
+				duration: route_table.durationMinutes,
 			})
 			.from(route_table)
 			.innerJoin(
@@ -57,11 +57,11 @@ export async function getRoutes() {
 
 export async function createRoute(data: RouteInput) {
 	try {
-		const route = await db.insert(route_table).values(data).returning();
+		const routes = await db.insert(route_table).values(data).returning();
 
 		return ServerResponse.success(
 			{
-				route,
+				route: routes[0],
 			},
 			{
 				message: "Route created successfully.",
@@ -72,10 +72,66 @@ export async function createRoute(data: RouteInput) {
 
 		return ServerResponse.server_error(
 			{
-				route: [],
+				route: null,
 			},
 			{
 				message: "An error occurred while creating route.",
+			},
+		);
+	}
+}
+
+export async function updateRoute(id: string, data: RouteInput) {
+	try {
+		const routes = await db
+			.update(route_table)
+			.set(data)
+			.where(eq(route_table.id, id))
+			.returning();
+
+		return ServerResponse.success(
+			{
+				route: routes[0],
+			},
+			{
+				message: "Route updated successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				route: null,
+			},
+			{
+				message: "An error occurred while updating route.",
+			},
+		);
+	}
+}
+
+export async function deleteRoute(id: string) {
+	try {
+		await db.delete(route_table).where(eq(route_table.id, id));
+
+		return ServerResponse.success(
+			{
+				route: null,
+			},
+			{
+				message: "Route deleted successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				route: null,
+			},
+			{
+				message: "An error occurred while deleting route.",
 			},
 		);
 	}

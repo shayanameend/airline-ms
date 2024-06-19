@@ -1,13 +1,20 @@
 {
-	"version": "6",
-	"dialect": "sqlite",
-	"entries": [
-		{
-			"idx": 0,
-			"version": "6",
-			"when": 1718407317385,
-			"tag": "0000_yellow_yellowjacket",
-			"breakpoints": true
-		}
-	]
+  "version": "6",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1718407317385,
+      "tag": "0000_yellow_yellowjacket",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1718793954781,
+      "tag": "0001_goofy_rawhide_kid",
+      "breakpoints": true
+    }
+  ]
 }

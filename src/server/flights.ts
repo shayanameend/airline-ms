@@ -145,7 +145,7 @@ export async function createFlight(data: FlightInput) {
 				.returning();
 		}
 
-		const flight = await db
+		const flights = await db
 			.insert(flight_table)
 			.values({
 				airlineId: data.airlineId,
@@ -160,7 +160,7 @@ export async function createFlight(data: FlightInput) {
 
 		return ServerResponse.created(
 			{
-				flight,
+				flight: flights[0],
 			},
 			{
 				message: "Flight created successfully.",
@@ -171,10 +171,70 @@ export async function createFlight(data: FlightInput) {
 
 		return ServerResponse.server_error(
 			{
-				flight: [],
+				flight: null,
 			},
 			{
 				message: "An error occurred while creating flight.",
+			},
+		);
+	} finally {
+		revalidatePath("/flights");
+	}
+}
+
+export async function updateFlight(id: string, data: FlightInput) {
+	try {
+		const flights = await db
+			.update(flight_table)
+			.set(data)
+			.where(eq(flight_table.id, id))
+			.returning();
+
+		return ServerResponse.success(
+			{
+				flight: flights[0],
+			},
+			{
+				message: "Flight updated successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				flight: null,
+			},
+			{
+				message: "An error occurred while updating flight.",
+			},
+		);
+	} finally {
+		revalidatePath("/flights");
+	}
+}
+
+export async function deleteFlight(id: string) {
+	try {
+		await db.delete(flight_table).where(eq(flight_table.id, id));
+
+		return ServerResponse.success(
+			{
+				flight: null,
+			},
+			{
+				message: "Flight deleted successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				flight: null,
+			},
+			{
+				message: "An error occurred while deleting flight.",
 			},
 		);
 	} finally {

@@ -108,7 +108,7 @@ export async function createTicket(data: TicketInput) {
 				.returning();
 		}
 
-		const ticket = await db
+		const tickets = await db
 			.insert(ticket_table)
 			.values({
 				flightId: data.flightId,
@@ -118,7 +118,7 @@ export async function createTicket(data: TicketInput) {
 
 		return ServerResponse.success(
 			{
-				ticket: ticket[0],
+				ticket: tickets[0],
 			},
 			{
 				message: "Ticket created successfully.",
@@ -142,7 +142,7 @@ export async function createTicket(data: TicketInput) {
 
 export async function updateTicket(id: string, data: TicketInput) {
 	try {
-		const ticket = await db
+		const tickets = await db
 			.update(ticket_table)
 			.set(data)
 			.where(eq(ticket_table.id, id))
@@ -150,7 +150,7 @@ export async function updateTicket(id: string, data: TicketInput) {
 
 		return ServerResponse.success(
 			{
-				ticket: ticket[0],
+				ticket: tickets[0],
 			},
 			{
 				message: "Ticket updated successfully.",

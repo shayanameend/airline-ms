@@ -39,14 +39,14 @@ export async function getCrewMembers() {
 
 export async function createCrewMember(data: CrewMemberInput) {
 	try {
-		const crewMember = await db
+		const crewMembers = await db
 			.insert(crew_member_table)
 			.values(data)
 			.returning();
 
 		return ServerResponse.success(
 			{
-				crewMember,
+				crewMember: crewMembers[0],
 			},
 			{
 				message: "Crew member created successfully.",
@@ -57,10 +57,66 @@ export async function createCrewMember(data: CrewMemberInput) {
 
 		return ServerResponse.server_error(
 			{
-				crewMember: [],
+				crewMember: null,
 			},
 			{
 				message: "An error occurred while creating crew member.",
+			},
+		);
+	}
+}
+
+export async function updateCrewMember(id: string, data: CrewMemberInput) {
+	try {
+		const crewMembers = await db
+			.update(crew_member_table)
+			.set(data)
+			.where(eq(crew_member_table.id, id))
+			.returning();
+
+		return ServerResponse.success(
+			{
+				crewMember: crewMembers[0],
+			},
+			{
+				message: "Crew member updated successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				crewMember: null,
+			},
+			{
+				message: "An error occurred while updating crew member.",
+			},
+		);
+	}
+}
+
+export async function deleteCrewMember(id: string) {
+	try {
+		await db.delete(crew_member_table).where(eq(crew_member_table.id, id));
+
+		return ServerResponse.success(
+			{
+				crewMember: null,
+			},
+			{
+				message: "Crew member deleted successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				crewMember: null,
+			},
+			{
+				message: "An error occurred while deleting crew member.",
 			},
 		);
 	}

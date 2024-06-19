@@ -29,6 +29,11 @@ export const aircraft_relations = relations(
 			fields: [aircraft_table.airlineId],
 			references: [airline_table.id],
 		}),
+		pilot: one(pilot_table, {
+			fields: [aircraft_table.pilotId],
+			references: [pilot_table.id],
+		}),
+		crewMembers: many(crew_member_table),
 		flights: many(flight_table),
 		maintenance_records: many(maintenance_record_table),
 	}),
@@ -79,6 +84,10 @@ export const crew_member_relations = relations(
 		airline: one(airline_table, {
 			fields: [crew_member_table.airlineId],
 			references: [airline_table.id],
+		}),
+		aircraft: one(aircraft_table, {
+			fields: [crew_member_table.aircraftId],
+			references: [aircraft_table.id],
 		}),
 		crewMembersToFlights: many(crewMembersToFlightsJoin),
 	}),

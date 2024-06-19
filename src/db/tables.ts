@@ -26,12 +26,15 @@ export const aircraft_table = sqliteTable("aircraft", {
 	model: text("model").notNull(),
 	capacity: integer("capacity").notNull(),
 	passengerCount: integer("passenger_count").notNull().default(0),
+	pilotId: text("pilot_id"),
+	crewMemberId: text("crew_member_id"),
 });
 
 export const route_table = sqliteTable("route", {
 	id: text("id").primaryKey().$default(uuid),
 	departureAirportId: text("departure_airport_id").notNull(),
 	arrivalAirportId: text("arrival_airport_id").notNull(),
+	durationMinutes: integer("duration_minutes").notNull(),
 });
 
 export const flight_table = sqliteTable("flight", {
@@ -48,6 +51,7 @@ export const flight_table = sqliteTable("flight", {
 export const pilot_table = sqliteTable("pilot", {
 	id: text("id").primaryKey().$default(uuid),
 	airlineId: text("airline_id").notNull(),
+	aircraftId: text("aircraft_id").references(() => aircraft_table.id),
 	name: text("name").notNull(),
 	flightHours: integer("flight_hours").notNull(),
 });
@@ -55,6 +59,7 @@ export const pilot_table = sqliteTable("pilot", {
 export const crew_member_table = sqliteTable("crew_member", {
 	id: text("id").primaryKey().$default(uuid),
 	airlineId: text("airline_id").notNull(),
+	aircraftId: text("aircraft_id"),
 	name: text("name").notNull(),
 	role: text("role").notNull(),
 });
