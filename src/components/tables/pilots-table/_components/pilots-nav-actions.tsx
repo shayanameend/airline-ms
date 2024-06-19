@@ -24,7 +24,7 @@ export async function PilotsNavActions() {
 			</DialogTrigger>
 			<DialogContent>
 				<DialogHeader>
-					<DialogTitle>New Pilots</DialogTitle>
+					<DialogTitle>New Pilot</DialogTitle>
 					<DialogDescription>
 						Please fill out the form below to create a new pilot.
 					</DialogDescription>

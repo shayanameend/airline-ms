@@ -90,7 +90,11 @@ export async function createPassenger(data: PassengerInput) {
 			},
 		);
 	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
 		revalidatePath("/bookings");
+		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }
 
@@ -135,7 +139,11 @@ export async function updatePassenger(id: string, data: PassengerInput) {
 			},
 		);
 	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
 		revalidatePath("/bookings");
+		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }
 
@@ -163,6 +171,10 @@ export async function deletePassenger(id: string) {
 			},
 		);
 	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
 		revalidatePath("/bookings");
+		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }

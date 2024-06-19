@@ -1,6 +1,7 @@
 "use server";
 
 import { eq } from "drizzle-orm";
+import { revalidatePath } from "next/cache";
 import { db } from "~/db";
 import { airline_table } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
@@ -55,6 +56,12 @@ export async function createAirline(data: AirlineInput) {
 				message: "An error occurred while creating airline.",
 			},
 		);
+	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
+		revalidatePath("/bookings");
+		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }
 
@@ -85,6 +92,12 @@ export async function updateAirline(id: string, data: AirlineInput) {
 				message: "An error occurred while updating airline.",
 			},
 		);
+	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
+		revalidatePath("/bookings");
+		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }
 
@@ -111,5 +124,11 @@ export async function deleteAirline(id: string) {
 				message: "An error occurred while deleting airline.",
 			},
 		);
+	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
+		revalidatePath("/bookings");
+		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }

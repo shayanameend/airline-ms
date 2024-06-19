@@ -65,7 +65,11 @@ export async function createCrewMember(data: CrewMemberInput) {
 			},
 		);
 	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
+		revalidatePath("/bookings");
 		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }
 
@@ -96,6 +100,12 @@ export async function updateCrewMember(id: string, data: CrewMemberInput) {
 				message: "An error occurred while updating crew member.",
 			},
 		);
+	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
+		revalidatePath("/bookings");
+		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }
 
@@ -122,5 +132,11 @@ export async function deleteCrewMember(id: string) {
 				message: "An error occurred while deleting crew member.",
 			},
 		);
+	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
+		revalidatePath("/bookings");
+		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }

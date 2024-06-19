@@ -63,7 +63,11 @@ export async function createPilot(data: PilotInput) {
 			},
 		);
 	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
+		revalidatePath("/bookings");
 		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }
 
@@ -94,6 +98,12 @@ export async function updatePilot(id: string, data: PilotInput) {
 				message: "An error occurred while updating pilot.",
 			},
 		);
+	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
+		revalidatePath("/bookings");
+		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }
 
@@ -120,5 +130,11 @@ export async function deletePilot(id: string) {
 				message: "An error occurred while deleting pilot.",
 			},
 		);
+	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
+		revalidatePath("/bookings");
+		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }

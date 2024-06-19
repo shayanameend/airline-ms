@@ -9,7 +9,7 @@ export const pilotColumns: ColumnDef<PilotData>[] = [
 	{
 		accessorKey: "id",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Crew Member" />
+			<DataTableColumnHeader column={column} title="Pilot" />
 		),
 		cell: ({ row }) => <div className="w-[128px]">{row.getValue("id")}</div>,
 	},

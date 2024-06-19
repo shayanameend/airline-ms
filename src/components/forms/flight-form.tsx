@@ -155,8 +155,11 @@ export function FlightForm({
 
 									if (route) {
 										form.setValue(
-											"departure",
-											addMinutes(new Date(), route.durationMinutes),
+											"arrival",
+											addMinutes(
+												form.getValues("departure"),
+												route.durationMinutes,
+											),
 										);
 									}
 								}}
@@ -195,7 +198,19 @@ export function FlightForm({
 								<DateTimePicker
 									granularity="second"
 									jsDate={field.value}
-									onJsDateChange={field.onChange}
+									onJsDateChange={(date: Date) => {
+										field.onChange(date);
+
+										form.setValue(
+											"arrival",
+											addMinutes(
+												date,
+												routes.find(
+													(route) => route.id === form.getValues("routeId"),
+												)?.durationMinutes ?? 0,
+											),
+										);
+									}}
 								/>
 							</FormControl>
 							<FormMessage />
@@ -258,11 +273,13 @@ export function FlightForm({
 							form.formState.errors.root !== undefined ||
 							form.formState.errors.routeId !== undefined ||
 							form.formState.errors.departure !== undefined ||
+							// form.formState.errors.arrival !== undefined ||
 							form.formState.errors.aircraftId !== undefined ||
 							form.formState.errors.price !== undefined ||
 							form.getValues("routeId") === "" ||
 							form.getValues("departure") === undefined ||
-							form.getValues("aircraftId") === "" ||
+							// form.getValues("arrival") === undefined ||
+							form.getValues("aircraftId") === undefined ||
 							form.getValues("price") === undefined
 						}
 						type="submit"

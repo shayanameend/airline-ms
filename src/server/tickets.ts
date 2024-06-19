@@ -136,7 +136,11 @@ export async function createTicket(data: TicketInput) {
 			},
 		);
 	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
 		revalidatePath("/bookings");
+		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }
 
@@ -168,7 +172,11 @@ export async function updateTicket(id: string, data: TicketInput) {
 			},
 		);
 	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
 		revalidatePath("/bookings");
+		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }
 
@@ -192,6 +200,10 @@ export async function deleteTicket(id: string) {
 			},
 		);
 	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
 		revalidatePath("/bookings");
+		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }

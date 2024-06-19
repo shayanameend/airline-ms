@@ -117,7 +117,11 @@ export async function createAircraft(data: AircraftInput) {
 			},
 		);
 	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
+		revalidatePath("/bookings");
 		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }
 
@@ -148,6 +152,12 @@ export async function updateAircraft(id: string, data: AircraftInput) {
 				message: "An error occurred while updating aircraft.",
 			},
 		);
+	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
+		revalidatePath("/bookings");
+		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }
 
@@ -174,5 +184,11 @@ export async function deleteAircraft(id: string) {
 				message: "An error occurred while deleting aircraft.",
 			},
 		);
+	} finally {
+		revalidatePath("/overview");
+		revalidatePath("/flights");
+		revalidatePath("/bookings");
+		revalidatePath("/management");
+		revalidatePath("/records");
 	}
 }
