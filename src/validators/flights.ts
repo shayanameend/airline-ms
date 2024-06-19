@@ -48,13 +48,30 @@ export const flightDataValidator = zod.object({
 export type FlightData = zod.infer<typeof flightDataValidator>;
 
 export const flightInputValidator = zod.object({
-	airlineId: zod.string(),
-	aircraftId: zod.string(),
-	routeId: zod.string(),
-	departure: zod.number(),
-	arrival: zod.number(),
-	status: zod.enum(flightStatusValues),
-	price: zod.number(),
+	airlineId: zod.string().min(1, {
+		message: "Airline is required",
+	}),
+	aircraftId: zod.string().min(1, {
+		message: "Aircraft is required",
+	}),
+	departureLocation: zod.string().min(1, {
+		message: "Departure location is required",
+	}),
+	arrivalLocation: zod.string().min(1, {
+		message: "Arrival location is required",
+	}),
+	departure: zod.date().min(new Date(), {
+		message: "Departure date must be in the future",
+	}),
+	arrival: zod.date().min(new Date(), {
+		message: "Arrival date must be in the future",
+	}),
+	status: zod.enum(flightStatusValues, {
+		message: "Invalid flight status",
+	}),
+	price: zod.coerce.number().min(0, {
+		message: "Price must be a positive number",
+	}),
 });
 
 export type FlightInput = zod.infer<typeof flightInputValidator>;

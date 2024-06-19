@@ -1,8 +1,9 @@
 "use server";
 
-import { fromUnixTime } from "date-fns";
-import { eq } from "drizzle-orm";
+import { fromUnixTime, getUnixTime } from "date-fns";
+import { and, eq } from "drizzle-orm";
 import { alias } from "drizzle-orm/sqlite-core";
+import { revalidatePath } from "next/cache";
 import { db } from "~/db";
 import {
 	aircraft_table,
@@ -78,9 +79,86 @@ export async function getFlights() {
 
 export async function createFlight(data: FlightInput) {
 	try {
-		const flight = await db.insert(flight_table).values(data).returning();
+		const [departureCity, departureCountry] =
+			data.departureLocation.split(", ");
+		const [arrivalCity, arrivalCountry] = data.arrivalLocation.split(", ");
 
-		return ServerResponse.success(
+		let departureAirports = await db
+			.select()
+			.from(airport_table)
+			.where(
+				and(
+					eq(airport_table.city, departureCity),
+					eq(airport_table.country, departureCountry),
+				),
+			);
+
+		if (departureAirports.length === 0) {
+			departureAirports = await db
+				.insert(airport_table)
+				.values({
+					name: `${departureCity}, Airport`,
+					city: departureCity,
+					country: departureCountry,
+				})
+				.returning();
+		}
+
+		let arrivalAirports = await db
+			.select()
+			.from(airport_table)
+			.where(
+				and(
+					eq(airport_table.city, arrivalCity),
+					eq(airport_table.country, arrivalCountry),
+				),
+			);
+
+		if (arrivalAirports.length === 0) {
+			arrivalAirports = await db
+				.insert(airport_table)
+				.values({
+					name: `${arrivalCity}, Airport`,
+					city: arrivalCity,
+					country: arrivalCountry,
+				})
+				.returning();
+		}
+
+		let routes = await db
+			.select()
+			.from(route_table)
+			.where(
+				and(
+					eq(route_table.departureAirportId, departureAirports[0].id),
+					eq(route_table.arrivalAirportId, arrivalAirports[0].id),
+				),
+			);
+
+		if (routes.length === 0) {
+			routes = await db
+				.insert(route_table)
+				.values({
+					departureAirportId: departureAirports[0].id,
+					arrivalAirportId: arrivalAirports[0].id,
+				})
+				.returning();
+		}
+
+		const flight = await db
+			.insert(flight_table)
+			.values({
+				airlineId: data.airlineId,
+				routeId: routes[0].id,
+				aircraftId: data.aircraftId,
+				departure: getUnixTime(data.departure),
+				arrival: getUnixTime(data.arrival),
+				status: data.status,
+				price: data.price,
+			})
+			.returning();
+
+		return ServerResponse.created(
 			{
 				flight,
 			},
@@ -99,5 +177,7 @@ export async function createFlight(data: FlightInput) {
 				message: "An error occurred while creating flight.",
 			},
 		);
+	} finally {
+		revalidatePath("/flights");
 	}
 }

@@ -238,23 +238,20 @@ export function TicketForm({
 							<Button variant="outline">Cancel</Button>
 						</CloseDialog>
 					)}
-					{form.formState.errors.root ||
-					form.formState.errors.flightId ||
-					form.formState.errors.passengerName ||
-					form.formState.errors.passengerPhone ||
-					form.getValues("flightId") === "" ||
-					form.getValues("passengerName") === "" ||
-					form.getValues("passengerPhone") === "" ? (
-						<Button disabled type="submit">
-							Submit
-						</Button>
-					) : (
-						// CloseDialog && (
-						// 	<CloseDialog asChild>
-						<Button type="submit">Submit</Button>
-						// </CloseDialog>
-						// )
-					)}
+					<Button
+						disabled={
+							form.formState.errors.root !== undefined ||
+							form.formState.errors.flightId !== undefined ||
+							form.formState.errors.passengerName !== undefined ||
+							form.formState.errors.passengerPhone !== undefined ||
+							form.getValues("flightId") === "" ||
+							form.getValues("passengerName") === "" ||
+							form.getValues("passengerPhone") === ""
+						}
+						type="submit"
+					>
+						Submit
+					</Button>
 				</div>
 			</form>
 		</Form>

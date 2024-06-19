@@ -31,13 +31,12 @@ export const route_table = sqliteTable("route", {
 	id: text("id").primaryKey().$default(uuid),
 	departureAirportId: text("departure_airport_id").notNull(),
 	arrivalAirportId: text("arrival_airport_id").notNull(),
-	duration: integer("duration").notNull(),
 });
 
 export const flight_table = sqliteTable("flight", {
 	id: text("id").primaryKey().$default(uuid),
 	airlineId: text("airline_id").notNull(),
-	routeId: text("route_id").notNull(),
+	routeId: text("route_id").notNull(), // unique composite
 	aircraftId: text("aircraft_id").notNull(),
 	departure: integer("departure").notNull(),
 	arrival: integer("arrival").notNull(),
