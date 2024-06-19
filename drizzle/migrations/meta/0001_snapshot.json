@@ -1,8 +1,8 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "1d5bdcee-6d90-4d13-abdd-8df7fe428db9",
-  "prevId": "be37378d-69a8-4aba-b7dd-5ac162e28480",
+  "id": "c952911c-888b-49cf-8978-90d98b50e612",
+  "prevId": "7e981c1c-cd54-44b5-973c-3f859b2c68e9",
   "tables": {
     "accident_record": {
       "name": "accident_record",
@@ -63,7 +63,8 @@
           "type": "text",
           "primaryKey": false,
           "notNull": true,
-          "autoincrement": false
+          "autoincrement": false,
+          "default": "'operable'"
         },
         "make": {
           "name": "make",
@@ -98,14 +99,7 @@
           "name": "pilot_id",
           "type": "text",
           "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
-        },
-        "crew_member_id": {
-          "name": "crew_member_id",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": false
         }
       },
@@ -451,25 +445,12 @@
           "type": "integer",
           "primaryKey": false,
           "notNull": true,
-          "autoincrement": false
+          "autoincrement": false,
+          "default": 0
         }
       },
       "indexes": {},
-      "foreignKeys": {
-        "pilot_aircraft_id_aircraft_id_fk": {
-          "name": "pilot_aircraft_id_aircraft_id_fk",
-          "tableFrom": "pilot",
-          "tableTo": "aircraft",
-          "columnsFrom": [
-            "aircraft_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
-        }
-      },
+      "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
@@ -668,8 +649,6 @@
   "_meta": {
     "schemas": {},
     "tables": {},
-    "columns": {
-      "\"route\".\"duration\"": "\"route\".\"duration_minutes\""
-    }
+    "columns": {}
   }
 }

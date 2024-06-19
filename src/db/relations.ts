@@ -86,6 +86,10 @@ export const pilot_relations = relations(pilot_table, ({ one, many }) => ({
 		fields: [pilot_table.airlineId],
 		references: [airline_table.id],
 	}),
+	aircrafts: one(aircraft_table, {
+		fields: [pilot_table.aircraftId],
+		references: [aircraft_table.id],
+	}),
 	pilotsToFlights: many(pilotsToFlightsJoin),
 }));
 

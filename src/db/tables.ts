@@ -50,7 +50,7 @@ export const flight_table = sqliteTable("flight", {
 export const pilot_table = sqliteTable("pilot", {
 	id: text("id").primaryKey().$default(uuid),
 	airlineId: text("airline_id").notNull(),
-	aircraftId: text("aircraft_id").references(() => aircraft_table.id),
+	aircraftId: text("aircraft_id"),
 	name: text("name").notNull(),
 	flightHours: integer("flight_hours").notNull().default(0),
 });
