@@ -1,0 +1,51 @@
+"use client";
+
+import type { ColumnDef } from "@tanstack/react-table";
+import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
+import { IncidentsRowActions } from "./incidents-row-actions";
+import type { IncidentReadData } from "~/validators/incidents";
+
+export const incidentsColumns: ColumnDef<IncidentReadData>[] = [
+	{
+		accessorKey: "id",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Flight" />
+		),
+		cell: ({ row }) => {
+			return (
+				<div className="w-[128px]">
+					<span>{row.original.id}</span>
+				</div>
+			);
+		},
+	},
+	{
+		accessorKey: "flightId",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Flight" />
+		),
+		cell: ({ row }) => <div className="w-[128px]">{row.original.flightId}</div>,
+	},
+	{
+		accessorKey: "description",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Model" />
+		),
+		cell: ({ row }) => (
+			<div className="w-[128px]">{row.original.description}</div>
+		),
+	},
+	{
+		accessorKey: "date",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Capacity" />
+		),
+		cell: ({ row }) => (
+			<div className="w-[128px]">{row.original.date.toLocaleString()}</div>
+		),
+	},
+	{
+		id: "actions",
+		cell: ({ row }) => <IncidentsRowActions row={row} />,
+	},
+];

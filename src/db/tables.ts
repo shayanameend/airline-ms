@@ -87,12 +87,12 @@ export const maintenance_record_table = sqliteTable("maintenance_record", {
 	id: text("id").primaryKey().$default(uuid),
 	aircraftId: text("aircraft_id").notNull(),
 	description: text("description").notNull(),
-	date: text("date").notNull(),
+	date: integer("date").notNull(),
 });
 
 export const accident_record_table = sqliteTable("accident_record", {
 	id: text("id").primaryKey().$default(uuid),
 	flightId: text("flight_id").notNull(),
 	description: text("description").notNull(),
-	date: text("date").notNull(),
+	date: integer("date").notNull(),
 });

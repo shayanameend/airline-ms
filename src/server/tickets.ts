@@ -1,6 +1,6 @@
 "use server";
 
-import { fromUnixTime, getUnixTime } from "date-fns";
+import { fromUnixTime } from "date-fns";
 import { desc, eq } from "drizzle-orm";
 import { alias } from "drizzle-orm/sqlite-core";
 import { revalidatePath } from "next/cache";
@@ -15,7 +15,7 @@ import {
 	ticket_table,
 } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
-import type { TicketInput } from "~/validators/tickets";
+import type { TicketData, TicketInput } from "~/validators/tickets";
 
 const airlineId = "21e8b789-1eb9-429b-a5ac-e83be75bad6b";
 

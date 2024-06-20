@@ -7,7 +7,7 @@ import { getFlights } from "~/server/flights";
 import { getRoutes } from "~/server/routes";
 
 export const metadata: Metadata = {
-	title: "Bookings",
+	title: "Flights",
 };
 
 export default async function FlightsPage(): Promise<AwaitedReactNode> {
