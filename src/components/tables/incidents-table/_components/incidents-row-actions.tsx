@@ -1,7 +1,6 @@
 "use client";
 
 import type { Row } from "@tanstack/react-table";
-
 import { DotsHorizontalIcon } from "@radix-ui/react-icons";
 import { Button } from "~/components/ui/button";
 import {
@@ -22,6 +21,7 @@ import {
 } from "~/components/ui/dropdown-menu";
 import { toast } from "~/components/ui/use-toast";
 import type { IncidentReadData } from "~/validators/incidents";
+import { deleteIncident } from "~/server/incidents";
 
 interface IncidentsRowActionsProps {
 	row: Row<IncidentReadData>;
@@ -29,11 +29,12 @@ interface IncidentsRowActionsProps {
 
 export function IncidentsRowActions({ row }: IncidentsRowActionsProps) {
 	const incidentDeleteHandler = async () => {
-		// const response = await deleteAircraft(row.original.id);
-		// toast({
-		// 	title: response.message,
-		// 	variant: "default",
-		// });
+		const response = await deleteIncident(row.original.id);
+
+		toast({
+			title: response.message,
+			variant: "default",
+		});
 	};
 
 	return (

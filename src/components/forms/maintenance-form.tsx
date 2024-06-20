@@ -1,5 +1,6 @@
 "use client";
 
+import { default as zod } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "~/components/ui/button";
@@ -13,32 +14,32 @@ import {
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
+import type { DialogClose } from "~/components/ui/dialog";
+import { createMaintenance } from "~/server/maintenances";
 import {
-	type IncidentCreateData,
-	incidentCreateDataValidator,
-} from "~/validators/incidents";
-import { createIncident } from "~/server/incidents";
+	type MaintenanceCreateData,
+	maintenanceCreateDataValidator,
+} from "~/validators/maintenances";
 import { DateTimePicker } from "../ui/date-time";
-import type { DialogClose } from "../ui/dialog";
 
-interface IncidentFormProps {
+interface MaintenanceFormProps {
 	CloseDialog: typeof DialogClose;
 }
 
-export function IncidentForm({ CloseDialog }: Readonly<IncidentFormProps>) {
-	const form = useForm<IncidentCreateData>({
-		resolver: zodResolver(incidentCreateDataValidator),
+export default function MaintenanceForm({ CloseDialog }: MaintenanceFormProps) {
+	const form = useForm<MaintenanceCreateData>({
+		resolver: zodResolver(maintenanceCreateDataValidator),
 		defaultValues: {
 			airlineId: "21e8b789-1eb9-429b-a5ac-e83be75bad6b",
-			flightId: "",
+			aircraftId: "",
 			description: "",
-			date: new Date(),
+			startDate: new Date(),
 		},
 	});
 
-	async function onSubmit(data: IncidentCreateData) {
+	async function onSubmit(data: MaintenanceCreateData) {
 		try {
-			const response = await createIncident(data);
+			const response = await createMaintenance(data);
 
 			if (response.status !== 201) {
 				toast({
@@ -52,7 +53,7 @@ export function IncidentForm({ CloseDialog }: Readonly<IncidentFormProps>) {
 				title: response.message,
 				description: (
 					<pre className="mt-1 w-[340px] rounded-md p-1">
-						<code>{JSON.stringify(response.data.incident, null, 2)}</code>
+						<code>{JSON.stringify(response.data.maintenance, null, 2)}</code>
 					</pre>
 				),
 				variant: "default",
@@ -75,10 +76,10 @@ export function IncidentForm({ CloseDialog }: Readonly<IncidentFormProps>) {
 			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
 				<FormField
 					control={form.control}
-					name="flightId"
+					name="aircraftId"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Flight ID</FormLabel>
+							<FormLabel>Aircraft ID</FormLabel>
 							<FormControl>
 								<Input placeholder="AA-21" {...field} />
 							</FormControl>
@@ -94,7 +95,7 @@ export function IncidentForm({ CloseDialog }: Readonly<IncidentFormProps>) {
 							<FormLabel>Description</FormLabel>
 							<FormControl>
 								<Input
-									placeholder="e.g. On 9 september, plane crashed due to..."
+									placeholder="e.g. location detector changed..."
 									{...field}
 								/>
 							</FormControl>
@@ -104,10 +105,10 @@ export function IncidentForm({ CloseDialog }: Readonly<IncidentFormProps>) {
 				/>
 				<FormField
 					control={form.control}
-					name="date"
+					name="startDate"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel htmlFor="datetime">Date</FormLabel>
+							<FormLabel htmlFor="datetime">Start Date</FormLabel>
 							<FormControl>
 								<DateTimePicker
 									granularity="second"

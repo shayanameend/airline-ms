@@ -4,7 +4,9 @@ export const maintenanceReadDataValidator = zod.object({
 	id: zod.string(),
 	aircraftId: zod.string(),
 	description: zod.string(),
-	date: zod.string(),
+	status: zod.string(),
+	startDate: zod.date(),
+	endDate: zod.date().nullable(),
 });
 
 export type MaintenanceReadData = zod.infer<
@@ -12,9 +14,10 @@ export type MaintenanceReadData = zod.infer<
 >;
 
 export const maintenanceCreateDataValidator = zod.object({
+	airlineId: zod.string(),
 	aircraftId: zod.string(),
 	description: zod.string(),
-	date: zod.string(),
+	startDate: zod.date(),
 });
 
 export type MaintenanceCreateData = zod.infer<

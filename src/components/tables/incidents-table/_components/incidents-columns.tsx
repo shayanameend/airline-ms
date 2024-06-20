@@ -9,7 +9,7 @@ export const incidentsColumns: ColumnDef<IncidentReadData>[] = [
 	{
 		accessorKey: "id",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Flight" />
+			<DataTableColumnHeader column={column} title="Incident" />
 		),
 		cell: ({ row }) => {
 			return (
@@ -29,16 +29,14 @@ export const incidentsColumns: ColumnDef<IncidentReadData>[] = [
 	{
 		accessorKey: "description",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Model" />
+			<DataTableColumnHeader column={column} title="Description" />
 		),
-		cell: ({ row }) => (
-			<div className="w-[128px]">{row.original.description}</div>
-		),
+		cell: ({ row }) => <div>{row.original.description}</div>,
 	},
 	{
 		accessorKey: "date",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Capacity" />
+			<DataTableColumnHeader column={column} title="Date" />
 		),
 		cell: ({ row }) => (
 			<div className="w-[128px]">{row.original.date.toLocaleString()}</div>

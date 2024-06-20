@@ -1,4 +1,5 @@
 import { PlusIcon } from "lucide-react";
+import MaintenanceForm from "~/components/forms/maintenance-form";
 import { Button } from "~/components/ui/button";
 import {
 	Dialog,
@@ -25,9 +26,7 @@ export async function MaintenancesNavActions() {
 						Please fill out the form below to create a new maintenance.
 					</DialogDescription>
 				</DialogHeader>
-				{/* <MaintenanceForm
-					CloseDialog={DialogClose}
-				/> */}
+				<MaintenanceForm CloseDialog={DialogClose} />
 			</DialogContent>
 		</Dialog>
 	);

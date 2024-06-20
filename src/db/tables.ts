@@ -83,15 +83,19 @@ export const ticket_table = sqliteTable("ticket", {
 		.$default(() => getUnixTime(new Date())),
 });
 
-export const maintenance_record_table = sqliteTable("maintenance_record", {
+export const maintenance_table = sqliteTable("maintenance", {
 	id: text("id").primaryKey().$default(uuid),
+	airlineId: text("airline_id").notNull(),
 	aircraftId: text("aircraft_id").notNull(),
 	description: text("description").notNull(),
-	date: integer("date").notNull(),
+	status: text("status").notNull().default("active"),
+	startDate: integer("start_date").notNull(),
+	endDate: integer("end_date"),
 });
 
-export const accident_record_table = sqliteTable("accident_record", {
+export const incident_table = sqliteTable("incident", {
 	id: text("id").primaryKey().$default(uuid),
+	airlineId: text("airline_id").notNull(),
 	flightId: text("flight_id").notNull(),
 	description: text("description").notNull(),
 	date: integer("date").notNull(),

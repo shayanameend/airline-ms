@@ -1,26 +1,26 @@
+"use server";
+
 import { fromUnixTime, getUnixTime } from "date-fns";
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { db } from "~/db";
-import { accident_record_table } from "~/db/tables";
+import { incident_table } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
 import type {
 	IncidentCreateData,
 	IncidentReadData,
 } from "~/validators/incidents";
 
-const airlineId = "21e8b789-1eb9-429b-a5ac-e83be75bad6b";
-
 export async function getIncidents() {
 	try {
 		const incidents = await db
 			.select({
-				id: accident_record_table.id,
-				flightId: accident_record_table.flightId,
-				description: accident_record_table.description,
-				date: accident_record_table.date,
+				id: incident_table.id,
+				flightId: incident_table.flightId,
+				description: incident_table.description,
+				date: incident_table.date,
 			})
-			.from(accident_record_table);
+			.from(incident_table);
 
 		return ServerResponse.success(
 			{
@@ -48,15 +48,16 @@ export async function getIncidents() {
 export async function createIncident(data: IncidentCreateData) {
 	try {
 		const incidents = await db
-			.insert(accident_record_table)
+			.insert(incident_table)
 			.values({
+				airlineId: data.airlineId,
 				flightId: data.flightId,
 				description: data.description,
 				date: getUnixTime(data.date),
 			})
 			.returning();
 
-		return ServerResponse.success(
+		return ServerResponse.created(
 			{
 				incident: incidents[0],
 			},
@@ -65,6 +66,8 @@ export async function createIncident(data: IncidentCreateData) {
 			},
 		);
 	} catch (error) {
+		console.error(error);
+
 		return ServerResponse.server_error(
 			{
 				incident: null,
@@ -85,12 +88,12 @@ export async function createIncident(data: IncidentCreateData) {
 export async function updateIncident(id: string, data: IncidentReadData) {
 	try {
 		const incidents = await db
-			.update(accident_record_table)
+			.update(incident_table)
 			.set({ ...data, date: getUnixTime(data.date) })
-			.where(eq(accident_record_table.id, id))
+			.where(eq(incident_table.id, id))
 			.returning();
 
-		return ServerResponse.success(
+		return ServerResponse.created(
 			{
 				incident: incidents[0],
 			},
@@ -118,11 +121,9 @@ export async function updateIncident(id: string, data: IncidentReadData) {
 
 export async function deleteIncident(id: string) {
 	try {
-		await db
-			.delete(accident_record_table)
-			.where(eq(accident_record_table.id, id));
+		await db.delete(incident_table).where(eq(incident_table.id, id));
 
-		return ServerResponse.success(
+		return ServerResponse.created(
 			{
 				incident: null,
 			},

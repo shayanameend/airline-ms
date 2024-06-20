@@ -1,4 +1,5 @@
 import { PlusIcon } from "lucide-react";
+import { IncidentForm } from "~/components/forms/incident-form";
 import { Button } from "~/components/ui/button";
 import {
 	Dialog,
@@ -25,9 +26,7 @@ export async function IncidentsNavActions() {
 						Please fill out the form below to create a new incident.
 					</DialogDescription>
 				</DialogHeader>
-				{/* <IncidentForm
-					CloseDialog={DialogClose}
-				/> */}
+				<IncidentForm CloseDialog={DialogClose} />
 			</DialogContent>
 		</Dialog>
 	);

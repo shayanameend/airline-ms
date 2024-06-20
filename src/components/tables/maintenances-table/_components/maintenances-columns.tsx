@@ -1,7 +1,7 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
-import { MaintenanceRecordRowActions } from "./maintenances-row-actions";
+import { MaintenancesRowActions } from "./maintenances-row-actions";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import type { MaintenanceReadData } from "~/validators/maintenances";
 
@@ -33,14 +33,14 @@ export const maintenancesColumns: ColumnDef<MaintenanceReadData>[] = [
 		enableSorting: false,
 	},
 	{
-		accessorKey: "date",
+		accessorKey: "startDate",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Date" />
+			<DataTableColumnHeader column={column} title="Start Date" />
 		),
 		cell: ({ row }) => <div className="w-[128px]">{row.getValue("date")}</div>,
 	},
 	{
 		id: "actions",
-		cell: ({ row }) => <MaintenanceRecordRowActions row={row} />,
+		cell: ({ row }) => <MaintenancesRowActions row={row} />,
 	},
 ];

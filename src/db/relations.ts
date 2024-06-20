@@ -1,13 +1,12 @@
 import { relations } from "drizzle-orm";
-import { crewMembersToFlightsJoin, pilotsToFlightsJoin } from "~/db/joins";
 import {
-	accident_record_table,
+	incident_table,
 	aircraft_table,
 	airline_table,
 	airport_table,
 	crew_member_table,
 	flight_table,
-	maintenance_record_table,
+	maintenance_table,
 	passenger_table,
 	pilot_table,
 	route_table,
@@ -20,6 +19,7 @@ export const airline_relations = relations(airline_table, ({ many }) => ({
 	pilots: many(pilot_table),
 	crewMembers: many(crew_member_table),
 	passengers: many(passenger_table),
+	incidents: many(incident_table),
 }));
 
 export const aircraft_relations = relations(
@@ -35,7 +35,7 @@ export const aircraft_relations = relations(
 		}),
 		crewMembers: many(crew_member_table),
 		flights: many(flight_table),
-		maintenance_records: many(maintenance_record_table),
+		maintenances: many(maintenance_table),
 	}),
 );
 
@@ -76,7 +76,7 @@ export const flight_relations = relations(flight_table, ({ one, many }) => ({
 		references: [aircraft_table.id],
 	}),
 	tickets: many(ticket_table),
-	accident_records: many(accident_record_table),
+	incidents: many(incident_table),
 	// pilotsToFlights: many(pilotsToFlightsJoin),
 	// crewMembersToFlights: many(crewMembersToFlightsJoin),
 }));
@@ -130,22 +130,23 @@ export const ticket_relations = relations(ticket_table, ({ one }) => ({
 	}),
 }));
 
-export const maintenance_record_relations = relations(
-	maintenance_record_table,
+export const maintenance_relations = relations(
+	maintenance_table,
 	({ one }) => ({
 		aircraft: one(aircraft_table, {
-			fields: [maintenance_record_table.aircraftId],
+			fields: [maintenance_table.aircraftId],
 			references: [aircraft_table.id],
 		}),
 	}),
 );
 
-export const accident_record_relations = relations(
-	accident_record_table,
-	({ one }) => ({
-		flight: one(flight_table, {
-			fields: [accident_record_table.flightId],
-			references: [flight_table.id],
-		}),
+export const incident_relations = relations(incident_table, ({ one }) => ({
+	airline: one(airline_table, {
+		fields: [incident_table.airlineId],
+		references: [airline_table.id],
 	}),
-);
+	flight: one(flight_table, {
+		fields: [incident_table.flightId],
+		references: [flight_table.id],
+	}),
+}));

@@ -4,7 +4,7 @@ import { getUnixTime } from "date-fns";
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { db } from "~/db";
-import { maintenance_record_table } from "~/db/tables";
+import { maintenance_table } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
 import type { MaintenanceCreateData } from "~/validators/maintenances";
 
@@ -14,12 +14,14 @@ export async function getMaintenances() {
 	try {
 		const maintenances = await db
 			.select({
-				id: maintenance_record_table.id,
-				aircraftId: maintenance_record_table.aircraftId,
-				description: maintenance_record_table.description,
-				date: maintenance_record_table.date,
+				id: maintenance_table.id,
+				aircraftId: maintenance_table.aircraftId,
+				description: maintenance_table.description,
+				status: maintenance_table.status,
+				startDate: maintenance_table.startDate,
+				endDate: maintenance_table.endDate,
 			})
-			.from(maintenance_record_table);
+			.from(maintenance_table);
 
 		return ServerResponse.success(
 			{
@@ -44,11 +46,12 @@ export async function getMaintenances() {
 export async function createMaintenance(data: MaintenanceCreateData) {
 	try {
 		const maintenances = await db
-			.insert(maintenance_record_table)
+			.insert(maintenance_table)
 			.values({
+				airlineId: data.airlineId,
 				aircraftId: data.aircraftId,
 				description: data.description,
-				date: getUnixTime(data.date),
+				startDate: getUnixTime(data.startDate),
 			})
 			.returning();
 
@@ -84,13 +87,14 @@ export async function updateMaintenance(
 ) {
 	try {
 		const maintenances = await db
-			.update(maintenance_record_table)
+			.update(maintenance_table)
 			.set({
+				airlineId: data.airlineId,
 				aircraftId: data.aircraftId,
 				description: data.description,
-				date: getUnixTime(data.date),
+				startDate: getUnixTime(data.startDate),
 			})
-			.where(eq(maintenance_record_table.id, id))
+			.where(eq(maintenance_table.id, id))
 			.returning();
 
 		return ServerResponse.success(
@@ -121,9 +125,7 @@ export async function updateMaintenance(
 
 export async function deleteMaintenance(id: string) {
 	try {
-		await db
-			.delete(maintenance_record_table)
-			.where(eq(maintenance_record_table.id, id));
+		await db.delete(maintenance_table).where(eq(maintenance_table.id, id));
 
 		return ServerResponse.success(
 			{
