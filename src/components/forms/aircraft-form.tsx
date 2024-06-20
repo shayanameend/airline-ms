@@ -15,9 +15,7 @@ import {
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
 import { createAircraft } from "~/server/aircrafts";
-import { createCrewMember } from "~/server/crew-members";
 import {
-	type AircraftData,
 	type AircraftInput,
 	aircraftInputValidator,
 } from "~/validators/aircrafts";
@@ -46,12 +44,12 @@ export function AircraftForm({
 	const form = useForm<AircraftInput>({
 		resolver: zodResolver(aircraftInputValidator),
 		defaultValues: {
-			airlineId: "21e8b789-1eb9-429b-a5ac-e83be75bad6b",
+			airlineId: "1f4c94b9-f0f5-496e-b1c8-e3bf1856502b",
 			make: "",
 			model: "",
-			capacity: undefined,
+			capacity: 0,
 			pilotId: "",
-			crewMemberIds: undefined,
+			crewMemberIds: [],
 		},
 	});
 
@@ -78,6 +76,7 @@ export function AircraftForm({
 			}
 		} finally {
 			form.reset();
+			form.resetField("capacity");
 		}
 	}
 
@@ -97,7 +96,7 @@ export function AircraftForm({
 							<FormItem>
 								<FormLabel>Make</FormLabel>
 								<FormControl>
-									<Input placeholder="Samsuung" {...field} />
+									<Input placeholder="Samsung" {...field} />
 								</FormControl>
 								<FormMessage />
 							</FormItem>
@@ -192,13 +191,15 @@ export function AircraftForm({
 							form.formState.errors.make !== undefined ||
 							form.formState.errors.model !== undefined ||
 							form.formState.errors.pilotId !== undefined ||
+							form.formState.errors.crewMemberIds !== undefined ||
 							form.formState.errors.root !== undefined ||
 							form.getValues("airlineId") === "" ||
 							form.getValues("capacity") === 0 ||
 							form.getValues("crewMemberIds")?.length === 0 ||
 							form.getValues("make") === "" ||
 							form.getValues("model") === "" ||
-							form.getValues("pilotId") === ""
+							form.getValues("pilotId") === "" ||
+							form.getValues("crewMemberIds").length === 0
 						}
 						type="submit"
 					>

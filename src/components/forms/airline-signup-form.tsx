@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { redirect } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { Button } from "~/components/ui/button";
 import {
@@ -13,15 +14,16 @@ import {
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
+import { useAirlineContext } from "~/contexts/airline-context";
 import { createAirline } from "~/server/airlines";
 import {
-	type AirlineInput,
-	airlineInputValidator,
+	type AirlineSignUpData,
+	airlineSignUpDataValidator,
 } from "~/validators/airlines";
 
-export function AirlineForm() {
-	const form = useForm<AirlineInput>({
-		resolver: zodResolver(airlineInputValidator),
+export function AirlineSignUpForm() {
+	const form = useForm<AirlineSignUpData>({
+		resolver: zodResolver(airlineSignUpDataValidator),
 		defaultValues: {
 			name: "",
 			email: "",
@@ -31,9 +33,17 @@ export function AirlineForm() {
 		},
 	});
 
-	async function onSubmit(data: AirlineInput) {
+	const { airline, setAirline } = useAirlineContext();
+
+	if (airline) {
+		return redirect("/overview");
+	}
+
+	async function onSubmit(data: AirlineSignUpData) {
 		try {
 			const response = await createAirline(data);
+
+			setAirline(response.data.airline);
 
 			toast({
 				title: response.message,

@@ -1,4 +1,4 @@
-import { getUnixTime } from "date-fns";
+import { fromUnixTime, getUnixTime } from "date-fns";
 import { and, desc, eq, gte, lt } from "drizzle-orm";
 import { db } from "~/db";
 import { flight_table, passenger_table, ticket_table } from "~/db/tables";
@@ -319,7 +319,10 @@ export async function getOverviewData() {
 				numberOfTicketsSold,
 				numberOfPassengers,
 				passengerTraficData,
-				recentBookingsData,
+				recentBookingsData: recentBookingsData.map((booking) => ({
+					...booking,
+					date: fromUnixTime(booking.date),
+				})),
 			},
 			{
 				message: "Overview details retrieved successfully",

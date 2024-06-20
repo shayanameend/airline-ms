@@ -1,6 +1,6 @@
 import zod from "zod";
 
-export const airlineDataValidaor = zod.object({
+export const airlineReadDataValidaor = zod.object({
 	id: zod.string(),
 	name: zod.string(),
 	email: zod.string(),
@@ -9,9 +9,9 @@ export const airlineDataValidaor = zod.object({
 	year: zod.number().min(1),
 });
 
-export type AirlineData = zod.infer<typeof airlineDataValidaor>;
+export type AirlineReadData = zod.infer<typeof airlineReadDataValidaor>;
 
-export const airlineInputValidator = zod.object({
+export const airlineSignUpDataValidator = zod.object({
 	name: zod.string(),
 	email: zod.string(),
 	password: zod.string(),
@@ -19,4 +19,11 @@ export const airlineInputValidator = zod.object({
 	year: zod.number().min(1),
 });
 
-export type AirlineInput = zod.infer<typeof airlineInputValidator>;
+export type AirlineSignUpData = zod.infer<typeof airlineSignUpDataValidator>;
+
+export const airlineSignInDataValidator = zod.object({
+	email: zod.string(),
+	password: zod.string(),
+});
+
+export type AirlineSignInData = zod.infer<typeof airlineSignInDataValidator>;

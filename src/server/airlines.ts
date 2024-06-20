@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache";
 import { db } from "~/db";
 import { airline_table } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
-import type { AirlineInput } from "~/validators/airlines";
+import type { AirlineSignUpData } from "~/validators/airlines";
 
 export async function getAirlines() {
 	try {
@@ -33,7 +33,7 @@ export async function getAirlines() {
 	}
 }
 
-export async function createAirline(data: AirlineInput) {
+export async function createAirline(data: AirlineSignUpData) {
 	try {
 		const airlines = await db.insert(airline_table).values(data).returning();
 
@@ -65,7 +65,7 @@ export async function createAirline(data: AirlineInput) {
 	}
 }
 
-export async function updateAirline(id: string, data: AirlineInput) {
+export async function updateAirline(id: string, data: AirlineSignUpData) {
 	try {
 		const airlines = await db
 			.update(airline_table)

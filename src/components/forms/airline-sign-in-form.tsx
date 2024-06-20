@@ -1,9 +1,9 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { redirect } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { Button } from "~/components/ui/button";
-import type { DialogClose } from "~/components/ui/dialog";
 import {
 	Form,
 	FormControl,
@@ -14,35 +14,39 @@ import {
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
-import { createPassenger } from "~/server/passengers";
+import { useAirlineContext } from "~/contexts/airline-context";
+import { getAirlines } from "~/server/airlines";
 import {
-	type PassengerInput,
-	passengerInputValidator,
-} from "~/validators/passengers";
+	type AirlineSignInData,
+	airlineSignInDataValidator,
+} from "~/validators/airlines";
 
-interface PassengerFormProps {
-	Close?: typeof DialogClose;
-}
-
-export function PassengerForm({ Close }: Readonly<PassengerFormProps>) {
-	const form = useForm<PassengerInput>({
-		resolver: zodResolver(passengerInputValidator),
+export function AirlineSignInForm() {
+	const form = useForm<AirlineSignInData>({
+		resolver: zodResolver(airlineSignInDataValidator),
 		defaultValues: {
-			airlineId: "1f4c94b9-f0f5-496e-b1c8-e3bf1856502b",
-			name: "",
-			phone: "",
+			email: "",
+			password: "",
 		},
 	});
 
-	async function onSubmit(data: PassengerInput) {
+	const { airline, setAirline } = useAirlineContext();
+
+	if (airline) {
+		return redirect("/overview");
+	}
+
+	async function onSubmit(data: AirlineSignInData) {
 		try {
-			const response = await createPassenger(data);
+			const response = await getAirlines();
+
+			setAirline(response.data.airlines[0]);
 
 			toast({
 				title: response.message,
 				description: (
 					<pre className="mt-1 w-[340px] rounded-md p-1">
-						<code>{JSON.stringify(response.data.passenger, null, 2)}</code>
+						<code>{JSON.stringify(response.data.airlines[0], null, 2)}</code>
 					</pre>
 				),
 				variant: "default",
@@ -65,12 +69,12 @@ export function PassengerForm({ Close }: Readonly<PassengerFormProps>) {
 			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
 				<FormField
 					control={form.control}
-					name="name"
+					name="email"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Full Name</FormLabel>
+							<FormLabel>Email</FormLabel>
 							<FormControl>
-								<Input placeholder="John Doe" {...field} />
+								<Input placeholder="email@domain.com" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -78,29 +82,18 @@ export function PassengerForm({ Close }: Readonly<PassengerFormProps>) {
 				/>
 				<FormField
 					control={form.control}
-					name="phone"
+					name="password"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Phone Number</FormLabel>
+							<FormLabel>Password</FormLabel>
 							<FormControl>
-								<Input placeholder="03123456789" {...field} />
+								<Input placeholder="********" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
 					)}
 				/>
-				{Close ? (
-					<div className="flex space-x-4">
-						<Close asChild>
-							<Button variant="outline">Cancel</Button>
-						</Close>
-						<Close asChild>
-							<Button type="submit">Submit</Button>
-						</Close>
-					</div>
-				) : (
-					<Button type="submit">Submit</Button>
-				)}
+				<Button type="submit">Submit</Button>
 			</form>
 		</Form>
 	);

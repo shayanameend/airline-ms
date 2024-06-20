@@ -7,7 +7,7 @@ export function RecentBookings({
 	data: {
 		name: string;
 		phone: string;
-		date: number;
+		date: Date;
 	}[];
 }) {
 	return (
@@ -24,7 +24,7 @@ export function RecentBookings({
 						<p className="text-sm text-muted-foreground">{item.phone}</p>
 					</div>
 					<div className="ml-auto font-medium">
-						{fromUnixTime(item.date).toLocaleString()}
+						{item.date.toLocaleString()}
 					</div>
 				</div>
 			))}

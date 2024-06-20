@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { AwaitedReactNode } from "react";
-import { AirlineForm } from "~/components/forms/airline-form";
+import { AirlineSignInForm } from "~/components/forms/airline-sign-in-form";
+import { AirlineSignUpForm } from "~/components/forms/airline-signup-form";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 
 export const metadata: Metadata = {
@@ -15,11 +16,11 @@ export default async function AuthPage(): Promise<AwaitedReactNode> {
 					<TabsTrigger value="signup">Sign Up</TabsTrigger>
 					<TabsTrigger value="signin">Sign In</TabsTrigger>
 				</TabsList>
-				<TabsContent value="signin">
-					<AirlineForm />
-				</TabsContent>
 				<TabsContent value="signup">
-					<AirlineForm />
+					<AirlineSignUpForm />
+				</TabsContent>
+				<TabsContent value="signin">
+					<AirlineSignInForm />
 				</TabsContent>
 			</Tabs>
 		</section>
