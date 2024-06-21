@@ -1,10 +1,10 @@
 import { DataTable } from "~/components/common/data-table";
-import { getCrewMembers } from "~/server/crew-members";
+import { getCrewMembersByAirlineId } from "~/server/crew-members";
 import { crewMembersColumns } from "./_components/crew-members-columns";
 import { CrewMembersNavActions } from "./_components/crew-members-nav-actions";
 
 export async function CrewMembersTable() {
-	const response = await getCrewMembers();
+	const response = await getCrewMembersByAirlineId();
 
 	return (
 		<article className="hidden h-full flex-1 flex-col space-y-8 md:flex">

@@ -10,6 +10,12 @@ export const airline_table = sqliteTable("airline", {
 	password: text("password").notNull(),
 	country: text("country").notNull(),
 	year: integer("year").notNull(),
+	createdAt: integer("created_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
+	updatedAt: integer("updated_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
 });
 
 export const airport_table = sqliteTable("airport", {
@@ -17,6 +23,12 @@ export const airport_table = sqliteTable("airport", {
 	name: text("name").notNull(),
 	city: text("city").notNull(),
 	country: text("country").notNull(),
+	createdAt: integer("created_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
+	updatedAt: integer("updated_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
 });
 
 export const aircraft_table = sqliteTable("aircraft", {
@@ -28,6 +40,12 @@ export const aircraft_table = sqliteTable("aircraft", {
 	capacity: integer("capacity").notNull(),
 	passengerCount: integer("passenger_count").notNull().default(0),
 	pilotId: text("pilot_id").notNull(),
+	createdAt: integer("created_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
+	updatedAt: integer("updated_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
 });
 
 export const route_table = sqliteTable("route", {
@@ -35,6 +53,12 @@ export const route_table = sqliteTable("route", {
 	departureAirportId: text("departure_airport_id").notNull(),
 	arrivalAirportId: text("arrival_airport_id").notNull(),
 	durationMinutes: integer("duration_minutes").notNull(),
+	createdAt: integer("created_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
+	updatedAt: integer("updated_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
 });
 
 export const flight_table = sqliteTable("flight", {
@@ -46,6 +70,12 @@ export const flight_table = sqliteTable("flight", {
 	arrival: integer("arrival").notNull(),
 	status: text("status").notNull().default(flightStatuses[0].value),
 	price: integer("price").notNull(),
+	createdAt: integer("created_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
+	updatedAt: integer("updated_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
 });
 
 export const pilot_table = sqliteTable("pilot", {
@@ -54,6 +84,12 @@ export const pilot_table = sqliteTable("pilot", {
 	aircraftId: text("aircraft_id"),
 	name: text("name").notNull(),
 	flightHours: integer("flight_hours").notNull().default(0),
+	createdAt: integer("created_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
+	updatedAt: integer("updated_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
 });
 
 export const crew_member_table = sqliteTable("crew_member", {
@@ -62,6 +98,12 @@ export const crew_member_table = sqliteTable("crew_member", {
 	aircraftId: text("aircraft_id"),
 	name: text("name").notNull(),
 	role: text("role").notNull(),
+	createdAt: integer("created_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
+	updatedAt: integer("updated_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
 });
 
 export const passenger_table = sqliteTable("passenger", {
@@ -72,6 +114,12 @@ export const passenger_table = sqliteTable("passenger", {
 	registerationDate: integer("registeration_date")
 		.notNull()
 		.$default(() => getUnixTime(new Date())),
+	createdAt: integer("created_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
+	updatedAt: integer("updated_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
 });
 
 export const ticket_table = sqliteTable("ticket", {
@@ -79,6 +127,12 @@ export const ticket_table = sqliteTable("ticket", {
 	flightId: text("flight_id").notNull(),
 	passengerId: text("passenger_id").notNull(),
 	date: integer("date")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
+	createdAt: integer("created_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
+	updatedAt: integer("updated_at")
 		.notNull()
 		.$default(() => getUnixTime(new Date())),
 });
@@ -91,6 +145,12 @@ export const maintenance_table = sqliteTable("maintenance", {
 	status: text("status").notNull().default("active"),
 	startDate: integer("start_date").notNull(),
 	endDate: integer("end_date"),
+	createdAt: integer("created_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
+	updatedAt: integer("updated_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
 });
 
 export const incident_table = sqliteTable("incident", {
@@ -99,4 +159,10 @@ export const incident_table = sqliteTable("incident", {
 	flightId: text("flight_id").notNull(),
 	description: text("description").notNull(),
 	date: integer("date").notNull(),
+	createdAt: integer("created_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
+	updatedAt: integer("updated_at")
+		.notNull()
+		.$default(() => getUnixTime(new Date())),
 });

@@ -8,7 +8,7 @@ import { airport_table, route_table } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
 import type { RouteCreateData } from "~/validators/routes";
 
-export async function getRoutes() {
+export async function getRoutes(airlineId: string) {
 	try {
 		const departure_airport_table = alias(airport_table, "departure_airport");
 		const arrival_airport_table = alias(airport_table, "arrival_airport");

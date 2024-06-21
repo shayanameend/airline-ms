@@ -1,15 +1,13 @@
 "use server";
 
-import { eq } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { db } from "~/db";
 import { aircraft_table, crew_member_table, pilot_table } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
 import type { AircraftData, AircraftInput } from "~/validators/aircrafts";
 
-const airlineId = "1f4c94b9-f0f5-496e-b1c8-e3bf1856502b";
-
-export async function getAircrafts() {
+export async function getAircraftsByAirlineId(airlineId: string) {
 	try {
 		const aircrafts = await db
 			.select({
@@ -30,7 +28,8 @@ export async function getAircrafts() {
 			.leftJoin(
 				crew_member_table,
 				eq(crew_member_table.aircraftId, aircraft_table.id),
-			);
+			)
+			.orderBy(desc(aircraft_table.updatedAt));
 
 		const reducedAircrafts = aircrafts.reduce(
 			(accumulatedAircrafts: AircraftData[], aircraft) => {

@@ -11,9 +11,7 @@ import {
 	passengerInputValidator,
 } from "~/validators/passengers";
 
-const airlineId = "1f4c94b9-f0f5-496e-b1c8-e3bf1856502b";
-
-export async function getPassengers() {
+export async function getPassengersByAirlineId(airlineId: string) {
 	try {
 		const passengers = await db
 			.select({
