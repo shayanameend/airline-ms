@@ -24,6 +24,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "../ui/select";
+import { useSearchParams } from "next/navigation";
 
 interface PilotFormProps {
 	aircrafts: AircraftData[];
@@ -34,10 +35,12 @@ export function PilotForm({
 	aircrafts,
 	CloseDialog,
 }: Readonly<PilotFormProps>) {
+	const searchParams = useSearchParams();
+
 	const form = useForm<PilotInput>({
 		resolver: zodResolver(pilotsInputValidator),
 		defaultValues: {
-			airlineId: "1f4c94b9-f0f5-496e-b1c8-e3bf1856502b",
+			airlineId: searchParams.get("airlineId") ?? "",
 			aircraftId: null,
 			name: "",
 			flightHours: 0,

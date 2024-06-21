@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default async function HomePage() {
-	return redirect("/overview");
+	return redirect("/auth");
 }

@@ -31,6 +31,7 @@ import {
 import { useState } from "react";
 import type { RouteReadData } from "~/validators/routes";
 import { addMinutes } from "date-fns";
+import { useSearchParams } from "next/navigation";
 
 interface FlightFormProps {
 	aircrafts: AircraftData[];
@@ -43,10 +44,12 @@ export function FlightForm({
 	routes,
 	CloseDialog,
 }: Readonly<FlightFormProps>) {
+	const searchParams = useSearchParams();
+
 	const form = useForm<FlightCreateData>({
 		resolver: zodResolver(flightCreateDataValidator),
 		defaultValues: {
-			airlineId: "1f4c94b9-f0f5-496e-b1c8-e3bf1856502b",
+			airlineId: searchParams.get("airlineId") ?? "",
 			aircraftId: "",
 			routeId: "",
 			departure: new Date(),

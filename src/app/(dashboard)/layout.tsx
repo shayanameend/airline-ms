@@ -1,9 +1,7 @@
 import type { PropsWithChildren } from "react";
-
 import { ThemeMenuButon } from "~/components/common/theme-menu-button";
 import { MainNav } from "./_components/main-nav";
 import { AirlineProfile } from "./_components/team-switcher";
-
 import { cn } from "~/lib/utils";
 
 export default function DashboardLayout({

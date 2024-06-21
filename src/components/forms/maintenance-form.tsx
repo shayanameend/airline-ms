@@ -21,16 +21,19 @@ import {
 	maintenanceCreateDataValidator,
 } from "~/validators/maintenances";
 import { DateTimePicker } from "../ui/date-time";
+import { useSearchParams } from "next/navigation";
 
 interface MaintenanceFormProps {
 	CloseDialog: typeof DialogClose;
 }
 
 export default function MaintenanceForm({ CloseDialog }: MaintenanceFormProps) {
+	const searchParams = useSearchParams();
+
 	const form = useForm<MaintenanceCreateData>({
 		resolver: zodResolver(maintenanceCreateDataValidator),
 		defaultValues: {
-			airlineId: "1f4c94b9-f0f5-496e-b1c8-e3bf1856502b",
+			airlineId: searchParams.get("airlineId") ?? "",
 			aircraftId: "",
 			description: "",
 			startDate: new Date(),

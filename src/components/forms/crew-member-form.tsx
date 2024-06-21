@@ -28,6 +28,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "../ui/select";
+import { useSearchParams } from "next/navigation";
 
 interface CrewMemberFormProps {
 	aircrafts: AircraftData[];
@@ -38,10 +39,12 @@ export function CrewMemberForm({
 	aircrafts,
 	CloseDialog,
 }: Readonly<CrewMemberFormProps>) {
+	const searchParams = useSearchParams();
+
 	const form = useForm<CrewMemberInput>({
 		resolver: zodResolver(crewMemberInputValidator),
 		defaultValues: {
-			airlineId: "1f4c94b9-f0f5-496e-b1c8-e3bf1856502b",
+			airlineId: searchParams.get("airlineId") ?? "",
 			aircraftId: null,
 			name: "",
 			role: "",

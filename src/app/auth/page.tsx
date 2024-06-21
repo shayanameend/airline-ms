@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default async function AuthPage(): Promise<AwaitedReactNode> {
 	return (
-		<section className="min-h-screen grid place-items-center">
+		<section className="min-h-screen flex justify-center py-12">
 			<Tabs defaultValue="signup" className="w-2/3 md:w-1/2 max-w-sm">
 				<TabsList>
 					<TabsTrigger value="signup">Sign Up</TabsTrigger>
