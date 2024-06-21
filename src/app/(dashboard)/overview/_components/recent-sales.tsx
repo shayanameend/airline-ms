@@ -13,7 +13,7 @@ export function RecentBookings({
 	return (
 		<div className="space-y-8">
 			{data.map((item) => (
-				<div key={item.name} className="flex items-center">
+				<div key={item.date.toLocaleString()} className="flex items-center">
 					<Avatar className="h-9 w-9">
 						<AvatarFallback>
 							{item.name.split(" ")[0].charAt(0).toUpperCase()}

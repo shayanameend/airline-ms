@@ -20,16 +20,19 @@ import {
 import { createIncident } from "~/server/incidents";
 import { DateTimePicker } from "../ui/date-time";
 import type { DialogClose } from "../ui/dialog";
+import { useSearchParams } from "next/navigation";
 
 interface IncidentFormProps {
 	CloseDialog: typeof DialogClose;
 }
 
 export function IncidentForm({ CloseDialog }: Readonly<IncidentFormProps>) {
+	const searchParams = useSearchParams();
+
 	const form = useForm<IncidentCreateData>({
 		resolver: zodResolver(incidentCreateDataValidator),
 		defaultValues: {
-			airlineId: "1f4c94b9-f0f5-496e-b1c8-e3bf1856502b",
+			airlineId: searchParams.get("airlineId") ?? "",
 			flightId: "",
 			description: "",
 			date: new Date(),

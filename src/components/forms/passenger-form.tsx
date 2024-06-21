@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { Button } from "~/components/ui/button";
 import type { DialogClose } from "~/components/ui/dialog";
@@ -25,10 +26,12 @@ interface PassengerFormProps {
 }
 
 export function PassengerForm({ Close }: Readonly<PassengerFormProps>) {
+	const searchParams = useSearchParams();
+
 	const form = useForm<PassengerInput>({
 		resolver: zodResolver(passengerInputValidator),
 		defaultValues: {
-			airlineId: "1f4c94b9-f0f5-496e-b1c8-e3bf1856502b",
+			airlineId: searchParams.get("airlineId") ?? "",
 			name: "",
 			phone: "",
 		},

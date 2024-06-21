@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { redirect } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { Button } from "~/components/ui/button";
 import {
@@ -14,7 +14,7 @@ import {
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
-import { useAirlineContext } from "~/contexts/airline-context";
+import { createQueryString } from "~/lib/utils";
 import { createAirline } from "~/server/airlines";
 import {
 	type AirlineSignUpData,
@@ -22,6 +22,9 @@ import {
 } from "~/validators/airlines";
 
 export function AirlineSignUpForm() {
+	const router = useRouter();
+	const searchParams = useSearchParams();
+
 	const form = useForm<AirlineSignUpData>({
 		resolver: zodResolver(airlineSignUpDataValidator),
 		defaultValues: {
@@ -33,17 +36,13 @@ export function AirlineSignUpForm() {
 		},
 	});
 
-	const { airline, setAirline } = useAirlineContext();
-
-	if (airline) {
-		return redirect("/overview");
-	}
-
 	async function onSubmit(data: AirlineSignUpData) {
 		try {
 			const response = await createAirline(data);
 
-			setAirline(response.data.airline);
+			if (!response.data.airline) {
+				throw new Error(response.message);
+			}
 
 			toast({
 				title: response.message,
@@ -54,6 +53,10 @@ export function AirlineSignUpForm() {
 				),
 				variant: "default",
 			});
+
+			router.push(
+				`/overview?${createQueryString(searchParams, "airlineId", response.data.airline.id)}`,
+			);
 		} catch (error) {
 			if (error instanceof Error) {
 				toast({

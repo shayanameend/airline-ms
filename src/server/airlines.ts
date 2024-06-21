@@ -1,6 +1,6 @@
 "use server";
 
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { db } from "~/db";
 import { airline_table } from "~/db/tables";
@@ -33,11 +33,271 @@ export async function getAirlines() {
 	}
 }
 
-export async function createAirline(data: AirlineSignUpData) {
+export async function getAirlineById(id: string) {
 	try {
-		const airlines = await db.insert(airline_table).values(data).returning();
+		const airlines = await db
+			.select()
+			.from(airline_table)
+			.where(eq(airline_table.id, id));
 
 		return ServerResponse.success(
+			{
+				airline: airlines[0],
+			},
+			{
+				message: "Airlines retrieved successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				airline: null,
+			},
+			{
+				message: "An error occurred while retrieving airlines.",
+			},
+		);
+	}
+}
+
+export async function getAirlineByName(name: string) {
+	try {
+		const airlines = await db
+			.select()
+			.from(airline_table)
+			.where(eq(airline_table.name, name));
+
+		return ServerResponse.success(
+			{
+				airline: airlines[0],
+			},
+			{
+				message: "Airlines retrieved successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				airline: null,
+			},
+			{
+				message: "An error occurred while retrieving airlines.",
+			},
+		);
+	}
+}
+
+export async function getAirlinesByEmail(email: string) {
+	try {
+		const airlines = await db
+			.select()
+			.from(airline_table)
+			.where(eq(airline_table.email, email));
+
+		return ServerResponse.success(
+			{
+				airline: airlines[0],
+			},
+			{
+				message: "Airlines retrieved successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				airline: null,
+			},
+			{
+				message: "An error occurred while retrieving airlines.",
+			},
+		);
+	}
+}
+
+export async function getAirlinesByCountry(country: string) {
+	try {
+		const airlines = await db
+			.select()
+			.from(airline_table)
+			.where(eq(airline_table.country, country));
+
+		return ServerResponse.success(
+			{
+				airlines: airlines,
+			},
+			{
+				message: "Airlines retrieved successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				airlines: [],
+			},
+			{
+				message: "An error occurred while retrieving airlines.",
+			},
+		);
+	}
+}
+
+export async function getAirlinesByYear(year: number) {
+	try {
+		const airlines = await db
+			.select()
+			.from(airline_table)
+			.where(eq(airline_table.year, year));
+
+		return ServerResponse.success(
+			{
+				airlines: airlines,
+			},
+			{
+				message: "Airlines retrieved successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				airlines: [],
+			},
+			{
+				message: "An error occurred while retrieving airlines.",
+			},
+		);
+	}
+}
+
+export async function getAirlineByNameAndEmail(country: string, name: string) {
+	try {
+		const airlines = await db
+			.select()
+			.from(airline_table)
+			.where(
+				and(eq(airline_table.country, country), eq(airline_table.name, name)),
+			);
+
+		return ServerResponse.success(
+			{
+				airline: airlines[0],
+			},
+			{
+				message: "Airlines retrieved successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				airline: null,
+			},
+			{
+				message: "An error occurred while retrieving airlines.",
+			},
+		);
+	}
+}
+
+export async function getAirlinesByEmailAndPassword(
+	email: string,
+	password: string,
+) {
+	try {
+		const airlines = await db
+			.select()
+			.from(airline_table)
+			.where(
+				and(
+					eq(airline_table.email, email),
+					eq(airline_table.password, password),
+				),
+			);
+
+		return ServerResponse.success(
+			{
+				airline: airlines[0],
+			},
+			{
+				message: "Airlines retrieved successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				airline: null,
+			},
+			{
+				message: "An error occurred while retrieving airlines.",
+			},
+		);
+	}
+}
+
+export async function getAirlinesByCountryAndYear(
+	country: string,
+	year: number,
+) {
+	try {
+		const airlines = await db
+			.select()
+			.from(airline_table)
+			.where(
+				and(eq(airline_table.country, country), eq(airline_table.year, year)),
+			);
+
+		return ServerResponse.success(
+			{
+				airlines: airlines,
+			},
+			{
+				message: "Airlines retrieved successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				airlines: [],
+			},
+			{
+				message: "An error occurred while retrieving airlines.",
+			},
+		);
+	}
+}
+
+export async function createAirline(data: AirlineSignUpData) {
+	try {
+		const airlineExists = await getAirlineByNameAndEmail(data.name, data.email);
+
+		if (airlineExists.data.airline) {
+			return ServerResponse.bad_request(
+				{
+					airline: null,
+				},
+				{
+					message: "Airline already exists.",
+				},
+			);
+		}
+
+		const airlines = await db.insert(airline_table).values(data).returning();
+
+		return ServerResponse.created(
 			{
 				airline: airlines[0],
 			},
@@ -67,6 +327,55 @@ export async function createAirline(data: AirlineSignUpData) {
 
 export async function updateAirline(id: string, data: AirlineSignUpData) {
 	try {
+		const airlineExists = await getAirlineById(id);
+
+		if (!airlineExists.data.airline) {
+			return ServerResponse.not_found(
+				{
+					airline: null,
+				},
+				{
+					message: "Airline not found.",
+				},
+			);
+		}
+
+		if (data.name) {
+			const airlineExistsByName = await getAirlineByName(data.name);
+
+			if (
+				airlineExistsByName.data.airline &&
+				airlineExistsByName.data.airline.id !== id
+			) {
+				return ServerResponse.bad_request(
+					{
+						airline: null,
+					},
+					{
+						message: "Airline name already exists.",
+					},
+				);
+			}
+		}
+
+		if (data.email) {
+			const airlineExistsByEmail = await getAirlinesByEmail(data.email);
+
+			if (
+				airlineExistsByEmail.data.airline &&
+				airlineExistsByEmail.data.airline.id !== id
+			) {
+				return ServerResponse.bad_request(
+					{
+						airline: null,
+					},
+					{
+						message: "Airline email already exists.",
+					},
+				);
+			}
+		}
+
 		const airlines = await db
 			.update(airline_table)
 			.set(data)
@@ -103,6 +412,19 @@ export async function updateAirline(id: string, data: AirlineSignUpData) {
 
 export async function deleteAirline(id: string) {
 	try {
+		const airlineExists = await getAirlineById(id);
+
+		if (!airlineExists.data.airline) {
+			return ServerResponse.not_found(
+				{
+					airline: null,
+				},
+				{
+					message: "Airline not found.",
+				},
+			);
+		}
+
 		await db.delete(airline_table).where(eq(airline_table.id, id));
 
 		return ServerResponse.success(

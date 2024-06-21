@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { redirect } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { Button } from "~/components/ui/button";
 import {
@@ -14,14 +14,17 @@ import {
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
-import { useAirlineContext } from "~/contexts/airline-context";
-import { getAirlines } from "~/server/airlines";
+import { createQueryString } from "~/lib/utils";
+import { getAirlinesByEmailAndPassword } from "~/server/airlines";
 import {
 	type AirlineSignInData,
 	airlineSignInDataValidator,
 } from "~/validators/airlines";
 
 export function AirlineSignInForm() {
+	const router = useRouter();
+	const searchParams = useSearchParams();
+
 	const form = useForm<AirlineSignInData>({
 		resolver: zodResolver(airlineSignInDataValidator),
 		defaultValues: {
@@ -30,27 +33,30 @@ export function AirlineSignInForm() {
 		},
 	});
 
-	const { airline, setAirline } = useAirlineContext();
-
-	if (airline) {
-		return redirect("/overview");
-	}
-
 	async function onSubmit(data: AirlineSignInData) {
 		try {
-			const response = await getAirlines();
+			const response = await getAirlinesByEmailAndPassword(
+				data.email,
+				data.password,
+			);
 
-			setAirline(response.data.airlines[0]);
+			if (!response.data.airline) {
+				throw new Error("Invalid email or password. Please try again.");
+			}
 
 			toast({
 				title: response.message,
 				description: (
 					<pre className="mt-1 w-[340px] rounded-md p-1">
-						<code>{JSON.stringify(response.data.airlines[0], null, 2)}</code>
+						<code>{JSON.stringify(response.data.airline, null, 2)}</code>
 					</pre>
 				),
 				variant: "default",
 			});
+
+			router.push(
+				`/overview?${createQueryString(searchParams, "airlineId", response.data.airline.id)}`,
+			);
 		} catch (error) {
 			if (error instanceof Error) {
 				toast({
