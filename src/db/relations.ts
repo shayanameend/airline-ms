@@ -89,8 +89,6 @@ export const flight_relations = relations(flight_table, ({ one, many }) => ({
 	}),
 	tickets: many(ticket_table),
 	incidents: many(incident_table),
-	// pilotsToFlights: many(pilotsToFlightsJoin),
-	// crewMembersToFlights: many(crewMembersToFlightsJoin),
 }));
 
 export const pilot_relations = relations(pilot_table, ({ one, many }) => ({
@@ -102,7 +100,6 @@ export const pilot_relations = relations(pilot_table, ({ one, many }) => ({
 		fields: [pilot_table.aircraftId],
 		references: [aircraft_table.id],
 	}),
-	// pilotsToFlights: many(pilotsToFlightsJoin),
 }));
 
 export const crew_member_relations = relations(
@@ -116,7 +113,6 @@ export const crew_member_relations = relations(
 			fields: [crew_member_table.aircraftId],
 			references: [aircraft_table.id],
 		}),
-		// crewMembersToFlights: many(crewMembersToFlightsJoin),
 	}),
 );
 

@@ -5,7 +5,6 @@ import { and, eq } from "drizzle-orm";
 import { alias } from "drizzle-orm/sqlite-core";
 import { revalidatePath } from "next/cache";
 import { db } from "~/db";
-import { crewMembersToFlightsJoin, pilotsToFlightsJoin } from "~/db/joins";
 import {
 	aircraft_table,
 	airline_table,
@@ -163,18 +162,6 @@ export async function createFlight(data: FlightCreateData) {
 				status: "booked",
 			})
 			.where(eq(aircraft_table.id, data.aircraftId));
-
-		await db.insert(pilotsToFlightsJoin).values({
-			pilotId: data.aircraftPilotId,
-			flightId: flights[0].id,
-		});
-
-		for (const crewMemberId of data.aircraftCrewIds) {
-			await db.insert(crewMembersToFlightsJoin).values({
-				crewMemberId,
-				flightId: flights[0].id,
-			});
-		}
 
 		return ServerResponse.created(
 			{
