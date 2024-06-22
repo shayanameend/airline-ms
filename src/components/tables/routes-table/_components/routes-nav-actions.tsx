@@ -10,10 +10,10 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "~/components/ui/dialog";
-import type { AirportData } from "~/validators/airports";
+import type { AirportReadData } from "~/validators/airports";
 
 interface RoutesNavActionsProps {
-	airports: AirportData[];
+	airports: AirportReadData[];
 }
 
 export function RoutesNavActions({

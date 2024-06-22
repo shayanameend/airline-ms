@@ -9,11 +9,11 @@ import { RoutesTable } from "~/components/tables/routes-table";
 import { Card, CardContent } from "~/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import { toast } from "~/components/ui/use-toast";
-import { getAircraftsByAirlineId } from "~/server/aircrafts";
+import { getAircrafts } from "~/server/aircrafts";
 import { getAirports } from "~/server/airports";
 import { getCrewMembersByAirlineId } from "~/server/crew-members";
-import { getPassengersByAirlineId } from "~/server/passengers";
-import { getPilotsByAirlineId } from "~/server/pilots";
+import { getPassengers } from "~/server/passengers";
+import { getPilots } from "~/server/pilots";
 import { getRoutes } from "~/server/routes";
 
 export const metadata: Metadata = {
@@ -27,10 +27,10 @@ interface ManagementPageProps {
 export default async function ManagementPage({
 	searchParams: { airlineId },
 }: Readonly<ManagementPageProps>): Promise<AwaitedReactNode> {
-	const passengersReponse = await getPassengersByAirlineId(airlineId);
+	const passengersReponse = await getPassengers(airlineId);
 	const crewMembersResponse = await getCrewMembersByAirlineId(airlineId);
-	const pilotsResponse = await getPilotsByAirlineId(airlineId);
-	const aircraftsResponse = await getAircraftsByAirlineId(airlineId);
+	const pilotsResponse = await getPilots(airlineId);
+	const aircraftsResponse = await getAircrafts(airlineId);
 	const airportsResponse = await getAirports();
 	const routesResponse = await getRoutes(airlineId);
 

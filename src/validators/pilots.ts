@@ -22,9 +22,6 @@ export const pilotsInputValidator = zod.object({
 	name: zod.string().min(1, {
 		message: "Name is required",
 	}),
-	flightHours: zod.coerce.number().min(0, {
-		message: "Flight hours is required",
-	}),
 });
 
 export type PilotInput = zod.infer<typeof pilotsInputValidator>;

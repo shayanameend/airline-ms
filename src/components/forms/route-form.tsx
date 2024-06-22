@@ -23,14 +23,14 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "../ui/select";
-import type { AirportData } from "~/validators/airports";
+import type { AirportReadData } from "~/validators/airports";
 import {
 	routeCreateDataValidator,
 	type RouteCreateData,
 } from "~/validators/routes";
 
 interface RouteFormProps {
-	airports: AirportData[];
+	airports: AirportReadData[];
 	CloseDialog?: typeof DialogClose;
 }
 

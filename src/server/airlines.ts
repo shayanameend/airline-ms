@@ -1,6 +1,7 @@
 "use server";
 
-import { and, eq } from "drizzle-orm";
+import { getUnixTime } from "date-fns";
+import { and, desc, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { db } from "~/db";
 import { airline_table } from "~/db/tables";
@@ -9,7 +10,10 @@ import type { AirlineSignUpData } from "~/validators/airlines";
 
 export async function getAirlines() {
 	try {
-		const airlines = await db.select().from(airline_table);
+		const airlines = await db
+			.select()
+			.from(airline_table)
+			.orderBy(desc(airline_table.updatedAt));
 
 		return ServerResponse.success(
 			{
@@ -91,7 +95,7 @@ export async function getAirlineByName(name: string) {
 	}
 }
 
-export async function getAirlinesByEmail(email: string) {
+export async function getAirlineByEmail(email: string) {
 	try {
 		const airlines = await db
 			.select()
@@ -125,7 +129,8 @@ export async function getAirlinesByCountry(country: string) {
 		const airlines = await db
 			.select()
 			.from(airline_table)
-			.where(eq(airline_table.country, country));
+			.where(eq(airline_table.country, country))
+			.orderBy(desc(airline_table.updatedAt));
 
 		return ServerResponse.success(
 			{
@@ -154,7 +159,8 @@ export async function getAirlinesByYear(year: number) {
 		const airlines = await db
 			.select()
 			.from(airline_table)
-			.where(eq(airline_table.year, year));
+			.where(eq(airline_table.year, year))
+			.orderBy(desc(airline_table.updatedAt));
 
 		return ServerResponse.success(
 			{
@@ -222,7 +228,8 @@ export async function getAirlinesByEmailAndPassword(
 					eq(airline_table.email, email),
 					eq(airline_table.password, password),
 				),
-			);
+			)
+			.orderBy(desc(airline_table.updatedAt));
 
 		return ServerResponse.success(
 			{
@@ -256,7 +263,8 @@ export async function getAirlinesByCountryAndYear(
 			.from(airline_table)
 			.where(
 				and(eq(airline_table.country, country), eq(airline_table.year, year)),
-			);
+			)
+			.orderBy(desc(airline_table.updatedAt));
 
 		return ServerResponse.success(
 			{
@@ -359,7 +367,7 @@ export async function updateAirline(id: string, data: AirlineSignUpData) {
 		}
 
 		if (data.email) {
-			const airlineExistsByEmail = await getAirlinesByEmail(data.email);
+			const airlineExistsByEmail = await getAirlineByEmail(data.email);
 
 			if (
 				airlineExistsByEmail.data.airline &&
@@ -378,7 +386,7 @@ export async function updateAirline(id: string, data: AirlineSignUpData) {
 
 		const airlines = await db
 			.update(airline_table)
-			.set(data)
+			.set({ ...data, updatedAt: getUnixTime(new Date()) })
 			.where(eq(airline_table.id, id))
 			.returning();
 

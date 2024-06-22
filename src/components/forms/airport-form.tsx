@@ -16,8 +16,8 @@ import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
 import { createAirport } from "~/server/airports";
 import {
-	type AirportInput,
-	airportInputValidator,
+	type AirportCreateData,
+	airportCreateDataValidator,
 } from "~/validators/airports";
 
 interface AirportFormProps {
@@ -25,8 +25,8 @@ interface AirportFormProps {
 }
 
 export function AirportForm({ CloseDialog }: Readonly<AirportFormProps>) {
-	const form = useForm<AirportInput>({
-		resolver: zodResolver(airportInputValidator),
+	const form = useForm<AirportCreateData>({
+		resolver: zodResolver(airportCreateDataValidator),
 		defaultValues: {
 			name: "",
 			city: "",
@@ -34,7 +34,7 @@ export function AirportForm({ CloseDialog }: Readonly<AirportFormProps>) {
 		},
 	});
 
-	async function onSubmit(data: AirportInput) {
+	async function onSubmit(data: AirportCreateData) {
 		try {
 			const response = await createAirport(data);
 

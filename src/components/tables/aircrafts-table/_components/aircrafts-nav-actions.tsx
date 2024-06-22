@@ -11,10 +11,10 @@ import {
 	DialogTrigger,
 } from "~/components/ui/dialog";
 import { getCrewMembersByAirlineId } from "~/server/crew-members";
-import { getPilotsByAirlineId } from "~/server/pilots";
+import { getPilots } from "~/server/pilots";
 
 export async function AircraftsNavActions() {
-	const pilotsResponse = await getPilotsByAirlineId();
+	const pilotsResponse = await getPilots();
 	const crewMembersResponse = await getCrewMembersByAirlineId();
 
 	return (

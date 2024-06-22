@@ -1,10 +1,10 @@
 import { DataTable } from "~/components/common/data-table";
-import { getPilotsByAirlineId } from "~/server/pilots";
+import { getPilots } from "~/server/pilots";
 import { pilotColumns } from "./_components/pilots-columns";
 import { PilotsNavActions } from "./_components/pilots-nav-actions";
 
 export async function PilotsTable() {
-	const response = await getPilotsByAirlineId();
+	const response = await getPilots();
 
 	return (
 		<article className="h-full space-y-8">

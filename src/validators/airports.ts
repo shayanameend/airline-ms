@@ -1,6 +1,6 @@
 import zod from "zod";
 
-export const airportDataValidator = zod.object({
+export const airportReadDataValidator = zod.object({
 	id: zod.string({
 		message: "Airport ID is required.",
 	}),
@@ -27,9 +27,12 @@ export const airportDataValidator = zod.object({
 		}),
 });
 
-export type AirportData = zod.infer<typeof airportDataValidator>;
+export type AirportReadData = zod.infer<typeof airportReadDataValidator>;
 
-export const airportInputValidator = zod.object({
+export const airportCreateDataValidator = zod.object({
+	airlineId: zod.string({
+		message: "Airline is required.",
+	}),
 	name: zod
 		.string({
 			message: "Airport name is required.",
@@ -53,4 +56,4 @@ export const airportInputValidator = zod.object({
 		}),
 });
 
-export type AirportInput = zod.infer<typeof airportInputValidator>;
+export type AirportCreateData = zod.infer<typeof airportCreateDataValidator>;

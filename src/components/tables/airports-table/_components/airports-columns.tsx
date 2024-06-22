@@ -2,10 +2,10 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import type { AirportData } from "~/validators/airports";
+import type { AirportReadData } from "~/validators/airports";
 import { AirportsRowActions } from "./airports-row-actions";
 
-export const airportsColumns: ColumnDef<AirportData>[] = [
+export const airportsColumns: ColumnDef<AirportReadData>[] = [
 	{
 		accessorKey: "id",
 		header: ({ column }) => (

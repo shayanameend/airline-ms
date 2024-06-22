@@ -13,11 +13,9 @@ import {
 	route_table,
 } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
-import type { FlightCreateData } from "~/validators/flights";
+import type { FlightCreateData, FlightUpdateData } from "~/validators/flights";
 
-const airlineId = "1f4c94b9-f0f5-496e-b1c8-e3bf1856502b";
-
-export async function getFlights() {
+export async function getFlights(airlineId: string) {
 	try {
 		const departure_airport_table = alias(airport_table, "departure_airport");
 		const arrival_airport_table = alias(airport_table, "arrival_airport");
@@ -92,6 +90,13 @@ export async function createFlight(data: FlightCreateData) {
 			})
 			.returning();
 
+		await db
+			.update(aircraft_table)
+			.set({
+				status: "booked",
+			})
+			.where(eq(aircraft_table.id, data.aircraftId));
+
 		await db.insert(pilotsToFlightsJoin).values({
 			pilotId: data.aircraftPilotId,
 			flightId: flights[0].id,
@@ -132,20 +137,30 @@ export async function createFlight(data: FlightCreateData) {
 	}
 }
 
-export async function updateFlight(id: string, data: FlightCreateData) {
+export async function updateFlight(id: string, data: FlightUpdateData) {
 	try {
 		const flights = await db
 			.update(flight_table)
 			.set({
-				airlineId: data.airlineId,
-				routeId: data.routeId,
-				aircraftId: data.aircraftId,
-				departure: getUnixTime(data.departure),
-				arrival: getUnixTime(data.arrival),
-				price: data.price,
+				...data,
+				departure: data.departure && getUnixTime(data.departure),
+				arrival: data.arrival && getUnixTime(data.arrival),
 			})
 			.where(eq(flight_table.id, id))
 			.returning();
+
+		if (
+			data.status === "cancelled" ||
+			data.status === "delayed" ||
+			data.status === "completed"
+		) {
+			await db
+				.update(aircraft_table)
+				.set({
+					status: "available",
+				})
+				.where(eq(aircraft_table.id, flights[0].aircraftId));
+		}
 
 		return ServerResponse.success(
 			{
@@ -178,6 +193,13 @@ export async function updateFlight(id: string, data: FlightCreateData) {
 export async function deleteFlight(id: string) {
 	try {
 		await db.delete(flight_table).where(eq(flight_table.id, id));
+
+		await db
+			.update(aircraft_table)
+			.set({
+				status: "available",
+			})
+			.where(eq(aircraft_table.id, id));
 
 		return ServerResponse.success(
 			{

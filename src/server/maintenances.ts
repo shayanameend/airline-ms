@@ -1,16 +1,14 @@
 "use server";
 
 import { getUnixTime } from "date-fns";
-import { eq } from "drizzle-orm";
+import { and, desc, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { db } from "~/db";
 import { maintenance_table } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
 import type { MaintenanceCreateData } from "~/validators/maintenances";
 
-const airlineId = "1f4c94b9-f0f5-496e-b1c8-e3bf1856502b";
-
-export async function getMaintenances() {
+export async function getMaintenances(airlineId: string) {
 	try {
 		const maintenances = await db
 			.select({
@@ -21,7 +19,9 @@ export async function getMaintenances() {
 				startDate: maintenance_table.startDate,
 				endDate: maintenance_table.endDate,
 			})
-			.from(maintenance_table);
+			.from(maintenance_table)
+			.where(eq(maintenance_table.airlineId, airlineId))
+			.orderBy(desc(maintenance_table.updatedAt));
 
 		return ServerResponse.success(
 			{
@@ -43,14 +43,178 @@ export async function getMaintenances() {
 	}
 }
 
+export async function getMaintenanceById(airlineId: string, id: string) {
+	try {
+		const maintenances = await db
+			.select()
+			.from(maintenance_table)
+			.where(
+				and(
+					eq(maintenance_table.airlineId, airlineId),
+					eq(maintenance_table.id, id),
+				),
+			);
+
+		return ServerResponse.success(
+			{
+				maintenance: maintenances[0],
+			},
+			{
+				message: "Maintenance retrieved successfully",
+			},
+		);
+	} catch (error) {
+		return ServerResponse.server_error(
+			{
+				maintenance: null,
+			},
+			{
+				message: "An error occurred while retrieving maintenance",
+			},
+		);
+	}
+}
+
+export async function getMaintenancesByAircraftId(
+	airlineId: string,
+	aircraftId: string,
+) {
+	try {
+		const maintenances = await db
+			.select()
+			.from(maintenance_table)
+			.where(
+				and(
+					eq(maintenance_table.airlineId, airlineId),
+					eq(maintenance_table.aircraftId, aircraftId),
+				),
+			);
+
+		return ServerResponse.success(
+			{
+				maintenances,
+			},
+			{
+				message: "Maintenances retrieved successfully",
+			},
+		);
+	} catch (error) {
+		return ServerResponse.server_error(
+			{
+				maintenances: [],
+			},
+			{
+				message: "An error occurred while retrieving maintenances",
+			},
+		);
+	}
+}
+
+export async function getMaintenancesByStartDate(
+	airlineId: string,
+	startDate: Date,
+) {
+	try {
+		const maintenances = await db
+			.select()
+			.from(maintenance_table)
+			.where(
+				and(
+					eq(maintenance_table.airlineId, airlineId),
+					eq(maintenance_table.startDate, getUnixTime(startDate)),
+				),
+			);
+
+		return ServerResponse.success(
+			{
+				maintenances,
+			},
+			{
+				message: "Maintenances retrieved successfully",
+			},
+		);
+	} catch (error) {
+		return ServerResponse.server_error(
+			{
+				maintenances: [],
+			},
+			{
+				message: "An error occurred while retrieving maintenances",
+			},
+		);
+	}
+}
+
+export async function getActiceMaintenances(airlineId: string) {
+	try {
+		const maintenances = await db
+			.select()
+			.from(maintenance_table)
+			.where(
+				and(
+					eq(maintenance_table.airlineId, airlineId),
+					eq(maintenance_table.status, "active"),
+				),
+			);
+
+		return ServerResponse.success(
+			{
+				maintenances,
+			},
+			{
+				message: "Active maintenances retrieved successfully",
+			},
+		);
+	} catch (error) {
+		return ServerResponse.server_error(
+			{
+				maintenances: [],
+			},
+			{
+				message: "An error occurred while retrieving active maintenances",
+			},
+		);
+	}
+}
+
+export async function getCompletedMaintenances(airlineId: string) {
+	try {
+		const maintenances = await db
+			.select()
+			.from(maintenance_table)
+			.where(
+				and(
+					eq(maintenance_table.airlineId, airlineId),
+					eq(maintenance_table.status, "completed"),
+				),
+			);
+
+		return ServerResponse.success(
+			{
+				maintenances,
+			},
+			{
+				message: "Completed maintenances retrieved successfully",
+			},
+		);
+	} catch (error) {
+		return ServerResponse.server_error(
+			{
+				maintenances: [],
+			},
+			{
+				message: "An error occurred while retrieving completed maintenances",
+			},
+		);
+	}
+}
+
 export async function createMaintenance(data: MaintenanceCreateData) {
 	try {
 		const maintenances = await db
 			.insert(maintenance_table)
 			.values({
-				airlineId: data.airlineId,
-				aircraftId: data.aircraftId,
-				description: data.description,
+				...data,
 				startDate: getUnixTime(data.startDate),
 			})
 			.returning();
@@ -89,10 +253,9 @@ export async function updateMaintenance(
 		const maintenances = await db
 			.update(maintenance_table)
 			.set({
-				airlineId: data.airlineId,
-				aircraftId: data.aircraftId,
-				description: data.description,
+				...data,
 				startDate: getUnixTime(data.startDate),
+				updatedAt: getUnixTime(new Date()),
 			})
 			.where(eq(maintenance_table.id, id))
 			.returning();

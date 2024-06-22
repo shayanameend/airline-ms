@@ -1,5 +1,5 @@
 import { DataTable } from "~/components/common/data-table";
-import { getAircraftsByAirlineId } from "~/server/aircrafts";
+import { getAircrafts } from "~/server/aircrafts";
 import { aircraftsColumns } from "./_components/aircrafts-columns";
 import { AircraftsNavActions } from "./_components/aircrafts-nav-actions";
 import type { AircraftData } from "~/validators/aircrafts";

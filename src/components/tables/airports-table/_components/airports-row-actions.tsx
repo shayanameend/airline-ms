@@ -21,10 +21,10 @@ import {
 } from "~/components/ui/dropdown-menu";
 import { toast } from "~/components/ui/use-toast";
 import { deleteAirport } from "~/server/airports";
-import type { AirportData } from "~/validators/airports";
+import type { AirportReadData } from "~/validators/airports";
 
 interface AirportsRowActionsProps {
-	row: Row<AirportData>;
+	row: Row<AirportReadData>;
 }
 
 export function AirportsRowActions({ row }: AirportsRowActionsProps) {

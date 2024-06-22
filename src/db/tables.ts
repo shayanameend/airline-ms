@@ -20,6 +20,7 @@ export const airline_table = sqliteTable("airline", {
 
 export const airport_table = sqliteTable("airport", {
 	id: text("id").primaryKey().$default(uuid),
+	airlineId: text("airline_id").notNull(),
 	name: text("name").notNull(),
 	city: text("city").notNull(),
 	country: text("country").notNull(),
@@ -39,7 +40,7 @@ export const aircraft_table = sqliteTable("aircraft", {
 	model: text("model").notNull(),
 	capacity: integer("capacity").notNull(),
 	passengerCount: integer("passenger_count").notNull().default(0),
-	pilotId: text("pilot_id").notNull(),
+	pilotId: text("pilot_id"),
 	createdAt: integer("created_at")
 		.notNull()
 		.$default(() => getUnixTime(new Date())),
@@ -50,6 +51,7 @@ export const aircraft_table = sqliteTable("aircraft", {
 
 export const route_table = sqliteTable("route", {
 	id: text("id").primaryKey().$default(uuid),
+	airlineId: text("airline_id").notNull(),
 	departureAirportId: text("departure_airport_id").notNull(),
 	arrivalAirportId: text("arrival_airport_id").notNull(),
 	durationMinutes: integer("duration_minutes").notNull(),
@@ -83,7 +85,6 @@ export const pilot_table = sqliteTable("pilot", {
 	airlineId: text("airline_id").notNull(),
 	aircraftId: text("aircraft_id"),
 	name: text("name").notNull(),
-	flightHours: integer("flight_hours").notNull().default(0),
 	createdAt: integer("created_at")
 		.notNull()
 		.$default(() => getUnixTime(new Date())),
@@ -124,6 +125,7 @@ export const passenger_table = sqliteTable("passenger", {
 
 export const ticket_table = sqliteTable("ticket", {
 	id: text("id").primaryKey().$default(uuid),
+	airlineId: text("airline_id").notNull(),
 	flightId: text("flight_id").notNull(),
 	passengerId: text("passenger_id").notNull(),
 	date: integer("date")

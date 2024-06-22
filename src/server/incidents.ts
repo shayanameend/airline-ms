@@ -1,7 +1,7 @@
 "use server";
 
-import { fromUnixTime, getUnixTime } from "date-fns";
-import { eq } from "drizzle-orm";
+import { addDays, fromUnixTime, getUnixTime } from "date-fns";
+import { and, desc, eq, gte, lt } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { db } from "~/db";
 import { incident_table } from "~/db/tables";
@@ -11,7 +11,7 @@ import type {
 	IncidentReadData,
 } from "~/validators/incidents";
 
-export async function getIncidents() {
+export async function getIncidents(airlineId: string) {
 	try {
 		const incidents = await db
 			.select({
@@ -20,7 +20,9 @@ export async function getIncidents() {
 				description: incident_table.description,
 				date: incident_table.date,
 			})
-			.from(incident_table);
+			.from(incident_table)
+			.where(eq(incident_table.airlineId, airlineId))
+			.orderBy(desc(incident_table.date));
 
 		return ServerResponse.success(
 			{
@@ -28,6 +30,109 @@ export async function getIncidents() {
 					...incident,
 					date: fromUnixTime(incident.date),
 				})),
+			},
+			{
+				message: "Incidents retrieved successfully",
+			},
+		);
+	} catch (error) {
+		return ServerResponse.server_error(
+			{
+				incidents: [],
+			},
+			{
+				message: "An error occurred while retrieving incidents",
+			},
+		);
+	}
+}
+
+export async function getIncidentById(airlineId: string, id: string) {
+	try {
+		const incidents = await db
+			.select()
+			.from(incident_table)
+			.where(
+				and(eq(incident_table.id, id), eq(incident_table.airlineId, airlineId)),
+			)
+			.orderBy(desc(incident_table.date));
+
+		return ServerResponse.success(
+			{
+				incident: incidents[0],
+			},
+			{
+				message: "Incident retrieved successfully",
+			},
+		);
+	} catch (error) {
+		return ServerResponse.server_error(
+			{
+				incident: null,
+			},
+			{
+				message: "An error occurred while retrieving incident",
+			},
+		);
+	}
+}
+
+export async function getIncidentsByFlightId(
+	airlineId: string,
+	flightId: string,
+) {
+	try {
+		const incidents = await db
+			.select()
+			.from(incident_table)
+			.where(
+				and(
+					eq(incident_table.flightId, flightId),
+					eq(incident_table.airlineId, airlineId),
+				),
+			)
+			.orderBy(desc(incident_table.date));
+
+		return ServerResponse.success(
+			{
+				incidents,
+			},
+			{
+				message: "Incidents retrieved successfully",
+			},
+		);
+	} catch (error) {
+		return ServerResponse.server_error(
+			{
+				incidents: [],
+			},
+			{
+				message: "An error occurred while retrieving incidents",
+			},
+		);
+	}
+}
+
+export async function getIncidentsByDate(airlineId: string, date: Date) {
+	try {
+		const incidents = await db
+			.select()
+			.from(incident_table)
+			.where(
+				and(
+					gte(incident_table.date, getUnixTime(date.toLocaleDateString())),
+					lt(
+						incident_table.date,
+						getUnixTime(addDays(date, 1).toLocaleDateString()),
+					),
+					eq(incident_table.airlineId, airlineId),
+				),
+			)
+			.orderBy(desc(incident_table.date));
+
+		return ServerResponse.success(
+			{
+				incidents,
 			},
 			{
 				message: "Incidents retrieved successfully",
@@ -89,7 +194,11 @@ export async function updateIncident(id: string, data: IncidentReadData) {
 	try {
 		const incidents = await db
 			.update(incident_table)
-			.set({ ...data, date: getUnixTime(data.date) })
+			.set({
+				...data,
+				date: getUnixTime(data.date),
+				updatedAt: getUnixTime(new Date()),
+			})
 			.where(eq(incident_table.id, id))
 			.returning();
 
