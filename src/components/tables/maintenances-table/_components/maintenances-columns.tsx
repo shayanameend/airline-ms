@@ -1,9 +1,9 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
-import { MaintenancesRowActions } from "./maintenances-row-actions";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
 import type { MaintenanceReadData } from "~/validators/maintenances";
+import { MaintenancesRowActions } from "./maintenances-row-actions";
 
 export const maintenancesColumns: ColumnDef<MaintenanceReadData>[] = [
 	{

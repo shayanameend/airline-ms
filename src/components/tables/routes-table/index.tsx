@@ -1,12 +1,14 @@
 import { DataTable } from "~/components/common/data-table";
 import { RoutesNavActions } from "~/components/tables/routes-table/_components/routes-nav-actions";
-import { getAirports } from "~/server/airports";
 import { getRoutes } from "~/server/routes";
 import { routesColumns } from "./_components/routes-columns";
 
-export async function RoutesTable() {
-	const airportsResponse = await getAirports();
-	const routesResponse = await getRoutes();
+interface RoutesTableProps {
+	airlineId: string;
+}
+
+export async function RoutesTable({ airlineId }: Readonly<RoutesTableProps>) {
+	const routesResponse = await getRoutes(airlineId);
 
 	return (
 		<>
@@ -16,7 +18,7 @@ export async function RoutesTable() {
 						<h2 className="text-2xl font-bold tracking-tight">Routes</h2>
 					</div>
 					<div className="flex items-center space-x-2">
-						<RoutesNavActions airports={airportsResponse.data.airports} />
+						<RoutesNavActions airlineId={airlineId} />
 					</div>
 				</div>
 				<DataTable columns={routesColumns} data={routesResponse.data.routes} />

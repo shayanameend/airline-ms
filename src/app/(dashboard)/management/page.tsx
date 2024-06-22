@@ -8,13 +8,6 @@ import { PilotsTable } from "~/components/tables/pilots-table";
 import { RoutesTable } from "~/components/tables/routes-table";
 import { Card, CardContent } from "~/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
-import { toast } from "~/components/ui/use-toast";
-import { getAircrafts } from "~/server/aircrafts";
-import { getAirports } from "~/server/airports";
-import { getCrewMembersByAirlineId } from "~/server/crew-members";
-import { getPassengers } from "~/server/passengers";
-import { getPilots } from "~/server/pilots";
-import { getRoutes } from "~/server/routes";
 
 export const metadata: Metadata = {
 	title: "Management",
@@ -27,30 +20,6 @@ interface ManagementPageProps {
 export default async function ManagementPage({
 	searchParams: { airlineId },
 }: Readonly<ManagementPageProps>): Promise<AwaitedReactNode> {
-	const passengersReponse = await getPassengers(airlineId);
-	const crewMembersResponse = await getCrewMembersByAirlineId(airlineId);
-	const pilotsResponse = await getPilots(airlineId);
-	const aircraftsResponse = await getAircrafts(airlineId);
-	const airportsResponse = await getAirports();
-	const routesResponse = await getRoutes(airlineId);
-
-	for (const response of [
-		passengersReponse,
-		crewMembersResponse,
-		pilotsResponse,
-		aircraftsResponse,
-		airportsResponse,
-		routesResponse,
-	]) {
-		if (response.status !== 200 && response.status !== 201) {
-			toast({
-				title: "Error occurred",
-				description: response.message,
-				variant: "destructive",
-			});
-		}
-	}
-
 	return (
 		<section className="min-h-screen">
 			<Tabs defaultValue="passengers">
@@ -65,42 +34,42 @@ export default async function ManagementPage({
 				<TabsContent value="passengers">
 					<Card>
 						<CardContent>
-							<PassengersTable />
+							<PassengersTable airlineId={airlineId} />
 						</CardContent>
 					</Card>
 				</TabsContent>
 				<TabsContent value="crew-members">
 					<Card>
 						<CardContent>
-							<CrewMembersTable />
+							<CrewMembersTable airlineId={airlineId} />
 						</CardContent>
 					</Card>
 				</TabsContent>
 				<TabsContent value="pilots">
 					<Card>
 						<CardContent>
-							<PilotsTable />
+							<PilotsTable airlineId={airlineId} />
 						</CardContent>
 					</Card>
 				</TabsContent>
 				<TabsContent value="aircrafts">
 					<Card>
 						<CardContent>
-							<AircraftsTable aircrafts={aircraftsResponse.data.aircrafts} />
+							<AircraftsTable airlineId={airlineId} />
 						</CardContent>
 					</Card>
 				</TabsContent>
 				<TabsContent value="airports">
 					<Card>
 						<CardContent>
-							<AirportsTable />
+							<AirportsTable airlineId={airlineId} />
 						</CardContent>
 					</Card>
 				</TabsContent>
 				<TabsContent value="routes">
 					<Card>
 						<CardContent>
-							<RoutesTable />
+							<RoutesTable airlineId={airlineId} />
 						</CardContent>
 					</Card>
 				</TabsContent>

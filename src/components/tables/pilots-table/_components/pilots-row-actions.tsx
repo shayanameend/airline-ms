@@ -22,19 +22,21 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 import { toast } from "~/components/ui/use-toast";
-import type { PilotData } from "~/validators/pilots";
+import { deletePilot } from "~/server/pilots";
+import type { PilotCreateData } from "~/validators/pilots";
 
 interface PilotsRowActionsProps {
-	row: Row<PilotData>;
+	row: Row<PilotCreateData>;
 }
 
 export function PilotsRowAction({ row }: PilotsRowActionsProps) {
 	const pilotDeleteHandler = async () => {
-		// const response = await deletePilot(row.original.id);
-		// toast({
-		// 	title: response.message,
-		// 	variant: "default",
-		// });
+		const response = await deletePilot(row.original.id);
+
+		toast({
+			title: response.message,
+			variant: "default",
+		});
 	};
 
 	return (

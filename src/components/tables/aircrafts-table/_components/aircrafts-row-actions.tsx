@@ -22,6 +22,7 @@ import {
 } from "~/components/ui/dropdown-menu";
 import { toast } from "~/components/ui/use-toast";
 import type { AircraftData } from "~/validators/aircrafts";
+import { deleteAircraft } from "~/server/aircrafts";
 
 interface AircraftsRowActionsProps {
 	row: Row<AircraftData>;
@@ -29,11 +30,12 @@ interface AircraftsRowActionsProps {
 
 export function AircraftsRowActions({ row }: AircraftsRowActionsProps) {
 	const aircraftsDeleteHandler = async () => {
-		// const response = await deleteAircraft(row.original.id);
-		// toast({
-		// 	title: response.message,
-		// 	variant: "default",
-		// });
+		const response = await deleteAircraft(row.original.id);
+
+		toast({
+			title: response.message,
+			variant: "default",
+		});
 	};
 
 	return (

@@ -2,10 +2,10 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import type { PilotData } from "~/validators/pilots";
+import type { PilotCreateData } from "~/validators/pilots";
 import { PilotsRowAction } from "./pilots-row-actions";
 
-export const pilotColumns: ColumnDef<PilotData>[] = [
+export const pilotColumns: ColumnDef<PilotCreateData>[] = [
 	{
 		accessorKey: "id",
 		header: ({ column }) => (
@@ -29,15 +29,6 @@ export const pilotColumns: ColumnDef<PilotData>[] = [
 			<div className="w-[128px]">
 				{row.getValue("aircraftId") || "Not Assigned"}
 			</div>
-		),
-	},
-	{
-		accessorKey: "flightHours",
-		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Flight Hours" />
-		),
-		cell: ({ row }) => (
-			<div className="w-[128px]">{row.getValue("flightHours")}</div>
 		),
 	},
 	{

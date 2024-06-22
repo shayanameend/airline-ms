@@ -1,20 +1,11 @@
 import zod from "zod";
-import { crewMemberDataValidator } from "./crew-members";
 
-export const aircraftStatuses = [
-	{
-		value: "operable",
-		label: "Operable",
-	},
-	{
-		value: "damaged",
-		label: "Damaged",
-	},
-	{
-		value: "discarded",
-		label: "Discarded",
-	},
-];
+export enum AircraftStatus {
+	Parked = "parked",
+	Booked = "booked",
+	InFlight = "in-flight",
+	OutForMaintenance = "out-for-maintenance",
+}
 
 export const aircraftDataValidator = zod.object({
 	id: zod.string(),

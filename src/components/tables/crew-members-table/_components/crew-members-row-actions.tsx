@@ -21,6 +21,7 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 import { toast } from "~/components/ui/use-toast";
+import { deleteCrewMember } from "~/server/crew-members";
 import type { CrewMemberData } from "~/validators/crew-members";
 
 interface CrewMembersRowActionsProps {
@@ -29,11 +30,12 @@ interface CrewMembersRowActionsProps {
 
 export function CrewMembersRowActions({ row }: CrewMembersRowActionsProps) {
 	const crewMemberDeleteHandler = async () => {
-		// const response = await deleteCrewMember(row.original.id);
-		// toast({
-		// 	title: response.message,
-		// 	variant: "default",
-		// });
+		const response = await deleteCrewMember(row.original.id);
+
+		toast({
+			title: response.message,
+			variant: "default",
+		});
 	};
 
 	return (

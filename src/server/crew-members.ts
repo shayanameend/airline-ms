@@ -1,13 +1,13 @@
 "use server";
 
-import { eq } from "drizzle-orm";
+import { and, eq, isNull } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { db } from "~/db";
 import { crew_member_table } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
 import type { CrewMemberInput } from "~/validators/crew-members";
 
-export async function getCrewMembersByAirlineId(airlineId: string) {
+export async function getCrewMembers(airlineId: string) {
 	try {
 		const crewMembers = await db
 			.select()
@@ -31,6 +31,40 @@ export async function getCrewMembersByAirlineId(airlineId: string) {
 			},
 			{
 				message: "An error occurred while retrieving crew members.",
+			},
+		);
+	}
+}
+
+export async function getAvailableCrewMembers(airlineId: string) {
+	try {
+		const crewMembers = await db
+			.select()
+			.from(crew_member_table)
+			.where(
+				and(
+					eq(crew_member_table.airlineId, airlineId),
+					isNull(crew_member_table.aircraftId),
+				),
+			);
+
+		return ServerResponse.success(
+			{
+				crewMembers,
+			},
+			{
+				message: "Available crew members retrieved successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				crewMembers: [],
+			},
+			{
+				message: "An error occurred while retrieving available crew members.",
 			},
 		);
 	}

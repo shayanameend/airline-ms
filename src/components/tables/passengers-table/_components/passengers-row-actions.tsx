@@ -22,6 +22,7 @@ import {
 } from "~/components/ui/dropdown-menu";
 import { toast } from "~/components/ui/use-toast";
 import type { PassengerData } from "~/validators/passengers";
+import { deletePassenger } from "~/server/passengers";
 
 interface PassengerRowActionsProps {
 	row: Row<PassengerData>;
@@ -29,11 +30,12 @@ interface PassengerRowActionsProps {
 
 export function PassengerRowActions({ row }: PassengerRowActionsProps) {
 	const passengerDeleteHandler = async () => {
-		// const response = await deletePassenger(row.original.id);
-		// toast({
-		// 	title: response.message,
-		// 	variant: "default",
-		// });
+		const response = await deletePassenger(row.original.id);
+
+		toast({
+			title: response.message,
+			variant: "default",
+		});
 	};
 
 	return (

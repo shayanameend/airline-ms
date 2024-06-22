@@ -3,8 +3,14 @@ import { getPassengers } from "~/server/passengers";
 import { passengerColumns } from "./_components/passengers-columns";
 import { PassengersNavActions } from "./_components/passengers-nav-actions";
 
-export async function PassengersTable() {
-	const response = await getPassengers();
+interface PassengersTableProps {
+	airlineId: string;
+}
+
+export async function PassengersTable({
+	airlineId,
+}: Readonly<PassengersTableProps>) {
+	const response = await getPassengers(airlineId);
 
 	return (
 		<article className="h-full space-y-8">

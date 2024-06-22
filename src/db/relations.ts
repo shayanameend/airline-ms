@@ -1,11 +1,11 @@
 import { relations } from "drizzle-orm";
 import {
-	incident_table,
 	aircraft_table,
 	airline_table,
 	airport_table,
 	crew_member_table,
 	flight_table,
+	incident_table,
 	maintenance_table,
 	passenger_table,
 	pilot_table,

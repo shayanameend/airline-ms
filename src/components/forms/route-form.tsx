@@ -16,6 +16,11 @@ import {
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
 import { createRoute } from "~/server/routes";
+import type { AirportReadData } from "~/validators/airports";
+import {
+	type RouteCreateData,
+	routeCreateDataValidator,
+} from "~/validators/routes";
 import {
 	Select,
 	SelectContent,
@@ -23,11 +28,6 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "../ui/select";
-import type { AirportReadData } from "~/validators/airports";
-import {
-	routeCreateDataValidator,
-	type RouteCreateData,
-} from "~/validators/routes";
 
 interface RouteFormProps {
 	airports: AirportReadData[];

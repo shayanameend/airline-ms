@@ -1,6 +1,9 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { addMinutes } from "date-fns";
+import { useSearchParams } from "next/navigation";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "~/components/ui/button";
 import type { DialogClose } from "~/components/ui/dialog";
@@ -20,6 +23,7 @@ import {
 	type FlightCreateData,
 	flightCreateDataValidator,
 } from "~/validators/flights";
+import type { RouteReadData } from "~/validators/routes";
 import { DateTimePicker } from "../ui/date-time";
 import {
 	Select,
@@ -28,10 +32,6 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "../ui/select";
-import { useState } from "react";
-import type { RouteReadData } from "~/validators/routes";
-import { addMinutes } from "date-fns";
-import { useSearchParams } from "next/navigation";
 
 interface FlightFormProps {
 	aircrafts: AircraftData[];

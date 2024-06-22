@@ -3,8 +3,14 @@ import { getAirports } from "~/server/airports";
 import { airportsColumns } from "./_components/airports-columns";
 import { AirportsNavActions } from "./_components/airports-nav-actions";
 
-export async function AirportsTable() {
-	const response = await getAirports();
+interface AirportsTableProps {
+	airlineId: string;
+}
+
+export async function AirportsTable({
+	airlineId,
+}: Readonly<AirportsTableProps>) {
+	const response = await getAirports(airlineId);
 
 	return (
 		<article className="h-full space-y-8 ">

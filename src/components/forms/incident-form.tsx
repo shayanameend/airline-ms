@@ -1,7 +1,8 @@
 "use client";
 
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useSearchParams } from "next/navigation";
+import { useForm } from "react-hook-form";
 import { Button } from "~/components/ui/button";
 import {
 	Form,
@@ -13,14 +14,13 @@ import {
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
+import { createIncident } from "~/server/incidents";
 import {
 	type IncidentCreateData,
 	incidentCreateDataValidator,
 } from "~/validators/incidents";
-import { createIncident } from "~/server/incidents";
 import { DateTimePicker } from "../ui/date-time";
 import type { DialogClose } from "../ui/dialog";
-import { useSearchParams } from "next/navigation";
 
 interface IncidentFormProps {
 	CloseDialog: typeof DialogClose;

@@ -28,8 +28,8 @@ export function AirlineSignInForm() {
 	const form = useForm<AirlineSignInData>({
 		resolver: zodResolver(airlineSignInDataValidator),
 		defaultValues: {
-			email: "",
-			password: "",
+			email: "email@domain.com",
+			password: "12345678",
 		},
 	});
 

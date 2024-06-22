@@ -1,9 +1,9 @@
 import { DataTable } from "~/components/common/data-table";
 import type { AircraftData } from "~/validators/aircrafts";
 import type { FlightReadData } from "~/validators/flights";
+import type { RouteReadData } from "~/validators/routes";
 import { flightColumns } from "./_components/flight-columns";
 import { FlightNavActions } from "./_components/flight-nav-actions";
-import type { RouteReadData } from "~/validators/routes";
 
 interface FlightsTableProps {
 	flights: FlightReadData[];

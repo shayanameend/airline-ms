@@ -2,8 +2,8 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import { IncidentsRowActions } from "./incidents-row-actions";
 import type { IncidentReadData } from "~/validators/incidents";
+import { IncidentsRowActions } from "./incidents-row-actions";
 
 export const incidentsColumns: ColumnDef<IncidentReadData>[] = [
 	{

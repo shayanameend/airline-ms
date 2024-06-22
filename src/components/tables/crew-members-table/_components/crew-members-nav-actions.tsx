@@ -10,10 +10,16 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "~/components/ui/dialog";
-import { getAircrafts } from "~/server/aircrafts";
+import { getAircraftsWithoutCrewMember } from "~/server/aircrafts";
 
-export async function CrewMembersNavActions() {
-	const aircraftsResponse = await getAircrafts();
+interface CrewMembersNavActionsProps {
+	airlineId: string;
+}
+
+export async function CrewMembersNavActions({
+	airlineId,
+}: Readonly<CrewMembersNavActionsProps>) {
+	const aircraftsResponse = await getAircraftsWithoutCrewMember(airlineId);
 
 	return (
 		<Dialog>

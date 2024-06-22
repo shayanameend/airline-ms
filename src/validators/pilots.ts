@@ -1,13 +1,12 @@
 import zod from "zod";
 
-export const pilotsDataValidator = zod.object({
+export const pilotsCreateDataValidator = zod.object({
 	id: zod.string(),
 	name: zod.string(),
 	aircraftId: zod.string().nullable(),
-	flightHours: zod.number().min(1),
 });
 
-export type PilotData = zod.infer<typeof pilotsDataValidator>;
+export type PilotCreateData = zod.infer<typeof pilotsCreateDataValidator>;
 
 export const pilotsInputValidator = zod.object({
 	airlineId: zod.string().min(1, {

@@ -22,8 +22,8 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 import { toast } from "~/components/ui/use-toast";
-import type { FlightReadData } from "~/validators/flights";
 import { deleteFlight } from "~/server/flights";
+import type { FlightReadData } from "~/validators/flights";
 
 interface FlightsRowActionsProps {
 	row: Row<FlightReadData>;

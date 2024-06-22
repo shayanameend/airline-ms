@@ -1,7 +1,7 @@
 "use client";
 
-import type { Row } from "@tanstack/react-table";
 import { DotsHorizontalIcon } from "@radix-ui/react-icons";
+import type { Row } from "@tanstack/react-table";
 import { Button } from "~/components/ui/button";
 import {
 	Dialog,
@@ -20,8 +20,8 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 import { toast } from "~/components/ui/use-toast";
-import type { IncidentReadData } from "~/validators/incidents";
 import { deleteIncident } from "~/server/incidents";
+import type { IncidentReadData } from "~/validators/incidents";
 
 interface IncidentsRowActionsProps {
 	row: Row<IncidentReadData>;

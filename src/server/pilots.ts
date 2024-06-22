@@ -3,7 +3,7 @@
 import { and, desc, eq, isNotNull, isNull } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { db } from "~/db";
-import { aircraft_table, airline_table, pilot_table } from "~/db/tables";
+import { aircraft_table, pilot_table } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
 import type { PilotInput } from "~/validators/pilots";
 

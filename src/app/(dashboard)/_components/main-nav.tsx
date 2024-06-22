@@ -1,7 +1,7 @@
 "use client";
 
 import { default as Link } from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import type { HTMLAttributes } from "react";
 import { cn } from "~/lib/utils";
 
@@ -30,6 +30,9 @@ const routes = [
 
 export function MainNav({ className, ...props }: HTMLAttributes<HTMLElement>) {
 	const pathname = usePathname();
+	const searchParams = useSearchParams();
+
+	const airlineId = searchParams.get("airlineId");
 
 	return (
 		<nav
@@ -39,7 +42,7 @@ export function MainNav({ className, ...props }: HTMLAttributes<HTMLElement>) {
 			{routes.map((route) => (
 				<Link
 					key={route.href}
-					href={route.href}
+					href={route.href + (airlineId ? `?airlineId=${airlineId}` : "")}
 					className={cn("text-sm font-medium transition-colors", {
 						"text-muted-foreground": pathname !== route.href,
 					})}

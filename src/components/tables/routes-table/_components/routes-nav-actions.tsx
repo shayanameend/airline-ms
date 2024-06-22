@@ -10,15 +10,17 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "~/components/ui/dialog";
-import type { AirportReadData } from "~/validators/airports";
+import { getAirports } from "~/server/airports";
 
 interface RoutesNavActionsProps {
-	airports: AirportReadData[];
+	airlineId: string;
 }
 
-export function RoutesNavActions({
-	airports,
+export async function RoutesNavActions({
+	airlineId,
 }: Readonly<RoutesNavActionsProps>) {
+	const airportsResponse = await getAirports(airlineId);
+
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
@@ -33,7 +35,10 @@ export function RoutesNavActions({
 						Please fill out the form below to create a new route.
 					</DialogDescription>
 				</DialogHeader>
-				<RouteForm airports={airports} CloseDialog={DialogClose} />
+				<RouteForm
+					airports={airportsResponse.data.airports}
+					CloseDialog={DialogClose}
+				/>
 			</DialogContent>
 		</Dialog>
 	);

@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { Button } from "~/components/ui/button";
 import type { DialogClose } from "~/components/ui/dialog";
@@ -20,7 +21,7 @@ import {
 	aircraftInputValidator,
 } from "~/validators/aircrafts";
 import type { CrewMemberData } from "~/validators/crew-members";
-import type { PilotData } from "~/validators/pilots";
+import type { PilotCreateData } from "~/validators/pilots";
 import MultipleSelector, { type Option } from "../ui/multi-select";
 import {
 	Select,
@@ -29,10 +30,9 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "../ui/select";
-import { useSearchParams } from "next/navigation";
 
 interface AircraftFormProps {
-	pilots: PilotData[];
+	pilots: PilotCreateData[];
 	crewMembers: CrewMemberData[];
 	CloseDialog?: typeof DialogClose;
 }
