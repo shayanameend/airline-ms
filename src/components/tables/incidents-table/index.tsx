@@ -3,8 +3,14 @@ import { getIncidents } from "~/server/incidents";
 import { incidentsColumns } from "./_components/incidents-columns";
 import { IncidentsNavActions } from "./_components/incidents-nav-actions";
 
-export async function IncidentsTable() {
-	const response = await getIncidents();
+interface IncidentsTableProps {
+	airlineId: string;
+}
+
+export async function IncidentsTable({
+	airlineId,
+}: Readonly<IncidentsTableProps>) {
+	const response = await getIncidents(airlineId);
 
 	return (
 		<article className="h-full space-y-8">

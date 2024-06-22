@@ -142,7 +142,11 @@ export function AircraftForm({
 								<Select onValueChange={field.onChange} value={field.value}>
 									<FormControl>
 										<SelectTrigger>
-											<SelectValue placeholder="Select a Pilot" />
+											<SelectValue
+												placeholder={
+													pilots.length === 0 ? "No pilots" : "Select a pilot	"
+												}
+											/>
 										</SelectTrigger>
 									</FormControl>
 									<SelectContent>
@@ -168,7 +172,11 @@ export function AircraftForm({
 								<MultipleSelector
 									{...field}
 									defaultOptions={crewMembersOptions}
-									placeholder="Select crew members you like..."
+									placeholder={
+										crewMembers.length === 0
+											? "No crew members"
+											: "Select crew members"
+									}
 									emptyIndicator={
 										<p className="text-center text-lg leading-10 text-gray-600 dark:text-gray-400">
 											no results found.

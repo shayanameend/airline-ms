@@ -43,7 +43,6 @@ export function PilotForm({
 			airlineId: searchParams.get("airlineId") ?? "",
 			aircraftId: null,
 			name: "",
-			flightHours: 0,
 		},
 	});
 
@@ -91,19 +90,6 @@ export function PilotForm({
 				/>
 				<FormField
 					control={form.control}
-					name="flightHours"
-					render={({ field }) => (
-						<FormItem>
-							<FormLabel>Flight Hours</FormLabel>
-							<FormControl>
-								<Input placeholder="1200" {...field} />
-							</FormControl>
-							<FormMessage />
-						</FormItem>
-					)}
-				/>
-				<FormField
-					control={form.control}
 					name="aircraftId"
 					render={({ field }) => (
 						<FormItem>
@@ -114,7 +100,13 @@ export function PilotForm({
 							>
 								<FormControl>
 									<SelectTrigger>
-										<SelectValue placeholder="Select an aircraft" />
+										<SelectValue
+											placeholder={
+												aircrafts.length === 0
+													? "No aircrafts"
+													: "Select an Aircraft	"
+											}
+										/>
 									</SelectTrigger>
 								</FormControl>
 								<SelectContent>
@@ -141,11 +133,9 @@ export function PilotForm({
 							form.formState.errors.airlineId !== undefined ||
 							form.formState.errors.aircraftId !== undefined ||
 							form.formState.errors.name !== undefined ||
-							form.formState.errors.flightHours !== undefined ||
 							form.getValues("airlineId") === "" ||
 							form.getValues("aircraftId") === "" ||
-							form.getValues("name") === "" ||
-							form.getValues("flightHours") === undefined
+							form.getValues("name") === ""
 						}
 						type="submit"
 					>

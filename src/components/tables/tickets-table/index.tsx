@@ -1,28 +1,22 @@
 import { DataTable } from "~/components/common/data-table";
-import type { FlightReadData } from "~/validators/flights";
-import type { PassengerData } from "~/validators/passengers";
-import type { TicketData } from "~/validators/tickets";
 import { ticketsColumns } from "./_components/tickets-columns";
 import { TicketsNavActions } from "./_components/tickets-nav-actions";
+import { getTickets } from "~/server/tickets";
 
 interface TicketsTableProps {
-	passengers: PassengerData[];
-	flights: FlightReadData[];
-	tickets: TicketData[];
+	airlineId: string;
 }
 
-export async function TicketsTable({
-	passengers,
-	flights,
-	tickets,
-}: Readonly<TicketsTableProps>) {
+export async function TicketsTable({ airlineId }: Readonly<TicketsTableProps>) {
+	const ticketsResponse = await getTickets(airlineId);
+
 	return (
 		<article className="h-full space-y-8">
 			<div className="flex items-center justify-between space-y-2">
 				<h2 className="text-2xl font-bold tracking-tight">Tickets</h2>
-				<TicketsNavActions passengers={passengers} flights={flights} />
+				<TicketsNavActions airlineId={airlineId} />
 			</div>
-			<DataTable columns={ticketsColumns} data={tickets} />
+			<DataTable columns={ticketsColumns} data={ticketsResponse.data.tickets} />
 		</article>
 	);
 }

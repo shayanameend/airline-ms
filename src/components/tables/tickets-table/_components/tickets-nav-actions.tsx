@@ -10,18 +10,19 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "~/components/ui/dialog";
-import type { FlightReadData } from "~/validators/flights";
-import type { PassengerData } from "~/validators/passengers";
+import { getAvailableFlights, getFlights } from "~/server/flights";
+import { getPassengers } from "~/server/passengers";
 
 interface TicketsNavActionsProps {
-	passengers: PassengerData[];
-	flights: FlightReadData[];
+	airlineId: string;
 }
 
-export function TicketsNavActions({
-	passengers,
-	flights,
+export async function TicketsNavActions({
+	airlineId,
 }: Readonly<TicketsNavActionsProps>) {
+	const passengersResponse = await getPassengers(airlineId);
+	const flightsResponse = await getAvailableFlights(airlineId);
+
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
@@ -37,8 +38,8 @@ export function TicketsNavActions({
 					</DialogDescription>
 				</DialogHeader>
 				<TicketForm
-					passengers={passengers}
-					flights={flights}
+					passengers={passengersResponse.data.passengers}
+					flights={flightsResponse.data.flights}
 					CloseDialog={DialogClose}
 				/>
 			</DialogContent>

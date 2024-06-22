@@ -17,19 +17,11 @@ interface FlightPageProps {
 export default async function FlightsPage({
 	searchParams: { airlineId },
 }: Readonly<FlightPageProps>): Promise<AwaitedReactNode> {
-	const flightsResponse = await getFlights();
-	const routesResponse = await getRoutes();
-	const aircraftsResponse = await getAircrafts(airlineId);
-
 	return (
 		<section className="min-h-screen">
 			<Card className="col-span-8 pt-4">
 				<CardContent>
-					<FlightsTable
-						routes={routesResponse.data.routes}
-						flights={flightsResponse.data.flights}
-						aircrafts={aircraftsResponse.data.aircrafts}
-					/>
+					<FlightsTable airlineId={airlineId} />
 				</CardContent>
 			</Card>
 		</section>

@@ -9,7 +9,13 @@ export const metadata: Metadata = {
 	title: "Records",
 };
 
-export default async function RecordsPage(): Promise<AwaitedReactNode> {
+interface RecordsPageProps {
+	searchParams: { airlineId: string };
+}
+
+export default async function RecordsPage({
+	searchParams: { airlineId },
+}: Readonly<RecordsPageProps>): Promise<AwaitedReactNode> {
 	return (
 		<section className="min-h-screen">
 			<Tabs defaultValue="maintenance">
@@ -20,14 +26,14 @@ export default async function RecordsPage(): Promise<AwaitedReactNode> {
 				<TabsContent value="maintenance">
 					<Card>
 						<CardContent>
-							<MaintenancesTable />
+							<MaintenancesTable airlineId={airlineId} />
 						</CardContent>
 					</Card>
 				</TabsContent>
 				<TabsContent value="incident">
 					<Card>
 						<CardContent>
-							<IncidentsTable />
+							<IncidentsTable airlineId={airlineId} />
 						</CardContent>
 					</Card>
 				</TabsContent>

@@ -1,7 +1,7 @@
 "use server";
 
 import { getUnixTime } from "date-fns";
-import { and, desc, eq, isNull } from "drizzle-orm";
+import { and, desc, eq, isNotNull, isNull } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { db } from "~/db";
 import {
@@ -270,7 +270,7 @@ export async function getAircraftsByModel(airlineId: string, model: string) {
 	}
 }
 
-export async function getAircraftByStatus(airlineId: string, status: string) {
+export async function getAircraftsByStatus(airlineId: string, status: string) {
 	try {
 		const aircrafts = await db
 			.select({
@@ -703,6 +703,75 @@ export async function getAircraftsWithoutCrewMember(airlineId: string) {
 				and(
 					eq(airline_table.id, airlineId),
 					isNull(crew_member_table.aircraftId),
+				),
+			)
+			.leftJoin(pilot_table, eq(pilot_table.aircraftId, aircraft_table.id))
+			.leftJoin(
+				crew_member_table,
+				eq(crew_member_table.aircraftId, aircraft_table.id),
+			);
+
+		const reducedAircrafts = aircrafts.reduce(
+			(accumulatedAircrafts: AircraftData[], aircraft) => {
+				const existingAircraft = accumulatedAircrafts.find(
+					(a) => a.id === aircraft.id,
+				);
+
+				if (existingAircraft) {
+					existingAircraft.crewMemberIds += `, ${aircraft.crewMemberIds}`;
+					existingAircraft.crewMemberNames += `, ${aircraft.crewMemberNames}`;
+				} else {
+					accumulatedAircrafts.push(aircraft);
+				}
+
+				return accumulatedAircrafts;
+			},
+			[],
+		);
+
+		return ServerResponse.success(
+			{
+				aircrafts: reducedAircrafts,
+			},
+			{
+				message: "Aircrafts retrieved successfully.",
+			},
+		);
+	} catch (error) {
+		console.error(error);
+
+		return ServerResponse.server_error(
+			{
+				aircrafts: [],
+			},
+			{
+				message: "An error occurred while retrieving aircrafts.",
+			},
+		);
+	}
+}
+
+export async function getAircraftsWithPilotAndCrewMember(airlineId: string) {
+	try {
+		const aircrafts = await db
+			.select({
+				id: aircraft_table.id,
+				make: aircraft_table.make,
+				model: aircraft_table.model,
+				status: aircraft_table.status,
+				capacity: aircraft_table.capacity,
+				passengerCount: aircraft_table.passengerCount,
+				pilotId: aircraft_table.pilotId,
+				pilotName: pilot_table.name,
+				crewMemberIds: crew_member_table.id,
+				crewMemberNames: crew_member_table.name,
+			})
+			.from(aircraft_table)
+			.where(
+				and(
+					eq(airline_table.id, airlineId),
+					isNotNull(crew_member_table.aircraftId),
+					isNotNull(aircraft_table.pilotId),
 				),
 			)
 			.leftJoin(pilot_table, eq(pilot_table.aircraftId, aircraft_table.id))

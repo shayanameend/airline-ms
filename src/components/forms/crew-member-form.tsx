@@ -118,7 +118,13 @@ export function CrewMemberForm({
 							>
 								<FormControl>
 									<SelectTrigger>
-										<SelectValue placeholder="Select an aircraft" />
+										<SelectValue
+											placeholder={
+												aircrafts.length === 0
+													? "No aircrafts"
+													: "Select an Aircraft	"
+											}
+										/>
 									</SelectTrigger>
 								</FormControl>
 								<SelectContent>

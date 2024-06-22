@@ -22,7 +22,7 @@ import {
 } from "~/components/ui/dropdown-menu";
 import { toast } from "~/components/ui/use-toast";
 import type { MaintenanceReadData } from "~/validators/maintenances";
-import { deleteAircraft } from "~/server/aircrafts";
+import { deleteMaintenance } from "~/server/maintenances";
 
 interface MaintenancesRowActionsProps {
 	row: Row<MaintenanceReadData>;
@@ -30,7 +30,8 @@ interface MaintenancesRowActionsProps {
 
 export function MaintenancesRowActions({ row }: MaintenancesRowActionsProps) {
 	const maintenanceDeleteHandler = async () => {
-		const response = await deleteAircraft(row.original.id);
+		const response = await deleteMaintenance(row.original.id);
+
 		toast({
 			title: response.message,
 			variant: "default",

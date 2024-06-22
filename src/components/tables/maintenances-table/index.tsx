@@ -3,8 +3,14 @@ import { getMaintenances } from "~/server/maintenances";
 import { maintenancesColumns } from "./_components/maintenances-columns";
 import { MaintenancesNavActions } from "./_components/maintenances-nav-actions";
 
-export async function MaintenancesTable() {
-	const response = await getMaintenances();
+interface MaintenancesTableProps {
+	airlineId: string;
+}
+
+export async function MaintenancesTable({
+	airlineId,
+}: Readonly<MaintenancesTableProps>) {
+	const response = await getMaintenances(airlineId);
 
 	return (
 		<article className="h-full space-y-8">

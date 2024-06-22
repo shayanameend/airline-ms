@@ -1,6 +1,6 @@
 "use server";
 
-import { getUnixTime } from "date-fns";
+import { fromUnixTime, getUnixTime } from "date-fns";
 import { and, desc, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { db } from "~/db";
@@ -25,7 +25,13 @@ export async function getMaintenances(airlineId: string) {
 
 		return ServerResponse.success(
 			{
-				maintenances,
+				maintenances: maintenances.map((maintenance) => ({
+					...maintenance,
+					startDate: fromUnixTime(maintenance.startDate),
+					endDate: maintenance.endDate
+						? fromUnixTime(maintenance.endDate)
+						: null,
+				})),
 			},
 			{
 				message: "Maintenances retrieved successfully",

@@ -10,18 +10,22 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "~/components/ui/dialog";
-import type { AircraftData } from "~/validators/aircrafts";
-import type { RouteReadData } from "~/validators/routes";
+import {
+	getAircraftsByStatus,
+	getAircraftsWithPilotAndCrewMember,
+} from "~/server/aircrafts";
+import { getRoutes } from "~/server/routes";
 
 interface FlightNavActionsProps {
-	routes: RouteReadData[];
-	aircrafts: AircraftData[];
+	airlineId: string;
 }
 
-export function FlightNavActions({
-	routes,
-	aircrafts,
+export async function FlightNavActions({
+	airlineId,
 }: Readonly<FlightNavActionsProps>) {
+	const routesResponse = await getRoutes(airlineId);
+	const aircraftsResponse = await getAircraftsWithPilotAndCrewMember(airlineId);
+
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
@@ -37,8 +41,8 @@ export function FlightNavActions({
 					</DialogDescription>
 				</DialogHeader>
 				<FlightForm
-					routes={routes}
-					aircrafts={aircrafts}
+					routes={routesResponse.data.routes}
+					aircrafts={aircraftsResponse.data.aircrafts}
 					CloseDialog={DialogClose}
 				/>
 			</DialogContent>
