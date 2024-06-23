@@ -15,15 +15,9 @@ import {
 
 export const airline_relations = relations(airline_table, ({ many }) => ({
 	aircrafts: many(aircraft_table),
-	airports: many(airport_table),
-	routes: many(route_table),
 	flights: many(flight_table),
-	tickets: many(ticket_table),
 	pilots: many(pilot_table),
 	crewMembers: many(crew_member_table),
-	passengers: many(passenger_table),
-	incidents: many(incident_table),
-	maintenances: many(maintenance_table),
 }));
 
 export const aircraft_relations = relations(
@@ -44,10 +38,6 @@ export const aircraft_relations = relations(
 );
 
 export const airport_relations = relations(airport_table, ({ one, many }) => ({
-	airline: one(airline_table, {
-		fields: [airport_table.airlineId],
-		references: [airline_table.id],
-	}),
 	arrivalRoutes: many(route_table, {
 		relationName: "arrivalAirport",
 	}),
@@ -58,10 +48,6 @@ export const airport_relations = relations(airport_table, ({ one, many }) => ({
 
 export const route_relations = relations(route_table, ({ one, many }) => ({
 	flights: many(flight_table),
-	airline: one(airline_table, {
-		fields: [route_table.airlineId],
-		references: [airline_table.id],
-	}),
 	arrivalAirport: one(airport_table, {
 		fields: [route_table.arrivalAirportId],
 		references: [airport_table.id],
@@ -120,18 +106,10 @@ export const passenger_relations = relations(
 	passenger_table,
 	({ one, many }) => ({
 		tickets: many(ticket_table),
-		airline: one(airline_table, {
-			fields: [passenger_table.airlineId],
-			references: [airline_table.id],
-		}),
 	}),
 );
 
 export const ticket_relations = relations(ticket_table, ({ one }) => ({
-	airline: one(airline_table, {
-		fields: [ticket_table.airlineId],
-		references: [airline_table.id],
-	}),
 	flight: one(flight_table, {
 		fields: [ticket_table.flightId],
 		references: [flight_table.id],
@@ -145,10 +123,6 @@ export const ticket_relations = relations(ticket_table, ({ one }) => ({
 export const maintenance_relations = relations(
 	maintenance_table,
 	({ one }) => ({
-		airline: one(airline_table, {
-			fields: [maintenance_table.airlineId],
-			references: [airline_table.id],
-		}),
 		aircraft: one(aircraft_table, {
 			fields: [maintenance_table.aircraftId],
 			references: [aircraft_table.id],
@@ -157,10 +131,6 @@ export const maintenance_relations = relations(
 );
 
 export const incident_relations = relations(incident_table, ({ one }) => ({
-	airline: one(airline_table, {
-		fields: [incident_table.airlineId],
-		references: [airline_table.id],
-	}),
 	flight: one(flight_table, {
 		fields: [incident_table.flightId],
 		references: [flight_table.id],

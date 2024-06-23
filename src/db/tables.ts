@@ -20,7 +20,6 @@ export const airline_table = sqliteTable("airline", {
 
 export const airport_table = sqliteTable("airport", {
 	id: text("id").primaryKey().$default(uuid),
-	airlineId: text("airline_id").notNull(),
 	name: text("name").notNull(),
 	city: text("city").notNull(),
 	country: text("country").notNull(),
@@ -51,7 +50,6 @@ export const aircraft_table = sqliteTable("aircraft", {
 
 export const route_table = sqliteTable("route", {
 	id: text("id").primaryKey().$default(uuid),
-	airlineId: text("airline_id").notNull(),
 	departureAirportId: text("departure_airport_id").notNull(),
 	arrivalAirportId: text("arrival_airport_id").notNull(),
 	durationMinutes: integer("duration_minutes").notNull(),
@@ -109,7 +107,6 @@ export const crew_member_table = sqliteTable("crew_member", {
 
 export const passenger_table = sqliteTable("passenger", {
 	id: text("id").primaryKey().$default(uuid),
-	airlineId: text("airline_id").notNull(),
 	name: text("name").notNull(),
 	phone: text("phone").unique().notNull(),
 	registerationDate: integer("registeration_date")
@@ -125,7 +122,6 @@ export const passenger_table = sqliteTable("passenger", {
 
 export const ticket_table = sqliteTable("ticket", {
 	id: text("id").primaryKey().$default(uuid),
-	airlineId: text("airline_id").notNull(),
 	flightId: text("flight_id").notNull(),
 	passengerId: text("passenger_id").notNull(),
 	date: integer("date")
@@ -141,7 +137,6 @@ export const ticket_table = sqliteTable("ticket", {
 
 export const maintenance_table = sqliteTable("maintenance", {
 	id: text("id").primaryKey().$default(uuid),
-	airlineId: text("airline_id").notNull(),
 	aircraftId: text("aircraft_id").notNull(),
 	description: text("description").notNull(),
 	status: text("status").notNull().default("active"),
@@ -157,7 +152,6 @@ export const maintenance_table = sqliteTable("maintenance", {
 
 export const incident_table = sqliteTable("incident", {
 	id: text("id").primaryKey().$default(uuid),
-	airlineId: text("airline_id").notNull(),
 	flightId: text("flight_id").notNull(),
 	description: text("description").notNull(),
 	date: integer("date").notNull(),
