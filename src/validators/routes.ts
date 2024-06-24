@@ -14,10 +14,17 @@ export const routeReadDataValidator = zod.object({
 export type RouteReadData = zod.infer<typeof routeReadDataValidator>;
 
 export const routeCreateDataValidator = zod.object({
-	airlineId: zod.string(),
 	departureAirportId: zod.string(),
 	arrivalAirportId: zod.string(),
 	durationMinutes: zod.coerce.number(),
 });
 
 export type RouteCreateData = zod.infer<typeof routeCreateDataValidator>;
+
+export const routeUpdateDataValidator = zod.object({
+	departureAirportId: zod.string().optional(),
+	arrivalAirportId: zod.string().optional(),
+	durationMinutes: zod.coerce.number().optional(),
+});
+
+export type RouteUpdateData = zod.infer<typeof routeUpdateDataValidator>;

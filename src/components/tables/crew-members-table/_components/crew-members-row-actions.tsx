@@ -22,10 +22,10 @@ import {
 } from "~/components/ui/dropdown-menu";
 import { toast } from "~/components/ui/use-toast";
 import { deleteCrewMember } from "~/server/crew-members";
-import type { CrewMemberData } from "~/validators/crew-members";
+import type { CrewMemberReadData } from "~/validators/crew-members";
 
 interface CrewMembersRowActionsProps {
-	row: Row<CrewMemberData>;
+	row: Row<CrewMemberReadData>;
 }
 
 export function CrewMembersRowActions({ row }: CrewMembersRowActionsProps) {

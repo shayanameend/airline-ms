@@ -86,6 +86,22 @@ export const flightColumns: ColumnDef<FlightReadData>[] = [
 		cell: ({ row }) => <div className="w-[128px]">${row.original.price}</div>,
 	},
 	{
+		accessorKey: "capacity",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Capacity" />
+		),
+		cell: ({ row }) => <div className="w-[128px]">{row.original.capacity}</div>,
+	},
+	{
+		accessorKey: "passengerCount",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Passengers" />
+		),
+		cell: ({ row }) => (
+			<div className="w-[128px]">{row.original.passengerCount}</div>
+		),
+	},
+	{
 		id: "actions",
 		cell: ({ row }) => <FlightsRowActions row={row} />,
 	},

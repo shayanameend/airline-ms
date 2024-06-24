@@ -2,10 +2,10 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import type { TicketData } from "~/validators/tickets";
+import type { TicketReadData } from "~/validators/tickets";
 import { TicketsRowActions } from "./tickets-row-actions";
 
-export const ticketsColumns: ColumnDef<TicketData>[] = [
+export const ticketsColumns: ColumnDef<TicketReadData>[] = [
 	{
 		accessorKey: "ticket",
 		header: ({ column }) => (
@@ -55,7 +55,7 @@ export const ticketsColumns: ColumnDef<TicketData>[] = [
 	{
 		accessorKey: "departureLocation",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Departure Location" />
+			<DataTableColumnHeader column={column} title="Departure" />
 		),
 		cell: ({ row }) => (
 			<>
@@ -70,7 +70,7 @@ export const ticketsColumns: ColumnDef<TicketData>[] = [
 	{
 		accessorKey: "arrivalLocation",
 		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Arrival Location" />
+			<DataTableColumnHeader column={column} title="Arrival" />
 		),
 		cell: ({ row }) => (
 			<>
@@ -88,17 +88,6 @@ export const ticketsColumns: ColumnDef<TicketData>[] = [
 			<DataTableColumnHeader column={column} title="Price" />
 		),
 		cell: ({ row }) => <div className="w-[128px]">${row.original.price}</div>,
-	},
-	{
-		accessorKey: "date",
-		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Date" />
-		),
-		cell: ({ row }) => (
-			<div className="w-[96px]" suppressHydrationWarning>
-				{row.original.date.toLocaleString()}
-			</div>
-		),
 	},
 	{
 		id: "actions",

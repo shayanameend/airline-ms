@@ -10,10 +10,7 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "~/components/ui/dialog";
-import {
-	getAircraftsByStatus,
-	getAircraftsWithPilotAndCrewMember,
-} from "~/server/aircrafts";
+import { getAircraftsWithPilotAndCrewMember } from "~/server/aircrafts";
 import { getRoutes } from "~/server/routes";
 
 interface FlightNavActionsProps {

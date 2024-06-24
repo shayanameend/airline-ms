@@ -10,7 +10,7 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "~/components/ui/dialog";
-import { getAvailableFlights, getFlights } from "~/server/flights";
+import { getAvailableFlightsOfAirline, getFlights } from "~/server/flights";
 import { getPassengers } from "~/server/passengers";
 
 interface TicketsNavActionsProps {
@@ -21,7 +21,7 @@ export async function TicketsNavActions({
 	airlineId,
 }: Readonly<TicketsNavActionsProps>) {
 	const passengersResponse = await getPassengers(airlineId);
-	const flightsResponse = await getAvailableFlights(airlineId);
+	const flightsResponse = await getAvailableFlightsOfAirline(airlineId);
 
 	return (
 		<Dialog>

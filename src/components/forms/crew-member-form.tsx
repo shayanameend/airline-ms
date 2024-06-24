@@ -19,8 +19,8 @@ import { createCrewMember } from "~/server/crew-members";
 import { createPilot } from "~/server/pilots";
 import type { AircraftData } from "~/validators/aircrafts";
 import {
-	type CrewMemberInput,
-	crewMemberInputValidator,
+	type CrewMemberCreateData,
+	crewMemberCreateDataValidator,
 } from "~/validators/crew-members";
 import {
 	Select,
@@ -41,8 +41,8 @@ export function CrewMemberForm({
 }: Readonly<CrewMemberFormProps>) {
 	const searchParams = useSearchParams();
 
-	const form = useForm<CrewMemberInput>({
-		resolver: zodResolver(crewMemberInputValidator),
+	const form = useForm<CrewMemberCreateData>({
+		resolver: zodResolver(crewMemberCreateDataValidator),
 		defaultValues: {
 			airlineId: searchParams.get("airlineId") ?? "",
 			aircraftId: null,
@@ -51,7 +51,7 @@ export function CrewMemberForm({
 		},
 	});
 
-	async function onSubmit(data: CrewMemberInput) {
+	async function onSubmit(data: CrewMemberCreateData) {
 		try {
 			const response = await createCrewMember(data);
 

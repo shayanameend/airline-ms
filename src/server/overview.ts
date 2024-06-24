@@ -3,6 +3,7 @@ import { and, desc, eq, gte, lt } from "drizzle-orm";
 import { db } from "~/db";
 import { flight_table, passenger_table, ticket_table } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
+import { FlightStatus } from "~/validators/flights";
 
 export async function getOverviewData() {
 	try {
@@ -10,14 +11,14 @@ export async function getOverviewData() {
 			await db
 				.select()
 				.from(flight_table)
-				.where(eq(flight_table.status, "active"))
+				.where(eq(flight_table.status, FlightStatus.InFlight))
 		).length;
 
 		const numberOfScheduledFlights = (
 			await db
 				.select()
 				.from(flight_table)
-				.where(eq(flight_table.status, "scheduled"))
+				.where(eq(flight_table.status, FlightStatus.Scheduled))
 		).length;
 
 		const numberOfTicketsSold = (await db.select().from(ticket_table)).length;
@@ -30,14 +31,8 @@ export async function getOverviewData() {
 				.from(passenger_table)
 				.where(
 					and(
-						gte(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-01-01")),
-						),
-						lt(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-02-01")),
-						),
+						gte(passenger_table.createdAt, getUnixTime(new Date("2024-01-01"))),
+						lt(passenger_table.createdAt, getUnixTime(new Date("2024-02-01"))),
 					),
 				)
 		).length;
@@ -48,14 +43,8 @@ export async function getOverviewData() {
 				.from(passenger_table)
 				.where(
 					and(
-						gte(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-02-01")),
-						),
-						lt(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-03-01")),
-						),
+						gte(passenger_table.createdAt, getUnixTime(new Date("2024-02-01"))),
+						lt(passenger_table.createdAt, getUnixTime(new Date("2024-03-01"))),
 					),
 				)
 		).length;
@@ -66,14 +55,8 @@ export async function getOverviewData() {
 				.from(passenger_table)
 				.where(
 					and(
-						gte(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-03-01")),
-						),
-						lt(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-04-01")),
-						),
+						gte(passenger_table.createdAt, getUnixTime(new Date("2024-03-01"))),
+						lt(passenger_table.createdAt, getUnixTime(new Date("2024-04-01"))),
 					),
 				)
 		).length;
@@ -84,14 +67,8 @@ export async function getOverviewData() {
 				.from(passenger_table)
 				.where(
 					and(
-						gte(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-04-01")),
-						),
-						lt(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-05-01")),
-						),
+						gte(passenger_table.createdAt, getUnixTime(new Date("2024-04-01"))),
+						lt(passenger_table.createdAt, getUnixTime(new Date("2024-05-01"))),
 					),
 				)
 		).length;
@@ -102,14 +79,8 @@ export async function getOverviewData() {
 				.from(passenger_table)
 				.where(
 					and(
-						gte(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-05-01")),
-						),
-						lt(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-06-01")),
-						),
+						gte(passenger_table.createdAt, getUnixTime(new Date("2024-05-01"))),
+						lt(passenger_table.createdAt, getUnixTime(new Date("2024-06-01"))),
 					),
 				)
 		).length;
@@ -120,14 +91,8 @@ export async function getOverviewData() {
 				.from(passenger_table)
 				.where(
 					and(
-						gte(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-06-01")),
-						),
-						lt(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-07-01")),
-						),
+						gte(passenger_table.createdAt, getUnixTime(new Date("2024-06-01"))),
+						lt(passenger_table.createdAt, getUnixTime(new Date("2024-07-01"))),
 					),
 				)
 		).length;
@@ -138,14 +103,8 @@ export async function getOverviewData() {
 				.from(passenger_table)
 				.where(
 					and(
-						gte(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-07-01")),
-						),
-						lt(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-08-01")),
-						),
+						gte(passenger_table.createdAt, getUnixTime(new Date("2024-07-01"))),
+						lt(passenger_table.createdAt, getUnixTime(new Date("2024-08-01"))),
 					),
 				)
 		).length;
@@ -156,14 +115,8 @@ export async function getOverviewData() {
 				.from(passenger_table)
 				.where(
 					and(
-						gte(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-08-01")),
-						),
-						lt(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-09-01")),
-						),
+						gte(passenger_table.createdAt, getUnixTime(new Date("2024-08-01"))),
+						lt(passenger_table.createdAt, getUnixTime(new Date("2024-09-01"))),
 					),
 				)
 		).length;
@@ -174,14 +127,8 @@ export async function getOverviewData() {
 				.from(passenger_table)
 				.where(
 					and(
-						gte(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-09-01")),
-						),
-						lt(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-10-01")),
-						),
+						gte(passenger_table.createdAt, getUnixTime(new Date("2024-09-01"))),
+						lt(passenger_table.createdAt, getUnixTime(new Date("2024-10-01"))),
 					),
 				)
 		).length;
@@ -192,14 +139,8 @@ export async function getOverviewData() {
 				.from(passenger_table)
 				.where(
 					and(
-						gte(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-10-01")),
-						),
-						lt(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-11-01")),
-						),
+						gte(passenger_table.createdAt, getUnixTime(new Date("2024-10-01"))),
+						lt(passenger_table.createdAt, getUnixTime(new Date("2024-11-01"))),
 					),
 				)
 		).length;
@@ -210,14 +151,8 @@ export async function getOverviewData() {
 				.from(passenger_table)
 				.where(
 					and(
-						gte(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-11-01")),
-						),
-						lt(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-12-01")),
-						),
+						gte(passenger_table.createdAt, getUnixTime(new Date("2024-11-01"))),
+						lt(passenger_table.createdAt, getUnixTime(new Date("2024-12-01"))),
 					),
 				)
 		).length;
@@ -228,14 +163,8 @@ export async function getOverviewData() {
 				.from(passenger_table)
 				.where(
 					and(
-						gte(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2024-12-01")),
-						),
-						lt(
-							passenger_table.registerationDate,
-							getUnixTime(new Date("2025-01-01")),
-						),
+						gte(passenger_table.createdAt, getUnixTime(new Date("2024-12-01"))),
+						lt(passenger_table.createdAt, getUnixTime(new Date("2025-01-01"))),
 					),
 				)
 		).length;
@@ -295,7 +224,7 @@ export async function getOverviewData() {
 			.select({
 				name: passenger_table.name,
 				phone: passenger_table.phone,
-				date: ticket_table.date,
+				date: ticket_table.updatedAt,
 			})
 			.from(ticket_table)
 			.innerJoin(
@@ -306,10 +235,10 @@ export async function getOverviewData() {
 				flight_table,
 				and(
 					eq(flight_table.id, ticket_table.flightId),
-					eq(flight_table.status, "scheduled"),
+					eq(flight_table.status, FlightStatus.Scheduled),
 				),
 			)
-			.orderBy(desc(ticket_table.date))
+			.orderBy(desc(ticket_table.updatedAt))
 			.limit(5);
 
 		return ServerResponse.success(

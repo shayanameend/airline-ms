@@ -15,7 +15,9 @@ import {
 	ticket_table,
 } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
-import type { TicketInput } from "~/validators/tickets";
+import { FlightStatus } from "~/validators/flights";
+import type { TicketCreateData, TicketUpdateData } from "~/validators/tickets";
+import { getFlightById, updateFlight } from "./flights";
 
 export async function getTickets(airlineId: string) {
 	try {
@@ -25,6 +27,7 @@ export async function getTickets(airlineId: string) {
 		const tickets = await db
 			.select({
 				id: ticket_table.id,
+				flightId: ticket_table.flightId,
 				passengerName: passenger_table.name,
 				passengerPhone: passenger_table.phone,
 				airlineName: airline_table.name,
@@ -39,14 +42,15 @@ export async function getTickets(airlineId: string) {
 				arrivalCity: arrival_airport_table.city,
 				arrivalCountry: arrival_airport_table.country,
 				price: flight_table.price,
-				date: ticket_table.date,
 			})
 			.from(ticket_table)
-			.where(eq(flight_table.airlineId, airlineId))
-			.innerJoin(airline_table, eq(airline_table.id, flight_table.airlineId))
-			.innerJoin(aircraft_table, eq(aircraft_table.id, flight_table.aircraftId))
+			.innerJoin(
+				passenger_table,
+				eq(passenger_table.id, ticket_table.passengerId),
+			)
 			.innerJoin(flight_table, eq(flight_table.id, ticket_table.flightId))
 			.innerJoin(route_table, eq(route_table.id, flight_table.routeId))
+			.innerJoin(aircraft_table, eq(aircraft_table.id, flight_table.aircraftId))
 			.innerJoin(
 				departure_airport_table,
 				eq(departure_airport_table.id, route_table.departureAirportId),
@@ -55,10 +59,8 @@ export async function getTickets(airlineId: string) {
 				arrival_airport_table,
 				eq(arrival_airport_table.id, route_table.arrivalAirportId),
 			)
-			.innerJoin(
-				passenger_table,
-				eq(passenger_table.id, ticket_table.passengerId),
-			)
+			.innerJoin(airline_table, eq(airline_table.id, flight_table.airlineId))
+			.where(eq(flight_table.airlineId, airlineId))
 			.orderBy(desc(ticket_table.updatedAt));
 
 		return ServerResponse.success(
@@ -67,7 +69,6 @@ export async function getTickets(airlineId: string) {
 					...ticket,
 					departureTime: fromUnixTime(ticket.departureTime),
 					arrivalTime: fromUnixTime(ticket.arrivalTime),
-					date: fromUnixTime(ticket.date),
 				})),
 			},
 			{
@@ -88,7 +89,7 @@ export async function getTickets(airlineId: string) {
 	}
 }
 
-export async function getTicketById(airlineId: string, id: string) {
+export async function getTicketById(id: string) {
 	try {
 		const departure_airport_table = alias(airport_table, "departure_airport");
 		const arrival_airport_table = alias(airport_table, "arrival_airport");
@@ -96,6 +97,7 @@ export async function getTicketById(airlineId: string, id: string) {
 		const tickets = await db
 			.select({
 				id: ticket_table.id,
+				flightId: ticket_table.flightId,
 				passengerName: passenger_table.name,
 				passengerPhone: passenger_table.phone,
 				airlineName: airline_table.name,
@@ -110,16 +112,15 @@ export async function getTicketById(airlineId: string, id: string) {
 				arrivalCity: arrival_airport_table.city,
 				arrivalCountry: arrival_airport_table.country,
 				price: flight_table.price,
-				date: ticket_table.date,
 			})
 			.from(ticket_table)
-			.where(
-				and(eq(flight_table.airlineId, airlineId), eq(ticket_table.id, id)),
+			.innerJoin(
+				passenger_table,
+				eq(passenger_table.id, ticket_table.passengerId),
 			)
-			.innerJoin(airline_table, eq(airline_table.id, flight_table.airlineId))
-			.innerJoin(aircraft_table, eq(aircraft_table.id, flight_table.aircraftId))
 			.innerJoin(flight_table, eq(flight_table.id, ticket_table.flightId))
 			.innerJoin(route_table, eq(route_table.id, flight_table.routeId))
+			.innerJoin(aircraft_table, eq(aircraft_table.id, flight_table.aircraftId))
 			.innerJoin(
 				departure_airport_table,
 				eq(departure_airport_table.id, route_table.departureAirportId),
@@ -128,11 +129,8 @@ export async function getTicketById(airlineId: string, id: string) {
 				arrival_airport_table,
 				eq(arrival_airport_table.id, route_table.arrivalAirportId),
 			)
-			.innerJoin(
-				passenger_table,
-				eq(passenger_table.id, ticket_table.passengerId),
-			)
-			.orderBy(desc(ticket_table.updatedAt));
+			.innerJoin(airline_table, eq(airline_table.id, flight_table.airlineId))
+			.where(eq(ticket_table.id, id));
 
 		return ServerResponse.success(
 			{
@@ -156,320 +154,7 @@ export async function getTicketById(airlineId: string, id: string) {
 	}
 }
 
-export async function getTicketsByAircraftId(
-	airlineId: string,
-	aircraftId: string,
-) {
-	try {
-		const departure_airport_table = alias(airport_table, "departure_airport");
-		const arrival_airport_table = alias(airport_table, "arrival_airport");
-
-		const tickets = await db
-			.select({
-				id: ticket_table.id,
-				passengerName: passenger_table.name,
-				passengerPhone: passenger_table.phone,
-				airlineName: airline_table.name,
-				aircraftMake: aircraft_table.make,
-				aircraftModel: aircraft_table.model,
-				departureAirport: departure_airport_table.name,
-				departureCity: departure_airport_table.city,
-				departureCountry: departure_airport_table.country,
-				departureTime: flight_table.departure,
-				arrivalTime: flight_table.arrival,
-				arrivalAirport: arrival_airport_table.name,
-				arrivalCity: arrival_airport_table.city,
-				arrivalCountry: arrival_airport_table.country,
-				price: flight_table.price,
-				date: ticket_table.date,
-			})
-			.from(ticket_table)
-			.where(
-				and(
-					eq(flight_table.airlineId, airlineId),
-					eq(flight_table.aircraftId, aircraftId),
-				),
-			)
-			.innerJoin(airline_table, eq(airline_table.id, flight_table.airlineId))
-			.innerJoin(aircraft_table, eq(aircraft_table.id, flight_table.aircraftId))
-			.innerJoin(flight_table, eq(flight_table.id, ticket_table.flightId))
-			.innerJoin(route_table, eq(route_table.id, flight_table.routeId))
-			.innerJoin(
-				departure_airport_table,
-				eq(departure_airport_table.id, route_table.departureAirportId),
-			)
-			.innerJoin(
-				arrival_airport_table,
-				eq(arrival_airport_table.id, route_table.arrivalAirportId),
-			)
-			.innerJoin(
-				passenger_table,
-				eq(passenger_table.id, ticket_table.passengerId),
-			)
-			.orderBy(desc(ticket_table.updatedAt));
-
-		return ServerResponse.success(
-			{
-				tickets: tickets.map((ticket) => ({
-					...ticket,
-					departureTime: fromUnixTime(ticket.departureTime),
-					arrivalTime: fromUnixTime(ticket.arrivalTime),
-					date: fromUnixTime(ticket.date),
-				})),
-			},
-			{
-				message: "Tickets retrieved successfully.",
-			},
-		);
-	} catch (error) {
-		console.error(error);
-
-		return ServerResponse.server_error(
-			{
-				tickets: [],
-			},
-			{
-				message: "An error occurred while retrieving tickets.",
-			},
-		);
-	}
-}
-
-export async function getTicketsByFlightId(
-	airlineId: string,
-	flightId: string,
-) {
-	try {
-		const departure_airport_table = alias(airport_table, "departure_airport");
-		const arrival_airport_table = alias(airport_table, "arrival_airport");
-
-		const tickets = await db
-			.select({
-				id: ticket_table.id,
-				passengerName: passenger_table.name,
-				passengerPhone: passenger_table.phone,
-				airlineName: airline_table.name,
-				aircraftMake: aircraft_table.make,
-				aircraftModel: aircraft_table.model,
-				departureAirport: departure_airport_table.name,
-				departureCity: departure_airport_table.city,
-				departureCountry: departure_airport_table.country,
-				departureTime: flight_table.departure,
-				arrivalTime: flight_table.arrival,
-				arrivalAirport: arrival_airport_table.name,
-				arrivalCity: arrival_airport_table.city,
-				arrivalCountry: arrival_airport_table.country,
-				price: flight_table.price,
-				date: ticket_table.date,
-			})
-			.from(ticket_table)
-			.where(
-				and(
-					eq(flight_table.airlineId, airlineId),
-					eq(ticket_table.flightId, flightId),
-				),
-			)
-			.innerJoin(airline_table, eq(airline_table.id, flight_table.airlineId))
-			.innerJoin(aircraft_table, eq(aircraft_table.id, flight_table.aircraftId))
-			.innerJoin(flight_table, eq(flight_table.id, ticket_table.flightId))
-			.innerJoin(route_table, eq(route_table.id, flight_table.routeId))
-			.innerJoin(
-				departure_airport_table,
-				eq(departure_airport_table.id, route_table.departureAirportId),
-			)
-			.innerJoin(
-				arrival_airport_table,
-				eq(arrival_airport_table.id, route_table.arrivalAirportId),
-			)
-			.innerJoin(
-				passenger_table,
-				eq(passenger_table.id, ticket_table.passengerId),
-			)
-			.orderBy(desc(ticket_table.updatedAt));
-
-		return ServerResponse.success(
-			{
-				tickets: tickets.map((ticket) => ({
-					...ticket,
-					departureTime: fromUnixTime(ticket.departureTime),
-					arrivalTime: fromUnixTime(ticket.arrivalTime),
-					date: fromUnixTime(ticket.date),
-				})),
-			},
-			{
-				message: "Tickets retrieved successfully.",
-			},
-		);
-	} catch (error) {
-		console.error(error);
-
-		return ServerResponse.server_error(
-			{
-				tickets: [],
-			},
-			{
-				message: "An error occurred while retrieving tickets.",
-			},
-		);
-	}
-}
-
-export async function getTicketsByPassengerId(
-	airlineId: string,
-	passengerId: string,
-) {
-	try {
-		const departure_airport_table = alias(airport_table, "departure_airport");
-		const arrival_airport_table = alias(airport_table, "arrival_airport");
-
-		const tickets = await db
-			.select({
-				id: ticket_table.id,
-				passengerName: passenger_table.name,
-				passengerPhone: passenger_table.phone,
-				airlineName: airline_table.name,
-				aircraftMake: aircraft_table.make,
-				aircraftModel: aircraft_table.model,
-				departureAirport: departure_airport_table.name,
-				departureCity: departure_airport_table.city,
-				departureCountry: departure_airport_table.country,
-				departureTime: flight_table.departure,
-				arrivalTime: flight_table.arrival,
-				arrivalAirport: arrival_airport_table.name,
-				arrivalCity: arrival_airport_table.city,
-				arrivalCountry: arrival_airport_table.country,
-				price: flight_table.price,
-				date: ticket_table.date,
-			})
-			.from(ticket_table)
-			.where(
-				and(
-					eq(flight_table.airlineId, airlineId),
-					eq(ticket_table.passengerId, passengerId),
-				),
-			)
-			.innerJoin(airline_table, eq(airline_table.id, flight_table.airlineId))
-			.innerJoin(aircraft_table, eq(aircraft_table.id, flight_table.aircraftId))
-			.innerJoin(flight_table, eq(flight_table.id, ticket_table.flightId))
-			.innerJoin(route_table, eq(route_table.id, flight_table.routeId))
-			.innerJoin(
-				departure_airport_table,
-				eq(departure_airport_table.id, route_table.departureAirportId),
-			)
-			.innerJoin(
-				arrival_airport_table,
-				eq(arrival_airport_table.id, route_table.arrivalAirportId),
-			)
-			.innerJoin(
-				passenger_table,
-				eq(passenger_table.id, ticket_table.passengerId),
-			)
-			.orderBy(desc(ticket_table.updatedAt));
-
-		return ServerResponse.success(
-			{
-				tickets: tickets.map((ticket) => ({
-					...ticket,
-					departureTime: fromUnixTime(ticket.departureTime),
-					arrivalTime: fromUnixTime(ticket.arrivalTime),
-					date: fromUnixTime(ticket.date),
-				})),
-			},
-			{
-				message: "Tickets retrieved successfully.",
-			},
-		);
-	} catch (error) {
-		console.error(error);
-
-		return ServerResponse.server_error(
-			{
-				tickets: [],
-			},
-			{
-				message: "An error occurred while retrieving tickets.",
-			},
-		);
-	}
-}
-
-export async function getTicketsByDate(airlineId: string, date: Date) {
-	try {
-		const departure_airport_table = alias(airport_table, "departure_airport");
-		const arrival_airport_table = alias(airport_table, "arrival_airport");
-
-		const tickets = await db
-			.select({
-				id: ticket_table.id,
-				passengerName: passenger_table.name,
-				passengerPhone: passenger_table.phone,
-				airlineName: airline_table.name,
-				aircraftMake: aircraft_table.make,
-				aircraftModel: aircraft_table.model,
-				departureAirport: departure_airport_table.name,
-				departureCity: departure_airport_table.city,
-				departureCountry: departure_airport_table.country,
-				departureTime: flight_table.departure,
-				arrivalTime: flight_table.arrival,
-				arrivalAirport: arrival_airport_table.name,
-				arrivalCity: arrival_airport_table.city,
-				arrivalCountry: arrival_airport_table.country,
-				price: flight_table.price,
-				date: ticket_table.date,
-			})
-			.from(ticket_table)
-			.where(
-				and(
-					eq(flight_table.airlineId, airlineId),
-					eq(ticket_table.date, getUnixTime(date)),
-				),
-			)
-			.innerJoin(airline_table, eq(airline_table.id, flight_table.airlineId))
-			.innerJoin(aircraft_table, eq(aircraft_table.id, flight_table.aircraftId))
-			.innerJoin(flight_table, eq(flight_table.id, ticket_table.flightId))
-			.innerJoin(route_table, eq(route_table.id, flight_table.routeId))
-			.innerJoin(
-				departure_airport_table,
-				eq(departure_airport_table.id, route_table.departureAirportId),
-			)
-			.innerJoin(
-				arrival_airport_table,
-				eq(arrival_airport_table.id, route_table.arrivalAirportId),
-			)
-			.innerJoin(
-				passenger_table,
-				eq(passenger_table.id, ticket_table.passengerId),
-			)
-			.orderBy(desc(ticket_table.updatedAt));
-
-		return ServerResponse.success(
-			{
-				tickets: tickets.map((ticket) => ({
-					...ticket,
-					departureTime: fromUnixTime(ticket.departureTime),
-					arrivalTime: fromUnixTime(ticket.arrivalTime),
-					date: fromUnixTime(ticket.date),
-				})),
-			},
-			{
-				message: "Tickets retrieved successfully.",
-			},
-		);
-	} catch (error) {
-		console.error(error);
-
-		return ServerResponse.server_error(
-			{
-				tickets: [],
-			},
-			{
-				message: "An error occurred while retrieving tickets.",
-			},
-		);
-	}
-}
-
-export async function createTicket(data: TicketInput) {
+export async function createTicket(data: TicketCreateData) {
 	try {
 		let passengers = await db
 			.select()
@@ -487,16 +172,54 @@ export async function createTicket(data: TicketInput) {
 				.returning();
 		}
 
+		const flightResponse = await getFlightById(data.flightId);
+
+		if (
+			flightResponse.status < 200 ||
+			flightResponse.status >= 300 ||
+			flightResponse.data.flight === null ||
+			flightResponse.data.flight === undefined ||
+			flightResponse.data.flight.status !== FlightStatus.Scheduled
+		) {
+			return ServerResponse.bad_request(
+				{
+					ticket: null,
+				},
+				{
+					message: "Flight is not scheduled.",
+				},
+			);
+		}
+
+		if (
+			flightResponse.data.flight.passengerCount ===
+			flightResponse.data.flight.capacity
+		) {
+			return ServerResponse.bad_request(
+				{
+					ticket: null,
+				},
+				{
+					message: "Flight is full.",
+				},
+			);
+		}
+
+		updateFlight(flightResponse.data.flight.id, {
+			passengerCount: flightResponse.data.flight.passengerCount
+				? flightResponse.data.flight.passengerCount + 1
+				: 1,
+		});
+
 		const tickets = await db
 			.insert(ticket_table)
 			.values({
-				airlineId: data.airlineId,
 				flightId: data.flightId,
 				passengerId: passengers[0].id,
 			})
 			.returning();
 
-		return ServerResponse.success(
+		return ServerResponse.created(
 			{
 				ticket: tickets[0],
 			},
@@ -524,7 +247,7 @@ export async function createTicket(data: TicketInput) {
 	}
 }
 
-export async function updateTicket(id: string, data: TicketInput) {
+export async function updateTicket(id: string, data: TicketUpdateData) {
 	try {
 		const tickets = await db
 			.update(ticket_table)
@@ -562,6 +285,46 @@ export async function updateTicket(id: string, data: TicketInput) {
 
 export async function deleteTicket(id: string) {
 	try {
+		const ticketResponse = await getTicketById(id);
+
+		if (
+			ticketResponse.status < 200 ||
+			ticketResponse.status >= 300 ||
+			ticketResponse.data.ticket === null ||
+			ticketResponse.data.ticket === undefined
+		) {
+			return ServerResponse.not_found(
+				{ ticket: null },
+				{
+					message: "Ticket not found.",
+				},
+			);
+		}
+
+		const flightsResponse = await getFlightById(
+			ticketResponse.data.ticket.flightId,
+		);
+
+		if (
+			flightsResponse.status < 200 ||
+			flightsResponse.status >= 300 ||
+			flightsResponse.data.flight === null ||
+			flightsResponse.data.flight === undefined
+		) {
+			return ServerResponse.not_found(
+				{ ticket: null },
+				{
+					message: "Flight not found.",
+				},
+			);
+		}
+
+		if (flightsResponse.data.flight.passengerCount > 0) {
+			await updateFlight(flightsResponse.data.flight.id, {
+				passengerCount: flightsResponse.data.flight.passengerCount - 1,
+			});
+		}
+
 		await db.delete(ticket_table).where(eq(ticket_table.id, id));
 
 		return ServerResponse.success(

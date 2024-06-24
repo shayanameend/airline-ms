@@ -11,9 +11,13 @@ export const aircraftDataValidator = zod.object({
 	id: zod.string(),
 	make: zod.string(),
 	model: zod.string(),
-	status: zod.string(),
+	status: zod.enum([
+		AircraftStatus.Parked,
+		AircraftStatus.Booked,
+		AircraftStatus.InFlight,
+		AircraftStatus.OutForMaintenance,
+	]),
 	capacity: zod.number().min(1),
-	passengerCount: zod.number().min(0),
 	pilotId: zod.string().nullable(),
 	pilotName: zod.string().nullable(),
 	crewMemberIds: zod.string().nullable(),
@@ -26,6 +30,12 @@ export const aircraftInputValidator = zod.object({
 	airlineId: zod.string(),
 	make: zod.string(),
 	model: zod.string(),
+	status: zod.enum([
+		AircraftStatus.Parked,
+		AircraftStatus.Booked,
+		AircraftStatus.InFlight,
+		AircraftStatus.OutForMaintenance,
+	]),
 	capacity: zod.coerce.number().min(1, {
 		message: "Capacity must be greater than 0.",
 	}),

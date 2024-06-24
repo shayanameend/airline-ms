@@ -1,7 +1,7 @@
 import { DataTable } from "~/components/common/data-table";
+import { getFlights } from "~/server/flights";
 import { flightColumns } from "./_components/flight-columns";
 import { FlightNavActions } from "./_components/flight-nav-actions";
-import { getFlights } from "~/server/flights";
 
 interface FlightsTableProps {
 	airlineId: string;

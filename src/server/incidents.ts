@@ -21,7 +21,6 @@ export async function getIncidents(airlineId: string) {
 				date: incident_table.date,
 			})
 			.from(incident_table)
-			.where(eq(incident_table.airlineId, airlineId))
 			.orderBy(desc(incident_table.date));
 
 		return ServerResponse.success(
@@ -52,9 +51,7 @@ export async function getIncidentById(airlineId: string, id: string) {
 		const incidents = await db
 			.select()
 			.from(incident_table)
-			.where(
-				and(eq(incident_table.id, id), eq(incident_table.airlineId, airlineId)),
-			)
+			.where(eq(incident_table.id, id))
 			.orderBy(desc(incident_table.date));
 
 		return ServerResponse.success(
@@ -85,12 +82,7 @@ export async function getIncidentsByFlightId(
 		const incidents = await db
 			.select()
 			.from(incident_table)
-			.where(
-				and(
-					eq(incident_table.flightId, flightId),
-					eq(incident_table.airlineId, airlineId),
-				),
-			)
+			.where(eq(incident_table.flightId, flightId))
 			.orderBy(desc(incident_table.date));
 
 		return ServerResponse.success(
@@ -125,7 +117,6 @@ export async function getIncidentsByDate(airlineId: string, date: Date) {
 						incident_table.date,
 						getUnixTime(addDays(date, 1).toLocaleDateString()),
 					),
-					eq(incident_table.airlineId, airlineId),
 				),
 			)
 			.orderBy(desc(incident_table.date));
@@ -155,7 +146,6 @@ export async function createIncident(data: IncidentCreateData) {
 		const incidents = await db
 			.insert(incident_table)
 			.values({
-				airlineId: data.airlineId,
 				flightId: data.flightId,
 				description: data.description,
 				date: getUnixTime(data.date),

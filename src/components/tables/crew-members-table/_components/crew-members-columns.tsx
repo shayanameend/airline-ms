@@ -2,10 +2,10 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import type { CrewMemberData } from "~/validators/crew-members";
+import type { CrewMemberReadData } from "~/validators/crew-members";
 import { CrewMembersRowActions } from "./crew-members-row-actions";
 
-export const crewMembersColumns: ColumnDef<CrewMemberData>[] = [
+export const crewMembersColumns: ColumnDef<CrewMemberReadData>[] = [
 	{
 		accessorKey: "id",
 		header: ({ column }) => (

@@ -22,10 +22,10 @@ import {
 } from "~/components/ui/dropdown-menu";
 import { toast } from "~/components/ui/use-toast";
 import { deleteTicket } from "~/server/tickets";
-import type { TicketData } from "~/validators/tickets";
+import type { TicketReadData } from "~/validators/tickets";
 
 interface TicektsRowActionsProps {
-	row: Row<TicketData>;
+	row: Row<TicketReadData>;
 }
 
 export function TicketsRowActions({ row }: TicektsRowActionsProps) {

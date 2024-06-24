@@ -1,26 +1,47 @@
+import { getUnixTime } from "date-fns";
 import zod from "zod";
 
-export const passengerDataValidator = zod.object({
-	id: zod.string({
-		message: "ID is required.",
-	}),
-	name: zod.string({
-		message: "Name is required.",
-	}),
-	phone: zod.string({
-		message: "Phone is required.",
-	}),
-	registerationDate: zod.number({
-		message: "Registeration Date is required.",
-	}),
+export const passengerReadDataValidator = zod.object({
+	id: zod
+		.string({
+			message: "ID is required.",
+		})
+		.min(1, {
+			message: "ID must be at least 1 characters long.",
+		}),
+	name: zod
+		.string({
+			message: "Name is required.",
+		})
+		.min(3, {
+			message: "Name must be at least 3 characters long.",
+		}),
+	phone: zod
+		.string({
+			message: "Phone is required.",
+		})
+		.length(11, {
+			message: "Phone must be at least 11 characters long.",
+		}),
+	registerationDate: zod
+		.number({
+			message: "Registeration Date is required.",
+		})
+		.min(getUnixTime(new Date()), {
+			message: "Registeration Date must be at least today.",
+		}),
 });
 
-export type PassengerData = zod.infer<typeof passengerDataValidator>;
+export type PassengerReadData = zod.infer<typeof passengerReadDataValidator>;
 
-export const passengerInputValidator = zod.object({
-	airlineId: zod.string({
-		message: "Airline ID is required.",
-	}),
+export const passengerCreateDataValidator = zod.object({
+	airlineId: zod
+		.string({
+			message: "Airline ID is required.",
+		})
+		.min(1, {
+			message: "Airline ID must be at least 1 characters long.",
+		}),
 	name: zod
 		.string({
 			message: "Name is required.",
@@ -37,4 +58,6 @@ export const passengerInputValidator = zod.object({
 		}),
 });
 
-export type PassengerInput = zod.infer<typeof passengerInputValidator>;
+export type PassengerCreateData = zod.infer<
+	typeof passengerCreateDataValidator
+>;

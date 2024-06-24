@@ -14,7 +14,7 @@ import {
 import { ServerResponse } from "~/lib/handlers/response-handler";
 import type { RouteCreateData } from "~/validators/routes";
 
-export async function getRoutes(airlineId: string) {
+export async function getRoutes(_airlineId: string) {
 	try {
 		const departure_airport_table = alias(airport_table, "departure_airport");
 		const arrival_airport_table = alias(airport_table, "arrival_airport");
@@ -38,170 +38,6 @@ export async function getRoutes(airlineId: string) {
 			.innerJoin(
 				arrival_airport_table,
 				eq(arrival_airport_table.id, route_table.arrivalAirportId),
-			)
-			.where(eq(route_table.airlineId, airlineId));
-
-		return ServerResponse.success(
-			{
-				routes,
-			},
-			{
-				message: "Routes retrieved successfully.",
-			},
-		);
-	} catch (error) {
-		console.error(error);
-
-		return ServerResponse.server_error(
-			{
-				routes: [],
-			},
-			{
-				message: "An error occurred while retrieving routes.",
-			},
-		);
-	}
-}
-
-export async function getRouteById(airlineId: string, id: string) {
-	try {
-		const departure_airport_table = alias(airport_table, "departure_airport");
-		const arrival_airport_table = alias(airport_table, "arrival_airport");
-
-		const routes = await db
-			.select({
-				id: route_table.id,
-				departureCity: departure_airport_table.city,
-				departureCountry: departure_airport_table.country,
-				departureAirport: departure_airport_table.name,
-				arrivalCity: arrival_airport_table.city,
-				arrivalCountry: arrival_airport_table.country,
-				arrivalAirport: departure_airport_table.name,
-				durationMinutes: route_table.durationMinutes,
-			})
-			.from(route_table)
-			.innerJoin(
-				departure_airport_table,
-				eq(departure_airport_table.id, route_table.departureAirportId),
-			)
-			.innerJoin(
-				arrival_airport_table,
-				eq(arrival_airport_table.id, route_table.arrivalAirportId),
-			)
-			.where(and(eq(route_table.airlineId, airlineId), eq(route_table.id, id)));
-
-		return ServerResponse.success(
-			{
-				route: routes[0],
-			},
-			{
-				message: "Route retrieved successfully.",
-			},
-		);
-	} catch (error) {
-		console.error(error);
-
-		return ServerResponse.server_error(
-			{
-				route: null,
-			},
-			{
-				message: "An error occurred while retrieving route.",
-			},
-		);
-	}
-}
-
-export async function getRouteByDepartureAirportId(
-	airlineId: string,
-	departureAirportId: string,
-) {
-	try {
-		const departure_airport_table = alias(airport_table, "departure_airport");
-		const arrival_airport_table = alias(airport_table, "arrival_airport");
-
-		const routes = await db
-			.select({
-				id: route_table.id,
-				departureCity: departure_airport_table.city,
-				departureCountry: departure_airport_table.country,
-				departureAirport: departure_airport_table.name,
-				arrivalCity: arrival_airport_table.city,
-				arrivalCountry: arrival_airport_table.country,
-				arrivalAirport: departure_airport_table.name,
-				durationMinutes: route_table.durationMinutes,
-			})
-			.from(route_table)
-			.innerJoin(
-				departure_airport_table,
-				eq(departure_airport_table.id, route_table.departureAirportId),
-			)
-			.innerJoin(
-				arrival_airport_table,
-				eq(arrival_airport_table.id, route_table.arrivalAirportId),
-			)
-			.where(
-				and(
-					eq(route_table.airlineId, airlineId),
-					eq(route_table.departureAirportId, departureAirportId),
-				),
-			);
-
-		return ServerResponse.success(
-			{
-				routes,
-			},
-			{
-				message: "Routes retrieved successfully.",
-			},
-		);
-	} catch (error) {
-		console.error(error);
-
-		return ServerResponse.server_error(
-			{
-				routes: [],
-			},
-			{
-				message: "An error occurred while retrieving routes.",
-			},
-		);
-	}
-}
-
-export async function getRouteByArrivalAirportId(
-	airlineId: string,
-	arrivalAirportId: string,
-) {
-	try {
-		const departure_airport_table = alias(airport_table, "departure_airport");
-		const arrival_airport_table = alias(airport_table, "arrival_airport");
-
-		const routes = await db
-			.select({
-				id: route_table.id,
-				departureCity: departure_airport_table.city,
-				departureCountry: departure_airport_table.country,
-				departureAirport: departure_airport_table.name,
-				arrivalCity: arrival_airport_table.city,
-				arrivalCountry: arrival_airport_table.country,
-				arrivalAirport: departure_airport_table.name,
-				durationMinutes: route_table.durationMinutes,
-			})
-			.from(route_table)
-			.innerJoin(
-				departure_airport_table,
-				eq(departure_airport_table.id, route_table.departureAirportId),
-			)
-			.innerJoin(
-				arrival_airport_table,
-				eq(arrival_airport_table.id, route_table.arrivalAirportId),
-			)
-			.where(
-				and(
-					eq(route_table.airlineId, airlineId),
-					eq(route_table.arrivalAirportId, arrivalAirportId),
-				),
 			);
 
 		return ServerResponse.success(
@@ -230,7 +66,7 @@ export async function createRoute(data: RouteCreateData) {
 	try {
 		const routes = await db.insert(route_table).values(data).returning();
 
-		return ServerResponse.success(
+		return ServerResponse.created(
 			{
 				route: routes[0],
 			},

@@ -1,32 +1,11 @@
 import zod from "zod";
 
-export const flightStatuses = [
-	{
-		value: "scheduled",
-		label: "Scheduled",
-	},
-	{
-		value: "delayed",
-		label: "Delayed",
-	},
-	{
-		value: "cancelled",
-		label: "Cancelled",
-	},
-	{
-		value: "departed",
-		label: "Departed",
-	},
-	{
-		value: "arrived",
-		label: "Arrived",
-	},
-];
-
-const flightStatusValues = flightStatuses.map((status) => status.value) as [
-	string,
-	...string[],
-];
+export enum FlightStatus {
+	Scheduled = "scheduled",
+	Cancelled = "cancelled",
+	InFlight = "in-flight",
+	Comepleted = "completed",
+}
 
 export const flightReadDataValidator = zod.object({
 	id: zod.string(),
@@ -35,7 +14,12 @@ export const flightReadDataValidator = zod.object({
 	routeId: zod.string(),
 	departureTime: zod.date(),
 	arrivalTime: zod.date(),
-	status: zod.enum(flightStatusValues),
+	status: zod.enum([
+		FlightStatus.Scheduled,
+		FlightStatus.Cancelled,
+		FlightStatus.InFlight,
+		FlightStatus.Comepleted,
+	]),
 	price: zod.number(),
 	departureCity: zod.string(),
 	departureCountry: zod.string(),
@@ -43,6 +27,8 @@ export const flightReadDataValidator = zod.object({
 	arrivalCity: zod.string(),
 	arrivalCountry: zod.string(),
 	arrivalAirport: zod.string(),
+	capacity: zod.number(),
+	passengerCount: zod.number(),
 });
 
 export type FlightReadData = zod.infer<typeof flightReadDataValidator>;
@@ -107,7 +93,14 @@ export const flightUpdateDataValidator = zod.object({
 			message: "Route is required",
 		})
 		.optional(),
-	status: zod.enum(flightStatusValues).optional(),
+	status: zod
+		.enum([
+			FlightStatus.Scheduled,
+			FlightStatus.Cancelled,
+			FlightStatus.InFlight,
+			FlightStatus.Comepleted,
+		])
+		.optional(),
 	departure: zod
 		.date()
 		.min(new Date(), {
@@ -124,6 +117,15 @@ export const flightUpdateDataValidator = zod.object({
 		.number()
 		.min(1, {
 			message: "Price must be a positive number",
+		})
+		.optional(),
+
+	passengerCount: zod
+		.number({
+			message: "Passenger count must be a number",
+		})
+		.min(0, {
+			message: "Passenger count must be a positive number",
 		})
 		.optional(),
 });

@@ -1,6 +1,6 @@
 import * as zod from "zod";
 
-export const ticketDataValidator = zod.object({
+export const ticketReadDataValidator = zod.object({
 	id: zod.string(),
 	passengerName: zod.string(),
 	passengerPhone: zod.string(),
@@ -16,14 +16,16 @@ export const ticketDataValidator = zod.object({
 	arrivalCountry: zod.string(),
 	arrivalTime: zod.date(),
 	price: zod.number(),
-	date: zod.date(),
 });
 
-export type TicketData = zod.infer<typeof ticketDataValidator>;
+export type TicketReadData = zod.infer<typeof ticketReadDataValidator>;
 
-export const ticketInputValidator = zod.object({
+export const ticketCreateDataValidator = zod.object({
 	airlineId: zod.string().min(1, {
 		message: "Airline must be selected",
+	}),
+	flightId: zod.string().min(1, {
+		message: "Flight must be selected",
 	}),
 	passengerName: zod.string().min(3, {
 		message: "Name must be at least 3 characters long",
@@ -31,9 +33,17 @@ export const ticketInputValidator = zod.object({
 	passengerPhone: zod.string().min(11, {
 		message: "Phone number must be at least 11 characters long",
 	}),
-	flightId: zod.string().min(1, {
-		message: "Flight must be selected",
+});
+
+export type TicketCreateData = zod.infer<typeof ticketCreateDataValidator>;
+
+export const ticketUpdateDataValidator = zod.object({
+	passengerName: zod.string().min(3, {
+		message: "Name must be at least 3 characters long",
+	}),
+	passengerPhone: zod.string().min(11, {
+		message: "Phone number must be at least 11 characters long",
 	}),
 });
 
-export type TicketInput = zod.infer<typeof ticketInputValidator>;
+export type TicketUpdateData = zod.infer<typeof ticketUpdateDataValidator>;

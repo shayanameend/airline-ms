@@ -21,11 +21,11 @@ import {
 	DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 import { toast } from "~/components/ui/use-toast";
-import type { PassengerData } from "~/validators/passengers";
 import { deletePassenger } from "~/server/passengers";
+import type { PassengerReadData } from "~/validators/passengers";
 
 interface PassengerRowActionsProps {
-	row: Row<PassengerData>;
+	row: Row<PassengerReadData>;
 }
 
 export function PassengerRowActions({ row }: PassengerRowActionsProps) {

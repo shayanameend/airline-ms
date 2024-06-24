@@ -6,7 +6,10 @@ import { revalidatePath } from "next/cache";
 import { db } from "~/db";
 import { maintenance_table } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
-import type { MaintenanceCreateData } from "~/validators/maintenances";
+import {
+	MaintenanceStatus,
+	type MaintenanceCreateData,
+} from "~/validators/maintenances";
 
 export async function getMaintenances(airlineId: string) {
 	try {
@@ -20,7 +23,6 @@ export async function getMaintenances(airlineId: string) {
 				endDate: maintenance_table.endDate,
 			})
 			.from(maintenance_table)
-			.where(eq(maintenance_table.airlineId, airlineId))
 			.orderBy(desc(maintenance_table.updatedAt));
 
 		return ServerResponse.success(
@@ -54,12 +56,7 @@ export async function getMaintenanceById(airlineId: string, id: string) {
 		const maintenances = await db
 			.select()
 			.from(maintenance_table)
-			.where(
-				and(
-					eq(maintenance_table.airlineId, airlineId),
-					eq(maintenance_table.id, id),
-				),
-			);
+			.where(eq(maintenance_table.id, id));
 
 		return ServerResponse.success(
 			{
@@ -89,12 +86,7 @@ export async function getMaintenancesByAircraftId(
 		const maintenances = await db
 			.select()
 			.from(maintenance_table)
-			.where(
-				and(
-					eq(maintenance_table.airlineId, airlineId),
-					eq(maintenance_table.aircraftId, aircraftId),
-				),
-			);
+			.where(eq(maintenance_table.aircraftId, aircraftId));
 
 		return ServerResponse.success(
 			{
@@ -124,12 +116,7 @@ export async function getMaintenancesByStartDate(
 		const maintenances = await db
 			.select()
 			.from(maintenance_table)
-			.where(
-				and(
-					eq(maintenance_table.airlineId, airlineId),
-					eq(maintenance_table.startDate, getUnixTime(startDate)),
-				),
-			);
+			.where(eq(maintenance_table.startDate, getUnixTime(startDate)));
 
 		return ServerResponse.success(
 			{
@@ -151,17 +138,12 @@ export async function getMaintenancesByStartDate(
 	}
 }
 
-export async function getActiceMaintenances(airlineId: string) {
+export async function getActiceMaintenances(_airlineId: string) {
 	try {
 		const maintenances = await db
 			.select()
 			.from(maintenance_table)
-			.where(
-				and(
-					eq(maintenance_table.airlineId, airlineId),
-					eq(maintenance_table.status, "active"),
-				),
-			);
+			.where(eq(maintenance_table.status, MaintenanceStatus.InProgress));
 
 		return ServerResponse.success(
 			{
@@ -188,12 +170,7 @@ export async function getCompletedMaintenances(airlineId: string) {
 		const maintenances = await db
 			.select()
 			.from(maintenance_table)
-			.where(
-				and(
-					eq(maintenance_table.airlineId, airlineId),
-					eq(maintenance_table.status, "completed"),
-				),
-			);
+			.where(eq(maintenance_table.status, MaintenanceStatus.Completed));
 
 		return ServerResponse.success(
 			{
@@ -222,6 +199,7 @@ export async function createMaintenance(data: MaintenanceCreateData) {
 			.values({
 				...data,
 				startDate: getUnixTime(data.startDate),
+				endDate: data.endDate ? getUnixTime(data.endDate) : null,
 			})
 			.returning();
 
@@ -261,6 +239,7 @@ export async function updateMaintenance(
 			.set({
 				...data,
 				startDate: getUnixTime(data.startDate),
+				endDate: data.endDate ? getUnixTime(data.endDate) : null,
 				updatedAt: getUnixTime(new Date()),
 			})
 			.where(eq(maintenance_table.id, id))

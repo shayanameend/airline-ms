@@ -1,7 +1,9 @@
 import { getUnixTime } from "date-fns";
-import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { integer, sqliteTable, text, unique } from "drizzle-orm/sqlite-core";
 import { v4 as uuid } from "uuid";
-import { flightStatuses } from "~/validators/flights";
+import { AircraftStatus } from "~/validators/aircrafts";
+import { FlightStatus } from "~/validators/flights";
+import { MaintenanceStatus } from "~/validators/maintenances";
 
 export const airline_table = sqliteTable("airline", {
 	id: text("id").primaryKey().$default(uuid),
@@ -34,11 +36,10 @@ export const airport_table = sqliteTable("airport", {
 export const aircraft_table = sqliteTable("aircraft", {
 	id: text("id").primaryKey().$default(uuid),
 	airlineId: text("airline_id").notNull(),
-	status: text("status").notNull().default("operable"),
+	status: text("status").notNull().default(AircraftStatus.Parked),
 	make: text("make").notNull(),
 	model: text("model").notNull(),
 	capacity: integer("capacity").notNull(),
-	passengerCount: integer("passenger_count").notNull().default(0),
 	pilotId: text("pilot_id"),
 	createdAt: integer("created_at")
 		.notNull()
@@ -68,8 +69,9 @@ export const flight_table = sqliteTable("flight", {
 	aircraftId: text("aircraft_id").notNull(),
 	departure: integer("departure").notNull(),
 	arrival: integer("arrival").notNull(),
-	status: text("status").notNull().default(flightStatuses[0].value),
+	status: text("status").notNull().default(FlightStatus.Scheduled),
 	price: integer("price").notNull(),
+	passengerCount: integer("passenger_count").notNull().default(0),
 	createdAt: integer("created_at")
 		.notNull()
 		.$default(() => getUnixTime(new Date())),
@@ -105,28 +107,29 @@ export const crew_member_table = sqliteTable("crew_member", {
 		.$default(() => getUnixTime(new Date())),
 });
 
-export const passenger_table = sqliteTable("passenger", {
-	id: text("id").primaryKey().$default(uuid),
-	name: text("name").notNull(),
-	phone: text("phone").unique().notNull(),
-	registerationDate: integer("registeration_date")
-		.notNull()
-		.$default(() => getUnixTime(new Date())),
-	createdAt: integer("created_at")
-		.notNull()
-		.$default(() => getUnixTime(new Date())),
-	updatedAt: integer("updated_at")
-		.notNull()
-		.$default(() => getUnixTime(new Date())),
-});
+export const passenger_table = sqliteTable(
+	"passenger",
+	{
+		id: text("id").primaryKey().$default(uuid),
+		airlineId: text("airline_id").notNull(),
+		name: text("name").notNull(),
+		phone: text("phone").notNull(),
+		createdAt: integer("created_at")
+			.notNull()
+			.$default(() => getUnixTime(new Date())),
+		updatedAt: integer("updated_at")
+			.notNull()
+			.$default(() => getUnixTime(new Date())),
+	},
+	(table) => ({
+		unique_airline_phone: unique().on(table.airlineId, table.phone),
+	}),
+);
 
 export const ticket_table = sqliteTable("ticket", {
 	id: text("id").primaryKey().$default(uuid),
 	flightId: text("flight_id").notNull(),
 	passengerId: text("passenger_id").notNull(),
-	date: integer("date")
-		.notNull()
-		.$default(() => getUnixTime(new Date())),
 	createdAt: integer("created_at")
 		.notNull()
 		.$default(() => getUnixTime(new Date())),
@@ -139,7 +142,7 @@ export const maintenance_table = sqliteTable("maintenance", {
 	id: text("id").primaryKey().$default(uuid),
 	aircraftId: text("aircraft_id").notNull(),
 	description: text("description").notNull(),
-	status: text("status").notNull().default("active"),
+	status: text("status").notNull().default(MaintenanceStatus.Scheduled),
 	startDate: integer("start_date").notNull(),
 	endDate: integer("end_date"),
 	createdAt: integer("created_at")

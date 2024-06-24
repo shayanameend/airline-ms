@@ -15,7 +15,7 @@ import {
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
 import { createQueryString } from "~/lib/utils";
-import { createAirline } from "~/server/airlines";
+import { signUpAirline } from "~/server/airlines";
 import {
 	type AirlineSignUpData,
 	airlineSignUpDataValidator,
@@ -38,7 +38,7 @@ export function AirlineSignUpForm() {
 
 	async function onSubmit(data: AirlineSignUpData) {
 		try {
-			const response = await createAirline(data);
+			const response = await signUpAirline(data);
 
 			if (!response.data.airline) {
 				throw new Error(response.message);

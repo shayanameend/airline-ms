@@ -17,8 +17,8 @@ import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
 import { createPassenger } from "~/server/passengers";
 import {
-	type PassengerInput,
-	passengerInputValidator,
+	type PassengerCreateData,
+	passengerCreateDataValidator,
 } from "~/validators/passengers";
 
 interface PassengerFormProps {
@@ -28,8 +28,8 @@ interface PassengerFormProps {
 export function PassengerForm({ Close }: Readonly<PassengerFormProps>) {
 	const searchParams = useSearchParams();
 
-	const form = useForm<PassengerInput>({
-		resolver: zodResolver(passengerInputValidator),
+	const form = useForm<PassengerCreateData>({
+		resolver: zodResolver(passengerCreateDataValidator),
 		defaultValues: {
 			airlineId: searchParams.get("airlineId") ?? "",
 			name: "",
@@ -37,7 +37,7 @@ export function PassengerForm({ Close }: Readonly<PassengerFormProps>) {
 		},
 	});
 
-	async function onSubmit(data: PassengerInput) {
+	async function onSubmit(data: PassengerCreateData) {
 		try {
 			const response = await createPassenger(data);
 

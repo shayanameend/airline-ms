@@ -5,18 +5,31 @@ import { revalidatePath } from "next/cache";
 import { db } from "~/db";
 import { crew_member_table } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
-import type { CrewMemberInput } from "~/validators/crew-members";
+import type {
+	CrewMemberCreateData,
+	CrewMemberReadData,
+	CrewMemberRole,
+	CrewMemberUpdateData,
+} from "~/validators/crew-members";
 
 export async function getCrewMembers(airlineId: string) {
 	try {
 		const crewMembers = await db
-			.select()
+			.select({
+				id: crew_member_table.id,
+				name: crew_member_table.name,
+				role: crew_member_table.role,
+				aircraftId: crew_member_table.aircraftId,
+			})
 			.from(crew_member_table)
 			.where(eq(crew_member_table.airlineId, airlineId));
 
-		return ServerResponse.success(
+		return ServerResponse.success<{ crewMembers: CrewMemberReadData[] }>(
 			{
-				crewMembers,
+				crewMembers: crewMembers.map((crewMember) => ({
+					...crewMember,
+					role: crewMember.role as CrewMemberRole,
+				})),
 			},
 			{
 				message: "Crew members retrieved successfully.",
@@ -39,7 +52,12 @@ export async function getCrewMembers(airlineId: string) {
 export async function getAvailableCrewMembers(airlineId: string) {
 	try {
 		const crewMembers = await db
-			.select()
+			.select({
+				id: crew_member_table.id,
+				name: crew_member_table.name,
+				role: crew_member_table.role,
+				aircraftId: crew_member_table.aircraftId,
+			})
 			.from(crew_member_table)
 			.where(
 				and(
@@ -48,9 +66,12 @@ export async function getAvailableCrewMembers(airlineId: string) {
 				),
 			);
 
-		return ServerResponse.success(
+		return ServerResponse.success<{ crewMembers: CrewMemberReadData[] }>(
 			{
-				crewMembers,
+				crewMembers: crewMembers.map((crewMember) => ({
+					...crewMember,
+					role: crewMember.role as CrewMemberRole,
+				})),
 			},
 			{
 				message: "Available crew members retrieved successfully.",
@@ -70,14 +91,14 @@ export async function getAvailableCrewMembers(airlineId: string) {
 	}
 }
 
-export async function createCrewMember(data: CrewMemberInput) {
+export async function createCrewMember(data: CrewMemberCreateData) {
 	try {
 		const crewMembers = await db
 			.insert(crew_member_table)
 			.values(data)
 			.returning();
 
-		return ServerResponse.success(
+		return ServerResponse.created(
 			{
 				crewMember: crewMembers[0],
 			},
@@ -105,7 +126,7 @@ export async function createCrewMember(data: CrewMemberInput) {
 	}
 }
 
-export async function updateCrewMember(id: string, data: CrewMemberInput) {
+export async function updateCrewMember(id: string, data: CrewMemberUpdateData) {
 	try {
 		const crewMembers = await db
 			.update(crew_member_table)

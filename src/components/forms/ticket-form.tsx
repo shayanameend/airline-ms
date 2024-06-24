@@ -18,8 +18,11 @@ import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
 import { createTicket } from "~/server/tickets";
 import type { FlightReadData } from "~/validators/flights";
-import type { PassengerData } from "~/validators/passengers";
-import { type TicketInput, ticketInputValidator } from "~/validators/tickets";
+import type { PassengerReadData } from "~/validators/passengers";
+import {
+	type TicketCreateData,
+	ticketCreateDataValidator,
+} from "~/validators/tickets";
 import {
 	Select,
 	SelectContent,
@@ -30,7 +33,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 
 interface TicketFormProps {
-	passengers: PassengerData[];
+	passengers: PassengerReadData[];
 	flights: FlightReadData[];
 	CloseDialog?: typeof DialogClose;
 }
@@ -40,8 +43,8 @@ export function TicketForm({
 	flights,
 	CloseDialog,
 }: Readonly<TicketFormProps>) {
-	const form = useForm<TicketInput>({
-		resolver: zodResolver(ticketInputValidator),
+	const form = useForm<TicketCreateData>({
+		resolver: zodResolver(ticketCreateDataValidator),
 		defaultValues: {
 			passengerName: "",
 			passengerPhone: "",
@@ -49,7 +52,7 @@ export function TicketForm({
 		},
 	});
 
-	async function onSubmit(data: TicketInput) {
+	async function onSubmit(data: TicketCreateData) {
 		try {
 			const response = await createTicket(data);
 

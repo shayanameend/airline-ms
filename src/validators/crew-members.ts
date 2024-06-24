@@ -1,19 +1,96 @@
 import zod from "zod";
 
-export const crewMemberDataValidator = zod.object({
-	id: zod.string(),
-	name: zod.string(),
-	aircraftId: zod.string().nullable(),
-	role: zod.string(),
+export enum CrewMemberRole {
+	Host = "host",
+	Cook = "cook",
+	Security = "security",
+}
+
+export const crewMemberReadDataValidator = zod.object({
+	id: zod
+		.string({
+			message: "Id is required",
+		})
+		.min(1, {
+			message: "Id must be at least 1 characters long",
+		}),
+	name: zod
+		.string({
+			message: "Name is required",
+		})
+		.min(3, {
+			message: "Name must be at least 3 characters long",
+		}),
+	role: zod.enum([
+		CrewMemberRole.Host,
+		CrewMemberRole.Cook,
+		CrewMemberRole.Security,
+	]),
+	aircraftId: zod
+		.string({
+			message: "Aircraft is required",
+		})
+		.min(1, {
+			message: "Aircraft must be at least 1 characters long",
+		})
+		.nullable(),
 });
 
-export type CrewMemberData = zod.infer<typeof crewMemberDataValidator>;
+export type CrewMemberReadData = zod.infer<typeof crewMemberReadDataValidator>;
 
-export const crewMemberInputValidator = zod.object({
-	airlineId: zod.string(),
-	aircraftId: zod.string().nullable(),
-	name: zod.string(),
-	role: zod.string(),
+export const crewMemberCreateDataValidator = zod.object({
+	airlineId: zod.string().min(1, {
+		message: "Airline Id must be at least 1 characters long",
+	}),
+	name: zod
+		.string({
+			message: "Name is required",
+		})
+		.min(3, {
+			message: "Name must be at least 3 characters long",
+		}),
+	role: zod.enum([
+		CrewMemberRole.Host,
+		CrewMemberRole.Cook,
+		CrewMemberRole.Security,
+	]),
+	aircraftId: zod
+		.string({
+			message: "Aircraft is required",
+		})
+		.min(1, {
+			message: "Aircraft must be at least 1 characters long",
+		})
+		.nullable(),
 });
 
-export type CrewMemberInput = zod.infer<typeof crewMemberInputValidator>;
+export type CrewMemberCreateData = zod.infer<
+	typeof crewMemberCreateDataValidator
+>;
+
+export const crewMemberUpdateDataValidator = zod.object({
+	name: zod
+		.string({
+			message: "Name is required",
+		})
+		.min(3, {
+			message: "Name must be at least 3 characters long",
+		}),
+	role: zod.enum([
+		CrewMemberRole.Host,
+		CrewMemberRole.Cook,
+		CrewMemberRole.Security,
+	]),
+	aircraftId: zod
+		.string({
+			message: "Aircraft is required",
+		})
+		.min(1, {
+			message: "Aircraft must be at least 1 characters long",
+		})
+		.nullable(),
+});
+
+export type CrewMemberUpdateData = zod.infer<
+	typeof crewMemberUpdateDataValidator
+>;

@@ -3,10 +3,10 @@
 import type { ColumnDef } from "@tanstack/react-table";
 import { fromUnixTime } from "date-fns";
 import { DataTableColumnHeader } from "~/components/common/data-table-column-header";
-import type { PassengerData } from "~/validators/passengers";
+import type { PassengerReadData } from "~/validators/passengers";
 import { PassengerRowActions } from "./passengers-row-actions";
 
-export const passengerColumns: ColumnDef<PassengerData>[] = [
+export const passengerColumns: ColumnDef<PassengerReadData>[] = [
 	{
 		accessorKey: "id",
 		header: ({ column }) => (

@@ -20,7 +20,7 @@ import {
 	type AircraftInput,
 	aircraftInputValidator,
 } from "~/validators/aircrafts";
-import type { CrewMemberData } from "~/validators/crew-members";
+import type { CrewMemberReadData } from "~/validators/crew-members";
 import type { PilotCreateData } from "~/validators/pilots";
 import MultipleSelector, { type Option } from "../ui/multi-select";
 import {
@@ -33,7 +33,7 @@ import {
 
 interface AircraftFormProps {
 	pilots: PilotCreateData[];
-	crewMembers: CrewMemberData[];
+	crewMembers: CrewMemberReadData[];
 	CloseDialog?: typeof DialogClose;
 }
 

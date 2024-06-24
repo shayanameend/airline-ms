@@ -15,7 +15,7 @@ import {
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
 import { createQueryString } from "~/lib/utils";
-import { getAirlinesByEmailAndPassword } from "~/server/airlines";
+import { signInAirline } from "~/server/airlines";
 import {
 	type AirlineSignInData,
 	airlineSignInDataValidator,
@@ -35,10 +35,7 @@ export function AirlineSignInForm() {
 
 	async function onSubmit(data: AirlineSignInData) {
 		try {
-			const response = await getAirlinesByEmailAndPassword(
-				data.email,
-				data.password,
-			);
+			const response = await signInAirline(data.email, data.password);
 
 			if (!response.data.airline) {
 				throw new Error("Invalid email or password. Please try again.");
