@@ -21,13 +21,18 @@ import {
 } from "~/validators/airports";
 
 interface AirportFormProps {
+	airlineId: string;
 	CloseDialog?: typeof DialogClose;
 }
 
-export function AirportForm({ CloseDialog }: Readonly<AirportFormProps>) {
+export function AirportForm({
+	airlineId,
+	CloseDialog,
+}: Readonly<AirportFormProps>) {
 	const form = useForm<AirportCreateData>({
 		resolver: zodResolver(airportCreateDataValidator),
 		defaultValues: {
+			airlineId,
 			name: "",
 			city: "",
 			country: "",

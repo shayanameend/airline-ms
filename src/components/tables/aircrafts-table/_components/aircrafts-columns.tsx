@@ -67,15 +67,6 @@ export const aircraftsColumns: ColumnDef<AircraftData>[] = [
 		),
 	},
 	{
-		accessorKey: "passengerCount",
-		header: ({ column }) => (
-			<DataTableColumnHeader column={column} title="Passenger Count" />
-		),
-		cell: ({ row }) => (
-			<div className="w-[128px]">{row.original.passengerCount}</div>
-		),
-	},
-	{
 		id: "actions",
 		cell: ({ row }) => <AircraftsRowActions row={row} />,
 	},

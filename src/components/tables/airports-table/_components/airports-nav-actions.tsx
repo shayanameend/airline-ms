@@ -11,7 +11,13 @@ import {
 	DialogTrigger,
 } from "~/components/ui/dialog";
 
-export function AirportsNavActions() {
+interface AirportsNavActionsProps {
+	airlineId: string;
+}
+
+export function AirportsNavActions({
+	airlineId,
+}: Readonly<AirportsNavActionsProps>) {
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
@@ -26,7 +32,7 @@ export function AirportsNavActions() {
 						Please fill out the form below to create a new airport.
 					</DialogDescription>
 				</DialogHeader>
-				<AirportForm CloseDialog={DialogClose} />
+				<AirportForm airlineId={airlineId} CloseDialog={DialogClose} />
 			</DialogContent>
 		</Dialog>
 	);

@@ -4,6 +4,7 @@ import { getUnixTime } from "date-fns";
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { db } from "~/db";
+import { airports_to_airlines_table } from "~/db/joins";
 import { airport_table } from "~/db/tables";
 import { ServerResponse } from "~/lib/handlers/response-handler";
 import type { AirportCreateData, AirportReadData } from "~/validators/airports";
@@ -78,6 +79,15 @@ export async function getAirportById(_airlineId: string, id: string) {
 export async function createAirport(data: AirportCreateData) {
 	try {
 		const airports = await db.insert(airport_table).values(data).returning();
+
+		if (!airports[0]) {
+			throw new Error();
+		}
+
+		await db.insert(airports_to_airlines_table).values({
+			airport_id: airports[0].id,
+			airline_id: data.airlineId,
+		});
 
 		return ServerResponse.created(
 			{

@@ -38,6 +38,7 @@ export async function AircraftsNavActions({
 					</DialogDescription>
 				</DialogHeader>
 				<AircraftForm
+					airlineId={airlineId}
 					pilots={pilotsResponse.data.pilots}
 					crewMembers={crewMembersResponse.data.crewMembers}
 					CloseDialog={DialogClose}

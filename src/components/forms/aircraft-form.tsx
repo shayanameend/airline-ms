@@ -1,7 +1,6 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { Button } from "~/components/ui/button";
 import type { DialogClose } from "~/components/ui/dialog";
@@ -32,22 +31,22 @@ import {
 } from "../ui/select";
 
 interface AircraftFormProps {
+	airlineId: string;
 	pilots: PilotCreateData[];
 	crewMembers: CrewMemberReadData[];
 	CloseDialog?: typeof DialogClose;
 }
 
 export function AircraftForm({
+	airlineId,
 	pilots,
 	crewMembers,
 	CloseDialog,
 }: Readonly<AircraftFormProps>) {
-	const searchParams = useSearchParams();
-
 	const form = useForm<AircraftInput>({
 		resolver: zodResolver(aircraftInputValidator),
 		defaultValues: {
-			airlineId: searchParams.get("airlineId") ?? "",
+			airlineId,
 			make: "",
 			model: "",
 			capacity: 0,

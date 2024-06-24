@@ -97,9 +97,7 @@ export function PassengerForm({ Close }: Readonly<PassengerFormProps>) {
 						<Close asChild>
 							<Button variant="outline">Cancel</Button>
 						</Close>
-						<Close asChild>
-							<Button type="submit">Submit</Button>
-						</Close>
+						<Button type="submit">Submit</Button>
 					</div>
 				) : (
 					<Button type="submit">Submit</Button>
