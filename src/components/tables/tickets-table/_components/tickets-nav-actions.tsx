@@ -38,6 +38,7 @@ export async function TicketsNavActions({
 					</DialogDescription>
 				</DialogHeader>
 				<TicketForm
+					airlineId={airlineId}
 					passengers={passengersResponse.data.passengers}
 					flights={flightsResponse.data.flights}
 					CloseDialog={DialogClose}

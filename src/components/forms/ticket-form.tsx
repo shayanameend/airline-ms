@@ -33,12 +33,14 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 
 interface TicketFormProps {
+	airlineId: string;
 	passengers: PassengerReadData[];
 	flights: FlightReadData[];
 	CloseDialog?: typeof DialogClose;
 }
 
 export function TicketForm({
+	airlineId,
 	passengers,
 	flights,
 	CloseDialog,
@@ -46,6 +48,7 @@ export function TicketForm({
 	const form = useForm<TicketCreateData>({
 		resolver: zodResolver(ticketCreateDataValidator),
 		defaultValues: {
+			airlineId,
 			passengerName: "",
 			passengerPhone: "",
 			flightId: "",
