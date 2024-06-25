@@ -1,10 +1,11 @@
 "use client";
 
-import { CaretSortIcon, CheckIcon, ExitIcon } from "@radix-ui/react-icons";
+import { CaretSortIcon, ExitIcon } from "@radix-ui/react-icons";
 import { CogIcon, UserIcon } from "lucide-react";
+import { useRouter} from "next/navigation";
 import { useState } from "react";
 
-import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
+import { Avatar } from "~/components/ui/avatar";
 import { Button } from "~/components/ui/button";
 import {
 	Command,
@@ -41,32 +42,6 @@ import {
 
 import { cn } from "~/lib/utils";
 
-const groups = [
-	{
-		label: "My Account",
-		teams: [
-			{
-				label: "Alicia Koch",
-				value: "personal",
-			},
-		],
-	},
-	{
-		label: "Admins",
-		teams: [
-			{
-				label: "Acme Inc.",
-				value: "acme-inc",
-			},
-			{
-				label: "Monsters Inc.",
-				value: "monsters",
-			},
-		],
-	},
-];
-
-type Team = (typeof groups)[number]["teams"][number];
 
 type PopoverTriggerProps = React.ComponentPropsWithoutRef<
 	typeof PopoverTrigger
@@ -77,6 +52,7 @@ interface TeamSwitcherProps extends PopoverTriggerProps {}
 export function AirlineProfile({ className }: TeamSwitcherProps) {
 	const [open, setOpen] = useState(false);
 	const [showSettingsDialog, setShowSettingsDialog] = useState(false);
+	const router = useRouter()
 
 	return (
 		<Dialog open={showSettingsDialog} onOpenChange={setShowSettingsDialog}>
@@ -92,7 +68,7 @@ export function AirlineProfile({ className }: TeamSwitcherProps) {
 						<Avatar className="mr-2 h-5 w-5">
 							<UserIcon className="h-5 w-5" />
 						</Avatar>
-						Blue Airlines
+						Options
 						<CaretSortIcon className="ml-auto h-4 w-4 shrink-0 opacity-50" />
 					</Button>
 				</PopoverTrigger>
@@ -104,10 +80,10 @@ export function AirlineProfile({ className }: TeamSwitcherProps) {
 							<CommandGroup heading={"Account"}>
 								<DialogTrigger asChild>
 									<CommandItem
-										onSelect={() => {
-											setOpen(false);
-											setShowSettingsDialog(true);
-										}}
+										// onSelect={() => {
+										// 	setOpen(false);
+										// 	setShowSettingsDialog(true);
+										// }}
 									>
 										<CogIcon className="mr-2 h-5 w-5" />
 										Settings
@@ -116,8 +92,7 @@ export function AirlineProfile({ className }: TeamSwitcherProps) {
 								<DialogTrigger asChild>
 									<CommandItem
 										onSelect={() => {
-											setOpen(false);
-											setShowSettingsDialog(true);
+											router.push("/auth")
 										}}
 									>
 										<ExitIcon className="mr-2 h-5 w-5" />
