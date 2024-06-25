@@ -35,6 +35,13 @@ export const aircraftsColumns: ColumnDef<AircraftData>[] = [
 		cell: ({ row }) => <div className="w-[128px]">{row.original.model}</div>,
 	},
 	{
+		accessorKey: "status",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Status" />
+		),
+		cell: ({ row }) => <div className="w-[128px]">{row.original.status}</div>,
+	},
+	{
 		accessorKey: "capacity",
 		header: ({ column }) => (
 			<DataTableColumnHeader column={column} title="Capacity" />

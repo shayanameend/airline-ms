@@ -33,11 +33,32 @@ export const maintenancesColumns: ColumnDef<MaintenanceReadData>[] = [
 		enableSorting: false,
 	},
 	{
+		accessorKey: "status",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="Status" />
+		),
+		cell: ({ row }) => (
+			<div className="w-[128px]">{row.getValue("status")}</div>
+		),
+		enableSorting: false,
+	},
+	{
 		accessorKey: "startDate",
 		header: ({ column }) => (
 			<DataTableColumnHeader column={column} title="Start Date" />
 		),
-		cell: ({ row }) => <div className="w-[128px]">{row.getValue("date")}</div>,
+		cell: ({ row }) => (
+			<div className="w-[128px]">{row.original.startDate.toLocaleString()}</div>
+		),
+	},
+	{
+		accessorKey: "endDate",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title="End Date" />
+		),
+		cell: ({ row }) => (
+			<div className="w-[128px]">{row.original.endDate?.toLocaleString()}</div>
+		),
 	},
 	{
 		id: "actions",
